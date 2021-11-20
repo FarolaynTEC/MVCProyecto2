@@ -50,7 +50,7 @@ public class CtrlCentroAtencion implements ActionListener{
   public void iniciar(){
     frm.setTitle("Centros de Atención");
     frm.setLocationRelativeTo(null);
-    cargarTablaPlanEstudio();
+    cargarTablaCentroAtencion();
   }
   
   /**
@@ -72,7 +72,7 @@ public class CtrlCentroAtencion implements ActionListener{
           JOptionPane.showMessageDialog(null,"Registro de Centro de "
                   + "Atención guardado");
           limpiar();
-          cargarTablaPlanEstudio();
+          cargarTablaCentroAtencion();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
           limpiar();
@@ -95,7 +95,11 @@ public class CtrlCentroAtencion implements ActionListener{
     frm.txtUbicacionCentro.setText(null);
   }
   
-  private void cargarTablaPlanEstudio(){
+  /**
+   * Método para cargar los datos de la base de datos
+   * en la tabla llamada tablaCentroA.
+   */
+  private void cargarTablaCentroAtencion(){
     DefaultTableModel modeloTabla = (DefaultTableModel) frm.tablaCentroA.getModel();
     modeloTabla.setRowCount(0);
     ResultSet rs;
