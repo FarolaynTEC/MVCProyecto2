@@ -337,15 +337,16 @@ package Vista;
               .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(41, 41, 41))
           .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-              .addComponent(btnAgregarVacuna)
-              .addComponent(btnConsultaVacunas)
-              .addComponent(btnGuardarPaciente)
-              .addComponent(btnEditarPaciente)
-              .addComponent(btnEliminarPaciente)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(btnLimpiarPaciente)
-                .addComponent(btnVolverPaciente)))
+                .addComponent(btnVolverPaciente))
+              .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(btnAgregarVacuna)
+                .addComponent(btnConsultaVacunas)
+                .addComponent(btnGuardarPaciente)
+                .addComponent(btnEditarPaciente)
+                .addComponent(btnEliminarPaciente)))
             .addContainerGap())))
     );
 
@@ -427,14 +428,14 @@ package Vista;
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton btnAgregarVacuna;
-  private javax.swing.JButton btnConsultaVacunas;
-  private javax.swing.JButton btnEditarPaciente;
-  private javax.swing.JButton btnEliminarPaciente;
-  private javax.swing.JButton btnGuardarPaciente;
-  private javax.swing.JButton btnLimpiarPaciente;
-  private javax.swing.JButton btnVolverPaciente;
-  private javax.swing.JComboBox<String> cmbTipoSangre;
+  public javax.swing.JButton btnAgregarVacuna;
+  public javax.swing.JButton btnConsultaVacunas;
+  public javax.swing.JButton btnEditarPaciente;
+  public javax.swing.JButton btnEliminarPaciente;
+  public javax.swing.JButton btnGuardarPaciente;
+  public javax.swing.JButton btnLimpiarPaciente;
+  public javax.swing.JButton btnVolverPaciente;
+  public javax.swing.JComboBox<String> cmbTipoSangre;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel10;
   private javax.swing.JLabel jLabel12;
@@ -449,20 +450,20 @@ package Vista;
   private javax.swing.JLabel jLabel7;
   private javax.swing.JLabel jLabel8;
   private javax.swing.JLabel jLabel9;
-  private javax.swing.JPanel jPanel1;
+  public javax.swing.JPanel jPanel1;
   private javax.swing.JPanel jPanel2;
   private javax.swing.JScrollPane jScrollPane1;
-  private javax.swing.JTable tablaPaciente;
-  private javax.swing.JTextField txtCedulaPaciente;
-  private javax.swing.JTextField txtCorreoPciente;
-  private javax.swing.JTextField txtFechaPaciente;
-  private javax.swing.JTextField txtFechaVacuna;
-  private javax.swing.JTextField txtNacionalidadPaciente;
-  private javax.swing.JTextField txtNombreFarmaceutica;
-  private javax.swing.JTextField txtNombrePaciente;
-  private javax.swing.JTextField txtNombreVacuna;
-  private javax.swing.JTextField txtNumLote;
-  private javax.swing.JTextField txtResidenciaPaciente;
-  private javax.swing.JTextField txxTelefonoPaciente;
+  public javax.swing.JTable tablaPaciente;
+  public javax.swing.JTextField txtCedulaPaciente;
+  public javax.swing.JTextField txtCorreoPciente;
+  public javax.swing.JTextField txtFechaPaciente;
+  public javax.swing.JTextField txtFechaVacuna;
+  public javax.swing.JTextField txtNacionalidadPaciente;
+  public javax.swing.JTextField txtNombreFarmaceutica;
+  public javax.swing.JTextField txtNombrePaciente;
+  public javax.swing.JTextField txtNombreVacuna;
+  public javax.swing.JTextField txtNumLote;
+  public javax.swing.JTextField txtResidenciaPaciente;
+  public javax.swing.JTextField txxTelefonoPaciente;
   // End of variables declaration//GEN-END:variables
 }

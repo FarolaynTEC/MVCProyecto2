@@ -299,14 +299,14 @@ public class Seguimiento extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton btnEditarSeguimiento;
-  private javax.swing.JButton btnEliminarSeguimiento;
-  private javax.swing.JButton btnGuardarSeguimiento;
-  private javax.swing.JButton btnLimpiar;
-  private javax.swing.JButton btnVolver;
-  private javax.swing.JComboBox<String> cmbCentro;
-  private javax.swing.JComboBox<String> cmbFuncionario;
-  private javax.swing.JComboBox<String> cmbTratamiento;
+  public javax.swing.JButton btnEditarSeguimiento;
+  public javax.swing.JButton btnEliminarSeguimiento;
+  public javax.swing.JButton btnGuardarSeguimiento;
+  public javax.swing.JButton btnLimpiar;
+  public javax.swing.JButton btnVolver;
+  public javax.swing.JComboBox<String> cmbCentro;
+  public javax.swing.JComboBox<String> cmbFuncionario;
+  public javax.swing.JComboBox<String> cmbTratamiento;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JLabel jLabel3;
@@ -315,8 +315,8 @@ public class Seguimiento extends javax.swing.JFrame {
   private javax.swing.JLabel jLabel6;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
-  private javax.swing.JTable tablaSeguimiento;
-  private javax.swing.JTextField txtCedulaPaciente;
-  private javax.swing.JTextField txtFechaSeguimiento;
+  public javax.swing.JTable tablaSeguimiento;
+  public javax.swing.JTextField txtCedulaPaciente;
+  public javax.swing.JTextField txtFechaSeguimiento;
   // End of variables declaration//GEN-END:variables
 }
