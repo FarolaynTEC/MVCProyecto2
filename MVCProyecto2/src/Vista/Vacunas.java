@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author farol
@@ -148,7 +150,13 @@ package Vista;
   }//GEN-LAST:event_btnVolverActionPerformed
 
   private void btnConsultaVacunasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaVacunasActionPerformed
-    // TODO add your handling code here:
+    if(txtCedulaPaciente.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados de vacuna no pueden estar vacios");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "CONSULTA REALIZADA CON EXITO");
+    }
   }//GEN-LAST:event_btnConsultaVacunasActionPerformed
 
   /**

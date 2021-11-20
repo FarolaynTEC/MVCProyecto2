@@ -235,19 +235,40 @@ public class Seguimiento extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void btnGuardarSeguimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarSeguimientoActionPerformed
-
+    if(txtCedulaPaciente.getText().length()==0
+        || txtFechaSeguimiento.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados de vacuna no pueden estar vacios");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
+    }
   }//GEN-LAST:event_btnGuardarSeguimientoActionPerformed
 
   private void btnEditarSeguimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarSeguimientoActionPerformed
-    // TODO add your handling code here:
+   if(txtCedulaPaciente.getText().length()==0
+        || txtFechaSeguimiento.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados de vacuna no pueden estar vacios");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO MODIFICADO CON EXITO");
+    }
   }//GEN-LAST:event_btnEditarSeguimientoActionPerformed
 
   private void btnEliminarSeguimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarSeguimientoActionPerformed
-    // TODO add your handling code here:
+   if(txtCedulaPaciente.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, el campo cedula no puede estar vacios");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO ELIMINADO CON EXITO");
+    }
   }//GEN-LAST:event_btnEliminarSeguimientoActionPerformed
 
   private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-    // TODO add your handling code here:
+    txtCedulaPaciente.setText(null);
+    txtFechaSeguimiento.setText(null);
   }//GEN-LAST:event_btnLimpiarActionPerformed
 
   private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
