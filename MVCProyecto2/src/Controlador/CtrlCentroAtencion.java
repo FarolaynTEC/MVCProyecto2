@@ -61,6 +61,7 @@ public class CtrlCentroAtencion implements ActionListener{
   public void actionPerformed(ActionEvent e){
     //Boton guardar
     if(e.getSource()==frm.btnGuardarCentro){
+      System.out.print("Aqui1");
       mod.setCodigoCentroAtencion(Integer.parseInt(frm.txtCodigoCentro.getText()));
       mod.setNombre(frm.txtNombreCentro.getText());
       mod.setUbicacion(frm.txtUbicacionCentro.getText());
@@ -85,6 +86,7 @@ public class CtrlCentroAtencion implements ActionListener{
     
     //Boton editar
     if(e.getSource()==frm.btnEditarCentro){
+      System.out.print("Aqui2");
       mod.setCodigoCentroAtencion(Integer.parseInt(frm.txtCodigoCentro.getText()));
       mod.setNombre(frm.txtNombreCentro.getText());
       mod.setUbicacion(frm.txtUbicacionCentro.getText());
@@ -109,6 +111,7 @@ public class CtrlCentroAtencion implements ActionListener{
     
     //Boton eliminar
     if(e.getSource()==frm.btnEliminarCentro){
+      System.out.print("Aqui3");
       mod.setCodigoCentroAtencion(Integer.parseInt
         (frm.txtCodigoCentro.getText()));
       try {
@@ -129,22 +132,23 @@ public class CtrlCentroAtencion implements ActionListener{
     
     //Boton buscar
     if(e.getSource()==frm.btnBuscarCentro){
+      System.out.print("Aqui4");
       mod.setCodigoCentroAtencion(Integer.parseInt
         (frm.txtCodigoCentro.getText()));
+      try {
+        if(modC.buscar(mod)){
           
-      DefaultTableModel modeloTabla = (DefaultTableModel) frm.tablaCentroA.getModel();
-      modeloTabla.setRowCount(0);
-      ResultSet rs;
-      ResultSetMetaData rsmd;
-      int columnas;
-
-      int [] anchos = {10, 50, 100, 30, 100};
-      for(int i = 0 ; i < frm.tablaCentroA.getColumnCount(); i++){
-        frm.tablaCentroA.getColumnModel().getColumn(i).setPreferredWidth
-          (anchos[i]);
+          frm.txtNombreCentro.setText(mod.getNombre());
+          frm.txtUbicacionCentro.setText(mod.getUbicacion());
+          frm.txtCantidadCentro.setText(String.valueOf(mod.getCapacidadMaxPac()));
+        }else{
+          JOptionPane.showMessageDialog(null,"ERROR NO SE ENCONTRÓ UN CENTRO DE"
+                  + "ATENCIÓN CON ESA IDENTIFICACIÓN");
+        }
+      } catch (SQLException ex) {
+        Logger.getLogger(CtrlCentroAtencion.class.getName())
+                .log(Level.SEVERE, null, ex);
       }
-      ConsultaCentroAtencion.cargarTablaCentroAtencionBuscado
-          (modeloTabla,mod.getCodigoCentroAtencion());
     }
     
     //Boton limpiar
@@ -170,8 +174,6 @@ public class CtrlCentroAtencion implements ActionListener{
     frm.txtNombreCentro.setText(null);
     frm.txtUbicacionCentro.setText(null);
   }
-  
-  
   
   /**
    * Método para cargar los datos de la base de datos
