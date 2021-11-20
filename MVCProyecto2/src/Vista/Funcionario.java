@@ -786,18 +786,47 @@ public class Funcionario extends javax.swing.JFrame {
   }//GEN-LAST:event_btnGuardarFuncionario1ActionPerformed
 
   private void btnGuardarFuncionario2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarFuncionario2ActionPerformed
-    if(txtCedulaPaciente.getText().length()==0
-        || txtFechaSeguimiento.getText().length()==0)
-   {
-     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados de vacuna no pueden estar vacios");
-    } else{
-     //verificacion de repetido
-     JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
-    }
+    if(txtCedulaFuncionario.getText().length()==0
+        || txtNombreFuncionario.getText().length()==0
+            || txtFechaFuncionario.getText().length()==0) {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados de funcionario no pueden estar vacios");
+    } else if (jRadioButton1.isSelected()==false && jRadioButton2.isSelected()==false) {
+          JOptionPane.showMessageDialog(null,"No selecciono ninguna opción  de cargo para enfermero");
+          } else if
+          (jRadioButton1.isSelected()==true && jRadioButton2.isSelected()==true){
+           JOptionPane.showMessageDialog(null,"No puede seleccionar dos opciones de cargo para enfermero");  
+        } else if
+          (jRadioButton5.isSelected()==true && jRadioButton6.isSelected()==true){
+           JOptionPane.showMessageDialog(null,"No puede seleccionar dos opciones de capacitaciones para enfermero");  
+        } else if
+          (jRadioButton5.isSelected()==false && jRadioButton6.isSelected()==false){
+           JOptionPane.showMessageDialog(null,"No selecciono ninguna opción de capacitaciones para enfermero");  
+        } else{ 
+           //llamar metodo para anadir
+           JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
+        } 
   }//GEN-LAST:event_btnGuardarFuncionario2ActionPerformed
 
   private void btnEditarFuncionario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarFuncionario1ActionPerformed
-    // TODO add your handling code here:
+    if(txtCedulaFuncionario.getText().length()==0
+        || txtNombreFuncionario.getText().length()==0
+            || txtFechaFuncionario.getText().length()==0) {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados de funcionario no pueden estar vacios");
+    } else if (jRadioButton1.isSelected()==false && jRadioButton2.isSelected()==false) {
+          JOptionPane.showMessageDialog(null,"No selecciono ninguna opción  de cargo para enfermero");
+          } else if
+          (jRadioButton1.isSelected()==true && jRadioButton2.isSelected()==true){
+           JOptionPane.showMessageDialog(null,"No puede seleccionar dos opciones de cargo para enfermero");  
+        } else if
+          (jRadioButton5.isSelected()==true && jRadioButton6.isSelected()==true){
+           JOptionPane.showMessageDialog(null,"No puede seleccionar dos opciones de capacitaciones para enfermero");  
+        } else if
+          (jRadioButton5.isSelected()==false && jRadioButton6.isSelected()==false){
+           JOptionPane.showMessageDialog(null,"No selecciono ninguna opción de capacitaciones para enfermero");  
+        } else{ 
+           //llamar metodo para anadir
+           JOptionPane.showMessageDialog(null, "REGISTRO MODIFICADO CON EXITO");
+        }
   }//GEN-LAST:event_btnEditarFuncionario1ActionPerformed
 
   private void btnEliminarFuncionario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarFuncionario1ActionPerformed

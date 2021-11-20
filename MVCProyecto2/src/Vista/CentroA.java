@@ -47,6 +47,7 @@ public class CentroA extends javax.swing.JFrame {
     btnEliminarCentro = new javax.swing.JButton();
     btnLimpiarCentro = new javax.swing.JButton();
     btnVolverCentro = new javax.swing.JButton();
+    btnBuscarCentro = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -123,6 +124,13 @@ public class CentroA extends javax.swing.JFrame {
       }
     });
 
+    btnBuscarCentro.setText("Buscar Centro");
+    btnBuscarCentro.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnBuscarCentroActionPerformed(evt);
+      }
+    });
+
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
@@ -163,9 +171,11 @@ public class CentroA extends javax.swing.JFrame {
             .addComponent(btnEditarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(18, 18, 18)
             .addComponent(btnEliminarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(151, 151, 151)
+            .addGap(109, 109, 109)
+            .addComponent(btnBuscarCentro)
+            .addGap(29, 29, 29)
             .addComponent(btnLimpiarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(117, 117, 117)
+            .addGap(29, 29, 29)
             .addComponent(btnVolverCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
     );
@@ -207,9 +217,10 @@ public class CentroA extends javax.swing.JFrame {
             .addGap(30, 30, 30))
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGap(18, 18, 18)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(btnVolverCentro)
-              .addComponent(btnLimpiarCentro))
+              .addComponent(btnLimpiarCentro)
+              .addComponent(btnBuscarCentro))
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
     );
 
@@ -274,6 +285,10 @@ public class CentroA extends javax.swing.JFrame {
     // TODO add your handling code here:
   }//GEN-LAST:event_btnVolverCentroActionPerformed
 
+  private void btnBuscarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarCentroActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_btnBuscarCentroActionPerformed
+
   /**
    * @param args the command line arguments
    */
@@ -313,6 +328,7 @@ public class CentroA extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
+  public javax.swing.JButton btnBuscarCentro;
   public javax.swing.JButton btnEditarCentro;
   public javax.swing.JButton btnEliminarCentro;
   public javax.swing.JButton btnGuardarCentro;
