@@ -12,7 +12,7 @@ public class ConsultaCentroAtencion extends Conexion{
   public boolean registrar(CentroAtencion CA) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();
-    
+    System.out.println(con);
     String sql = "INSERT INTO CentroAtencion(codigoCentroAtencion,"
             + "nombre,ubicacion,capacidadMaxPac,"
             + "tipoDeCentro) VALUES (?,?,?,?,?)";

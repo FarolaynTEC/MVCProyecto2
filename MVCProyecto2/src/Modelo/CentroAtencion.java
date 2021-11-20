@@ -11,23 +11,6 @@ public class CentroAtencion {
   private int capacidadMaxPac; 
   private String tipoDeCentro;
 
-  /**
-   * Constrictor para la clase CentroAtención
-   * @param pCodigoCentroAtencion
-   * @param pNombre
-   * @param pUbicacion
-   * @param pCapacidadMaxPac
-   * @param pTipoDeCentro 
-   */
-  public CentroAtencion(int pCodigoCentroAtencion, String pNombre,
-          String pUbicacion, int pCapacidadMaxPac, String pTipoDeCentro) {
-    this.codigoCentroAtencion = pCodigoCentroAtencion;
-    this.nombre = pNombre;
-    this.ubicacion = pUbicacion;
-    this.capacidadMaxPac = pCapacidadMaxPac;
-    this.tipoDeCentro = pTipoDeCentro;
-  }
-
   public int getCodigoCentroAtencion() {
     return codigoCentroAtencion;
   }
