@@ -33,7 +33,7 @@ package Vista;
     jLabel4 = new javax.swing.JLabel();
     jLabel5 = new javax.swing.JLabel();
     jLabel6 = new javax.swing.JLabel();
-    cmbTipoSangre = new javax.swing.JComboBox<>();
+    cmbEspecialidad = new javax.swing.JComboBox<>();
     jScrollPane1 = new javax.swing.JScrollPane();
     tablaPaciente = new javax.swing.JTable();
     btnGuardarPaciente = new javax.swing.JButton();
@@ -43,15 +43,15 @@ package Vista;
     btnVolverPaciente = new javax.swing.JButton();
     jLabel7 = new javax.swing.JLabel();
     jLabel8 = new javax.swing.JLabel();
-    txtResidenciaPaciente = new javax.swing.JTextField();
-    txxTelefonoPaciente = new javax.swing.JTextField();
+    txtFechaFin = new javax.swing.JTextField();
+    txtFechaInicio = new javax.swing.JTextField();
     jLabel9 = new javax.swing.JLabel();
-    btnConsultaVacunas = new javax.swing.JButton();
-    cmbTipoSangre1 = new javax.swing.JComboBox<>();
-    cmbTipoSangre2 = new javax.swing.JComboBox<>();
-    cmbTipoSangre3 = new javax.swing.JComboBox<>();
-    cmbTipoSangre4 = new javax.swing.JComboBox<>();
-    cmbTipoSangre5 = new javax.swing.JComboBox<>();
+    btnSeguimiento = new javax.swing.JButton();
+    cmbCentro = new javax.swing.JComboBox<>();
+    cmbCedulaPaciente = new javax.swing.JComboBox<>();
+    cmbNombrePaciente = new javax.swing.JComboBox<>();
+    cmbDiagnostico = new javax.swing.JComboBox<>();
+    cmbFuncionario = new javax.swing.JComboBox<>();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,7 +70,7 @@ package Vista;
 
     jLabel6.setText("Fecha Inicio");
 
-    cmbTipoSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+    cmbEspecialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
     tablaPaciente.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
@@ -139,24 +139,35 @@ package Vista;
 
     jLabel8.setText("Fecha Fin");
 
-    jLabel9.setText("Funcionario Encargado");
-
-    btnConsultaVacunas.setText("Registro Seguimiento");
-    btnConsultaVacunas.addActionListener(new java.awt.event.ActionListener() {
+    txtFechaInicio.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnConsultaVacunasActionPerformed(evt);
+        txtFechaInicioActionPerformed(evt);
       }
     });
 
-    cmbTipoSangre1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+    jLabel9.setText("Funcionario Encargado");
 
-    cmbTipoSangre2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+    btnSeguimiento.setText("Registro Seguimiento");
+    btnSeguimiento.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnSeguimientoActionPerformed(evt);
+      }
+    });
 
-    cmbTipoSangre3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+    cmbCentro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-    cmbTipoSangre4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+    cmbCedulaPaciente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-    cmbTipoSangre5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+    cmbNombrePaciente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+    cmbNombrePaciente.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        cmbNombrePacienteActionPerformed(evt);
+      }
+    });
+
+    cmbDiagnostico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+    cmbFuncionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -171,15 +182,15 @@ package Vista;
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                   .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addGap(18, 18, 18)
-                  .addComponent(cmbTipoSangre4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                  .addComponent(cmbDiagnostico, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(jPanel1Layout.createSequentialGroup()
                   .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addGap(18, 18, 18)
-                  .addComponent(txxTelefonoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                  .addComponent(txtFechaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                   .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                  .addComponent(txtResidenciaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                  .addComponent(txtFechaFin, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                   .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -191,21 +202,21 @@ package Vista;
                       .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                       .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                   .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cmbTipoSangre1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cmbTipoSangre2, 0, 112, Short.MAX_VALUE)
-                    .addComponent(cmbTipoSangre3, 0, 112, Short.MAX_VALUE))))
+                    .addComponent(cmbCentro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cmbCedulaPaciente, 0, 112, Short.MAX_VALUE)
+                    .addComponent(cmbNombrePaciente, 0, 112, Short.MAX_VALUE))))
               .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                   .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                  .addComponent(cmbTipoSangre5, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                  .addComponent(cmbFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createSequentialGroup()
                   .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addGap(18, 18, 18)
-                  .addComponent(cmbTipoSangre, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                  .addComponent(cmbEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
               .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(56, 56, 56)
-                .addComponent(btnConsultaVacunas)))
+                .addComponent(btnSeguimiento)))
             .addGap(51, 51, 51)
             .addComponent(jScrollPane1))
           .addGroup(jPanel1Layout.createSequentialGroup()
@@ -236,37 +247,37 @@ package Vista;
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel2)
-              .addComponent(cmbTipoSangre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(cmbCentro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(18, 18, 18)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addComponent(jLabel3)
-              .addComponent(cmbTipoSangre2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(cmbCedulaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(18, 18, 18)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel4)
-              .addComponent(cmbTipoSangre3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(cmbNombrePaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(18, 18, 18)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(cmbTipoSangre4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(cmbDiagnostico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(18, 18, 18)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(txxTelefonoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(txtFechaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(18, 18, 18)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel8)
-              .addComponent(txtResidenciaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(txtFechaFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(18, 18, 18)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(cmbTipoSangre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(cmbEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(18, 18, 18)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(cmbTipoSangre5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(cmbFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(29, 29, 29)
-            .addComponent(btnConsultaVacunas))
+            .addComponent(btnSeguimiento))
           .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(22, 22, 22)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -316,9 +327,17 @@ package Vista;
     // TODO add your handling code here:
   }//GEN-LAST:event_btnVolverPacienteActionPerformed
 
-  private void btnConsultaVacunasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaVacunasActionPerformed
+  private void btnSeguimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeguimientoActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_btnConsultaVacunasActionPerformed
+  }//GEN-LAST:event_btnSeguimientoActionPerformed
+
+  private void cmbNombrePacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbNombrePacienteActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_cmbNombrePacienteActionPerformed
+
+  private void txtFechaInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaInicioActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_txtFechaInicioActionPerformed
 
   /**
    * @param args the command line arguments
@@ -356,18 +375,18 @@ package Vista;
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton btnConsultaVacunas;
   private javax.swing.JButton btnEditarPaciente;
   private javax.swing.JButton btnEliminarPaciente;
   private javax.swing.JButton btnGuardarPaciente;
   private javax.swing.JButton btnLimpiarPaciente;
+  private javax.swing.JButton btnSeguimiento;
   private javax.swing.JButton btnVolverPaciente;
-  private javax.swing.JComboBox<String> cmbTipoSangre;
-  private javax.swing.JComboBox<String> cmbTipoSangre1;
-  private javax.swing.JComboBox<String> cmbTipoSangre2;
-  private javax.swing.JComboBox<String> cmbTipoSangre3;
-  private javax.swing.JComboBox<String> cmbTipoSangre4;
-  private javax.swing.JComboBox<String> cmbTipoSangre5;
+  private javax.swing.JComboBox<String> cmbCedulaPaciente;
+  private javax.swing.JComboBox<String> cmbCentro;
+  private javax.swing.JComboBox<String> cmbDiagnostico;
+  private javax.swing.JComboBox<String> cmbEspecialidad;
+  private javax.swing.JComboBox<String> cmbFuncionario;
+  private javax.swing.JComboBox<String> cmbNombrePaciente;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JLabel jLabel3;
@@ -380,7 +399,7 @@ package Vista;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
   private javax.swing.JTable tablaPaciente;
-  private javax.swing.JTextField txtResidenciaPaciente;
-  private javax.swing.JTextField txxTelefonoPaciente;
+  private javax.swing.JTextField txtFechaFin;
+  private javax.swing.JTextField txtFechaInicio;
   // End of variables declaration//GEN-END:variables
 }

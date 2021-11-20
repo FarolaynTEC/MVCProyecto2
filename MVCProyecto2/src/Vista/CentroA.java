@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author farol
@@ -138,8 +140,8 @@ public class CentroA extends javax.swing.JFrame {
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(cmbTipoCentro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-              .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(txtCodigoCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
               .addGroup(jPanel1Layout.createSequentialGroup()
@@ -226,19 +228,46 @@ public class CentroA extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void btnGuardarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCentroActionPerformed
-    // TODO add your handling code here:
+    if(txtCantidadCentro.getText().length()==0
+        & txtCodigoCentro.getText().length()==0
+            & txtNombreCentro.getText().length()==0
+                & txtUbicacionCentro.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
+    }
   }//GEN-LAST:event_btnGuardarCentroActionPerformed
 
   private void btnEditarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCentroActionPerformed
-    // TODO add your handling code here:
+    if(txtCantidadCentro.getText().length()==0
+        & txtCodigoCentro.getText().length()==0
+            & txtNombreCentro.getText().length()==0
+                & txtUbicacionCentro.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO MODIFICADO CON EXITO");
+    }
   }//GEN-LAST:event_btnEditarCentroActionPerformed
 
   private void btnEliminarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCentroActionPerformed
-    // TODO add your handling code here:
+    if(txtCodigoCentro.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO ELIMINADO CON EXITO");
+    }
   }//GEN-LAST:event_btnEliminarCentroActionPerformed
 
   private void btnLimpiarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarCentroActionPerformed
-    // TODO add your handling code here:
+    txtCantidadCentro.setText(null);
+    txtCodigoCentro.setText(null);
+    txtNombreCentro.setText(null);
+    txtUbicacionCentro.setText(null);
   }//GEN-LAST:event_btnLimpiarCentroActionPerformed
 
   private void btnVolverCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverCentroActionPerformed

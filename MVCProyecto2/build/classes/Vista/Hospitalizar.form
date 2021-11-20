@@ -55,17 +55,17 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabel5" min="-2" pref="109" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="cmbTipoSangre4" max="32767" attributes="0"/>
+                                      <Component id="cmbDiagnostico" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel6" min="-2" pref="109" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="txxTelefonoPaciente" min="-2" pref="112" max="-2" attributes="0"/>
+                                      <Component id="txtFechaInicio" min="-2" pref="112" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabel8" min="-2" pref="96" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="txtResidenciaPaciente" min="-2" pref="112" max="-2" attributes="0"/>
+                                      <Component id="txtFechaFin" min="-2" pref="112" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -82,9 +82,9 @@
                                           </Group>
                                       </Group>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="cmbTipoSangre1" max="32767" attributes="0"/>
-                                          <Component id="cmbTipoSangre2" alignment="0" pref="112" max="32767" attributes="0"/>
-                                          <Component id="cmbTipoSangre3" alignment="0" pref="112" max="32767" attributes="0"/>
+                                          <Component id="cmbCentro" max="32767" attributes="0"/>
+                                          <Component id="cmbCedulaPaciente" alignment="0" pref="112" max="32767" attributes="0"/>
+                                          <Component id="cmbNombrePaciente" alignment="0" pref="112" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -92,17 +92,17 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel9" min="-2" pref="123" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="cmbTipoSangre5" min="-2" pref="112" max="-2" attributes="0"/>
+                                      <Component id="cmbFuncionario" min="-2" pref="112" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabel7" min="-2" pref="109" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="cmbTipoSangre" min="-2" pref="112" max="-2" attributes="0"/>
+                                      <Component id="cmbEspecialidad" min="-2" pref="112" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                                  <Component id="btnConsultaVacunas" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnSeguimiento" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
@@ -141,45 +141,45 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cmbTipoSangre1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cmbCentro" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cmbTipoSangre2" min="-2" max="-2" attributes="0"/>
+                              <Component id="cmbCedulaPaciente" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cmbTipoSangre3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cmbNombrePaciente" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel5" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                              <Component id="cmbTipoSangre4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cmbDiagnostico" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel6" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                              <Component id="txxTelefonoPaciente" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtFechaInicio" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtResidenciaPaciente" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtFechaFin" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel7" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                              <Component id="cmbTipoSangre" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cmbEspecialidad" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel9" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                              <Component id="cmbTipoSangre5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cmbFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="btnConsultaVacunas" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSeguimiento" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jScrollPane1" min="-2" pref="337" max="-2" attributes="0"/>
                   </Group>
@@ -234,7 +234,7 @@
             <Property name="text" type="java.lang.String" value="Fecha Inicio"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="cmbTipoSangre">
+        <Component class="javax.swing.JComboBox" name="cmbEspecialidad">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -371,24 +371,27 @@
             <Property name="text" type="java.lang.String" value="Fecha Fin"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtResidenciaPaciente">
+        <Component class="javax.swing.JTextField" name="txtFechaFin">
         </Component>
-        <Component class="javax.swing.JTextField" name="txxTelefonoPaciente">
+        <Component class="javax.swing.JTextField" name="txtFechaInicio">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechaInicioActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
             <Property name="text" type="java.lang.String" value="Funcionario Encargado"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btnConsultaVacunas">
+        <Component class="javax.swing.JButton" name="btnSeguimiento">
           <Properties>
             <Property name="text" type="java.lang.String" value="Registro Seguimiento"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConsultaVacunasActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSeguimientoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JComboBox" name="cmbTipoSangre1">
+        <Component class="javax.swing.JComboBox" name="cmbCentro">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -403,7 +406,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="cmbTipoSangre2">
+        <Component class="javax.swing.JComboBox" name="cmbCedulaPaciente">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -418,7 +421,25 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="cmbTipoSangre3">
+        <Component class="javax.swing.JComboBox" name="cmbNombrePaciente">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Item 1"/>
+                <StringItem index="1" value="Item 2"/>
+                <StringItem index="2" value="Item 3"/>
+                <StringItem index="3" value="Item 4"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbNombrePacienteActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cmbDiagnostico">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -433,22 +454,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="cmbTipoSangre4">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="cmbTipoSangre5">
+        <Component class="javax.swing.JComboBox" name="cmbFuncionario">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">

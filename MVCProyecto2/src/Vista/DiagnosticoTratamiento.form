@@ -430,11 +430,11 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btnGuardarCentro2" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnGuardarDiagnostico" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnEditarCentro2" min="-2" pref="136" max="-2" attributes="0"/>
+                  <Component id="btnEditarDiagnostico" min="-2" pref="136" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnEliminarCentro2" min="-2" pref="148" max="-2" attributes="0"/>
+                  <Component id="btnEliminarDiagnostico" min="-2" pref="148" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
@@ -451,36 +451,31 @@
                                           <EmptySpace max="32767" attributes="0"/>
                                           <Component id="jLabel5" min="-2" pref="109" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel4" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                      <Component id="jLabel2" max="32767" attributes="0"/>
-                                                      <Component id="jLabel3" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="txtCodigoCentro" min="-2" pref="112" max="-2" attributes="0"/>
-                                                      <Component id="txtNombreCentro" min="-2" pref="112" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Component id="jLabel6" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel25" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="txtCodigoCentro5" min="-2" pref="112" max="-2" attributes="0"/>
-                                                      <Component id="txtCodigoCentro4" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
-                                                      <Component id="txtNombreCentro2" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
+                                      <Component id="jLabel4" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="jLabel2" max="32767" attributes="0"/>
+                                              <Component id="jLabel3" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="txtCedulaDiagnostico" min="-2" pref="112" max="-2" attributes="0"/>
+                                              <Component id="txtNombreDiagnostico" min="-2" pref="112" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Component id="jLabel6" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel25" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="txtTipoTratamiento" min="-2" pref="112" max="-2" attributes="0"/>
+                                              <Component id="txNombreTratamiento" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
+                                              <Component id="txtDosisTratamiento" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -488,16 +483,11 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane1" min="-2" pref="601" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                                              <Component id="jLabel1" min="-2" pref="250" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                              <Component id="jScrollPane3" min="-2" pref="592" max="-2" attributes="0"/>
-                                          </Group>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                                          <Component id="jLabel1" min="-2" pref="250" max="-2" attributes="0"/>
                                       </Group>
+                                      <Component id="jScrollPane3" alignment="0" min="-2" pref="592" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -511,11 +501,11 @@
                                   <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                                   <Component id="btnVolverCentro" min="-2" pref="73" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="220" max="-2" attributes="0"/>
-                                  <Component id="btnGuardarCentro3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnGuardarTratamiento" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="btnEditarCentro3" min="-2" pref="136" max="-2" attributes="0"/>
+                                  <Component id="btnEditarTratamiento" min="-2" pref="136" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="btnEliminarCentro3" min="-2" pref="148" max="-2" attributes="0"/>
+                                  <Component id="btnEliminarTratamiento" min="-2" pref="148" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -536,12 +526,12 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtCodigoCentro" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtCedulaDiagnostico" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtNombreCentro" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtNombreDiagnostico" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
@@ -555,9 +545,9 @@
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnEditarCentro2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnGuardarCentro2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnEliminarCentro2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnEditarDiagnostico" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnGuardarDiagnostico" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnEliminarDiagnostico" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
@@ -568,17 +558,17 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtCodigoCentro4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txNombreTratamiento" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtNombreCentro2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtDosisTratamiento" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtCodigoCentro5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtTipoTratamiento" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -598,9 +588,9 @@
                       <Group type="102" attributes="0">
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnEditarCentro3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnGuardarCentro3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnEliminarCentro3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnEditarTratamiento" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnGuardarTratamiento" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnEliminarTratamiento" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -643,9 +633,9 @@
             <Property name="text" type="java.lang.String" value="Tratamiento"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtCodigoCentro">
+        <Component class="javax.swing.JTextField" name="txtCedulaDiagnostico">
         </Component>
-        <Component class="javax.swing.JTextField" name="txtNombreCentro">
+        <Component class="javax.swing.JTextField" name="txtNombreDiagnostico">
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>
@@ -654,7 +644,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="tablaFuncionario">
+            <Component class="javax.swing.JTable" name="tablaDiagnostico">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="3" rowCount="4">
@@ -713,7 +703,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="tablaEnfermero">
+            <Component class="javax.swing.JTable" name="tablaTratamiento">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="3" rowCount="4">
@@ -755,7 +745,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="jTextArea1">
+            <Component class="javax.swing.JTextArea" name="txtObservacionDiagnostico">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
@@ -776,68 +766,68 @@
             <Property name="text" type="java.lang.String" value="Nombre Tratamiento"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtCodigoCentro4">
+        <Component class="javax.swing.JTextField" name="txNombreTratamiento">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel24">
           <Properties>
             <Property name="text" type="java.lang.String" value="Dosis"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtNombreCentro2">
+        <Component class="javax.swing.JTextField" name="txtDosisTratamiento">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel25">
           <Properties>
             <Property name="text" type="java.lang.String" value="Tipo Tratamiento"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtCodigoCentro5">
+        <Component class="javax.swing.JTextField" name="txtTipoTratamiento">
         </Component>
-        <Component class="javax.swing.JButton" name="btnEditarCentro2">
+        <Component class="javax.swing.JButton" name="btnEditarDiagnostico">
           <Properties>
             <Property name="text" type="java.lang.String" value="Editar Diagn&#xf3;stico"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarCentro2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarDiagnosticoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnEliminarCentro2">
+        <Component class="javax.swing.JButton" name="btnEliminarDiagnostico">
           <Properties>
             <Property name="text" type="java.lang.String" value="Eliminar Diagn&#xf3;stico"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarCentro2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarDiagnosticoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnGuardarCentro2">
+        <Component class="javax.swing.JButton" name="btnGuardarDiagnostico">
           <Properties>
             <Property name="text" type="java.lang.String" value="Guardar Diagn&#xf3;stico"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarCentro2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarDiagnosticoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnGuardarCentro3">
+        <Component class="javax.swing.JButton" name="btnGuardarTratamiento">
           <Properties>
             <Property name="text" type="java.lang.String" value="Guardar Tratamiento"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarCentro3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarTratamientoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnEditarCentro3">
+        <Component class="javax.swing.JButton" name="btnEditarTratamiento">
           <Properties>
             <Property name="text" type="java.lang.String" value="Editar Tratamiento"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarCentro3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarTratamientoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnEliminarCentro3">
+        <Component class="javax.swing.JButton" name="btnEliminarTratamiento">
           <Properties>
             <Property name="text" type="java.lang.String" value="Eliminar Diagn&#xf3;stico"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarCentro3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarTratamientoActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel2">

@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author farol
@@ -32,17 +34,19 @@ public class Bitacora extends javax.swing.JFrame {
     jLabel3 = new javax.swing.JLabel();
     jLabel4 = new javax.swing.JLabel();
     jLabel5 = new javax.swing.JLabel();
-    txtCodigoCentro = new javax.swing.JTextField();
-    txtNombreCentro = new javax.swing.JTextField();
-    txtUbicacionCentro = new javax.swing.JTextField();
-    txtCantidadCentro = new javax.swing.JTextField();
+    txtNombreBitacora = new javax.swing.JTextField();
+    txtIDCitaBitacora = new javax.swing.JTextField();
+    txtFechaBitacora = new javax.swing.JTextField();
+    txtHoraBitacora = new javax.swing.JTextField();
     jScrollPane1 = new javax.swing.JScrollPane();
-    jTable1 = new javax.swing.JTable();
-    btnGuardarCentro = new javax.swing.JButton();
-    btnEditarCentro = new javax.swing.JButton();
-    btnEliminarCentro = new javax.swing.JButton();
-    btnLimpiarCentro = new javax.swing.JButton();
-    btnVolverCentro = new javax.swing.JButton();
+    tablaBitacora = new javax.swing.JTable();
+    btnGuardarBitacora = new javax.swing.JButton();
+    btnEditarBitacora = new javax.swing.JButton();
+    btnEliminarBitacora = new javax.swing.JButton();
+    btnLimpiarBitacora = new javax.swing.JButton();
+    btnVolverBitacora = new javax.swing.JButton();
+    jLabel6 = new javax.swing.JLabel();
+    txtIDBitacora = new javax.swing.JTextField();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,7 +63,7 @@ public class Bitacora extends javax.swing.JFrame {
 
     jLabel5.setText("Hora");
 
-    jTable1.setModel(new javax.swing.table.DefaultTableModel(
+    tablaBitacora.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
         {null, null, null, null},
         {null, null, null, null},
@@ -85,42 +89,44 @@ public class Bitacora extends javax.swing.JFrame {
         return canEdit [columnIndex];
       }
     });
-    jScrollPane1.setViewportView(jTable1);
+    jScrollPane1.setViewportView(tablaBitacora);
 
-    btnGuardarCentro.setText("Guardar");
-    btnGuardarCentro.addActionListener(new java.awt.event.ActionListener() {
+    btnGuardarBitacora.setText("Guardar");
+    btnGuardarBitacora.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnGuardarCentroActionPerformed(evt);
+        btnGuardarBitacoraActionPerformed(evt);
       }
     });
 
-    btnEditarCentro.setText("Editar");
-    btnEditarCentro.addActionListener(new java.awt.event.ActionListener() {
+    btnEditarBitacora.setText("Editar");
+    btnEditarBitacora.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnEditarCentroActionPerformed(evt);
+        btnEditarBitacoraActionPerformed(evt);
       }
     });
 
-    btnEliminarCentro.setText("Eliminar");
-    btnEliminarCentro.addActionListener(new java.awt.event.ActionListener() {
+    btnEliminarBitacora.setText("Eliminar");
+    btnEliminarBitacora.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnEliminarCentroActionPerformed(evt);
+        btnEliminarBitacoraActionPerformed(evt);
       }
     });
 
-    btnLimpiarCentro.setText("Limpiar");
-    btnLimpiarCentro.addActionListener(new java.awt.event.ActionListener() {
+    btnLimpiarBitacora.setText("Limpiar");
+    btnLimpiarBitacora.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnLimpiarCentroActionPerformed(evt);
+        btnLimpiarBitacoraActionPerformed(evt);
       }
     });
 
-    btnVolverCentro.setText("Volver");
-    btnVolverCentro.addActionListener(new java.awt.event.ActionListener() {
+    btnVolverBitacora.setText("Volver");
+    btnVolverBitacora.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnVolverCentroActionPerformed(evt);
+        btnVolverBitacoraActionPerformed(evt);
       }
     });
+
+    jLabel6.setText("ID Bitácora");
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -130,40 +136,42 @@ public class Bitacora extends javax.swing.JFrame {
         .addGap(37, 37, 37)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(jPanel1Layout.createSequentialGroup()
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                  .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addGap(18, 18, 18)
-                  .addComponent(txtCantidadCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                  .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                  .addComponent(txtCodigoCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                  .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                  .addComponent(txtUbicacionCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                  .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                  .addComponent(txtNombreCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
               .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(btnGuardarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnEditarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnEliminarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(txtHoraBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtNombreBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtFechaBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtIDCitaBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtIDBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(50, 50, 50))
           .addGroup(jPanel1Layout.createSequentialGroup()
-            .addGap(406, 406, 406)
-            .addComponent(btnLimpiarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(btnGuardarBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(18, 18, 18)
+            .addComponent(btnEditarBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(18, 18, 18)
+            .addComponent(btnEliminarBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(151, 151, 151)
+            .addComponent(btnLimpiarBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(117, 117, 117)
-            .addComponent(btnVolverCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(btnVolverBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
     );
     jPanel1Layout.setVerticalGroup(
@@ -174,31 +182,36 @@ public class Bitacora extends javax.swing.JFrame {
         .addGap(47, 47, 47)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGap(3, 3, 3)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+              .addComponent(jLabel6)
+              .addComponent(txtIDBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(30, 30, 30)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel2)
-              .addComponent(txtCodigoCentro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(txtNombreBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(26, 26, 26)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel3)
-              .addComponent(txtNombreCentro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(txtIDCitaBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(27, 27, 27)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel4)
-              .addComponent(txtUbicacionCentro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(txtFechaBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(31, 31, 31)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(txtCantidadCentro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(43, 43, 43)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-              .addComponent(btnGuardarCentro)
-              .addComponent(btnEditarCentro)
-              .addComponent(btnEliminarCentro)))
+              .addComponent(txtHoraBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
           .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(18, 18, 18)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addComponent(btnVolverCentro)
-          .addComponent(btnLimpiarCentro))
+          .addComponent(btnVolverBitacora)
+          .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+            .addComponent(btnLimpiarBitacora)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+              .addComponent(btnGuardarBitacora)
+              .addComponent(btnEditarBitacora)
+              .addComponent(btnEliminarBitacora))))
         .addContainerGap(32, Short.MAX_VALUE))
     );
 
@@ -216,25 +229,55 @@ public class Bitacora extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
-  private void btnGuardarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCentroActionPerformed
-    // TODO add your handling code here:
-  }//GEN-LAST:event_btnGuardarCentroActionPerformed
+  private void btnGuardarBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarBitacoraActionPerformed
+    if(txtFechaBitacora.getText().length()==0
+        & txtHoraBitacora.getText().length()==0
+            & txtIDBitacora.getText().length()==0
+                & txtIDCitaBitacora.getText().length()==0
+                    & txtNombreBitacora.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
+    }
+  }//GEN-LAST:event_btnGuardarBitacoraActionPerformed
 
-  private void btnEditarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCentroActionPerformed
-    // TODO add your handling code here:
-  }//GEN-LAST:event_btnEditarCentroActionPerformed
+  private void btnEditarBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarBitacoraActionPerformed
+    if(txtFechaBitacora.getText().length()==0
+        & txtHoraBitacora.getText().length()==0
+            & txtIDBitacora.getText().length()==0
+                & txtIDCitaBitacora.getText().length()==0
+                    & txtNombreBitacora.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO MODIFICADO CON EXITO");
+    }
+  }//GEN-LAST:event_btnEditarBitacoraActionPerformed
 
-  private void btnEliminarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCentroActionPerformed
-    // TODO add your handling code here:
-  }//GEN-LAST:event_btnEliminarCentroActionPerformed
+  private void btnEliminarBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarBitacoraActionPerformed
+    if(txtIDBitacora.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, el campo ID no puede estar vacio");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO ELIMINADO CON EXITO");
+    }
+  }//GEN-LAST:event_btnEliminarBitacoraActionPerformed
 
-  private void btnLimpiarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarCentroActionPerformed
-    // TODO add your handling code here:
-  }//GEN-LAST:event_btnLimpiarCentroActionPerformed
+  private void btnLimpiarBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarBitacoraActionPerformed
+    txtFechaBitacora.setText(null);
+    txtHoraBitacora.setText(null);
+    txtIDBitacora.setText(null);
+    txtIDCitaBitacora.setText(null);
+    txtNombreBitacora.setText(null);
+  }//GEN-LAST:event_btnLimpiarBitacoraActionPerformed
 
-  private void btnVolverCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverCentroActionPerformed
+  private void btnVolverBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverBitacoraActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_btnVolverCentroActionPerformed
+  }//GEN-LAST:event_btnVolverBitacoraActionPerformed
 
   /**
    * @param args the command line arguments
@@ -279,22 +322,24 @@ public class Bitacora extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton btnEditarCentro;
-  private javax.swing.JButton btnEliminarCentro;
-  private javax.swing.JButton btnGuardarCentro;
-  private javax.swing.JButton btnLimpiarCentro;
-  private javax.swing.JButton btnVolverCentro;
+  private javax.swing.JButton btnEditarBitacora;
+  private javax.swing.JButton btnEliminarBitacora;
+  private javax.swing.JButton btnGuardarBitacora;
+  private javax.swing.JButton btnLimpiarBitacora;
+  private javax.swing.JButton btnVolverBitacora;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JLabel jLabel3;
   private javax.swing.JLabel jLabel4;
   private javax.swing.JLabel jLabel5;
+  private javax.swing.JLabel jLabel6;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
-  private javax.swing.JTable jTable1;
-  private javax.swing.JTextField txtCantidadCentro;
-  private javax.swing.JTextField txtCodigoCentro;
-  private javax.swing.JTextField txtNombreCentro;
-  private javax.swing.JTextField txtUbicacionCentro;
+  private javax.swing.JTable tablaBitacora;
+  private javax.swing.JTextField txtFechaBitacora;
+  private javax.swing.JTextField txtHoraBitacora;
+  private javax.swing.JTextField txtIDBitacora;
+  private javax.swing.JTextField txtIDCitaBitacora;
+  private javax.swing.JTextField txtNombreBitacora;
   // End of variables declaration//GEN-END:variables
 }

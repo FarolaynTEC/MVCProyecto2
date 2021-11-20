@@ -58,8 +58,8 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="cmbTipoCentro" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel2" min="-2" pref="34" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel2" min="-2" pref="80" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="txtCodigoCentro" min="-2" pref="112" max="-2" attributes="0"/>
                               </Group>

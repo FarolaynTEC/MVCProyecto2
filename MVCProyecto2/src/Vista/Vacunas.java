@@ -31,8 +31,8 @@ package Vista;
     jLabel2 = new javax.swing.JLabel();
     txtCedulaPaciente = new javax.swing.JTextField();
     jScrollPane1 = new javax.swing.JScrollPane();
-    tablaPaciente = new javax.swing.JTable();
-    btnVolverPaciente = new javax.swing.JButton();
+    tablaVacuna = new javax.swing.JTable();
+    btnVolver = new javax.swing.JButton();
     btnConsultaVacunas = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,7 +44,7 @@ package Vista;
 
     jLabel2.setText("Cédula Paciente");
 
-    tablaPaciente.setModel(new javax.swing.table.DefaultTableModel(
+    tablaVacuna.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
         {null, null, null, null, null},
         {null, null, null, null, null},
@@ -70,12 +70,12 @@ package Vista;
         return canEdit [columnIndex];
       }
     });
-    jScrollPane1.setViewportView(tablaPaciente);
+    jScrollPane1.setViewportView(tablaVacuna);
 
-    btnVolverPaciente.setText("Volver");
-    btnVolverPaciente.addActionListener(new java.awt.event.ActionListener() {
+    btnVolver.setText("Volver");
+    btnVolver.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnVolverPacienteActionPerformed(evt);
+        btnVolverActionPerformed(evt);
       }
     });
 
@@ -94,7 +94,7 @@ package Vista;
         .addGap(258, 258, 258)
         .addComponent(btnConsultaVacunas, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(193, 193, 193)
-        .addComponent(btnVolverPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
         .addContainerGap(181, Short.MAX_VALUE)
@@ -125,7 +125,7 @@ package Vista;
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(btnConsultaVacunas)
-          .addComponent(btnVolverPaciente))
+          .addComponent(btnVolver))
         .addContainerGap(22, Short.MAX_VALUE))
     );
 
@@ -143,9 +143,9 @@ package Vista;
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
-  private void btnVolverPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverPacienteActionPerformed
+  private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_btnVolverPacienteActionPerformed
+  }//GEN-LAST:event_btnVolverActionPerformed
 
   private void btnConsultaVacunasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaVacunasActionPerformed
     // TODO add your handling code here:
@@ -181,19 +181,19 @@ package Vista;
     /* Create and display the form */
     java.awt.EventQueue.invokeLater(new Runnable() {
       public void run() {
-        new CentroA().setVisible(true);
+        new Vacunas().setVisible(true);
       }
     });
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton btnConsultaVacunas;
-  private javax.swing.JButton btnVolverPaciente;
+  private javax.swing.JButton btnVolver;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
-  private javax.swing.JTable tablaPaciente;
+  private javax.swing.JTable tablaVacuna;
   private javax.swing.JTextField txtCedulaPaciente;
   // End of variables declaration//GEN-END:variables
 }

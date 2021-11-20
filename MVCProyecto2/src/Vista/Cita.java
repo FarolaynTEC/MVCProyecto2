@@ -31,16 +31,16 @@ package Vista;
     jLabel2 = new javax.swing.JLabel();
     txtCedulaPaciente = new javax.swing.JTextField();
     jScrollPane1 = new javax.swing.JScrollPane();
-    tablaPaciente = new javax.swing.JTable();
-    btnVolverPaciente = new javax.swing.JButton();
-    btnConsultaVacunas = new javax.swing.JButton();
+    tablaCita = new javax.swing.JTable();
+    btnVolver = new javax.swing.JButton();
+    btnSolicitarCita = new javax.swing.JButton();
     jLabel3 = new javax.swing.JLabel();
-    txtCedulaPaciente1 = new javax.swing.JTextField();
+    txtFechaCita = new javax.swing.JTextField();
     jLabel4 = new javax.swing.JLabel();
     jScrollPane2 = new javax.swing.JScrollPane();
-    jTextArea1 = new javax.swing.JTextArea();
+    txtObservacionesCita = new javax.swing.JTextArea();
     jLabel7 = new javax.swing.JLabel();
-    cmbTipoCentro = new javax.swing.JComboBox<>();
+    cmbEspecialidad = new javax.swing.JComboBox<>();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,7 +51,7 @@ package Vista;
 
     jLabel2.setText("Cédula Paciente");
 
-    tablaPaciente.setModel(new javax.swing.table.DefaultTableModel(
+    tablaCita.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
         {null, null, null, null, null},
         {null, null, null, null, null},
@@ -77,19 +77,19 @@ package Vista;
         return canEdit [columnIndex];
       }
     });
-    jScrollPane1.setViewportView(tablaPaciente);
+    jScrollPane1.setViewportView(tablaCita);
 
-    btnVolverPaciente.setText("Volver");
-    btnVolverPaciente.addActionListener(new java.awt.event.ActionListener() {
+    btnVolver.setText("Volver");
+    btnVolver.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnVolverPacienteActionPerformed(evt);
+        btnVolverActionPerformed(evt);
       }
     });
 
-    btnConsultaVacunas.setText("Solicitar Cita");
-    btnConsultaVacunas.addActionListener(new java.awt.event.ActionListener() {
+    btnSolicitarCita.setText("Solicitar Cita");
+    btnSolicitarCita.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnConsultaVacunasActionPerformed(evt);
+        btnSolicitarCitaActionPerformed(evt);
       }
     });
 
@@ -97,29 +97,25 @@ package Vista;
 
     jLabel4.setText("Observaciones");
 
-    jTextArea1.setColumns(20);
-    jTextArea1.setRows(5);
-    jScrollPane2.setViewportView(jTextArea1);
+    txtObservacionesCita.setColumns(20);
+    txtObservacionesCita.setRows(5);
+    jScrollPane2.setViewportView(txtObservacionesCita);
 
     jLabel7.setText("Especialidad");
 
-    cmbTipoCentro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+    cmbEspecialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(396, 396, 396))
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addGap(52, 52, 52)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(cmbTipoCentro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(cmbEspecialidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
           .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
             .addGroup(jPanel1Layout.createSequentialGroup()
               .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -128,25 +124,30 @@ package Vista;
             .addGroup(jPanel1Layout.createSequentialGroup()
               .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addGap(40, 40, 40)
-              .addComponent(txtCedulaPaciente1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(txtFechaCita, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(jScrollPane2)))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-            .addComponent(btnConsultaVacunas, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(183, 183, 183)
-            .addComponent(btnVolverPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(46, 46, 46)))
-        .addContainerGap(80, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(44, 44, 44))
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addComponent(btnSolicitarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(84, 84, 84)
+            .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(141, 141, 141))))
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(334, 334, 334))
     );
     jPanel1Layout.setVerticalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel1Layout.createSequentialGroup()
-        .addGap(22, 22, 22)
+        .addGap(23, 23, 23)
         .addComponent(jLabel1)
-        .addGap(45, 45, 45)
+        .addGap(44, 44, 44)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addGroup(jPanel1Layout.createSequentialGroup()
@@ -156,19 +157,19 @@ package Vista;
             .addGap(18, 18, 18)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel3)
-              .addComponent(txtCedulaPaciente1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(txtFechaCita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(18, 18, 18)
             .addComponent(jLabel4)
             .addGap(18, 18, 18)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(18, 18, 18)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-              .addComponent(cmbTipoCentro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(cmbEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))))
         .addGap(9, 9, 9)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(btnVolverPaciente)
-          .addComponent(btnConsultaVacunas))
+          .addComponent(btnVolver)
+          .addComponent(btnSolicitarCita))
         .addContainerGap(71, Short.MAX_VALUE))
     );
 
@@ -186,13 +187,13 @@ package Vista;
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
-  private void btnVolverPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverPacienteActionPerformed
+  private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_btnVolverPacienteActionPerformed
+  }//GEN-LAST:event_btnVolverActionPerformed
 
-  private void btnConsultaVacunasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaVacunasActionPerformed
+  private void btnSolicitarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitarCitaActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_btnConsultaVacunasActionPerformed
+  }//GEN-LAST:event_btnSolicitarCitaActionPerformed
 
   /**
    * @param args the command line arguments
@@ -230,9 +231,9 @@ package Vista;
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton btnConsultaVacunas;
-  private javax.swing.JButton btnVolverPaciente;
-  private javax.swing.JComboBox<String> cmbTipoCentro;
+  private javax.swing.JButton btnSolicitarCita;
+  private javax.swing.JButton btnVolver;
+  private javax.swing.JComboBox<String> cmbEspecialidad;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JLabel jLabel3;
@@ -241,9 +242,9 @@ package Vista;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
   private javax.swing.JScrollPane jScrollPane2;
-  private javax.swing.JTextArea jTextArea1;
-  private javax.swing.JTable tablaPaciente;
+  private javax.swing.JTable tablaCita;
   private javax.swing.JTextField txtCedulaPaciente;
-  private javax.swing.JTextField txtCedulaPaciente1;
+  private javax.swing.JTextField txtFechaCita;
+  private javax.swing.JTextArea txtObservacionesCita;
   // End of variables declaration//GEN-END:variables
 }

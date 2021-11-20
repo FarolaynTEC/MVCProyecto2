@@ -33,19 +33,18 @@ public class Seguimiento extends javax.swing.JFrame {
     jLabel4 = new javax.swing.JLabel();
     jLabel5 = new javax.swing.JLabel();
     jLabel6 = new javax.swing.JLabel();
-    txtCodigoCentro = new javax.swing.JTextField();
-    txtNombreCentro = new javax.swing.JTextField();
+    txtCedulaPaciente = new javax.swing.JTextField();
+    txtFechaSeguimiento = new javax.swing.JTextField();
     jScrollPane1 = new javax.swing.JScrollPane();
-    jTable1 = new javax.swing.JTable();
-    btnGuardarCentro = new javax.swing.JButton();
-    btnEditarCentro = new javax.swing.JButton();
-    btnEliminarCentro = new javax.swing.JButton();
-    btnLimpiarCentro = new javax.swing.JButton();
-    btnVolverCentro = new javax.swing.JButton();
-    cmbTipoCentro1 = new javax.swing.JComboBox<>();
-    cmbTipoCentro2 = new javax.swing.JComboBox<>();
-    jScrollPane2 = new javax.swing.JScrollPane();
-    jTextArea1 = new javax.swing.JTextArea();
+    tablaSeguimiento = new javax.swing.JTable();
+    btnGuardarSeguimiento = new javax.swing.JButton();
+    btnEditarSeguimiento = new javax.swing.JButton();
+    btnEliminarSeguimiento = new javax.swing.JButton();
+    btnLimpiar = new javax.swing.JButton();
+    btnVolver = new javax.swing.JButton();
+    cmbFuncionario = new javax.swing.JComboBox<>();
+    cmbTratamiento = new javax.swing.JComboBox<>();
+    cmbCentro = new javax.swing.JComboBox<>();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,7 +63,13 @@ public class Seguimiento extends javax.swing.JFrame {
 
     jLabel6.setText("Tipo de Centro");
 
-    jTable1.setModel(new javax.swing.table.DefaultTableModel(
+    txtFechaSeguimiento.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        txtFechaSeguimientoActionPerformed(evt);
+      }
+    });
+
+    tablaSeguimiento.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
         {null, null, null, null, null},
         {null, null, null, null, null},
@@ -83,50 +88,48 @@ public class Seguimiento extends javax.swing.JFrame {
         return types [columnIndex];
       }
     });
-    jScrollPane1.setViewportView(jTable1);
+    jScrollPane1.setViewportView(tablaSeguimiento);
 
-    btnGuardarCentro.setText("Registrar Seguimiento");
-    btnGuardarCentro.addActionListener(new java.awt.event.ActionListener() {
+    btnGuardarSeguimiento.setText("Registrar Seguimiento");
+    btnGuardarSeguimiento.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnGuardarCentroActionPerformed(evt);
+        btnGuardarSeguimientoActionPerformed(evt);
       }
     });
 
-    btnEditarCentro.setText("Editar");
-    btnEditarCentro.addActionListener(new java.awt.event.ActionListener() {
+    btnEditarSeguimiento.setText("Editar");
+    btnEditarSeguimiento.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnEditarCentroActionPerformed(evt);
+        btnEditarSeguimientoActionPerformed(evt);
       }
     });
 
-    btnEliminarCentro.setText("Eliminar");
-    btnEliminarCentro.addActionListener(new java.awt.event.ActionListener() {
+    btnEliminarSeguimiento.setText("Eliminar");
+    btnEliminarSeguimiento.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnEliminarCentroActionPerformed(evt);
+        btnEliminarSeguimientoActionPerformed(evt);
       }
     });
 
-    btnLimpiarCentro.setText("Limpiar");
-    btnLimpiarCentro.addActionListener(new java.awt.event.ActionListener() {
+    btnLimpiar.setText("Limpiar");
+    btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnLimpiarCentroActionPerformed(evt);
+        btnLimpiarActionPerformed(evt);
       }
     });
 
-    btnVolverCentro.setText("Volver");
-    btnVolverCentro.addActionListener(new java.awt.event.ActionListener() {
+    btnVolver.setText("Volver");
+    btnVolver.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnVolverCentroActionPerformed(evt);
+        btnVolverActionPerformed(evt);
       }
     });
 
-    cmbTipoCentro1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+    cmbFuncionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-    cmbTipoCentro2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+    cmbTratamiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-    jTextArea1.setColumns(20);
-    jTextArea1.setRows(5);
-    jScrollPane2.setViewportView(jTextArea1);
+    cmbCentro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -135,26 +138,28 @@ public class Seguimiento extends javax.swing.JFrame {
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addGap(37, 37, 37)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-          .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
             .addGroup(jPanel1Layout.createSequentialGroup()
               .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addGap(18, 18, 18)
-              .addComponent(cmbTipoCentro2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(cmbTratamiento, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+              .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addGap(18, 18, 18)
+              .addComponent(cmbCentro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
               .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-              .addComponent(txtCodigoCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(txtCedulaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
               .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addGap(63, 63, 63)
-              .addComponent(cmbTipoCentro1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+              .addComponent(cmbFuncionario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
               .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-              .addComponent(txtNombreCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
-          .addComponent(btnGuardarCentro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(txtFechaSeguimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+          .addComponent(btnGuardarSeguimiento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -162,13 +167,13 @@ public class Seguimiento extends javax.swing.JFrame {
             .addGap(36, 36, 36)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE))
           .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-            .addComponent(btnEditarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(btnEditarSeguimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(57, 57, 57)
-            .addComponent(btnEliminarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(btnEliminarSeguimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(56, 56, 56)
-            .addComponent(btnLimpiarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(55, 55, 55)
-            .addComponent(btnVolverCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(35, 35, 35)))
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
@@ -182,35 +187,35 @@ public class Seguimiento extends javax.swing.JFrame {
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel2)
-              .addComponent(txtCodigoCentro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(txtCedulaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(26, 26, 26)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel3)
-              .addComponent(txtNombreCentro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(txtFechaSeguimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(27, 27, 27)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel4)
-              .addComponent(cmbTipoCentro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(cmbFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(31, 31, 31)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(cmbTipoCentro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(18, 18, 18)
-            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-            .addComponent(btnGuardarCentro)
+              .addComponent(cmbTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(28, 28, 28)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+              .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(cmbCentro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnGuardarSeguimiento)
             .addGap(30, 30, 30))
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(29, 29, 29)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-              .addComponent(btnEliminarCentro)
-              .addComponent(btnLimpiarCentro)
-              .addComponent(btnVolverCentro)
-              .addComponent(btnEditarCentro))
-            .addGap(0, 0, Short.MAX_VALUE))))
+              .addComponent(btnEliminarSeguimiento)
+              .addComponent(btnLimpiar)
+              .addComponent(btnVolver)
+              .addComponent(btnEditarSeguimiento))
+            .addGap(0, 45, Short.MAX_VALUE))))
     );
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -227,25 +232,29 @@ public class Seguimiento extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
-  private void btnGuardarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCentroActionPerformed
+  private void btnGuardarSeguimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarSeguimientoActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_btnGuardarCentroActionPerformed
+  }//GEN-LAST:event_btnGuardarSeguimientoActionPerformed
 
-  private void btnEditarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCentroActionPerformed
+  private void btnEditarSeguimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarSeguimientoActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_btnEditarCentroActionPerformed
+  }//GEN-LAST:event_btnEditarSeguimientoActionPerformed
 
-  private void btnEliminarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCentroActionPerformed
+  private void btnEliminarSeguimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarSeguimientoActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_btnEliminarCentroActionPerformed
+  }//GEN-LAST:event_btnEliminarSeguimientoActionPerformed
 
-  private void btnLimpiarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarCentroActionPerformed
+  private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_btnLimpiarCentroActionPerformed
+  }//GEN-LAST:event_btnLimpiarActionPerformed
 
-  private void btnVolverCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverCentroActionPerformed
+  private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_btnVolverCentroActionPerformed
+  }//GEN-LAST:event_btnVolverActionPerformed
+
+  private void txtFechaSeguimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaSeguimientoActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_txtFechaSeguimientoActionPerformed
 
   /**
    * @param args the command line arguments
@@ -290,13 +299,14 @@ public class Seguimiento extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton btnEditarCentro;
-  private javax.swing.JButton btnEliminarCentro;
-  private javax.swing.JButton btnGuardarCentro;
-  private javax.swing.JButton btnLimpiarCentro;
-  private javax.swing.JButton btnVolverCentro;
-  private javax.swing.JComboBox<String> cmbTipoCentro1;
-  private javax.swing.JComboBox<String> cmbTipoCentro2;
+  private javax.swing.JButton btnEditarSeguimiento;
+  private javax.swing.JButton btnEliminarSeguimiento;
+  private javax.swing.JButton btnGuardarSeguimiento;
+  private javax.swing.JButton btnLimpiar;
+  private javax.swing.JButton btnVolver;
+  private javax.swing.JComboBox<String> cmbCentro;
+  private javax.swing.JComboBox<String> cmbFuncionario;
+  private javax.swing.JComboBox<String> cmbTratamiento;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JLabel jLabel3;
@@ -305,10 +315,8 @@ public class Seguimiento extends javax.swing.JFrame {
   private javax.swing.JLabel jLabel6;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
-  private javax.swing.JScrollPane jScrollPane2;
-  private javax.swing.JTable jTable1;
-  private javax.swing.JTextArea jTextArea1;
-  private javax.swing.JTextField txtCodigoCentro;
-  private javax.swing.JTextField txtNombreCentro;
+  private javax.swing.JTable tablaSeguimiento;
+  private javax.swing.JTextField txtCedulaPaciente;
+  private javax.swing.JTextField txtFechaSeguimiento;
   // End of variables declaration//GEN-END:variables
 }
