@@ -1,8 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package mvcproyecto2;
+
+import Modelo.CentroAtencion;
+import Modelo.ConsultaCentroAtencion;
+import Vista.CentroA;
+import Controlador.CtrlCentroAtencion;
+
 
 /**
  *
@@ -14,7 +17,13 @@ public class MVCProyecto2 {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-    // TODO code application logic here
+    
+    CentroAtencion mod = new CentroAtencion();
+    ConsultaCentroAtencion modC = new ConsultaCentroAtencion();
+    CentroA frm = new CentroA();
+    
+    CtrlCentroAtencion ctrl = new CtrlCentroAtencion(mod,modC,frm);
+    ctrl.iniciar();
+    frm.setVisible(true);
   }
-  
 }

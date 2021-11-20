@@ -65,7 +65,7 @@ public class CentroA extends javax.swing.JFrame {
 
     jLabel6.setText("Tipo de Centro");
 
-    cmbTipoCentro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+    cmbTipoCentro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HOSPITAL", "EBAIS", "CLINICA" }));
 
     jTable1.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
@@ -313,24 +313,24 @@ public class CentroA extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton btnEditarCentro;
-  private javax.swing.JButton btnEliminarCentro;
-  private javax.swing.JButton btnGuardarCentro;
-  private javax.swing.JButton btnLimpiarCentro;
-  private javax.swing.JButton btnVolverCentro;
-  private javax.swing.JComboBox<String> cmbTipoCentro;
+  public javax.swing.JButton btnEditarCentro;
+  public javax.swing.JButton btnEliminarCentro;
+  public javax.swing.JButton btnGuardarCentro;
+  public javax.swing.JButton btnLimpiarCentro;
+  public javax.swing.JButton btnVolverCentro;
+  public javax.swing.JComboBox<String> cmbTipoCentro;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JLabel jLabel3;
   private javax.swing.JLabel jLabel4;
   private javax.swing.JLabel jLabel5;
   private javax.swing.JLabel jLabel6;
-  private javax.swing.JPanel jPanel1;
+  public javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
   private javax.swing.JTable jTable1;
-  private javax.swing.JTextField txtCantidadCentro;
-  private javax.swing.JTextField txtCodigoCentro;
-  private javax.swing.JTextField txtNombreCentro;
-  private javax.swing.JTextField txtUbicacionCentro;
+  public javax.swing.JTextField txtCantidadCentro;
+  public javax.swing.JTextField txtCodigoCentro;
+  public javax.swing.JTextField txtNombreCentro;
+  public javax.swing.JTextField txtUbicacionCentro;
   // End of variables declaration//GEN-END:variables
 }
