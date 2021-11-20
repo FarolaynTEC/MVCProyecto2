@@ -20,20 +20,6 @@ public class Conexion {
  private String url;
  public Connection connect;
 
- 
- 
-  /**
-   * Constructor del objeto {@code Conector} con el url del servidor para la base de datos.
-   * @param pUrl
-   */
- 
- /*
-  public Conexion (String pUrl) {
-    pUrl = "jdbc:sqlserver://;databaseName=Proyecto_POO2;user=usuariosql;password=root1";
-    this.url = pUrl;
-   }
- */
- 
   /**
    * Método para conectarse a la base de datos por medio del driver JDBC para realizar operaciones.
    */
