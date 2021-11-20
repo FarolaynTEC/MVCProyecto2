@@ -19,12 +19,13 @@ public class CentroAtencion {
    * @param capacidadMaxPac
    * @param tipoDeCentro 
    */
-  public CentroAtencion(int codigoCentroAtencion, String nombre, String ubicacion, int capacidadMaxPac, String tipoDeCentro) {
-    this.codigoCentroAtencion = codigoCentroAtencion;
-    this.nombre = nombre;
-    this.ubicacion = ubicacion;
-    this.capacidadMaxPac = capacidadMaxPac;
-    this.tipoDeCentro = tipoDeCentro;
+  public CentroAtencion(int pCodigoCentroAtencion, String pNombre,
+          String pUbicacion, int pCapacidadMaxPac, String pTipoDeCentro) {
+    this.codigoCentroAtencion = pCodigoCentroAtencion;
+    this.nombre = pNombre;
+    this.ubicacion = pUbicacion;
+    this.capacidadMaxPac = pCapacidadMaxPac;
+    this.tipoDeCentro = pTipoDeCentro;
   }
 
   public int getCodigoCentroAtencion() {
