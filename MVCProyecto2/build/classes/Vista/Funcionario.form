@@ -511,16 +511,16 @@
                                                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                                   <Component id="jRadioButton6" min="-2" max="-2" attributes="0"/>
                                               </Group>
+                                              <Component id="btnAgregarEspecialidad" min="-2" max="-2" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="btnGuardarFuncionario2" min="-2" pref="73" max="-2" attributes="0"/>
+                                                  <Component id="btnGuardarFuncionario2" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Component id="btnEditarFuncionario1" min="-2" pref="73" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Component id="btnEliminarFuncionario1" min="-2" pref="73" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="btnAgregarEspecialidad" min="-2" max="-2" attributes="0"/>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="btnGuardarFuncionario" min="-2" pref="73" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="btnGuardarFuncionario" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Component id="btnEditarFuncionario" min="-2" pref="73" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -776,7 +776,7 @@
         </Container>
         <Component class="javax.swing.JButton" name="btnGuardarFuncionario">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Guardar"/>
+            <Property name="text" type="java.lang.String" value="Guardar Doc"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarFuncionarioActionPerformed"/>
@@ -952,8 +952,11 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnAgregarEspecialidad">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Agregar Especialidad"/>
+            <Property name="text" type="java.lang.String" value="Agregar Especialidad Extra"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarEspecialidadActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -1050,7 +1053,7 @@
         </Container>
         <Component class="javax.swing.JButton" name="btnGuardarFuncionario2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Guardar"/>
+            <Property name="text" type="java.lang.String" value="Guardar Enf"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarFuncionario2ActionPerformed"/>

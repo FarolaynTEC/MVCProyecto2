@@ -377,7 +377,7 @@ public class Funcionario extends javax.swing.JFrame {
     tablaFuncionario.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
     jScrollPane1.setViewportView(tablaFuncionario);
 
-    btnGuardarFuncionario.setText("Guardar");
+    btnGuardarFuncionario.setText("Guardar Doc");
     btnGuardarFuncionario.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
         btnGuardarFuncionarioActionPerformed(evt);
@@ -457,7 +457,12 @@ public class Funcionario extends javax.swing.JFrame {
 
     jLabel21.setText("Especialidades");
 
-    btnAgregarEspecialidad.setText("Agregar Especialidad");
+    btnAgregarEspecialidad.setText("Agregar Especialidad Extra");
+    btnAgregarEspecialidad.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnAgregarEspecialidadActionPerformed(evt);
+      }
+    });
 
     tablaEnfermero.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
@@ -515,7 +520,7 @@ public class Funcionario extends javax.swing.JFrame {
     });
     jScrollPane4.setViewportView(tablaDoctor);
 
-    btnGuardarFuncionario2.setText("Guardar");
+    btnGuardarFuncionario2.setText("Guardar Enf");
     btnGuardarFuncionario2.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
         btnGuardarFuncionario2ActionPerformed(evt);
@@ -604,15 +609,15 @@ public class Funcionario extends javax.swing.JFrame {
                         .addComponent(jRadioButton5)
                         .addGap(28, 28, 28)
                         .addComponent(jRadioButton6))
+                      .addComponent(btnAgregarEspecialidad)
                       .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnGuardarFuncionario2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnGuardarFuncionario2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnEditarFuncionario1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnEliminarFuncionario1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                      .addComponent(btnAgregarEspecialidad)
                       .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnGuardarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnGuardarFuncionario)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnEditarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -751,33 +756,50 @@ public class Funcionario extends javax.swing.JFrame {
     txtCedulaFuncionario.setText(null);
     txtNombreFuncionario.setText(null);
     txtFechaFuncionario.setText(null);
+    txtCedulaDoctor.setText(null);
+    txtEspecialidad.setText(null);
+    
     
   }//GEN-LAST:event_btnLimpiarActionPerformed
 
   private void btnEliminarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarFuncionarioActionPerformed
-    // TODO add your handling code here:
+    if(txtCedulaFuncionario.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, la cedula del funcionario no puede estar vacia");
+    } else{
+     //verificacion de repetido
+     //eliminar enfermero
+     JOptionPane.showMessageDialog(null, "DOCTOR ELIMINADO CON EXITO");
+    }
   }//GEN-LAST:event_btnEliminarFuncionarioActionPerformed
 
   private void btnEditarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarFuncionarioActionPerformed
-    // TODO add your handling code here:
+    if(txtCedulaFuncionario.getText().length()==0
+        || txtNombreFuncionario.getText().length()==0
+            || txtFechaFuncionario.getText().length()==0
+                || txtCedulaDoctor.getText().length()==0
+                    || txtEspecialidad.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos de funcionario no pueden estar vacios");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "DOCTOR MODIFICADO CON EXITO");
+    }
   }//GEN-LAST:event_btnEditarFuncionarioActionPerformed
 
   private void btnGuardarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarFuncionarioActionPerformed
     if(txtCedulaFuncionario.getText().length()==0
         || txtNombreFuncionario.getText().length()==0
-            || txtFechaFuncionario.getText().length()==0)
+            || txtFechaFuncionario.getText().length()==0 
+                || txtCedulaDoctor.getText().length()==0
+                    || txtEspecialidad.getText().length()==0)
    {
      JOptionPane.showMessageDialog(null, "ERROR, los campos de funcionario no pueden estar vacios");
+     JOptionPane.showMessageDialog(null, "para registrar un doctor debe por lo menos agregar una especialidad");
     } else{
      //verificacion de repetido
-     if(jRadioButton1.isSelected()==false
-        || jRadioButton2.isSelected()==false)
-   {
-     JOptionPane.showMessageDialog(null, "ERROR, los campos de funcionario no pueden estar vacios");
-    } else{
-     //verificacion de repetido
-     JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
-    }
+     //anadir doctor
+     JOptionPane.showMessageDialog(null, "DOCTOR AÑADIDO CON EXITO");
     }
   }//GEN-LAST:event_btnGuardarFuncionarioActionPerformed
 
@@ -803,7 +825,7 @@ public class Funcionario extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(null,"No selecciono ninguna opción de capacitaciones para enfermero");  
         } else{ 
            //llamar metodo para anadir
-           JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
+           JOptionPane.showMessageDialog(null, "ENFERMERO AÑADIDO CON EXITO");
         } 
   }//GEN-LAST:event_btnGuardarFuncionario2ActionPerformed
 
@@ -825,13 +847,32 @@ public class Funcionario extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(null,"No selecciono ninguna opción de capacitaciones para enfermero");  
         } else{ 
            //llamar metodo para anadir
-           JOptionPane.showMessageDialog(null, "REGISTRO MODIFICADO CON EXITO");
+           JOptionPane.showMessageDialog(null, "ENFERMERO MODIFICADO CON EXITO");
         }
   }//GEN-LAST:event_btnEditarFuncionario1ActionPerformed
 
   private void btnEliminarFuncionario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarFuncionario1ActionPerformed
-    // TODO add your handling code here:
+    if(txtCedulaFuncionario.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, la cedula del funcionario no puede estar vacia");
+    } else{
+     //verificacion de repetido
+     //eliminar enfermero
+     JOptionPane.showMessageDialog(null, "ENFERMERO ELIMINADO CON EXITO");
+    }
   }//GEN-LAST:event_btnEliminarFuncionario1ActionPerformed
+
+  private void btnAgregarEspecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarEspecialidadActionPerformed
+    if(txtCedulaDoctor.getText().length()==0
+        || txtEspecialidad.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos de especialidad no pueden estar vacios");
+    } else{
+     //verificacion de repetido
+     //verificar cedula de doctor en la base
+     JOptionPane.showMessageDialog(null, "ESPECIALIDAD AÑADIDA CON EXITO");
+    }
+  }//GEN-LAST:event_btnAgregarEspecialidadActionPerformed
 
   /**
    * @param args the command line arguments
