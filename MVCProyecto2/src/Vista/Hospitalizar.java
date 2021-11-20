@@ -329,7 +329,8 @@ import javax.swing.JOptionPane;
   }//GEN-LAST:event_btnEliminarPacienteActionPerformed
 
   private void btnLimpiarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarPacienteActionPerformed
-    // TODO add your handling code here:
+    txtFechaInicio.setText(null);
+    txtFechaFin.setText(null);
   }//GEN-LAST:event_btnLimpiarPacienteActionPerformed
 
   private void btnVolverPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverPacienteActionPerformed

@@ -41,7 +41,7 @@ public class CentroA extends javax.swing.JFrame {
     txtCantidadCentro = new javax.swing.JTextField();
     cmbTipoCentro = new javax.swing.JComboBox<>();
     jScrollPane1 = new javax.swing.JScrollPane();
-    jTable1 = new javax.swing.JTable();
+    tablaCentroA = new javax.swing.JTable();
     btnGuardarCentro = new javax.swing.JButton();
     btnEditarCentro = new javax.swing.JButton();
     btnEliminarCentro = new javax.swing.JButton();
@@ -67,7 +67,7 @@ public class CentroA extends javax.swing.JFrame {
 
     cmbTipoCentro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HOSPITAL", "EBAIS", "CLINICA" }));
 
-    jTable1.setModel(new javax.swing.table.DefaultTableModel(
+    tablaCentroA.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
         {null, null, null, null, null},
         {null, null, null, null, null},
@@ -86,7 +86,7 @@ public class CentroA extends javax.swing.JFrame {
         return types [columnIndex];
       }
     });
-    jScrollPane1.setViewportView(jTable1);
+    jScrollPane1.setViewportView(tablaCentroA);
 
     btnGuardarCentro.setText("Guardar");
     btnGuardarCentro.addActionListener(new java.awt.event.ActionListener() {
@@ -327,7 +327,7 @@ public class CentroA extends javax.swing.JFrame {
   private javax.swing.JLabel jLabel6;
   public javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
-  public javax.swing.JTable jTable1;
+  public javax.swing.JTable tablaCentroA;
   public javax.swing.JTextField txtCantidadCentro;
   public javax.swing.JTextField txtCodigoCentro;
   public javax.swing.JTextField txtNombreCentro;

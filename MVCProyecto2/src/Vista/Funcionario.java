@@ -94,6 +94,8 @@ public class Funcionario extends javax.swing.JFrame {
     tablaEnfermero = new javax.swing.JTable();
     jScrollPane4 = new javax.swing.JScrollPane();
     tablaDoctor = new javax.swing.JTable();
+    btnGuardarFuncionario2 = new javax.swing.JButton();
+    btnEditarFuncionario1 = new javax.swing.JButton();
 
     jPanel5.setBackground(new java.awt.Color(37, 182, 204));
 
@@ -512,6 +514,20 @@ public class Funcionario extends javax.swing.JFrame {
     });
     jScrollPane4.setViewportView(tablaDoctor);
 
+    btnGuardarFuncionario2.setText("Guardar");
+    btnGuardarFuncionario2.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnGuardarFuncionario2ActionPerformed(evt);
+      }
+    });
+
+    btnEditarFuncionario1.setText("Editar");
+    btnEditarFuncionario1.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnEditarFuncionario1ActionPerformed(evt);
+      }
+    });
+
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
@@ -585,7 +601,12 @@ public class Funcionario extends javax.swing.JFrame {
                     .addGap(52, 52, 52)
                     .addComponent(btnAgregarEspecialidad))
                   .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+              .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(btnGuardarFuncionario2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnEditarFuncionario1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(69, 69, 69)
@@ -656,6 +677,10 @@ public class Funcionario extends javax.swing.JFrame {
               .addComponent(jRadioButton5)
               .addComponent(jRadioButton6))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+              .addComponent(btnGuardarFuncionario2)
+              .addComponent(btnEditarFuncionario1))
+            .addGap(18, 18, 18)
             .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -715,7 +740,10 @@ public class Funcionario extends javax.swing.JFrame {
   }//GEN-LAST:event_btnVolverActionPerformed
 
   private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-    // TODO add your handling code here:
+    txtCedulaFuncionario.setText(null);
+    txtNombreFuncionario.setText(null);
+    txtFechaFuncionario.setText(null);
+    
   }//GEN-LAST:event_btnLimpiarActionPerformed
 
   private void btnEliminarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarFuncionarioActionPerformed
@@ -748,6 +776,14 @@ public class Funcionario extends javax.swing.JFrame {
   private void btnGuardarFuncionario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarFuncionario1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnGuardarFuncionario1ActionPerformed
+
+  private void btnGuardarFuncionario2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarFuncionario2ActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_btnGuardarFuncionario2ActionPerformed
+
+  private void btnEditarFuncionario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarFuncionario1ActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_btnEditarFuncionario1ActionPerformed
 
   /**
    * @param args the command line arguments
@@ -791,11 +827,13 @@ public class Funcionario extends javax.swing.JFrame {
   public javax.swing.JButton btnAgregarEspecialidad;
   private javax.swing.JButton btnEditarCentro1;
   public javax.swing.JButton btnEditarFuncionario;
+  public javax.swing.JButton btnEditarFuncionario1;
   private javax.swing.JButton btnEliminarCentro1;
   public javax.swing.JButton btnEliminarFuncionario;
   private javax.swing.JButton btnGuardarCentro1;
   public javax.swing.JButton btnGuardarFuncionario;
   private javax.swing.JButton btnGuardarFuncionario1;
+  public javax.swing.JButton btnGuardarFuncionario2;
   public javax.swing.JButton btnLimpiar;
   private javax.swing.JButton btnLimpiarCentro1;
   public javax.swing.JButton btnVolver;

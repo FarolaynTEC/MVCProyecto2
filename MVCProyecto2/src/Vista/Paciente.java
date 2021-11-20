@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author farol
@@ -365,19 +367,59 @@ package Vista;
   }// </editor-fold>//GEN-END:initComponents
 
   private void btnGuardarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarPacienteActionPerformed
-    // TODO add your handling code here:
+    if(txtCedulaPaciente.getText().length()==0
+        || txtCorreoPciente.getText().length()==0
+            || txtFechaPaciente.getText().length()==0
+                || txtNacionalidadPaciente.getText().length()==0
+                    || txtNombrePaciente.getText().length()==0
+                        || txtResidenciaPaciente.getText().length()==0
+                            || txxTelefonoPaciente.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
+    }
   }//GEN-LAST:event_btnGuardarPacienteActionPerformed
 
   private void btnEditarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPacienteActionPerformed
-    // TODO add your handling code here:
+    if(txtCedulaPaciente.getText().length()==0
+        || txtCorreoPciente.getText().length()==0
+            || txtFechaPaciente.getText().length()==0
+                || txtNacionalidadPaciente.getText().length()==0
+                    || txtNombrePaciente.getText().length()==0
+                        || txtResidenciaPaciente.getText().length()==0
+                            || txxTelefonoPaciente.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO MODIFICADO CON EXITO");
+    }
   }//GEN-LAST:event_btnEditarPacienteActionPerformed
 
   private void btnEliminarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPacienteActionPerformed
-    // TODO add your handling code here:
+    if(txtCedulaPaciente.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, el campo de cedula no puede estar vacios");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO ELIMINADO CON EXITO");
+    }
   }//GEN-LAST:event_btnEliminarPacienteActionPerformed
 
   private void btnLimpiarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarPacienteActionPerformed
-    // TODO add your handling code here:
+    txtCedulaPaciente.setText(null);
+    txtCorreoPciente.setText(null);
+    txtFechaPaciente.setText(null);
+    txtNacionalidadPaciente.setText(null);
+    txtNombrePaciente.setText(null);
+    txtResidenciaPaciente.setText(null);
+    txxTelefonoPaciente.setText(null);
+    txtNombreVacuna.setText(null);
+    txtNumLote.setText(null);
+    txtFechaVacuna.setText(null);
+    txtNombreFarmaceutica.setText(null);
   }//GEN-LAST:event_btnLimpiarPacienteActionPerformed
 
   private void btnVolverPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverPacienteActionPerformed
@@ -389,7 +431,18 @@ package Vista;
   }//GEN-LAST:event_btnConsultaVacunasActionPerformed
 
   private void btnAgregarVacunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarVacunaActionPerformed
-    // TODO add your handling code here:
+    if(txtCedulaPaciente.getText().length()==0
+        || txtNombreVacuna.getText().length()==0
+            || txtNumLote.getText().length()==0
+                || txtFechaVacuna.getText().length()==0
+                    || txtNombreFarmaceutica.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados de vacuna no pueden estar vacios");
+     JOptionPane.showMessageDialog(null, "ERROR, el campo de cedula no puede estar vacio");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
+    }
   }//GEN-LAST:event_btnAgregarVacunaActionPerformed
 
   /**
