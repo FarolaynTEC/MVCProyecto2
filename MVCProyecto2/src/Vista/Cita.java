@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author farol
@@ -41,6 +43,7 @@ package Vista;
     txtObservacionesCita = new javax.swing.JTextArea();
     jLabel7 = new javax.swing.JLabel();
     cmbEspecialidad = new javax.swing.JComboBox<>();
+    txtLimpiar = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -105,6 +108,13 @@ package Vista;
 
     cmbEspecialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+    txtLimpiar.setText("Limpiar");
+    txtLimpiar.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        txtLimpiarActionPerformed(evt);
+      }
+    });
+
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
@@ -112,10 +122,6 @@ package Vista;
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addGap(52, 52, 52)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(jPanel1Layout.createSequentialGroup()
-            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(cmbEspecialidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
           .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
             .addGroup(jPanel1Layout.createSequentialGroup()
               .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -126,7 +132,11 @@ package Vista;
               .addGap(40, 40, 40)
               .addComponent(txtFechaCita, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jScrollPane2)))
+            .addComponent(jScrollPane2))
+          .addGroup(jPanel1Layout.createSequentialGroup()
+            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(cmbEspecialidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -141,6 +151,10 @@ package Vista;
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(334, 334, 334))
+      .addGroup(jPanel1Layout.createSequentialGroup()
+        .addGap(130, 130, 130)
+        .addComponent(txtLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel1Layout.setVerticalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,7 +184,9 @@ package Vista;
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(btnVolver)
           .addComponent(btnSolicitarCita))
-        .addContainerGap(71, Short.MAX_VALUE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(txtLimpiar)
+        .addContainerGap(42, Short.MAX_VALUE))
     );
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -192,8 +208,22 @@ package Vista;
   }//GEN-LAST:event_btnVolverActionPerformed
 
   private void btnSolicitarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitarCitaActionPerformed
-    // TODO add your handling code here:
+    if(txtCedulaPaciente.getText().length()==0
+        || txtFechaCita.getText().length()==0
+            || txtObservacionesCita.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
+    }
   }//GEN-LAST:event_btnSolicitarCitaActionPerformed
+
+  private void txtLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLimpiarActionPerformed
+    txtCedulaPaciente.setText(null);
+    txtFechaCita.setText(null);
+    txtObservacionesCita.setText(null);
+  }//GEN-LAST:event_txtLimpiarActionPerformed
 
   /**
    * @param args the command line arguments
@@ -245,6 +275,7 @@ package Vista;
   private javax.swing.JTable tablaCita;
   private javax.swing.JTextField txtCedulaPaciente;
   private javax.swing.JTextField txtFechaCita;
+  private javax.swing.JButton txtLimpiar;
   private javax.swing.JTextArea txtObservacionesCita;
   // End of variables declaration//GEN-END:variables
 }

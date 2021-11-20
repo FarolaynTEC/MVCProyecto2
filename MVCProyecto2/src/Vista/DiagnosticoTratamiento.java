@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author farol
@@ -64,7 +66,7 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
     txtNombreDiagnostico = new javax.swing.JTextField();
     jScrollPane1 = new javax.swing.JScrollPane();
     tablaDiagnostico = new javax.swing.JTable();
-    btnLimpiarCentro = new javax.swing.JButton();
+    btnLimpiarDiag = new javax.swing.JButton();
     btnVolverCentro = new javax.swing.JButton();
     jScrollPane3 = new javax.swing.JScrollPane();
     tablaTratamiento = new javax.swing.JTable();
@@ -84,6 +86,7 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
     btnEditarTratamiento = new javax.swing.JButton();
     btnEliminarTratamiento = new javax.swing.JButton();
     jPanel2 = new javax.swing.JPanel();
+    btnLimpiarCentro2 = new javax.swing.JButton();
 
     jPanel5.setBackground(new java.awt.Color(37, 182, 204));
 
@@ -324,6 +327,12 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
     jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
     jLabel6.setText("Tratamiento");
 
+    txtCedulaDiagnostico.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        txtCedulaDiagnosticoActionPerformed(evt);
+      }
+    });
+
     tablaDiagnostico.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
         {null, null, null},
@@ -353,10 +362,10 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
     tablaDiagnostico.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
     jScrollPane1.setViewportView(tablaDiagnostico);
 
-    btnLimpiarCentro.setText("Limpiar");
-    btnLimpiarCentro.addActionListener(new java.awt.event.ActionListener() {
+    btnLimpiarDiag.setText("Limpiar");
+    btnLimpiarDiag.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnLimpiarCentroActionPerformed(evt);
+        btnLimpiarDiagActionPerformed(evt);
       }
     });
 
@@ -461,6 +470,13 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
       .addGap(0, 8, Short.MAX_VALUE)
     );
 
+    btnLimpiarCentro2.setText("Limpiar");
+    btnLimpiarCentro2.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnLimpiarCentro2ActionPerformed(evt);
+      }
+    });
+
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
@@ -476,16 +492,11 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addGap(37, 37, 37)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+          .addGroup(jPanel1Layout.createSequentialGroup()
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
               .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
               .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                   .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -497,15 +508,24 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
                       .addComponent(txtNombreDiagnostico, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
                   .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addComponent(jLabel23)
-                      .addComponent(jLabel24)
-                      .addComponent(jLabel25))
-                    .addGap(30, 30, 30)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addComponent(txtTipoTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                      .addComponent(txNombreTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                      .addComponent(txtDosisTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                      .addComponent(btnLimpiarDiag, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                  .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnLimpiarCentro2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                      .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel23)
+                        .addComponent(jLabel24)
+                        .addComponent(jLabel25))
+                      .addGap(30, 30, 30)
+                      .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtTipoTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txNombreTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtDosisTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -519,10 +539,8 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(btnLimpiarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
                 .addComponent(btnVolverCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(220, 220, 220)
+                .addGap(377, 377, 377)
                 .addComponent(btnGuardarTratamiento)
                 .addGap(18, 18, 18)
                 .addComponent(btnEditarTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -558,11 +576,22 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(btnEditarDiagnostico)
           .addComponent(btnGuardarDiagnostico)
-          .addComponent(btnEliminarDiagnostico))
+          .addComponent(btnEliminarDiagnostico)
+          .addComponent(btnLimpiarDiag))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGap(24, 24, 24)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(21, 21, 21)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+              .addComponent(btnEditarTratamiento)
+              .addComponent(btnGuardarTratamiento)
+              .addComponent(btnEliminarTratamiento)
+              .addComponent(btnVolverCentro))
+            .addContainerGap(22, Short.MAX_VALUE))
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -576,37 +605,23 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
             .addGap(26, 26, 26)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel25)
-              .addComponent(txtTipoTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-          .addGroup(jPanel1Layout.createSequentialGroup()
-            .addGap(24, 24, 24)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-              .addComponent(btnLimpiarCentro)
-              .addComponent(btnVolverCentro))
-            .addGap(34, 34, 34))
-          .addGroup(jPanel1Layout.createSequentialGroup()
-            .addGap(18, 18, 18)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-              .addComponent(btnEditarTratamiento)
-              .addComponent(btnGuardarTratamiento)
-              .addComponent(btnEliminarTratamiento))
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+              .addComponent(txtTipoTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(26, 26, 26)
+            .addComponent(btnLimpiarCentro2)
+            .addGap(0, 0, Short.MAX_VALUE))))
     );
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(layout.createSequentialGroup()
         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(0, 5, Short.MAX_VALUE))
+        .addGap(0, 2, Short.MAX_VALUE))
     );
 
     pack();
@@ -633,36 +648,92 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
   }//GEN-LAST:event_btnVolverCentro1ActionPerformed
 
   private void btnGuardarDiagnosticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarDiagnosticoActionPerformed
-    // TODO add your handling code here:
+    if(txtCedulaDiagnostico.getText().length()==0
+        || txtNombreDiagnostico.getText().length()==0
+            || txtObservacionDiagnostico.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
+    }
   }//GEN-LAST:event_btnGuardarDiagnosticoActionPerformed
 
   private void btnEliminarDiagnosticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarDiagnosticoActionPerformed
-    // TODO add your handling code here:
+    if(txtNombreDiagnostico.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, el campo nombre diagnostico no puede estar vacio");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO ELIMINADO CON EXITO");
+    }
   }//GEN-LAST:event_btnEliminarDiagnosticoActionPerformed
 
   private void btnEditarDiagnosticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarDiagnosticoActionPerformed
-    // TODO add your handling code here:
+    if(txtCedulaDiagnostico.getText().length()==0
+        || txtNombreDiagnostico.getText().length()==0
+            || txtObservacionDiagnostico.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO MODIFICADO CON EXITO");
+    }
   }//GEN-LAST:event_btnEditarDiagnosticoActionPerformed
 
   private void btnVolverCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverCentroActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnVolverCentroActionPerformed
 
-  private void btnLimpiarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarCentroActionPerformed
-    // TODO add your handling code here:
-  }//GEN-LAST:event_btnLimpiarCentroActionPerformed
+  private void btnLimpiarDiagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarDiagActionPerformed
+    txtCedulaDiagnostico.setText(null);
+    txtNombreDiagnostico.setText(null);
+    txtObservacionDiagnostico.setText(null);
+  }//GEN-LAST:event_btnLimpiarDiagActionPerformed
 
   private void btnGuardarTratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTratamientoActionPerformed
-    // TODO add your handling code here:
+    if(txNombreTratamiento.getText().length()==0
+        || txtDosisTratamiento.getText().length()==0
+            || txtTipoTratamiento.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
+    }
   }//GEN-LAST:event_btnGuardarTratamientoActionPerformed
 
   private void btnEditarTratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarTratamientoActionPerformed
-    // TODO add your handling code here:
+    if(txNombreTratamiento.getText().length()==0
+        || txtDosisTratamiento.getText().length()==0
+            || txtTipoTratamiento.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO EDITADO CON EXITO");
+    }
   }//GEN-LAST:event_btnEditarTratamientoActionPerformed
 
   private void btnEliminarTratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarTratamientoActionPerformed
-    // TODO add your handling code here:
+    if(txNombreTratamiento.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, el nombre tratamiento no puede estar vacio");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO ELIMINADO CON EXITO");
+    }
   }//GEN-LAST:event_btnEliminarTratamientoActionPerformed
+
+  private void txtCedulaDiagnosticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaDiagnosticoActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_txtCedulaDiagnosticoActionPerformed
+
+  private void btnLimpiarCentro2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarCentro2ActionPerformed
+    txNombreTratamiento.setText(null);
+    txtDosisTratamiento.setText(null);
+    txtTipoTratamiento.setText(null);
+  }//GEN-LAST:event_btnLimpiarCentro2ActionPerformed
 
   /**
    * @param args the command line arguments
@@ -712,8 +783,9 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
   private javax.swing.JButton btnGuardarCentro1;
   private javax.swing.JButton btnGuardarDiagnostico;
   private javax.swing.JButton btnGuardarTratamiento;
-  private javax.swing.JButton btnLimpiarCentro;
   private javax.swing.JButton btnLimpiarCentro1;
+  private javax.swing.JButton btnLimpiarCentro2;
+  private javax.swing.JButton btnLimpiarDiag;
   private javax.swing.JButton btnVolverCentro;
   private javax.swing.JButton btnVolverCentro1;
   private javax.swing.JComboBox<String> cmbTipoCentro2;
