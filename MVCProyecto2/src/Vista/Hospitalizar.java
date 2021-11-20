@@ -384,18 +384,18 @@ import javax.swing.JOptionPane;
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton btnEditarPaciente;
-  private javax.swing.JButton btnEliminarPaciente;
-  private javax.swing.JButton btnGuardarPaciente;
-  private javax.swing.JButton btnLimpiarPaciente;
-  private javax.swing.JButton btnSeguimiento;
-  private javax.swing.JButton btnVolverPaciente;
-  private javax.swing.JComboBox<String> cmbCedulaPaciente;
-  private javax.swing.JComboBox<String> cmbCentro;
-  private javax.swing.JComboBox<String> cmbDiagnostico;
-  private javax.swing.JComboBox<String> cmbEspecialidad;
-  private javax.swing.JComboBox<String> cmbFuncionario;
-  private javax.swing.JComboBox<String> cmbNombrePaciente;
+  public javax.swing.JButton btnEditarPaciente;
+  public javax.swing.JButton btnEliminarPaciente;
+  public javax.swing.JButton btnGuardarPaciente;
+  public javax.swing.JButton btnLimpiarPaciente;
+  public javax.swing.JButton btnSeguimiento;
+  public javax.swing.JButton btnVolverPaciente;
+  public javax.swing.JComboBox<String> cmbCedulaPaciente;
+  public javax.swing.JComboBox<String> cmbCentro;
+  public javax.swing.JComboBox<String> cmbDiagnostico;
+  public javax.swing.JComboBox<String> cmbEspecialidad;
+  public javax.swing.JComboBox<String> cmbFuncionario;
+  public javax.swing.JComboBox<String> cmbNombrePaciente;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JLabel jLabel3;
@@ -407,8 +407,8 @@ import javax.swing.JOptionPane;
   private javax.swing.JLabel jLabel9;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
-  private javax.swing.JTable tablaPaciente;
-  private javax.swing.JTextField txtFechaFin;
-  private javax.swing.JTextField txtFechaInicio;
+  public javax.swing.JTable tablaPaciente;
+  public javax.swing.JTextField txtFechaFin;
+  public javax.swing.JTextField txtFechaInicio;
   // End of variables declaration//GEN-END:variables
 }

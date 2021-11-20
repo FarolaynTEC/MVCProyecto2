@@ -700,19 +700,19 @@ public class AreaCentro extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton btnEditarArea;
-  private javax.swing.JButton btnEditarCentro;
+  public javax.swing.JButton btnEditarArea;
+  public javax.swing.JButton btnEditarCentro;
   private javax.swing.JButton btnEditarCentro1;
-  private javax.swing.JButton btnEliminarArea;
-  private javax.swing.JButton btnEliminarCentro;
+  public javax.swing.JButton btnEliminarArea;
+  public javax.swing.JButton btnEliminarCentro;
   private javax.swing.JButton btnEliminarCentro1;
-  private javax.swing.JButton btnGuardarArea;
-  private javax.swing.JButton btnGuardarCentro;
+  public javax.swing.JButton btnGuardarArea;
+  public javax.swing.JButton btnGuardarCentro;
   private javax.swing.JButton btnGuardarCentro1;
-  private javax.swing.JButton btnLimpiarArea;
-  private javax.swing.JButton btnLimpiarCentro;
+  public javax.swing.JButton btnLimpiarArea;
+  public javax.swing.JButton btnLimpiarCentro;
   private javax.swing.JButton btnLimpiarCentro1;
-  private javax.swing.JButton btnVolver;
+  public javax.swing.JButton btnVolver;
   private javax.swing.JButton btnVolverCentro1;
   private javax.swing.JComboBox<String> cmbTipoCentro2;
   private javax.swing.JComboBox<String> cmbTipoCentro3;
@@ -743,12 +743,12 @@ public class AreaCentro extends javax.swing.JFrame {
   private javax.swing.JScrollPane jScrollPane2;
   private javax.swing.JScrollPane jScrollPane3;
   private javax.swing.JTable jTable2;
-  private javax.swing.JTable tablaArea;
-  private javax.swing.JTable tablaTipoCentro;
+  public javax.swing.JTable tablaArea;
+  public javax.swing.JTable tablaTipoCentro;
   private javax.swing.JTextField txtCantidadCentro1;
   private javax.swing.JTextField txtCodigoCentro1;
-  private javax.swing.JTextField txtNombreArea;
-  private javax.swing.JTextField txtNombreCentro;
+  public javax.swing.JTextField txtNombreArea;
+  public javax.swing.JTextField txtNombreCentro;
   private javax.swing.JTextField txtNombreCentro1;
   // End of variables declaration//GEN-END:variables
 }

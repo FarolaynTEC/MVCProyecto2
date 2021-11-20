@@ -327,7 +327,7 @@ public class CentroA extends javax.swing.JFrame {
   private javax.swing.JLabel jLabel6;
   public javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
-  private javax.swing.JTable jTable1;
+  public javax.swing.JTable jTable1;
   public javax.swing.JTextField txtCantidadCentro;
   public javax.swing.JTextField txtCodigoCentro;
   public javax.swing.JTextField txtNombreCentro;

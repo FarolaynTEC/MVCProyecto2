@@ -775,18 +775,18 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton btnEditarCentro1;
-  private javax.swing.JButton btnEditarDiagnostico;
-  private javax.swing.JButton btnEditarTratamiento;
+  public javax.swing.JButton btnEditarDiagnostico;
+  public javax.swing.JButton btnEditarTratamiento;
   private javax.swing.JButton btnEliminarCentro1;
-  private javax.swing.JButton btnEliminarDiagnostico;
-  private javax.swing.JButton btnEliminarTratamiento;
+  public javax.swing.JButton btnEliminarDiagnostico;
+  public javax.swing.JButton btnEliminarTratamiento;
   private javax.swing.JButton btnGuardarCentro1;
-  private javax.swing.JButton btnGuardarDiagnostico;
-  private javax.swing.JButton btnGuardarTratamiento;
+  public javax.swing.JButton btnGuardarDiagnostico;
+  public javax.swing.JButton btnGuardarTratamiento;
   private javax.swing.JButton btnLimpiarCentro1;
-  private javax.swing.JButton btnLimpiarCentro2;
-  private javax.swing.JButton btnLimpiarDiag;
-  private javax.swing.JButton btnVolverCentro;
+  public javax.swing.JButton btnLimpiarCentro2;
+  public javax.swing.JButton btnLimpiarDiag;
+  public javax.swing.JButton btnVolverCentro;
   private javax.swing.JButton btnVolverCentro1;
   private javax.swing.JComboBox<String> cmbTipoCentro2;
   private javax.swing.JComboBox<String> cmbTipoCentro3;
@@ -822,16 +822,16 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
   private javax.swing.JScrollPane jScrollPane3;
   private javax.swing.JScrollPane jScrollPane5;
   private javax.swing.JTable jTable2;
-  private javax.swing.JTable tablaDiagnostico;
-  private javax.swing.JTable tablaTratamiento;
-  private javax.swing.JTextField txNombreTratamiento;
+  public javax.swing.JTable tablaDiagnostico;
+  public javax.swing.JTable tablaTratamiento;
+  public javax.swing.JTextField txNombreTratamiento;
   private javax.swing.JTextField txtCantidadCentro1;
-  private javax.swing.JTextField txtCedulaDiagnostico;
+  public javax.swing.JTextField txtCedulaDiagnostico;
   private javax.swing.JTextField txtCodigoCentro1;
-  private javax.swing.JTextField txtDosisTratamiento;
+  public javax.swing.JTextField txtDosisTratamiento;
   private javax.swing.JTextField txtNombreCentro1;
-  private javax.swing.JTextField txtNombreDiagnostico;
-  private javax.swing.JTextArea txtObservacionDiagnostico;
-  private javax.swing.JTextField txtTipoTratamiento;
+  public javax.swing.JTextField txtNombreDiagnostico;
+  public javax.swing.JTextArea txtObservacionDiagnostico;
+  public javax.swing.JTextField txtTipoTratamiento;
   // End of variables declaration//GEN-END:variables
 }

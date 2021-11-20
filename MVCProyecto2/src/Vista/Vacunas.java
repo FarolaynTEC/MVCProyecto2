@@ -187,13 +187,13 @@ package Vista;
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton btnConsultaVacunas;
-  private javax.swing.JButton btnVolver;
+  public javax.swing.JButton btnConsultaVacunas;
+  public javax.swing.JButton btnVolver;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
-  private javax.swing.JTable tablaVacuna;
-  private javax.swing.JTextField txtCedulaPaciente;
+  public javax.swing.JTable tablaVacuna;
+  public javax.swing.JTextField txtCedulaPaciente;
   // End of variables declaration//GEN-END:variables
 }

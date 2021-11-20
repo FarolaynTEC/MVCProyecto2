@@ -261,9 +261,9 @@ import javax.swing.JOptionPane;
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton btnSolicitarCita;
-  private javax.swing.JButton btnVolver;
-  private javax.swing.JComboBox<String> cmbEspecialidad;
+  public javax.swing.JButton btnSolicitarCita;
+  public javax.swing.JButton btnVolver;
+  public javax.swing.JComboBox<String> cmbEspecialidad;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JLabel jLabel3;
@@ -272,10 +272,10 @@ import javax.swing.JOptionPane;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
   private javax.swing.JScrollPane jScrollPane2;
-  private javax.swing.JTable tablaCita;
-  private javax.swing.JTextField txtCedulaPaciente;
-  private javax.swing.JTextField txtFechaCita;
-  private javax.swing.JButton txtLimpiar;
-  private javax.swing.JTextArea txtObservacionesCita;
+  public javax.swing.JTable tablaCita;
+  public javax.swing.JTextField txtCedulaPaciente;
+  public javax.swing.JTextField txtFechaCita;
+  public javax.swing.JButton txtLimpiar;
+  public javax.swing.JTextArea txtObservacionesCita;
   // End of variables declaration//GEN-END:variables
 }

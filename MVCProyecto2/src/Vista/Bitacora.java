@@ -207,11 +207,10 @@ public class Bitacora extends javax.swing.JFrame {
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addComponent(btnVolverBitacora)
           .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-            .addComponent(btnLimpiarBitacora)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-              .addComponent(btnGuardarBitacora)
-              .addComponent(btnEditarBitacora)
-              .addComponent(btnEliminarBitacora))))
+            .addComponent(btnGuardarBitacora)
+            .addComponent(btnEditarBitacora)
+            .addComponent(btnEliminarBitacora))
+          .addComponent(btnLimpiarBitacora))
         .addContainerGap(32, Short.MAX_VALUE))
     );
 
@@ -322,11 +321,11 @@ public class Bitacora extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton btnEditarBitacora;
-  private javax.swing.JButton btnEliminarBitacora;
-  private javax.swing.JButton btnGuardarBitacora;
-  private javax.swing.JButton btnLimpiarBitacora;
-  private javax.swing.JButton btnVolverBitacora;
+  public javax.swing.JButton btnEditarBitacora;
+  public javax.swing.JButton btnEliminarBitacora;
+  public javax.swing.JButton btnGuardarBitacora;
+  public javax.swing.JButton btnLimpiarBitacora;
+  public javax.swing.JButton btnVolverBitacora;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JLabel jLabel3;
@@ -335,11 +334,11 @@ public class Bitacora extends javax.swing.JFrame {
   private javax.swing.JLabel jLabel6;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
-  private javax.swing.JTable tablaBitacora;
-  private javax.swing.JTextField txtFechaBitacora;
-  private javax.swing.JTextField txtHoraBitacora;
-  private javax.swing.JTextField txtIDBitacora;
-  private javax.swing.JTextField txtIDCitaBitacora;
-  private javax.swing.JTextField txtNombreBitacora;
+  public javax.swing.JTable tablaBitacora;
+  public javax.swing.JTextField txtFechaBitacora;
+  public javax.swing.JTextField txtHoraBitacora;
+  public javax.swing.JTextField txtIDBitacora;
+  public javax.swing.JTextField txtIDCitaBitacora;
+  public javax.swing.JTextField txtNombreBitacora;
   // End of variables declaration//GEN-END:variables
 }
