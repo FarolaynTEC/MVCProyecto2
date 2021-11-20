@@ -13,11 +13,11 @@ public class CentroAtencion {
 
   /**
    * Constrictor para la clase CentroAtención
-   * @param codigoCentroAtencion
-   * @param nombre
-   * @param ubicacion
-   * @param capacidadMaxPac
-   * @param tipoDeCentro 
+   * @param pCodigoCentroAtencion
+   * @param pNombre
+   * @param pUbicacion
+   * @param pCapacidadMaxPac
+   * @param pTipoDeCentro 
    */
   public CentroAtencion(int pCodigoCentroAtencion, String pNombre,
           String pUbicacion, int pCapacidadMaxPac, String pTipoDeCentro) {
@@ -32,41 +32,39 @@ public class CentroAtencion {
     return codigoCentroAtencion;
   }
 
-  public void setCodigoCentroAtencion(int codigoCentroAtencion) {
-    this.codigoCentroAtencion = codigoCentroAtencion;
+  public void setCodigoCentroAtencion(int pCodigoCentroAtencion) {
+    this.codigoCentroAtencion = pCodigoCentroAtencion;
   }
 
   public String getNombre() {
     return nombre;
   }
 
-  public void setNombre(String nombre) {
-    this.nombre = nombre;
+  public void setNombre(String pNombre) {
+    this.nombre = pNombre;
   }
 
   public String getUbicacion() {
     return ubicacion;
   }
 
-  public void setUbicacion(String ubicacion) {
-    this.ubicacion = ubicacion;
+  public void setUbicacion(String pUbicacion) {
+    this.ubicacion = pUbicacion;
   }
 
   public int getCapacidadMaxPac() {
     return capacidadMaxPac;
   }
 
-  public void setCapacidadMaxPac(int capacidadMaxPac) {
-    this.capacidadMaxPac = capacidadMaxPac;
+  public void setCapacidadMaxPac(int pCapacidadMaxPac) {
+    this.capacidadMaxPac = pCapacidadMaxPac;
   }
 
   public String getTipoDeCentro() {
     return tipoDeCentro;
   }
 
-  public void setTipoDeCentro(String tipoDeCentro) {
-    this.tipoDeCentro = tipoDeCentro;
-  }
-  
-  
+  public void setTipoDeCentro(String pTipoDeCentro) {
+    this.tipoDeCentro = pTipoDeCentro;
+  } 
 }
