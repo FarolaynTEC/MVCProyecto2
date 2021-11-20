@@ -152,3 +152,10 @@ CREATE TABLE RegistroDeSeguimiento(
   FOREIGN KEY (tratameintoAsociado) REFERENCES Tratamiento(nombreTratameinto)ON DELETE NO ACTION  
   ON UPDATE NO ACTION,
 );
+
+INSERT INTO TiposCentrosAtencion(tipoDeCentro) VALUES ('HOSPITAL')
+
+INSERT INTO TiposCentrosAtencion(tipoDeCentro) VALUES ('EBAIS')
+
+INSERT INTO TiposCentrosAtencion(tipoDeCentro) VALUES ('CLINICA')
+
