@@ -5,10 +5,16 @@ import Modelo.ConsultaCentroAtencion;
 import Vista.CentroA;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  * Controlados de la clase CentroAtencion.
@@ -44,6 +50,7 @@ public class CtrlCentroAtencion implements ActionListener{
   public void iniciar(){
     frm.setTitle("Centros de Atención");
     frm.setLocationRelativeTo(null);
+    cargarTablaPlanEstudio();
   }
   
   /**
@@ -65,6 +72,7 @@ public class CtrlCentroAtencion implements ActionListener{
           JOptionPane.showMessageDialog(null,"Registro de Centro de "
                   + "Atención guardado");
           limpiar();
+          cargarTablaPlanEstudio();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
           limpiar();
@@ -85,5 +93,19 @@ public class CtrlCentroAtencion implements ActionListener{
     frm.txtCantidadCentro.setText(null);
     frm.txtNombreCentro.setText(null);
     frm.txtUbicacionCentro.setText(null);
+  }
+  
+  private void cargarTablaPlanEstudio(){
+    DefaultTableModel modeloTabla = (DefaultTableModel) frm.tablaCentroA.getModel();
+    modeloTabla.setRowCount(0);
+    ResultSet rs;
+    ResultSetMetaData rsmd;
+    int columnas;
+    
+    int [] anchos = {10, 50, 100, 30, 100};
+    for(int i = 0 ; i < frm.tablaCentroA.getColumnCount(); i++){
+      frm.tablaCentroA.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
+    }
+    ConsultaCentroAtencion.cargarTablaCentroAtencion(modeloTabla);
   }
 }
