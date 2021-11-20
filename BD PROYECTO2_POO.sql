@@ -20,7 +20,8 @@ CREATE TABLE CentroAtencion(
   capacidadMaxPac int NOT NULL,
   tipoDeCentro varchar(90) NOT NULL,
   PRIMARY KEY (codigoCentroAtencion),
-  FOREIGN KEY (tipoDeCentro) REFERENCES TiposCentrosAtencion(tipoDeCentro)
+  FOREIGN KEY (tipoDeCentro) REFERENCES TiposCentrosAtencion(tipoDeCentro) ON DELETE CASCADE  
+  ON UPDATE CASCADE,
 );
 
 CREATE TABLE Funcionario(
@@ -31,21 +32,24 @@ CREATE TABLE Funcionario(
   codigoCentroAtencion int NOT NULL,
   areaTrabajo varchar(70) NOT NULL,
   PRIMARY KEY (cedulaFuncionario),
-  FOREIGN KEY (codigoCentroAtencion) REFERENCES CentroAtencion(codigoCentroAtencion)
+  FOREIGN KEY (codigoCentroAtencion) REFERENCES CentroAtencion(codigoCentroAtencion) ON DELETE CASCADE  
+  ON UPDATE CASCADE, 
 );
 
 CREATE TABLE Enfermero(
   cedulaFuncionario int NOT NULL,
   IndicadorPersonasACargo bit NOT NULL,
   IndicadorExpCapacitacion bit NOT NULL,
-  FOREIGN KEY (cedulaFuncionario) REFERENCES Funcionario(cedulaFuncionario)
+  FOREIGN KEY (cedulaFuncionario) REFERENCES Funcionario(cedulaFuncionario) ON DELETE CASCADE  
+  ON UPDATE CASCADE,
 );
 
 CREATE TABLE Doctor(
   cedulaFuncionario int NOT NULL,
   codigoMedico int NOT NULL,
   especialidad varchar NOT NULL,
-  FOREIGN KEY (cedulaFuncionario) REFERENCES Funcionario(cedulaFuncionario)
+  FOREIGN KEY (cedulaFuncionario) REFERENCES Funcionario(cedulaFuncionario) ON DELETE CASCADE  
+  ON UPDATE CASCADE,
 );
 
 CREATE TABLE Citas(
@@ -63,7 +67,8 @@ CREATE TABLE Diagnostico(
   observaciones varchar(80) NOT NULL,
   nivel varchar(15) NOT NULL,
   PRIMARY KEY (nombreDiagnostico),
-  FOREIGN KEY (identificador) REFERENCES Citas(identificador)
+  FOREIGN KEY (identificador) REFERENCES Citas(identificador) ON DELETE CASCADE  
+  ON UPDATE CASCADE,
 );
 
 CREATE TABLE Tratamiento(
@@ -72,7 +77,8 @@ CREATE TABLE Tratamiento(
   dosis varchar(80) NOT NULL,
   tipoTratamiento varchar(80) NOT NULL,
   PRIMARY KEY (nombreTratameinto),
-  FOREIGN KEY (identificador) REFERENCES Citas(identificador)
+  FOREIGN KEY (identificador) REFERENCES Citas(identificador)ON DELETE CASCADE  
+  ON UPDATE CASCADE,
 );
 
 CREATE TABLE Bitacora(
@@ -82,7 +88,8 @@ CREATE TABLE Bitacora(
   hora varchar(80) NOT NULL,
   nombreAutor varchar(80) NOT NULL,
   PRIMARY KEY (idBitacora),
-  FOREIGN KEY (identificadorCita) REFERENCES Citas(identificador)
+  FOREIGN KEY (identificadorCita) REFERENCES Citas(identificador) ON DELETE CASCADE  
+  ON UPDATE CASCADE,
 );
 
 CREATE TABLE Paciente(
@@ -96,7 +103,8 @@ CREATE TABLE Paciente(
   telefono int NOT NULL,
   correoElectronico varchar(70) NOT NULL
   PRIMARY KEY (cedulaPaciente),
-  FOREIGN KEY (identificadorCita) REFERENCES Citas(identificador)
+  FOREIGN KEY (identificadorCita) REFERENCES Citas(identificador) ON DELETE CASCADE  
+  ON UPDATE CASCADE,
 );
 
 CREATE TABLE Vacuna(
@@ -105,7 +113,8 @@ CREATE TABLE Vacuna(
   nombreVacuna varchar(70) NOT NULL,
   farmaceutica varchar(70) NOT NULL,
   numLote varchar(20) NOT NULL,
-  FOREIGN KEY (cedulaPaciente) REFERENCES Paciente(cedulaPaciente)
+  FOREIGN KEY (cedulaPaciente) REFERENCES Paciente(cedulaPaciente) ON DELETE CASCADE  
+  ON UPDATE CASCADE,
 );
 
 CREATE TABLE Hospitalizacion(
@@ -118,11 +127,16 @@ CREATE TABLE Hospitalizacion(
   especialidadHospitalizacion varchar(80) NOT NULL,
   funcionarioEncargado int NOT NULL,
   PRIMARY KEY (cedulaPacienteInternado),
-  FOREIGN KEY (centroAtencion) REFERENCES CentroAtencion(codigoCentroAtencion),
-  FOREIGN KEY (cedulaPacienteInternado) REFERENCES Paciente(cedulaPaciente),
-  FOREIGN KEY (diagnostico) REFERENCES Diagnostico(nombreDiagnostico),
-  FOREIGN KEY (especialidadHospitalizacion) REFERENCES AreaTrabajo(areaTrabajo),
-  FOREIGN KEY (funcionarioEncargado) REFERENCES Funcionario(cedulaFuncionario),
+  FOREIGN KEY (centroAtencion) REFERENCES CentroAtencion(codigoCentroAtencion) ON DELETE CASCADE  
+  ON UPDATE CASCADE,
+  FOREIGN KEY (cedulaPacienteInternado) REFERENCES Paciente(cedulaPaciente) ON DELETE NO ACTION  
+  ON UPDATE NO ACTION,
+  FOREIGN KEY (diagnostico) REFERENCES Diagnostico(nombreDiagnostico)ON DELETE NO ACTION  
+  ON UPDATE NO ACTION,
+  FOREIGN KEY (especialidadHospitalizacion) REFERENCES AreaTrabajo(areaTrabajo)ON DELETE NO ACTION  
+  ON UPDATE NO ACTION,
+  FOREIGN KEY (funcionarioEncargado) REFERENCES Funcionario(cedulaFuncionario)ON DELETE NO ACTION  
+  ON UPDATE NO ACTION,
 );
 
 
@@ -131,7 +145,17 @@ CREATE TABLE RegistroDeSeguimiento(
   funcionarioSeguimiento int NOT NULL,
   observacionDeEvolucion int NOT NULL,
   tratameintoAsociado varchar(80) NOT NULL,
-  FOREIGN KEY (cedulaPacienteInternado) REFERENCES Hospitalizacion(cedulaPacienteInternado),
-  FOREIGN KEY (funcionarioSeguimiento) REFERENCES Funcionario(cedulaFuncionario),
-  FOREIGN KEY (tratameintoAsociado) REFERENCES Tratamiento(nombreTratameinto),
+  FOREIGN KEY (cedulaPacienteInternado) REFERENCES Hospitalizacion(cedulaPacienteInternado)ON DELETE CASCADE  
+  ON UPDATE CASCADE,
+  FOREIGN KEY (funcionarioSeguimiento) REFERENCES Funcionario(cedulaFuncionario)ON DELETE NO ACTION  
+  ON UPDATE NO ACTION,
+  FOREIGN KEY (tratameintoAsociado) REFERENCES Tratamiento(nombreTratameinto)ON DELETE NO ACTION  
+  ON UPDATE NO ACTION,
 );
+
+INSERT INTO TiposCentrosAtencion(tipoDeCentro) VALUES ('HOSPITAL')
+
+INSERT INTO TiposCentrosAtencion(tipoDeCentro) VALUES ('EBAIS')
+
+INSERT INTO TiposCentrosAtencion(tipoDeCentro) VALUES ('CLINICA')
+
