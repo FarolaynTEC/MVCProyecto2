@@ -43,9 +43,8 @@ public class ConsultaCentroAtencion extends Conexion{
     }
   }
   
-    /**
-   *Este metodo carga la los datos de la tabla Planes
-   * y la muestra en la tabla de la aplicacion
+   /**
+   *Este metodo carga la los datos de la tabla centroAtencion
    * @param modeloTabla
    */  
   public static void cargarTablaCentroAtencion(DefaultTableModel modeloTabla){
