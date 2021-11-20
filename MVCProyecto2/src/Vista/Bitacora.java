@@ -231,10 +231,10 @@ public class Bitacora extends javax.swing.JFrame {
 
   private void btnGuardarBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarBitacoraActionPerformed
     if(txtFechaBitacora.getText().length()==0
-        & txtHoraBitacora.getText().length()==0
-            & txtIDBitacora.getText().length()==0
-                & txtIDCitaBitacora.getText().length()==0
-                    & txtNombreBitacora.getText().length()==0)
+        || txtHoraBitacora.getText().length()==0
+            || txtIDBitacora.getText().length()==0
+                || txtIDCitaBitacora.getText().length()==0
+                    || txtNombreBitacora.getText().length()==0)
    {
      JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
     } else{
@@ -245,10 +245,10 @@ public class Bitacora extends javax.swing.JFrame {
 
   private void btnEditarBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarBitacoraActionPerformed
     if(txtFechaBitacora.getText().length()==0
-        & txtHoraBitacora.getText().length()==0
-            & txtIDBitacora.getText().length()==0
-                & txtIDCitaBitacora.getText().length()==0
-                    & txtNombreBitacora.getText().length()==0)
+        || txtHoraBitacora.getText().length()==0
+            || txtIDBitacora.getText().length()==0
+                || txtIDCitaBitacora.getText().length()==0
+                    || txtNombreBitacora.getText().length()==0)
    {
      JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
     } else{
