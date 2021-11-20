@@ -59,7 +59,7 @@ public class CtrlCentroAtencion implements ActionListener{
    * @param e 
    */
   public void actionPerformed(ActionEvent e){
-    
+    //Boton guardar
     if(e.getSource()==frm.btnGuardarCentro){
       mod.setCodigoCentroAtencion(Integer.parseInt(frm.txtCodigoCentro.getText()));
       mod.setNombre(frm.txtNombreCentro.getText());
@@ -82,6 +82,82 @@ public class CtrlCentroAtencion implements ActionListener{
                 .log(Level.SEVERE, null, ex);
       }
     }
+    
+    //Boton editar
+    if(e.getSource()==frm.btnEditarCentro){
+      mod.setCodigoCentroAtencion(Integer.parseInt(frm.txtCodigoCentro.getText()));
+      mod.setNombre(frm.txtNombreCentro.getText());
+      mod.setUbicacion(frm.txtUbicacionCentro.getText());
+      mod.setCapacidadMaxPac(Integer.parseInt(frm.txtCantidadCentro.getText()));
+      mod.setTipoDeCentro(frm.cmbTipoCentro.getSelectedItem().toString());
+      
+      try {
+        if(modC.modificar(mod)){
+          JOptionPane.showMessageDialog(null,"Registro de Centro de "
+                  + "Atención modificado");
+          limpiar();
+          cargarTablaCentroAtencion();
+        }else{
+          JOptionPane.showMessageDialog(null,"ERROR");
+          limpiar();
+        }
+      } catch (SQLException ex) {
+        Logger.getLogger(CtrlCentroAtencion.class.getName())
+                .log(Level.SEVERE, null, ex);
+      }
+    }
+    
+    //Boton eliminar
+    if(e.getSource()==frm.btnEliminarCentro){
+      mod.setCodigoCentroAtencion(Integer.parseInt
+        (frm.txtCodigoCentro.getText()));
+      try {
+        if(modC.eliminar(mod)){
+          JOptionPane.showMessageDialog(null,"Registro de Centro de "
+                  + "Atención eliminado");
+          limpiar();
+          cargarTablaCentroAtencion();
+        }else{
+          JOptionPane.showMessageDialog(null,"ERROR");
+          limpiar();
+        }
+      } catch (SQLException ex) {
+        Logger.getLogger(CtrlCentroAtencion.class.getName())
+                .log(Level.SEVERE, null, ex);
+      }
+    }
+    
+    //Boton buscar
+    if(e.getSource()==frm.btnBuscarCentro){
+      mod.setCodigoCentroAtencion(Integer.parseInt
+        (frm.txtCodigoCentro.getText()));
+          
+      DefaultTableModel modeloTabla = (DefaultTableModel) frm.tablaCentroA.getModel();
+      modeloTabla.setRowCount(0);
+      ResultSet rs;
+      ResultSetMetaData rsmd;
+      int columnas;
+
+      int [] anchos = {10, 50, 100, 30, 100};
+      for(int i = 0 ; i < frm.tablaCentroA.getColumnCount(); i++){
+        frm.tablaCentroA.getColumnModel().getColumn(i).setPreferredWidth
+          (anchos[i]);
+      }
+      ConsultaCentroAtencion.cargarTablaCentroAtencionBuscado
+          (modeloTabla,mod.getCodigoCentroAtencion());
+    }
+    
+    //Boton limpiar
+    if(e.getSource()==frm.btnLimpiarCentro){
+      limpiar();
+    }
+    
+    
+    //boton Volver
+    if(e.getSource()==frm.btnVolverCentro){
+      limpiar();
+    }
+    
   }
   
   /**
@@ -94,6 +170,8 @@ public class CtrlCentroAtencion implements ActionListener{
     frm.txtNombreCentro.setText(null);
     frm.txtUbicacionCentro.setText(null);
   }
+  
+  
   
   /**
    * Método para cargar los datos de la base de datos
