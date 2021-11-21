@@ -123,5 +123,85 @@ public class ConsultaFuncionario extends Conexion {
     }
   }
   
+  public boolean registrarDoctor (Doctor doc) {
+    System.out.print("Aqui1");
+    PreparedStatement ps = null;
+    Connection con = connect();
+    String sql = "INSERT INTO Funcionario(cedulaFuncionario ,"
+            + "nombreFuncionario,fechaVigencia ,tipoFuncionario ,"
+            + "codigoCentroAtencion, areaTrabajo) VALUES (?,?,?,?,?,?)";
+    try{
+      ps = con.prepareStatement(sql);
+      ps.setInt(1, doc.getCedulaFuncionario());
+      ps.setString(2, doc.getNomFuncionario());
+      ps.setString (3, doc.getFechaIngreso());
+      ps.setString(4, doc.getTipoFuncionario());
+      ps.setInt(5, doc.trabajaEn.getCodigoCentroAtencion());
+      ps.setString(6, doc.areaTrabajo.getNomAreaTrabajo());
+      ps.execute();
+    }catch(SQLException e){
+      System.err.println(e);
+      return false;
+    } 
+    String sql2 = "INSERT INTO Doctor (cedulaFuncionario ,"
+            + "codigoMedico,especialidad VALUES (?,?,?)";
+    try{
+      ps = con.prepareStatement(sql2);
+      ps.setInt(1, doc.getCedulaFuncionario());
+      ps.setInt(2, doc.getCodigoMedico());
+      ps.setString (3, doc.getEspecialidad());
+      ps.execute();
+      return true;
+    }catch(SQLException e){
+      System.err.println(e);
+      return false;
+    }finally{
+      try{
+        con.close();
+      }catch(SQLException e){
+        System.err.println(e);
+      }
+    }
+  }
   
+  public boolean modificarDoctor (Doctor doc) {
+    System.out.print("Aqui1");
+    PreparedStatement ps = null;
+    Connection con = connect();
+    String sql = "UPDATE Funcionario SET nombreFuncionario=?"
+            + "fechaVigencia=? ,tipoFuncionario=?,codigoCentroAtencion=?,"
+            + "areaTrabajo=? WHERE cedulaFuncionario=?";
+    try{
+      ps = con.prepareStatement(sql);
+      
+      ps.setString(1, doc.getNomFuncionario());
+      ps.setString (2, doc.getFechaIngreso());
+      ps.setString(3, doc.getTipoFuncionario());
+      ps.setInt(4, doc.trabajaEn.getCodigoCentroAtencion());
+      ps.setString(5, doc.areaTrabajo.getNomAreaTrabajo());
+      ps.setInt(6, doc.getCedulaFuncionario());
+      ps.execute();
+    }catch(SQLException e){
+      System.err.println(e);
+      return false;
+    }String sql2 = "UPDATE Doctor SET codigoMedico=?"
+            + "especialidad=? WHERE cedulaFuncionario=?";
+    try{
+      ps = con.prepareStatement(sql2);
+      ps.setInt(1, doc.getCodigoMedico());
+      ps.setString (2, doc.getEspecialidad());
+      ps.setInt(3, doc.getCedulaFuncionario());
+      ps.execute();
+      return true;
+    }catch(SQLException e){
+      System.err.println(e);
+      return false;
+    }finally{
+      try{
+        con.close();
+      }catch(SQLException e){
+        System.err.println(e);
+      }
+    }
+  }
 }
