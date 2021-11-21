@@ -14,8 +14,8 @@ public class Enfermero extends Funcionario{
   private boolean indicadorPersonasACargo;
   private boolean indicadorExpCapacitacion;
 
-  public Enfermero(boolean indicadorPersonasACargo, boolean indicadorExpCapacitacion, int pCedulaFuncionario, String pNomFuncionario, Date pFechaIngreso, AreaTrabajo pAreaTrabajo) {
-    super(pCedulaFuncionario, pNomFuncionario, pFechaIngreso, pAreaTrabajo);
+  public Enfermero(boolean indicadorPersonasACargo, boolean indicadorExpCapacitacion, int pCedulaFuncionario, String pNomFuncionario, String pFechaIngreso, AreaTrabajo pAreaTrabajo, String pTipoFuncionario, CentroAtencion pTrabajaEn) {
+    super(pCedulaFuncionario, pNomFuncionario, pFechaIngreso, pAreaTrabajo, pTipoFuncionario, pTrabajaEn);
     this.indicadorPersonasACargo = indicadorPersonasACargo;
     this.indicadorExpCapacitacion = indicadorExpCapacitacion;
   }
@@ -27,7 +27,4 @@ public class Enfermero extends Funcionario{
     msg = "Tiene experiencia en capacitacion: "+indicadorExpCapacitacion + "\n";
     return msg;
   }
-  
-  
-  
 }
