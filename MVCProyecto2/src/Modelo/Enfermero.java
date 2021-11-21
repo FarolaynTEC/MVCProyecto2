@@ -27,4 +27,22 @@ public class Enfermero extends Funcionario{
     msg = "Tiene experiencia en capacitacion: "+indicadorExpCapacitacion + "\n";
     return msg;
   }
+
+  public boolean isIndicadorPersonasACargo() {
+    return indicadorPersonasACargo;
+  }
+
+  public boolean isIndicadorExpCapacitacion() {
+    return indicadorExpCapacitacion;
+  }
+
+  public void setIndicadorPersonasACargo(boolean indicadorPersonasACargo) {
+    this.indicadorPersonasACargo = indicadorPersonasACargo;
+  }
+
+  public void setIndicadorExpCapacitacion(boolean indicadorExpCapacitacion) {
+    this.indicadorExpCapacitacion = indicadorExpCapacitacion;
+  }
+  
+  
 }

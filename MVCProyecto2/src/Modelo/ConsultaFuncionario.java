@@ -18,11 +18,41 @@ import javax.swing.table.DefaultTableModel;
  * @author Alejandra Merino
  */
 public class ConsultaFuncionario extends Conexion {
-    public boolean registrarFuncionario (Funcionario fun) {
-      System.out.print("Aqui1");
+  
+  public boolean registrarFuncionario (Funcionario fun) {
+    System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "INSERT INTO Funcionario(cedulaFuncionario ,"
+            + "nombreFuncionario,fechaVigencia ,tipoFuncionario ,"
+            + "codigoCentroAtencion, areaTrabajo) VALUES (?,?,?,?,?,?)";
+    try{
+      ps = con.prepareStatement(sql);
+      ps.setInt(1, fun.getCedulaFuncionario());
+      ps.setString(2, fun.getNomFuncionario());
+      ps.setString (3, fun.getFechaIngreso());
+      ps.setString(4, fun.getTipoFuncionario());
+      ps.setInt(5, fun.trabajaEn.getCodigoCentroAtencion());
+      ps.setString(6, fun.areaTrabajo.getNomAreaTrabajo());
+      ps.execute();
+      return true;
+    }catch(SQLException e){
+      System.err.println(e);
+      return false;
+    }finally{
+      try{
+        con.close();
+      }catch(SQLException e){
+        System.err.println(e);
+      }
+    }
+  }
+  
+  public boolean modificarFuncionario (Funcionario fun) {
+      System.out.print("Aqui1");
+    PreparedStatement ps = null;
+    Connection con = connect();
+    String sql = "UPDATE Funcionario SET cedulaFuncionario ,"
             + "nombreFuncionario,fechaVigencia ,tipoFuncionario ,"
             + "codigoCentroAtencion, areaTrabajo) VALUES (?,?,?,?,?,?)";
      try{
@@ -45,5 +75,6 @@ public class ConsultaFuncionario extends Conexion {
       System.err.println(e);
       }
     }
-    }
+    }  
+    
 }

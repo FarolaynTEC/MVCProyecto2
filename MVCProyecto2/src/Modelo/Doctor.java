@@ -31,6 +31,22 @@ public class Doctor extends Funcionario{
     msg+= "Especialidad: "+especialidad+ "\n";
     return msg;
   }
+
+  public int getCodigoMedico() {
+    return codigoMedico;
+  }
+
+  public String getEspecialidad() {
+    return especialidad;
+  }
+
+  public void setCodigoMedico(int codigoMedico) {
+    this.codigoMedico = codigoMedico;
+  }
+
+  public void setEspecialidad(String especialidad) {
+    this.especialidad = especialidad;
+  }
   
   
   
