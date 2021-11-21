@@ -14,8 +14,8 @@ public class Doctor extends Funcionario{
   private int codigoMedico;
   private String especialidad;
 
-  public Doctor (int codigoMedico, String especialidad, int pCedulaFuncionario, String pNomFuncionario, Date pFechaIngreso, AreaTrabajo pAreaTrabajo) {
-    super(pCedulaFuncionario, pNomFuncionario, pFechaIngreso, pAreaTrabajo);
+  public Doctor (int codigoMedico, String especialidad, int pCedulaFuncionario, String pNomFuncionario, String pFechaIngreso, AreaTrabajo pAreaTrabajo, String pTipoFuncionario, CentroAtencion pTrabajaEn) {
+    super(pCedulaFuncionario, pNomFuncionario, pFechaIngreso, pAreaTrabajo, pTipoFuncionario, pTrabajaEn);
     this.codigoMedico = codigoMedico;
     this.especialidad = especialidad;
   }
@@ -30,6 +30,22 @@ public class Doctor extends Funcionario{
     msg = "Doctor: "+codigoMedico+ "\n";
     msg+= "Especialidad: "+especialidad+ "\n";
     return msg;
+  }
+
+  public int getCodigoMedico() {
+    return codigoMedico;
+  }
+
+  public String getEspecialidad() {
+    return especialidad;
+  }
+
+  public void setCodigoMedico(int codigoMedico) {
+    this.codigoMedico = codigoMedico;
+  }
+
+  public void setEspecialidad(String especialidad) {
+    this.especialidad = especialidad;
   }
   
   
