@@ -15,6 +15,7 @@ import javax.swing.table.DefaultTableModel;
 public class ConsultaCentroAtencion extends Conexion{
   
   public boolean registrar(CentroAtencion CA) throws SQLException{
+    System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "INSERT INTO CentroAtencion(codigoCentroAtencion,"
@@ -43,6 +44,7 @@ public class ConsultaCentroAtencion extends Conexion{
   }
   
   public boolean modificar(CentroAtencion CA) throws SQLException{
+    System.out.print("Aqui2");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "UPDATE CentroAtencion SET "
@@ -72,6 +74,7 @@ public class ConsultaCentroAtencion extends Conexion{
   }
   
   public boolean eliminar(CentroAtencion CA) throws SQLException{
+    System.out.print("Aqui3");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "DELETE FROM CentroAtencion WHERE codigoCentroAtencion=?";
@@ -92,17 +95,26 @@ public class ConsultaCentroAtencion extends Conexion{
       }
     }
   }
-
+  
   public boolean buscar(CentroAtencion CA) throws SQLException{
+    System.out.print("Aqui4");
     PreparedStatement ps = null;
-    ResultSet rs=null;
+    ResultSet rs;
     Connection con = connect();
+    String sql = "SELECT nombre,ubicacion,capacidadMaxPac  "
+            + "FROM CentroAtencion WHERE codigoCentroAtencion=?";
     
     try{
-    cargarTablaCentroAtencionBuscado(DefaultTableModel modeloTabla, int cABuscado)
-    ps = con.prepareStatement(sql);
+      ps = con.prepareStatement(sql);
       ps.setInt(1, CA.getCodigoCentroAtencion());
       rs = ps.executeQuery();
+      
+      if(rs.next()){
+        CA.setNombre(rs.getString("nombre"));
+        CA.setUbicacion(rs.getString("ubicacion"));
+        CA.setCapacidadMaxPac(Integer.parseInt(rs.getString("capacidadMaxPac")));
+        return true;
+      }
       return true;
     }catch(SQLException e){
       System.err.println(e);
@@ -114,7 +126,7 @@ public class ConsultaCentroAtencion extends Conexion{
       System.err.println(e);
       }
     }
-  }  
+  }
   
    /**
    *Este metodo carga la los datos de la tabla centroAtencion
@@ -145,37 +157,4 @@ public class ConsultaCentroAtencion extends Conexion{
       JOptionPane.showMessageDialog(null,e);
     }
   }
-  
-     /**
-   *Este metodo carga la los datos de la tabla centroAtencion
-   * @param modeloTabla
-   */  
-  public static void cargarTablaCentroAtencionBuscado
-        (DefaultTableModel modeloTabla, int cABuscado){
-    ResultSet rs;
-    ResultSetMetaData rsmd;
-    int columnas;
-    try{
-      
-      Connection connect = DriverManager.getConnection("jdbc:sqlserver://;"
-              + "databaseName=Proyecto_POO2;user=usuariosql;password=root1");
-      PreparedStatement st = connect.prepareStatement("SELECT *  FROM "
-              + "CentroAtencion WHERE codigoCentroAtencion = "+cABuscado);
-      rs = st.executeQuery();
-      rsmd = rs.getMetaData();
-      columnas = rsmd.getColumnCount();
-      
-      while(rs.next()){
-        Object[] fila = new Object[columnas];
-        for(int indice=0; indice<columnas; indice++){
-          fila[indice]=rs.getObject(indice+1);
-        }
-        modeloTabla.addRow(fila);
-      }
-    }catch(SQLException e){
-      
-      JOptionPane.showMessageDialog(null,e);
-    }
-  }
-  
 }
