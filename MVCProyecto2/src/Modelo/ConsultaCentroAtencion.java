@@ -95,38 +95,7 @@ public class ConsultaCentroAtencion extends Conexion{
       }
     }
   }
-  
-  public boolean buscar(CentroAtencion CA) throws SQLException{
-    System.out.print("Aqui4");
-    PreparedStatement ps = null;
-    ResultSet rs;
-    Connection con = connect();
-    String sql = "SELECT nombre,ubicacion,capacidadMaxPac  "
-            + "FROM CentroAtencion WHERE codigoCentroAtencion=?";
-    
-    try{
-      ps = con.prepareStatement(sql);
-      ps.setInt(1, CA.getCodigoCentroAtencion());
-      rs = ps.executeQuery();
-      
-      if(rs.next()){
-        CA.setNombre(rs.getString("nombre"));
-        CA.setUbicacion(rs.getString("ubicacion"));
-        CA.setCapacidadMaxPac(Integer.parseInt(rs.getString("capacidadMaxPac")));
-        return true;
-      }
-      return true;
-    }catch(SQLException e){
-      System.err.println(e);
-      return false;
-    }finally{
-      try{
-        con.close();
-      }catch(SQLException e){
-      System.err.println(e);
-      }
-    }
-  }
+ 
   
    /**
    *Este metodo carga la los datos de la tabla centroAtencion

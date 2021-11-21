@@ -59,9 +59,9 @@ public class CtrlCentroAtencion implements ActionListener{
    * @param e 
    */
   public void actionPerformed(ActionEvent e){
+
     //Boton guardar
     if(e.getSource()==frm.btnGuardarCentro){
-      System.out.print("Aqui1");
       mod.setCodigoCentroAtencion(Integer.parseInt(frm.txtCodigoCentro.getText()));
       mod.setNombre(frm.txtNombreCentro.getText());
       mod.setUbicacion(frm.txtUbicacionCentro.getText());
@@ -86,7 +86,6 @@ public class CtrlCentroAtencion implements ActionListener{
     
     //Boton editar
     if(e.getSource()==frm.btnEditarCentro){
-      System.out.print("Aqui2");
       mod.setCodigoCentroAtencion(Integer.parseInt(frm.txtCodigoCentro.getText()));
       mod.setNombre(frm.txtNombreCentro.getText());
       mod.setUbicacion(frm.txtUbicacionCentro.getText());
@@ -111,7 +110,6 @@ public class CtrlCentroAtencion implements ActionListener{
     
     //Boton eliminar
     if(e.getSource()==frm.btnEliminarCentro){
-      System.out.print("Aqui3");
       mod.setCodigoCentroAtencion(Integer.parseInt
         (frm.txtCodigoCentro.getText()));
       try {
@@ -130,27 +128,6 @@ public class CtrlCentroAtencion implements ActionListener{
       }
     }
     
-    //Boton buscar
-    if(e.getSource()==frm.btnBuscarCentro){
-      System.out.print("Aqui4");
-      mod.setCodigoCentroAtencion(Integer.parseInt
-        (frm.txtCodigoCentro.getText()));
-      try {
-        if(modC.buscar(mod)){
-          
-          frm.txtNombreCentro.setText(mod.getNombre());
-          frm.txtUbicacionCentro.setText(mod.getUbicacion());
-          frm.txtCantidadCentro.setText(String.valueOf(mod.getCapacidadMaxPac()));
-        }else{
-          JOptionPane.showMessageDialog(null,"ERROR NO SE ENCONTRÓ UN CENTRO DE"
-                  + "ATENCIÓN CON ESA IDENTIFICACIÓN");
-        }
-      } catch (SQLException ex) {
-        Logger.getLogger(CtrlCentroAtencion.class.getName())
-                .log(Level.SEVERE, null, ex);
-      }
-    }
-    
     //Boton limpiar
     if(e.getSource()==frm.btnLimpiarCentro){
       limpiar();
@@ -159,7 +136,7 @@ public class CtrlCentroAtencion implements ActionListener{
     
     //boton Volver
     if(e.getSource()==frm.btnVolverCentro){
-      limpiar();
+       
     }
     
   }

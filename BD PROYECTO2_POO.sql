@@ -159,3 +159,6 @@ INSERT INTO TiposCentrosAtencion(tipoDeCentro) VALUES ('EBAIS')
 
 INSERT INTO TiposCentrosAtencion(tipoDeCentro) VALUES ('CLINICA')
 
+SELECT *  FROM CentroAtencion
+
+SELECT * FROM CentroAtencion WHERE codigoCentroAtencion = 1
