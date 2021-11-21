@@ -136,7 +136,7 @@ public class CtrlCentroAtencion implements ActionListener{
     
     //boton Volver
     if(e.getSource()==frm.btnVolverCentro){
-       
+       //Agregar la ventana principal
     }
     
   }
