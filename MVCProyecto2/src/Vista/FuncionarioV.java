@@ -10,12 +10,12 @@ import javax.swing.JOptionPane;
  *
  * @author farol
  */
-public class Funcionario extends javax.swing.JFrame {
+public class FuncionarioV extends javax.swing.JFrame {
 
   /**
    * Creates new form CentroA
    */
-  public Funcionario() {
+  public FuncionarioV() {
     initComponents();
   }
 
@@ -747,7 +747,7 @@ public class Funcionario extends javax.swing.JFrame {
   private void btnVolverCentro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverCentro1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnVolverCentro1ActionPerformed
-
+ 
   private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnVolverActionPerformed
@@ -907,7 +907,7 @@ public class Funcionario extends javax.swing.JFrame {
     /* Create and display the form */
     java.awt.EventQueue.invokeLater(new Runnable() {
       public void run() {
-        new Funcionario().setVisible(true);
+        new FuncionarioV().setVisible(true);
       }
     });
   }
