@@ -50,7 +50,6 @@ public class CentroA extends javax.swing.JFrame {
     btnEliminarCentro = new javax.swing.JButton();
     btnLimpiarCentro = new javax.swing.JButton();
     btnVolverCentro = new javax.swing.JButton();
-    btnBuscarCentro = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,7 +73,6 @@ public class CentroA extends javax.swing.JFrame {
     jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     jLabel6.setText("Tipo de Centro");
 
-    cmbTipoCentro.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     cmbTipoCentro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HOSPITAL", "EBAIS", "CLINICA" }));
 
     tablaCentroA.setModel(new javax.swing.table.DefaultTableModel(
@@ -138,27 +136,10 @@ public class CentroA extends javax.swing.JFrame {
       }
     });
 
-    btnBuscarCentro.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-    btnBuscarCentro.setText("Buscar Centro");
-    btnBuscarCentro.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnBuscarCentroActionPerformed(evt);
-      }
-    });
-
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(jPanel1Layout.createSequentialGroup()
-        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(jPanel1Layout.createSequentialGroup()
-            .addGap(454, 454, 454)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
-          .addGroup(jPanel1Layout.createSequentialGroup()
-            .addGap(18, 18, 18)
-            .addComponent(btnVolverCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        .addGap(0, 0, Short.MAX_VALUE))
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addGap(37, 37, 37)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -183,30 +164,37 @@ public class CentroA extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addComponent(txtCodigoCentro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(txtNombreCentro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+        .addGap(245, 245, 245)
         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(39, 39, 39))
+        .addContainerGap(39, Short.MAX_VALUE))
       .addGroup(jPanel1Layout.createSequentialGroup()
-        .addGap(70, 70, 70)
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGap(454, 454, 454)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGap(18, 18, 18)
+            .addComponent(btnVolverCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        .addGap(0, 0, Short.MAX_VALUE))
+      .addGroup(jPanel1Layout.createSequentialGroup()
+        .addGap(69, 69, 69)
         .addComponent(btnGuardarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(38, 38, 38)
         .addComponent(btnEditarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(34, 34, 34)
         .addComponent(btnEliminarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addComponent(btnBuscarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(29, 29, 29)
         .addComponent(btnLimpiarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap())
+        .addGap(276, 276, 276))
     );
     jPanel1Layout.setVerticalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addGap(34, 34, 34)
         .addComponent(jLabel1)
+        .addGap(35, 35, 35)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(jPanel1Layout.createSequentialGroup()
-            .addGap(35, 35, 35)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel2)
               .addComponent(txtCodigoCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -226,17 +214,14 @@ public class CentroA extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(cmbTipoCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-          .addGroup(jPanel1Layout.createSequentialGroup()
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+          .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(18, 18, 18)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(btnGuardarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(btnEditarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(btnEliminarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(btnLimpiarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(btnBuscarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addGap(52, 52, 52)
+          .addComponent(btnLimpiarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
         .addComponent(btnVolverCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addContainerGap())
     );
@@ -302,10 +287,6 @@ public class CentroA extends javax.swing.JFrame {
     // TODO add your handling code here:
   }//GEN-LAST:event_btnVolverCentroActionPerformed
 
-  private void btnBuscarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarCentroActionPerformed
-    // TODO add your handling code here:
-  }//GEN-LAST:event_btnBuscarCentroActionPerformed
-
   /**
    * @param args the command line arguments
    */
@@ -345,7 +326,6 @@ public class CentroA extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  public javax.swing.JButton btnBuscarCentro;
   public javax.swing.JButton btnEditarCentro;
   public javax.swing.JButton btnEliminarCentro;
   public javax.swing.JButton btnGuardarCentro;
