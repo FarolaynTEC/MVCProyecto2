@@ -5,6 +5,7 @@ import Modelo.Doctor;
 import Modelo.Enfermero;
 import Modelo.Funcionario;
 import Modelo.AreaTrabajo;
+import Modelo.CentroAtencion;
 import Vista.FuncionarioV;
 import java.awt.event.ActionEvent;
 
@@ -51,16 +52,17 @@ public class CtrlFuncionario {
    * @param e 
    */
   public void actionPerformed(ActionEvent e){
-    AreaTrabajo areaTrabajo = new AreaTrabajo() ;
+    AreaTrabajo areaTrabajo = new AreaTrabajo(frm.cmbAreaFuncionario.getSelectedItem().toString());
+    CentroAtencion centroAtencion = new CentroAtencion();
     //Boton guardar Secritario
     if(e.getSource()==frm.btnGuardarFuncionario){
       modFun.setCedulaFuncionario(Integer.parseInt(frm.txtCedulaFuncionario.getText()));
       modFun.setNomFuncionario(frm.txtNombreFuncionario.getText());
       modFun.setFechaIngreso(frm.txtFechaFuncionario.getText());
       modFun.setTipoFuncionario(frm.cmbTipoFuncionario.getSelectedItem().toString());
-      modFun.setTrabajaEn(frm.cm.getSelectedItem().toString());
-      
-      modFun.setAreaTrabajo(frm.cmbAreaFuncionario.getSelectedItem().toString());
+      centroAtencion = frm.cmbTrabajaEn.getSelectedItem().toString();
+      modFun.setTrabajaEn(centroAtencion);
+      modFun.setAreaTrabajo(areaTrabajo);
       try {
         if(modC.registrar(mod)){
           JOptionPane.showMessageDialog(null,"Registro de Centro de "
