@@ -32,7 +32,7 @@ public class ConsultaFuncionario extends Conexion {
       ps.setString(2, fun.getNomFuncionario());
       ps.setString (3, fun.getFechaIngreso());
       ps.setString(4, fun.getTipoFuncionario());
-      ps.setInt(5, fun.trabajaEn.getCodigoCentroAtencion());
+      ps.setString(5, fun.getTrabajaEn());
       ps.setString(6, fun.areaTrabajo.getNomAreaTrabajo());
       ps.execute();
       return true;
@@ -61,7 +61,7 @@ public class ConsultaFuncionario extends Conexion {
       ps.setString(1, fun.getNomFuncionario());
       ps.setString (2, fun.getFechaIngreso());
       ps.setString(3, fun.getTipoFuncionario());
-      ps.setInt(4, fun.trabajaEn.getCodigoCentroAtencion());
+      ps.setString(4, fun.getTrabajaEn());
       ps.setString(5, fun.areaTrabajo.getNomAreaTrabajo());
       ps.setInt(6, fun.getCedulaFuncionario());
       ps.execute();
@@ -136,7 +136,7 @@ public class ConsultaFuncionario extends Conexion {
       ps.setString(2, doc.getNomFuncionario());
       ps.setString (3, doc.getFechaIngreso());
       ps.setString(4, doc.getTipoFuncionario());
-      ps.setInt(5, doc.trabajaEn.getCodigoCentroAtencion());
+      ps.setString(5, doc.getTrabajaEn());
       ps.setString(6, doc.areaTrabajo.getNomAreaTrabajo());
       ps.execute();
     }catch(SQLException e){
@@ -177,7 +177,7 @@ public class ConsultaFuncionario extends Conexion {
       ps.setString(1, doc.getNomFuncionario());
       ps.setString (2, doc.getFechaIngreso());
       ps.setString(3, doc.getTipoFuncionario());
-      ps.setInt(4, doc.trabajaEn.getCodigoCentroAtencion());
+      ps.setString(5, doc.getTrabajaEn());
       ps.setString(5, doc.areaTrabajo.getNomAreaTrabajo());
       ps.setInt(6, doc.getCedulaFuncionario());
       ps.execute();

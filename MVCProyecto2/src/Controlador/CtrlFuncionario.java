@@ -8,6 +8,7 @@ import Modelo.AreaTrabajo;
 import Modelo.CentroAtencion;
 import Vista.FuncionarioV;
 import java.awt.event.ActionEvent;
+import javax.swing.JOptionPane;
 
 /**
  * Controlados de la clase Funcionario.
@@ -53,18 +54,16 @@ public class CtrlFuncionario {
    */
   public void actionPerformed(ActionEvent e){
     AreaTrabajo areaTrabajo = new AreaTrabajo(frm.cmbAreaFuncionario.getSelectedItem().toString());
-    CentroAtencion centroAtencion = new CentroAtencion();
     //Boton guardar Secritario
     if(e.getSource()==frm.btnGuardarFuncionario){
       modFun.setCedulaFuncionario(Integer.parseInt(frm.txtCedulaFuncionario.getText()));
       modFun.setNomFuncionario(frm.txtNombreFuncionario.getText());
       modFun.setFechaIngreso(frm.txtFechaFuncionario.getText());
       modFun.setTipoFuncionario(frm.cmbTipoFuncionario.getSelectedItem().toString());
-      centroAtencion = frm.cmbTrabajaEn.getSelectedItem().toString();
-      modFun.setTrabajaEn(centroAtencion);
+      modFun.setTrabajaEn(frm.cmbTrabajaEn.getSelectedItem().toString());
       modFun.setAreaTrabajo(areaTrabajo);
       try {
-        if(modC.registrar(mod)){
+        if(modC.registrarFuncionario(modFun)){
           JOptionPane.showMessageDialog(null,"Registro de Centro de "
                   + "Atención guardado");
           limpiar();
@@ -124,7 +123,7 @@ public class CtrlFuncionario {
     }
     
     //Boton limpiar
-    if(e.getSource()==frm.btnLimpiarCentro){
+    if(e.getSource()==frm.btnLimpiar){
       limpiar();
     }
     
@@ -134,6 +133,17 @@ public class CtrlFuncionario {
        
     }
     
+  }
+  
+    /**
+   * Establece las cajas de texto como nulas o vacias
+   */
+  public void limpiar(){
+    
+    frm.txtCodigoCentro.setText(null);
+    frm.txtCantidadCentro.setText(null);
+    frm.txtNombreCentro.setText(null);
+    frm.txtUbicacionCentro.setText(null);
   }
   
 }

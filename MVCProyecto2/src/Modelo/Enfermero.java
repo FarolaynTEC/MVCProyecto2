@@ -14,8 +14,12 @@ public class Enfermero extends Funcionario{
   private boolean indicadorPersonasACargo;
   private boolean indicadorExpCapacitacion;
 
-  public Enfermero(boolean indicadorPersonasACargo, boolean indicadorExpCapacitacion, int pCedulaFuncionario, String pNomFuncionario, String pFechaIngreso, AreaTrabajo pAreaTrabajo, String pTipoFuncionario, CentroAtencion pTrabajaEn) {
-    super(pCedulaFuncionario, pNomFuncionario, pFechaIngreso, pAreaTrabajo, pTipoFuncionario, pTrabajaEn);
+  public Enfermero(boolean indicadorPersonasACargo, 
+      boolean indicadorExpCapacitacion, int pCedulaFuncionario, 
+      String pNomFuncionario, String pFechaIngreso, 
+      AreaTrabajo pAreaTrabajo, String pTipoFuncionario, String pTrabajaEn) {
+    super(pCedulaFuncionario, pNomFuncionario, pFechaIngreso, pAreaTrabajo, 
+        pTipoFuncionario, pTrabajaEn);
     this.indicadorPersonasACargo = indicadorPersonasACargo;
     this.indicadorExpCapacitacion = indicadorExpCapacitacion;
   }

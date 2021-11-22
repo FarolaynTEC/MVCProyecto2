@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Modelo;
 
 import java.util.Date;
@@ -15,10 +12,12 @@ public class Funcionario {
   protected String nomFuncionario;
   protected String fechaIngreso;
   protected String tipoFuncionario;
-  protected CentroAtencion trabajaEn;
+  protected String trabajaEn;
   protected AreaTrabajo areaTrabajo;
 
-  public Funcionario(int pCedulaFuncionario, String pNomFuncionario, String pFechaIngreso, AreaTrabajo pAreaTrabajo, String pTipoFuncionario, CentroAtencion pTrabajaEn) {
+  public Funcionario(int pCedulaFuncionario, String pNomFuncionario, 
+          String pFechaIngreso, AreaTrabajo pAreaTrabajo, 
+          String pTipoFuncionario, String pTrabajaEn) {
     this.cedulaFuncionario = pCedulaFuncionario;
     this.nomFuncionario = pNomFuncionario;
     this.fechaIngreso = pFechaIngreso;
@@ -63,7 +62,7 @@ public class Funcionario {
     return areaTrabajo;
   }
 
-  public CentroAtencion getTrabajaEn() {
+  public String getTrabajaEn() {
     return trabajaEn;
   }
   
@@ -89,7 +88,7 @@ public class Funcionario {
     this.areaTrabajo = areaTrabajo;
   }
 
-  public void setTrabajaEn(CentroAtencion trabajaEn) {
+  public void setTrabajaEn(String trabajaEn) {
     this.trabajaEn = trabajaEn;
   }
   
