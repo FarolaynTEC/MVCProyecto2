@@ -5,12 +5,17 @@ import Modelo.Doctor;
 import Modelo.Enfermero;
 import Modelo.Funcionario;
 import Modelo.AreaTrabajo;
-import Modelo.CentroAtencion;
-import Modelo.ConsultaCentroAtencion;
 import Vista.FuncionarioV;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -32,15 +37,15 @@ public class CtrlFuncionario {
     this.modDoc = modDoc;
     this.modEnf = modEnf;
     this.frm = frm;
-    this.frm.btnAgregarEspecialidad.addActionListener(this);
-    this.frm.btnEditarFuncionario.addActionListener(this);
-    this.frm.btnEditarFuncionario1.addActionListener(this);
-    this.frm.btnEliminarFuncionario.addActionListener(this);
-    this.frm.btnEliminarFuncionario1.addActionListener(this);
-    this.frm.btnGuardarFuncionario.addActionListener(this);
-    this.frm.btnGuardarFuncionario2.addActionListener(this);
-    this.frm.btnLimpiar.addActionListener(this);
-    this.frm.btnVolver.addActionListener(this);
+    this.frm.btnAgregarEspecialidad.addActionListener((ActionListener) this);
+    this.frm.btnEditarFuncionario.addActionListener((ActionListener) this);
+    this.frm.btnEditarFuncionario1.addActionListener((ActionListener) this);
+    this.frm.btnEliminarFuncionario.addActionListener((ActionListener) this);
+    this.frm.btnEliminarFuncionario1.addActionListener((ActionListener) this);
+    this.frm.btnGuardarFuncionario.addActionListener((ActionListener) this);
+    this.frm.btnGuardarFuncionario2.addActionListener((ActionListener) this);
+    this.frm.btnLimpiar.addActionListener((ActionListener) this);
+    this.frm.btnVolver.addActionListener((ActionListener) this);
   }
     
   /**
@@ -58,8 +63,9 @@ public class CtrlFuncionario {
    */
   public void actionPerformed(ActionEvent e){
     AreaTrabajo areaTrabajo = new AreaTrabajo(frm.cmbAreaFuncionario.getSelectedItem().toString());
+    
     //Boton guardar Secritario
-    if(e.getSource()==frm.btnGuardarFuncionario){
+    if(e.getSource()==frm.btnGuardarSecretario){
       modFun.setCedulaFuncionario(Integer.parseInt(frm.txtCedulaFuncionario.getText()));
       modFun.setNomFuncionario(frm.txtNombreFuncionario.getText());
       modFun.setFechaIngreso(frm.txtFechaFuncionario.getText());
@@ -68,17 +74,42 @@ public class CtrlFuncionario {
       modFun.setAreaTrabajo(areaTrabajo);
       try {
         if(modC.registrarFuncionario(modFun)){
-          JOptionPane.showMessageDialog(null,"Registro de Centro de "
-                  + "Atención guardado");
+          JOptionPane.showMessageDialog(null,"Registro de Funcionario guardado");
           limpiar();
-          cargarTablaCentroAtencion();
+          cargarTablaFuncionario();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
           limpiar();
         }
-      } catch (SQLException ex) {
-        Logger.getLogger(CtrlCentroAtencion.class.getName())
-                .log(Level.SEVERE, null, ex);
+      } catch(SQLException e){
+        Logger.getLogger(CtrlFuncionario.class.getName())
+                .log(Level.SEVERE,null,e);
+      }
+    }
+    
+    //Boton guardar Doctor
+    if(e.getSource()==frm.btnGuardarFuncionario){
+      modFun.setCedulaFuncionario(Integer.parseInt(frm.txtCedulaFuncionario.getText()));
+      modFun.setNomFuncionario(frm.txtNombreFuncionario.getText());
+      modFun.setFechaIngreso(frm.txtFechaFuncionario.getText());
+      modFun.setTipoFuncionario(frm.cmbTipoFuncionario.getSelectedItem().toString());
+      modFun.setTrabajaEn(frm.cmbTrabajaEn.getSelectedItem().toString());
+      modFun.setAreaTrabajo(areaTrabajo);
+      modDoc.setCodigoMedico(Integer.parseInt(frm.txtCedulaDoctor.getText()));
+      modDoc.setEspecialidad(frm.txtEspecialidad.getText());
+      try {
+        if(modC.registrarFuncionario(modFun)){
+          JOptionPane.showMessageDialog(null,"Registro de Centro de "
+                  + "Atención guardado");
+          limpiar();
+          cargarTablaFuncionario();
+        }else{
+          JOptionPane.showMessageDialog(null,"ERROR");
+          limpiar();
+        }
+      } catch(SQLException e){
+        Logger.getLogger(CtrlFuncionario.class.getName())
+                .log(Level.SEVERE,null,e);
       }
     }
     
@@ -101,7 +132,7 @@ public class CtrlFuncionario {
           limpiar();
         }
       } catch (SQLException ex) {
-        Logger.getLogger(CtrlCentroAtencion.class.getName())
+        Logger.getLogger(CtrlFuncionario.class.getName())
                 .log(Level.SEVERE, null, ex);
       }
     }
@@ -165,7 +196,24 @@ public class CtrlFuncionario {
     for(int i = 0 ; i < frm.tablaFuncionario.getColumnCount(); i++){
       frm.tablaFuncionario.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
     }
-    ConsultaCentroAtencion.cargarTablaCentroAtencion(modeloTabla);
+    ConsultaFuncionario.cargarTablaFuncionario(modeloTabla);
   }
   
+      /**
+   * Método para cargar los datos de la base de datos
+   * en la tabla llamada tablaCentroA.
+   */
+  private void cargarTablaFuncionarioDoctor(){
+    DefaultTableModel modeloTabla = (DefaultTableModel) frm.tablaDoctor.getModel();
+    modeloTabla.setRowCount(0);
+    ResultSet rs;
+    ResultSetMetaData rsmd;
+    int columnas;
+    
+    int [] anchos = {10, 50, 100, 30, 100};
+    for(int i = 0 ; i < frm.tablaFuncionario.getColumnCount(); i++){
+      frm.tablaFuncionario.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
+    }
+    ConsultaFuncionario.cargarTablaFuncionarioDoctor(modeloTabla);
+  }
 }
