@@ -58,6 +58,7 @@ public class CtrlFuncionario {
   
   /**
    * 
+   * @throws java.sql.SQLException
    * @override
    * @param e 
    */
@@ -82,9 +83,9 @@ public class CtrlFuncionario {
           JOptionPane.showMessageDialog(null,"ERROR");
           limpiar();
         }
-      } catch(SQLException e){
+      } catch(SQLException ex){
         Logger.getLogger(CtrlFuncionario.class.getName())
-                .log(Level.SEVERE,null,e);
+                .log(Level.SEVERE,null,ex);
       }
     }
     
@@ -107,7 +108,7 @@ public class CtrlFuncionario {
           JOptionPane.showMessageDialog(null,"ERROR");
           limpiar();
         }
-      } catch(SQLException e){
+      } catch(SQLException ex){
         Logger.getLogger(CtrlFuncionario.class.getName())
                 .log(Level.SEVERE,null,e);
       }
@@ -149,14 +150,14 @@ public class CtrlFuncionario {
           JOptionPane.showMessageDialog(null,"ERROR");
           limpiar();
         }
-      } catch(SQLException e){
+      } catch(SQLException ex){
         Logger.getLogger(CtrlFuncionario.class.getName())
                 .log(Level.SEVERE,null,e);
       }
     }
     
     
-    //Boton editar
+    //Boton editar enfermero
     if(e.getSource()==frm.btnEditarCentro){
       mod.setCodigoCentroAtencion(Integer.parseInt(frm.txtCodigoCentro.getText()));
       mod.setNombre(frm.txtNombreCentro.getText());

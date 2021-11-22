@@ -106,6 +106,8 @@ public class FuncionarioV extends javax.swing.JFrame {
     jLabel23 = new javax.swing.JLabel();
     jLabel24 = new javax.swing.JLabel();
     jLabel25 = new javax.swing.JLabel();
+    btnEditarsecretario = new javax.swing.JButton();
+    btnEliminarSecretario = new javax.swing.JButton();
 
     jPanel5.setBackground(new java.awt.Color(37, 182, 204));
 
@@ -601,6 +603,22 @@ public class FuncionarioV extends javax.swing.JFrame {
     jLabel25.setForeground(new java.awt.Color(255, 255, 255));
     jLabel25.setText("Si desea guardar un doctor, rellene el primer cuadrante y el área de doctor");
 
+    btnEditarsecretario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    btnEditarsecretario.setText("Editar Secretario");
+    btnEditarsecretario.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnEditarsecretarioActionPerformed(evt);
+      }
+    });
+
+    btnEliminarSecretario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    btnEliminarSecretario.setText("Eliminar Secretario");
+    btnEliminarSecretario.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnEliminarSecretarioActionPerformed(evt);
+      }
+    });
+
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
@@ -617,39 +635,6 @@ public class FuncionarioV extends javax.swing.JFrame {
             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addComponent(btnGuardarSecretario)
-                    .addGap(53, 53, 53))
-                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                      .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                      .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                          .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                              .addComponent(jRadioButton1)
-                              .addGap(18, 18, 18)
-                              .addComponent(jRadioButton2)
-                              .addGap(228, 228, 228))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                              .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                  .addComponent(jRadioButton5)
-                                  .addGap(20, 20, 20)
-                                  .addComponent(jRadioButton6)))
-                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                          .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(btnGuardarFuncionario2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEditarFuncionario1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEliminarFuncionario1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
               .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addGroup(jPanel1Layout.createSequentialGroup()
@@ -704,7 +689,44 @@ public class FuncionarioV extends javax.swing.JFrame {
                           .addComponent(jLabel3)
                           .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                           .addComponent(txtNombreFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(22, 22, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                      .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                          .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                              .addComponent(jRadioButton1)
+                              .addGap(18, 18, 18)
+                              .addComponent(jRadioButton2)
+                              .addGap(228, 228, 228))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                              .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                  .addComponent(jRadioButton5)
+                                  .addGap(20, 20, 20)
+                                  .addComponent(jRadioButton6)))
+                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                          .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnGuardarFuncionario2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEditarFuncionario1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEliminarFuncionario1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addComponent(btnEliminarSecretario)
+                    .addGap(18, 18, 18)
+                    .addComponent(btnEditarsecretario)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(btnGuardarSecretario)
+                    .addGap(53, 53, 53)))))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
               .addComponent(jScrollPane1)
               .addComponent(jScrollPane3)
@@ -766,7 +788,10 @@ public class FuncionarioV extends javax.swing.JFrame {
             .addGap(26, 26, 26))
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-            .addComponent(btnGuardarSecretario, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+              .addComponent(btnGuardarSecretario, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(btnEditarsecretario, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(btnEliminarSecretario, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -980,6 +1005,14 @@ public class FuncionarioV extends javax.swing.JFrame {
     // TODO add your handling code here:
   }//GEN-LAST:event_btnGuardarSecretarioActionPerformed
 
+  private void btnEditarsecretarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarsecretarioActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_btnEditarsecretarioActionPerformed
+
+  private void btnEliminarSecretarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarSecretarioActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_btnEliminarSecretarioActionPerformed
+
   /**
    * @param args the command line arguments
    */
@@ -1023,9 +1056,11 @@ public class FuncionarioV extends javax.swing.JFrame {
   private javax.swing.JButton btnEditarCentro1;
   public javax.swing.JButton btnEditarFuncionario;
   public javax.swing.JButton btnEditarFuncionario1;
+  public javax.swing.JButton btnEditarsecretario;
   private javax.swing.JButton btnEliminarCentro1;
   public javax.swing.JButton btnEliminarFuncionario;
   public javax.swing.JButton btnEliminarFuncionario1;
+  public javax.swing.JButton btnEliminarSecretario;
   private javax.swing.JButton btnGuardarCentro1;
   public javax.swing.JButton btnGuardarFuncionario;
   private javax.swing.JButton btnGuardarFuncionario1;
