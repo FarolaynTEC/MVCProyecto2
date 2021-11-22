@@ -238,7 +238,7 @@ public class ConsultaFuncionario extends Conexion {
   }
   
    /**
-   *Este metodo carga la los datos de la tabla Funcionario
+   *Este metodo carga la los datos de la tabla doctor
    * @param modeloTabla
    */  
   public static void cargarTablaFuncionarioDoctor(DefaultTableModel modeloTabla){
@@ -252,6 +252,39 @@ public class ConsultaFuncionario extends Conexion {
       PreparedStatement st = connect.prepareStatement("SELECT nombreFuncionario,"
               + " codigoMedico, especialidad  FROM Funcionario f INNER JOIN "
               + "Doctor d on f.cedulaFuncionario = d.cedulaFuncionario");
+      rs = st.executeQuery();
+      rsmd = rs.getMetaData();
+      columnas = rsmd.getColumnCount();
+      
+      while(rs.next()){
+        Object[] fila = new Object[columnas];
+        for(int indice=0; indice<columnas; indice++){
+          fila[indice]=rs.getObject(indice+1);
+        }
+        modeloTabla.addRow(fila);
+      }
+    }catch(SQLException e){
+      
+      JOptionPane.showMessageDialog(null,e);
+    }
+  }
+  
+     /**
+   *Este metodo carga la los datos de la tabla Funcionario
+   * @param modeloTabla
+   */  
+  public static void cargarTablaFuncionarioEnfermero(DefaultTableModel modeloTabla){
+    ResultSet rs;
+    ResultSetMetaData rsmd;
+    int columnas;
+    try{
+      
+      Connection connect = DriverManager.getConnection("jdbc:sqlserver://;"
+              + "databaseName=Proyecto_POO2;user=usuariosql;password=root1");
+      PreparedStatement st = connect.prepareStatement("SELECT nombreFuncionario,"
+              + "IndicadorPersonasACargo ,IndicadorExpCapacitacion FROM"
+              + " Funcionario f INNER JOIN Enfermero e on f.cedulaFuncionario"
+              + " = e.cedulaFuncionario");
       rs = st.executeQuery();
       rsmd = rs.getMetaData();
       columnas = rsmd.getColumnCount();

@@ -113,6 +113,49 @@ public class CtrlFuncionario {
       }
     }
     
+    //Boton guardar enfermero
+    if(e.getSource()==frm.btnGuardarFuncionario2){
+      modEnf.setCedulaFuncionario(Integer.parseInt(frm.txtCedulaFuncionario.getText()));
+      modEnf.setNomFuncionario(frm.txtNombreFuncionario.getText());
+      modEnf.setFechaIngreso(frm.txtFechaFuncionario.getText());
+      modEnf.setTipoFuncionario(frm.cmbTipoFuncionario.getSelectedItem().toString());
+      modEnf.setTrabajaEn(frm.cmbTrabajaEn.getSelectedItem().toString());
+      modEnf.setAreaTrabajo(areaTrabajo);
+      boolean aCargo;
+      if(frm.jRadioButton1.isSelected()==true){
+        aCargo=true;
+      }else if(frm.jRadioButton1.isSelected()==true){
+        aCargo=false;
+      }else{
+        aCargo=false;
+      }
+      modEnf.setIndicadorExpCapacitacion(aCargo);
+      boolean expCapa;
+      if(frm.jRadioButton5.isSelected()==true){
+        expCapa=true;
+      }else if(frm.jRadioButton6.isSelected()==true){
+        expCapa=false;
+      }else{
+        expCapa=false;
+      }
+      modEnf.setIndicadorExpCapacitacion(expCapa);
+      try {
+        if(modC.registrarEnfermero(modDoc)){
+          JOptionPane.showMessageDialog(null,"Registro de enfermero guardado");
+          limpiar();
+          cargarTablaFuncionario();
+          cargarTablaFuncionarioEnfermero();
+        }else{
+          JOptionPane.showMessageDialog(null,"ERROR");
+          limpiar();
+        }
+      } catch(SQLException e){
+        Logger.getLogger(CtrlFuncionario.class.getName())
+                .log(Level.SEVERE,null,e);
+      }
+    }
+    
+    
     //Boton editar
     if(e.getSource()==frm.btnEditarCentro){
       mod.setCodigoCentroAtencion(Integer.parseInt(frm.txtCodigoCentro.getText()));
@@ -199,7 +242,7 @@ public class CtrlFuncionario {
     ConsultaFuncionario.cargarTablaFuncionario(modeloTabla);
   }
   
-      /**
+  /**
    * Método para cargar los datos de la base de datos
    * en la tabla llamada tablaCentroA.
    */
@@ -215,5 +258,23 @@ public class CtrlFuncionario {
       frm.tablaFuncionario.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
     }
     ConsultaFuncionario.cargarTablaFuncionarioDoctor(modeloTabla);
+  }
+  
+    /**
+   * Método para cargar los datos de la base de datos
+   * en la tabla llamada tablaCentroA.
+   */
+  private void cargarTablaFuncionarioEnfermero(){
+    DefaultTableModel modeloTabla = (DefaultTableModel) frm.tablaEnfermero.getModel();
+    modeloTabla.setRowCount(0);
+    ResultSet rs;
+    ResultSetMetaData rsmd;
+    int columnas;
+    
+    int [] anchos = {10, 50, 100, 30, 100};
+    for(int i = 0 ; i < frm.tablaEnfermero.getColumnCount(); i++){
+      frm.tablaEnfermero.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
+    }
+    ConsultaFuncionario.cargarTablaFuncionarioEnfermero(modeloTabla);
   }
 }
