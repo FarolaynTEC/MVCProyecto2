@@ -579,7 +579,7 @@ public class FuncionarioV extends javax.swing.JFrame {
     });
 
     jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-    jLabel22.setText("Fecha Ingreso");
+    jLabel22.setText("Lugar de Trabajo");
 
     cmbTrabajaEn.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     cmbTrabajaEn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -689,7 +689,6 @@ public class FuncionarioV extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(61, 61, 61)
                         .addComponent(txtCedulaFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                       .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(3, 3, 3)

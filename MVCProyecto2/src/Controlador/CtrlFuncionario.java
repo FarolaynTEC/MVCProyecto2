@@ -6,9 +6,13 @@ import Modelo.Enfermero;
 import Modelo.Funcionario;
 import Modelo.AreaTrabajo;
 import Modelo.CentroAtencion;
+import Modelo.ConsultaCentroAtencion;
 import Vista.FuncionarioV;
 import java.awt.event.ActionEvent;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  * Controlados de la clase Funcionario.
@@ -139,11 +143,29 @@ public class CtrlFuncionario {
    * Establece las cajas de texto como nulas o vacias
    */
   public void limpiar(){
+    frm.txtCedulaFuncionario.setText(null);
+    frm.txtCedulaDoctor.setText(null);
+    frm.txtEspecialidad.setText(null);
+    frm.txtFechaFuncionario.setText(null);
+    frm.txtNombreFuncionario.setText(null);
+  }
+  
+    /**
+   * Método para cargar los datos de la base de datos
+   * en la tabla llamada tablaCentroA.
+   */
+  private void cargarTablaFuncionario(){
+    DefaultTableModel modeloTabla = (DefaultTableModel) frm.tablaFuncionario.getModel();
+    modeloTabla.setRowCount(0);
+    ResultSet rs;
+    ResultSetMetaData rsmd;
+    int columnas;
     
-    frm.txtCodigoCentro.setText(null);
-    frm.txtCantidadCentro.setText(null);
-    frm.txtNombreCentro.setText(null);
-    frm.txtUbicacionCentro.setText(null);
+    int [] anchos = {10, 50, 100, 30, 100};
+    for(int i = 0 ; i < frm.tablaFuncionario.getColumnCount(); i++){
+      frm.tablaFuncionario.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
+    }
+    ConsultaCentroAtencion.cargarTablaCentroAtencion(modeloTabla);
   }
   
 }
