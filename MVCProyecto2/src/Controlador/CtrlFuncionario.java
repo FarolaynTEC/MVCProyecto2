@@ -63,7 +63,7 @@ public class CtrlFuncionario {
    * @param e 
    */
   public void actionPerformed(ActionEvent e){
-    AreaTrabajo areaTrabajo = new AreaTrabajo(frm.cmbAreaFuncionario.getSelectedItem().toString());
+    
     
     //Boton guardar Secritario
     if(e.getSource()==frm.btnGuardarSecretario){
@@ -72,6 +72,8 @@ public class CtrlFuncionario {
       modFun.setFechaIngreso(frm.txtFechaFuncionario.getText());
       modFun.setTipoFuncionario(frm.cmbTipoFuncionario.getSelectedItem().toString());
       modFun.setTrabajaEn(frm.cmbTrabajaEn.getSelectedItem().toString());
+      AreaTrabajo areaTrabajo = new AreaTrabajo(frm.cmbAreaFuncionario.
+          getSelectedItem().toString());
       modFun.setAreaTrabajo(areaTrabajo);
       try {
         if(modC.registrarFuncionario(modFun)){
@@ -96,6 +98,8 @@ public class CtrlFuncionario {
       modDoc.setFechaIngreso(frm.txtFechaFuncionario.getText());
       modDoc.setTipoFuncionario(frm.cmbTipoFuncionario.getSelectedItem().toString());
       modDoc.setTrabajaEn(frm.cmbTrabajaEn.getSelectedItem().toString());
+      AreaTrabajo areaTrabajo = new AreaTrabajo(frm.cmbAreaFuncionario.
+          getSelectedItem().toString());
       modDoc.setAreaTrabajo(areaTrabajo);
       modDoc.setCodigoMedico(Integer.parseInt(frm.txtCedulaDoctor.getText()));
       modDoc.setEspecialidad(frm.txtEspecialidad.getText());
@@ -104,6 +108,7 @@ public class CtrlFuncionario {
           JOptionPane.showMessageDialog(null,"Registro de Doctor guardado");
           limpiar();
           cargarTablaFuncionario();
+          cargarTablaFuncionarioDoctor();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
           limpiar();
@@ -121,6 +126,8 @@ public class CtrlFuncionario {
       modEnf.setFechaIngreso(frm.txtFechaFuncionario.getText());
       modEnf.setTipoFuncionario(frm.cmbTipoFuncionario.getSelectedItem().toString());
       modEnf.setTrabajaEn(frm.cmbTrabajaEn.getSelectedItem().toString());
+      AreaTrabajo areaTrabajo = new AreaTrabajo(frm.cmbAreaFuncionario.
+          getSelectedItem().toString());
       modEnf.setAreaTrabajo(areaTrabajo);
       boolean aCargo;
       if(frm.jRadioButton1.isSelected()==true){
@@ -141,7 +148,7 @@ public class CtrlFuncionario {
       }
       modEnf.setIndicadorExpCapacitacion(expCapa);
       try {
-        if(modC.registrarEnfermero(modDoc)){
+        if(modC.registrarEnfermero(modEnf)){
           JOptionPane.showMessageDialog(null,"Registro de enfermero guardado");
           limpiar();
           cargarTablaFuncionario();
@@ -157,22 +164,26 @@ public class CtrlFuncionario {
     }
     
     
-    //Boton editar enfermero
-    if(e.getSource()==frm.btnEditarCentro){
-      mod.setCodigoCentroAtencion(Integer.parseInt(frm.txtCodigoCentro.getText()));
-      mod.setNombre(frm.txtNombreCentro.getText());
-      mod.setUbicacion(frm.txtUbicacionCentro.getText());
-      mod.setCapacidadMaxPac(Integer.parseInt(frm.txtCantidadCentro.getText()));
-      mod.setTipoDeCentro(frm.cmbTipoCentro.getSelectedItem().toString());
-      
+    //Boton editar Secretario
+    if(e.getSource()==frm.btnEditarsecretario){
+      modFun.setCedulaFuncionario(Integer.parseInt(frm.txtCedulaFuncionario.getText()));
+      modFun.setNomFuncionario(frm.txtNombreFuncionario.getText());
+      modFun.setFechaIngreso(frm.txtFechaFuncionario.getText());
+      modFun.setTipoFuncionario(frm.cmbTipoFuncionario.getSelectedItem().toString());
+      modFun.setTrabajaEn(frm.cmbTrabajaEn.getSelectedItem().toString());
+      AreaTrabajo areaTrabajo = new AreaTrabajo(frm.cmbAreaFuncionario.
+          getSelectedItem().toString());
+      modFun.setAreaTrabajo(areaTrabajo);
       try {
-        if(modC.modificar(mod)){
-          JOptionPane.showMessageDialog(null,"Registro de Centro de "
-                  + "Atención modificado");
+        if(modC.modificarFuncionario(modFun)){
+          JOptionPane.showMessageDialog(null,"Modificación realizada");
           limpiar();
-          cargarTablaCentroAtencion();
+          cargarTablaFuncionario();
+          cargarTablaFuncionarioEnfermero();
+          cargarTablaFuncionarioDoctor();
         }else{
-          JOptionPane.showMessageDialog(null,"ERROR");
+          JOptionPane.showMessageDialog(null,"ERROR, el funcionario "
+              + "ingresado no existe");
           limpiar();
         }
       } catch (SQLException ex) {
@@ -181,18 +192,140 @@ public class CtrlFuncionario {
       }
     }
     
-    //Boton eliminar
-    if(e.getSource()==frm.btnEliminarCentro){
-      mod.setCodigoCentroAtencion(Integer.parseInt
-        (frm.txtCodigoCentro.getText()));
+    //Boton editar Doctor
+    if(e.getSource()==frm.btnEditarFuncionario){
+      modDoc.setCedulaFuncionario(Integer.parseInt(frm.txtCedulaFuncionario.getText()));
+      modDoc.setNomFuncionario(frm.txtNombreFuncionario.getText());
+      modDoc.setFechaIngreso(frm.txtFechaFuncionario.getText());
+      modDoc.setTipoFuncionario(frm.cmbTipoFuncionario.getSelectedItem().toString());
+      modDoc.setTrabajaEn(frm.cmbTrabajaEn.getSelectedItem().toString());
+      AreaTrabajo areaTrabajo = new AreaTrabajo(frm.cmbAreaFuncionario.
+          getSelectedItem().toString());
+      modDoc.setAreaTrabajo(areaTrabajo);
+      modDoc.setCodigoMedico(Integer.parseInt(frm.txtCedulaDoctor.getText()));
+      modDoc.setEspecialidad(frm.txtEspecialidad.getText());
       try {
-        if(modC.eliminar(mod)){
-          JOptionPane.showMessageDialog(null,"Registro de Centro de "
-                  + "Atención eliminado");
+        if(modC.modificarDoctor(modDoc)){
+          JOptionPane.showMessageDialog(null,"Modificación realizada");
           limpiar();
-          cargarTablaCentroAtencion();
+          cargarTablaFuncionario();
+          cargarTablaFuncionarioEnfermero();
+          cargarTablaFuncionarioDoctor();
         }else{
-          JOptionPane.showMessageDialog(null,"ERROR");
+          JOptionPane.showMessageDialog(null,"ERROR, el funcionario "
+              + "ingresado no existe");
+          limpiar();
+        }
+      } catch (SQLException ex) {
+        Logger.getLogger(CtrlFuncionario.class.getName())
+                .log(Level.SEVERE, null, ex);
+      }
+    }
+    
+    //Boton editar Enfermero
+    if(e.getSource()==frm.btnEditarsecretario){
+      modEnf.setCedulaFuncionario(Integer.parseInt(frm.txtCedulaFuncionario.getText()));
+      modEnf.setNomFuncionario(frm.txtNombreFuncionario.getText());
+      modEnf.setFechaIngreso(frm.txtFechaFuncionario.getText());
+      modEnf.setTipoFuncionario(frm.cmbTipoFuncionario.getSelectedItem().toString());
+      modEnf.setTrabajaEn(frm.cmbTrabajaEn.getSelectedItem().toString());
+      AreaTrabajo areaTrabajo = new AreaTrabajo(frm.cmbAreaFuncionario.
+          getSelectedItem().toString());
+      modEnf.setAreaTrabajo(areaTrabajo);
+      boolean aCargo;
+      if(frm.jRadioButton1.isSelected()==true){
+        aCargo=true;
+      }else if(frm.jRadioButton1.isSelected()==true){
+        aCargo=false;
+      }else{
+        aCargo=false;
+      }
+      modEnf.setIndicadorExpCapacitacion(aCargo);
+      boolean expCapa;
+      if(frm.jRadioButton5.isSelected()==true){
+        expCapa=true;
+      }else if(frm.jRadioButton6.isSelected()==true){
+        expCapa=false;
+      }else{
+        expCapa=false;
+      }
+      modEnf.setIndicadorExpCapacitacion(expCapa);
+      try {
+        if(modC.modificarEnfermero(modEnf)){
+          JOptionPane.showMessageDialog(null,"Modificación realizada");
+          limpiar();
+          cargarTablaFuncionario();
+          cargarTablaFuncionarioEnfermero();
+          cargarTablaFuncionarioDoctor();
+        }else{
+          JOptionPane.showMessageDialog(null,"ERROR, el funcionario "
+              + "ingresado no existe");
+          limpiar();
+        }
+      } catch (SQLException ex) {
+        Logger.getLogger(CtrlFuncionario.class.getName())
+                .log(Level.SEVERE, null, ex);
+      }
+    }
+    
+    //Boton eliminar secretario
+    if(e.getSource()==frm.btnEliminarSecretario){
+      modFun.setCedulaFuncionario(Integer.parseInt
+          (frm.txtCedulaFuncionario.getText()));
+      try {
+        if(modC.eliminarFuncionario(modFun)){
+          JOptionPane.showMessageDialog(null,"Registro de secretario eliminado");
+          limpiar();
+          cargarTablaFuncionario();
+          cargarTablaFuncionarioEnfermero();
+          cargarTablaFuncionarioDoctor();
+        }else{
+          JOptionPane.showMessageDialog(null,"ERROR, el funcionario "
+              + "ingresado no existe");
+          limpiar();
+        }
+      } catch (SQLException ex) {
+        Logger.getLogger(CtrlCentroAtencion.class.getName())
+                .log(Level.SEVERE, null, ex);
+      }
+    }
+    
+    //Boton eliminar Doctor
+    if(e.getSource()==frm.btnEliminarFuncionario){
+      modDoc.setCedulaFuncionario(Integer.parseInt
+          (frm.txtCedulaFuncionario.getText()));
+      try {
+        if(modC.eliminarDoctor(modDoc)){
+          JOptionPane.showMessageDialog(null,"Registro de doctor eliminado");
+          limpiar();
+          cargarTablaFuncionario();
+          cargarTablaFuncionarioEnfermero();
+          cargarTablaFuncionarioDoctor();
+        }else{
+          JOptionPane.showMessageDialog(null,"ERROR, el funcionario "
+              + "ingresado no existe");
+          limpiar();
+        }
+      } catch (SQLException ex) {
+        Logger.getLogger(CtrlCentroAtencion.class.getName())
+                .log(Level.SEVERE, null, ex);
+      }
+    }
+
+    //Boton eliminar Enfermero
+    if(e.getSource()==frm.btnEditarFuncionario1){
+      modEnf.setCedulaFuncionario(Integer.parseInt
+          (frm.txtCedulaFuncionario.getText()));
+      try {
+        if(modC.eliminarEnfermero(modEnf)){
+          JOptionPane.showMessageDialog(null,"Registro de enfermero eliminado");
+          limpiar();
+          cargarTablaFuncionario();
+          cargarTablaFuncionarioEnfermero();
+          cargarTablaFuncionarioDoctor();
+        }else{
+          JOptionPane.showMessageDialog(null,"ERROR, el funcionario "
+              + "ingresado no existe");
           limpiar();
         }
       } catch (SQLException ex) {
@@ -208,7 +341,7 @@ public class CtrlFuncionario {
     
     
     //boton Volver
-    if(e.getSource()==frm.btnVolverCentro){
+    if(e.getSource()==frm.btnVolver){
        
     }
     
