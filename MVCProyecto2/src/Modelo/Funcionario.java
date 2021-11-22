@@ -15,16 +15,6 @@ public class Funcionario {
   protected String trabajaEn;
   protected AreaTrabajo areaTrabajo;
 
-  public Funcionario(int pCedulaFuncionario, String pNomFuncionario, 
-          String pFechaIngreso, AreaTrabajo pAreaTrabajo, 
-          String pTipoFuncionario, String pTrabajaEn) {
-    this.cedulaFuncionario = pCedulaFuncionario;
-    this.nomFuncionario = pNomFuncionario;
-    this.fechaIngreso = pFechaIngreso;
-    this.areaTrabajo = pAreaTrabajo;
-    this.tipoFuncionario = pTipoFuncionario;
-    this.trabajaEn = pTrabajaEn;
-  }
   
   public void cancelarCitaPaciente () {}
   

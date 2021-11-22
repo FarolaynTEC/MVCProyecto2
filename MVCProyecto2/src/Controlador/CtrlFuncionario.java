@@ -54,6 +54,9 @@ public class CtrlFuncionario {
   public void iniciar(){
     frm.setTitle("Funcionarios");
     frm.setLocationRelativeTo(null);
+    cargarTablaFuncionario();
+    cargarTablaFuncionarioEnfermero();
+    cargarTablaFuncionarioDoctor();
   }
   
   /**
@@ -63,8 +66,6 @@ public class CtrlFuncionario {
    * @param e 
    */
   public void actionPerformed(ActionEvent e){
-    
-    
     //Boton guardar Secritario
     if(e.getSource()==frm.btnGuardarSecretario){
       modFun.setCedulaFuncionario(Integer.parseInt(frm.txtCedulaFuncionario.getText()));

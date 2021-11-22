@@ -5,6 +5,12 @@ import Modelo.CentroAtencion;
 import Modelo.ConsultaCentroAtencion;
 import Vista.CentroA;
 import Controlador.CtrlCentroAtencion;
+import Controlador.CtrlFuncionario;
+import Modelo.ConsultaFuncionario;
+import Modelo.Doctor;
+import Modelo.Enfermero;
+import Modelo.Funcionario;
+import Vista.FuncionarioV;
 
 
 /**
@@ -18,12 +24,22 @@ public class MVCProyecto2 {
    */
   public static void main(String[] args) {
     
-    CentroAtencion mod = new CentroAtencion();
-    ConsultaCentroAtencion modC = new ConsultaCentroAtencion();
-    CentroA frm = new CentroA();
+    CentroAtencion modCA = new CentroAtencion();
+    ConsultaCentroAtencion modCCA = new ConsultaCentroAtencion();
+    CentroA frmCA = new CentroA();
     
-    CtrlCentroAtencion ctrl = new CtrlCentroAtencion(mod,modC,frm);
-    ctrl.iniciar();
-    frm.setVisible(true);
+    CtrlCentroAtencion ctrl1 = new CtrlCentroAtencion(modCA,modCCA,frmCA);
+    ctrl1.iniciar();
+    frmCA.setVisible(true);
+    
+    Funcionario modFun = new Funcionario();
+    Doctor modDoc = new Doctor();
+    Enfermero modEnf= new Enfermero();
+    ConsultaFuncionario modCF = new ConsultaFuncionario();
+    FuncionarioV frmF = new FuncionarioV();
+    
+    CtrlFuncionario ctrl2 = new CtrlFuncionario( modFun, modCF, modDoc, modEnf, frmF);
+    ctrl2.iniciar();
+    frmCA.setVisible(true);
   }
 }
