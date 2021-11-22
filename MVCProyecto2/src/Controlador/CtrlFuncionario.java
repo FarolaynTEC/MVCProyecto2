@@ -77,6 +77,7 @@ public class CtrlFuncionario {
           JOptionPane.showMessageDialog(null,"Registro de Funcionario guardado");
           limpiar();
           cargarTablaFuncionario();
+          cargarTablaFuncionarioDoctor();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
           limpiar();
@@ -89,18 +90,17 @@ public class CtrlFuncionario {
     
     //Boton guardar Doctor
     if(e.getSource()==frm.btnGuardarFuncionario){
-      modFun.setCedulaFuncionario(Integer.parseInt(frm.txtCedulaFuncionario.getText()));
-      modFun.setNomFuncionario(frm.txtNombreFuncionario.getText());
-      modFun.setFechaIngreso(frm.txtFechaFuncionario.getText());
-      modFun.setTipoFuncionario(frm.cmbTipoFuncionario.getSelectedItem().toString());
-      modFun.setTrabajaEn(frm.cmbTrabajaEn.getSelectedItem().toString());
-      modFun.setAreaTrabajo(areaTrabajo);
+      modDoc.setCedulaFuncionario(Integer.parseInt(frm.txtCedulaFuncionario.getText()));
+      modDoc.setNomFuncionario(frm.txtNombreFuncionario.getText());
+      modDoc.setFechaIngreso(frm.txtFechaFuncionario.getText());
+      modDoc.setTipoFuncionario(frm.cmbTipoFuncionario.getSelectedItem().toString());
+      modDoc.setTrabajaEn(frm.cmbTrabajaEn.getSelectedItem().toString());
+      modDoc.setAreaTrabajo(areaTrabajo);
       modDoc.setCodigoMedico(Integer.parseInt(frm.txtCedulaDoctor.getText()));
       modDoc.setEspecialidad(frm.txtEspecialidad.getText());
       try {
-        if(modC.registrarFuncionario(modFun)){
-          JOptionPane.showMessageDialog(null,"Registro de Centro de "
-                  + "Atención guardado");
+        if(modC.registrarDoctor(modDoc)){
+          JOptionPane.showMessageDialog(null,"Registro de Doctor guardado");
           limpiar();
           cargarTablaFuncionario();
         }else{
