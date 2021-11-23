@@ -68,25 +68,12 @@ public class CtrlCentroAtencion implements ActionListener{
       mod.setUbicacion(frm.txtUbicacionCentro.getText());
       mod.setCapacidadMaxPac(Integer.parseInt(frm.txtCantidadCentro.getText()));
       mod.setTipoDeCentro(frm.cmbTipoCentro.getSelectedItem().toString());
-      
       try {
-        
-        if(frm.txtCantidadCentro.getText().length()==0
-        || frm.txtCodigoCentro.getText().length()==0
-            || frm.txtNombreCentro.getText().length()==0
-                || frm.txtUbicacionCentro.getText().length()==0){ 
-          JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
-        }
-        else{
           if(modC.registrar(mod)){
             JOptionPane.showMessageDialog(null,"Registro de Centro de "
                     + "Atención guardado");
             limpiar();
             cargarTablaCentroAtencion();
-          }else{
-            JOptionPane.showMessageDialog(null,"ERROR");
-            limpiar();
-          }
         }
       } catch (SQLException ex) {
         Logger.getLogger(CtrlCentroAtencion.class.getName())
