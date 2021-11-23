@@ -94,12 +94,10 @@ public class CtrlFuncionario implements ActionListener {
       try {
         if(modC.registrarFuncionario(modFun)){
           JOptionPane.showMessageDialog(null,"Registro de Funcionario guardado");
-          limpiar();
           cargarTablaFuncionario();
           cargarTablaFuncionarioDoctor();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
-          limpiar();
         }
       } catch(SQLException ex){
         Logger.getLogger(CtrlFuncionario.class.getName())
@@ -122,12 +120,10 @@ public class CtrlFuncionario implements ActionListener {
       try {
         if(modC.registrarDoctor(modDoc)){
           JOptionPane.showMessageDialog(null,"Registro de Doctor guardado");
-          limpiar();
           cargarTablaFuncionario();
           cargarTablaFuncionarioDoctor();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
-          limpiar();
         }
       } catch(SQLException ex){
         Logger.getLogger(CtrlFuncionario.class.getName())
@@ -166,12 +162,10 @@ public class CtrlFuncionario implements ActionListener {
       try {
         if(modC.registrarEnfermero(modEnf)){
           JOptionPane.showMessageDialog(null,"Registro de enfermero guardado");
-          limpiar();
           cargarTablaFuncionario();
           cargarTablaFuncionarioEnfermero();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
-          limpiar();
         }
       } catch(SQLException ex){
         Logger.getLogger(CtrlFuncionario.class.getName())
@@ -193,14 +187,12 @@ public class CtrlFuncionario implements ActionListener {
       try {
         if(modC.modificarFuncionario(modFun)){
           JOptionPane.showMessageDialog(null,"Modificación realizada");
-          limpiar();
           cargarTablaFuncionario();
           cargarTablaFuncionarioEnfermero();
           cargarTablaFuncionarioDoctor();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR, el funcionario "
               + "ingresado no existe");
-          limpiar();
         }
       } catch (SQLException ex) {
         Logger.getLogger(CtrlFuncionario.class.getName())
@@ -223,14 +215,12 @@ public class CtrlFuncionario implements ActionListener {
       try {
         if(modC.modificarDoctor(modDoc)){
           JOptionPane.showMessageDialog(null,"Modificación realizada");
-          limpiar();
           cargarTablaFuncionario();
           cargarTablaFuncionarioEnfermero();
           cargarTablaFuncionarioDoctor();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR, el funcionario "
               + "ingresado no existe");
-          limpiar();
         }
       } catch (SQLException ex) {
         Logger.getLogger(CtrlFuncionario.class.getName())
@@ -269,14 +259,12 @@ public class CtrlFuncionario implements ActionListener {
       try {
         if(modC.modificarEnfermero(modEnf)){
           JOptionPane.showMessageDialog(null,"Modificación realizada");
-          limpiar();
           cargarTablaFuncionario();
           cargarTablaFuncionarioEnfermero();
           cargarTablaFuncionarioDoctor();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR, el funcionario "
               + "ingresado no existe");
-          limpiar();
         }
       } catch (SQLException ex) {
         Logger.getLogger(CtrlFuncionario.class.getName())
@@ -291,13 +279,11 @@ public class CtrlFuncionario implements ActionListener {
       try {
         if(modC.eliminarFuncionario(modFun)){
           JOptionPane.showMessageDialog(null,"Registro de secretario eliminado");
-          limpiar();
           cargarTablaFuncionario();
           cargarTablaFuncionarioEnfermero();
           cargarTablaFuncionarioDoctor();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
-          limpiar();
         }
       } catch (SQLException ex) {
         Logger.getLogger(CtrlCentroAtencion.class.getName())
@@ -312,13 +298,11 @@ public class CtrlFuncionario implements ActionListener {
       try {
         if(modC.eliminarDoctor(modDoc)){
           JOptionPane.showMessageDialog(null,"Registro de doctor eliminado");
-          limpiar();
           cargarTablaFuncionario();
           cargarTablaFuncionarioEnfermero();
           cargarTablaFuncionarioDoctor();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
-          limpiar();
         }
       } catch (SQLException ex) {
         Logger.getLogger(CtrlCentroAtencion.class.getName())
@@ -333,13 +317,11 @@ public class CtrlFuncionario implements ActionListener {
       try {
         if(modC.eliminarEnfermero(modEnf)){
           JOptionPane.showMessageDialog(null,"Registro de enfermero eliminado");
-          limpiar();
           cargarTablaFuncionario();
           cargarTablaFuncionarioEnfermero();
           cargarTablaFuncionarioDoctor();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
-          limpiar();
         }
       } catch (SQLException ex) {
         Logger.getLogger(CtrlCentroAtencion.class.getName())

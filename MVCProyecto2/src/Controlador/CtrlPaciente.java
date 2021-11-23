@@ -75,12 +75,10 @@ public class CtrlPaciente implements ActionListener {
       try {
         if(modC.registrarPaciente(modPac)){
           JOptionPane.showMessageDialog(null,"Registro de Paciente guardado");
-          limpiar();
           cargarTablaPaciente1();
           cargarTablaPaciente2();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
-          limpiar();
         }
       } catch(SQLException ex){
         Logger.getLogger(CtrlFuncionario.class.getName())
@@ -100,7 +98,6 @@ public class CtrlPaciente implements ActionListener {
       try {
         if(modC.modificarPaciente(modPac)){
           JOptionPane.showMessageDialog(null,"Registro de Paciente editado");
-          limpiar();
           cargarTablaPaciente1();
           cargarTablaPaciente2();
         }else{
@@ -119,12 +116,10 @@ public class CtrlPaciente implements ActionListener {
       try {
         if(modC.eliminarPaciente(modPac)){
           JOptionPane.showMessageDialog(null,"Registro de Paciente eliminado");
-          limpiar();
           cargarTablaPaciente1();
           cargarTablaPaciente2();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
-          limpiar();
         }
       } catch(SQLException ex){
         Logger.getLogger(CtrlFuncionario.class.getName())
@@ -142,10 +137,8 @@ public class CtrlPaciente implements ActionListener {
       try {
         if(modC.registrarVacunas(modVac)){
           JOptionPane.showMessageDialog(null,"Registro de vacuna guardado");
-          limpiar();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
-          limpiar();
         }
       } catch(SQLException ex){
         Logger.getLogger(CtrlFuncionario.class.getName())

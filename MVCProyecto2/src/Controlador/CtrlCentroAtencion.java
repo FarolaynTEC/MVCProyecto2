@@ -81,11 +81,9 @@ public class CtrlCentroAtencion implements ActionListener{
           if(modC.registrar(mod)){
             JOptionPane.showMessageDialog(null,"Registro de Centro de "
                     + "Atención guardado");
-            limpiar();
             cargarTablaCentroAtencion();
           }else{
             JOptionPane.showMessageDialog(null,"ERROR");
-            limpiar();
           }
         }
       } catch (SQLException ex) {
@@ -107,11 +105,9 @@ public class CtrlCentroAtencion implements ActionListener{
         if(modC.modificar(mod)){
           JOptionPane.showMessageDialog(null,"Registro de Centro de "
                   + "Atención modificado");
-          limpiar();
           cargarTablaCentroAtencion();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
-          limpiar();
         }
       } catch (SQLException ex) {
         Logger.getLogger(CtrlCentroAtencion.class.getName())
@@ -127,11 +123,9 @@ public class CtrlCentroAtencion implements ActionListener{
         if(modC.eliminar(mod)){
           JOptionPane.showMessageDialog(null,"Registro de Centro de "
                   + "Atención eliminado");
-          limpiar();
           cargarTablaCentroAtencion();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
-          limpiar();
         }
       } catch (SQLException ex) {
         Logger.getLogger(CtrlCentroAtencion.class.getName())
