@@ -15,6 +15,7 @@ public class Cita {
   private AreaTrabajo servicio;
   private Diagnostico diagnostico;
   private Bitacora bitacora;
+  private String estadoDeCita;
 
   @Override
   public String toString() {
@@ -39,6 +40,10 @@ public class Cita {
     return observaciones;
   }
 
+  public String getEstadoDeCita() {
+    return estadoDeCita;
+  }
+
   
   
   public void setIdentificador(int identificador) {
@@ -51,6 +56,10 @@ public class Cita {
 
   public void setObservaciones(String observaciones) {
     this.observaciones = observaciones;
+  }
+
+  public void setEstadoDeCita(String estadoDeCita) {
+    this.estadoDeCita = estadoDeCita;
   }
   
   
