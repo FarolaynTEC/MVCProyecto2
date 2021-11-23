@@ -52,13 +52,28 @@ CREATE TABLE Doctor(
   ON UPDATE CASCADE,
 );
 
+CREATE TABLE Paciente(
+  cedulaPaciente int NOT NULL,
+  nombrePaciente varchar(70) NOT NULL,
+  fechaNacimiento date NOT NULL,
+  tipoSangre varchar(15) NOT NULL,
+  nacionalidad varchar(70) NOT NULL,
+  lugarRecidincia varchar(70) NOT NULL,
+  telefono int NOT NULL,
+  correoElectronico varchar(70) NOT NULL
+  PRIMARY KEY (cedulaPaciente),
+);
+
 CREATE TABLE Citas(
+  cedulaPaciente int NOT NULL,
   identificador int NOT NULL,
   fechaCita date NOT NULL,
   observaciones varchar(80) NOT NULL,
   diagnostico varchar(80) NOT NULL,
   estadoDeCita varchar(30) NOT NULL,
   PRIMARY KEY (identificador),
+  FOREIGN KEY (cedulaPaciente) REFERENCES Paciente(cedulaPaciente) ON DELETE CASCADE  
+  ON UPDATE CASCADE,
 );
 
 CREATE TABLE Diagnostico(
@@ -88,21 +103,6 @@ CREATE TABLE Bitacora(
   hora varchar(80) NOT NULL,
   nombreAutor varchar(80) NOT NULL,
   PRIMARY KEY (idBitacora),
-  FOREIGN KEY (identificadorCita) REFERENCES Citas(identificador) ON DELETE CASCADE  
-  ON UPDATE CASCADE,
-);
-
-CREATE TABLE Paciente(
-  cedulaPaciente int NOT NULL,
-  identificadorCita int NOT NULL,
-  nombrePaciente varchar(70) NOT NULL,
-  fechaNacimiento date NOT NULL,
-  tipoSangre varchar(15) NOT NULL,
-  nacionalidad varchar(70) NOT NULL,
-  lugarRecidincia varchar(70) NOT NULL,
-  telefono int NOT NULL,
-  correoElectronico varchar(70) NOT NULL
-  PRIMARY KEY (cedulaPaciente),
   FOREIGN KEY (identificadorCita) REFERENCES Citas(identificador) ON DELETE CASCADE  
   ON UPDATE CASCADE,
 );
@@ -159,6 +159,3 @@ INSERT INTO TiposCentrosAtencion(tipoDeCentro) VALUES ('EBAIS')
 
 INSERT INTO TiposCentrosAtencion(tipoDeCentro) VALUES ('CLINICA')
 
-SELECT *  FROM CentroAtencion
-
-SELECT * FROM CentroAtencion WHERE codigoCentroAtencion = 1

@@ -34,7 +34,7 @@ public class CtrlPaciente implements ActionListener {
   private ConsultaPaciente modC;
   private PacienteV frm;
 
-  public CtrlPaciente(Paciente modPac, Vacuna modVac, Hospitalizacion modHos, RegistroSeguimiento modReSe, ConsultaPaciente modC, PacienteV frm) {
+  public CtrlPaciente(Paciente modPac, Vacuna modVac, /*Hospitalizacion modHos, RegistroSeguimiento modReSe,*/ ConsultaPaciente modC, PacienteV frm) {
     this.modPac = modPac;
     this.modVac = modVac;
     this.modHos = modHos;
@@ -55,7 +55,9 @@ public class CtrlPaciente implements ActionListener {
    */
   public void iniciar(){
     frm.setTitle("Pacientes");
-    frm.setLocationRelativeTo(null);;
+    frm.setLocationRelativeTo(null);
+    cargarTablaPaciente1();
+    cargarTablaPaciente2();
   }
 
   @Override
@@ -74,6 +76,8 @@ public class CtrlPaciente implements ActionListener {
         if(modC.registrarPaciente(modPac)){
           JOptionPane.showMessageDialog(null,"Registro de Paciente guardado");
           limpiar();
+          cargarTablaPaciente1();
+          cargarTablaPaciente2();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
           limpiar();
@@ -95,8 +99,10 @@ public class CtrlPaciente implements ActionListener {
       modPac.setCorreoElectronico(frm.txtCorreoPciente.getText());
       try {
         if(modC.modificarPaciente(modPac)){
-          JOptionPane.showMessageDialog(null,"Registro de Paciente guardado");
+          JOptionPane.showMessageDialog(null,"Registro de Paciente editado");
           limpiar();
+          cargarTablaPaciente1();
+          cargarTablaPaciente2();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
           limpiar();
@@ -112,8 +118,10 @@ public class CtrlPaciente implements ActionListener {
       modPac.setCedulaPaciente(Integer.parseInt(frm.txtCedulaPaciente.getText()));
       try {
         if(modC.eliminarPaciente(modPac)){
-          JOptionPane.showMessageDialog(null,"Registro de Paciente guardado");
+          JOptionPane.showMessageDialog(null,"Registro de Paciente eliminado");
           limpiar();
+          cargarTablaPaciente1();
+          cargarTablaPaciente2();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
           limpiar();
@@ -167,17 +175,35 @@ public class CtrlPaciente implements ActionListener {
    * Método para cargar los datos de la base de datos
    * en la tabla llamada tablaPaciente.
    */
-  private void cargarTablaPaciente(){
-    DefaultTableModel modeloTabla = (DefaultTableModel) frm.tablaPaciente.getModel();
+  private void cargarTablaPaciente1(){
+    DefaultTableModel modeloTabla = (DefaultTableModel) frm.tablaPaciente1.getModel();
     modeloTabla.setRowCount(0);
     ResultSet rs;
     ResultSetMetaData rsmd;
     int columnas;
     
     int [] anchos = {10, 50, 100, 30, 100};
-    for(int i = 0 ; i < frm.tablaPaciente.getColumnCount(); i++){
-      frm.tablaPaciente.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
+    for(int i = 0 ; i < frm.tablaPaciente1.getColumnCount(); i++){
+      frm.tablaPaciente1.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
     }
-    ConsultaPaciente.cargarTablaPaciente(modeloTabla);
+    ConsultaPaciente.cargarTablaPaciente1(modeloTabla);
+  }
+  
+      /**
+   * Método para cargar los datos de la base de datos
+   * en la tabla llamada tablaPaciente.
+   */
+  private void cargarTablaPaciente2(){
+    DefaultTableModel modeloTabla = (DefaultTableModel) frm.tablaPaciente2.getModel();
+    modeloTabla.setRowCount(0);
+    ResultSet rs;
+    ResultSetMetaData rsmd;
+    int columnas;
+    
+    int [] anchos = {10, 50, 100, 30, 100};
+    for(int i = 0 ; i < frm.tablaPaciente2.getColumnCount(); i++){
+      frm.tablaPaciente2.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
+    }
+    ConsultaPaciente.cargarTablaPaciente2(modeloTabla);
   }
 }
