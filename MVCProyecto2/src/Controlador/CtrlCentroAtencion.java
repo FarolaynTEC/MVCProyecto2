@@ -60,6 +60,7 @@ public class CtrlCentroAtencion implements ActionListener{
    */
   @Override
   public void actionPerformed(ActionEvent e){
+
     //Boton guardar
     if(e.getSource()==frm.btnGuardarCentro){ 
       mod.setCodigoCentroAtencion(Integer.parseInt(frm.txtCodigoCentro.getText()));
@@ -69,39 +70,30 @@ public class CtrlCentroAtencion implements ActionListener{
       mod.setTipoDeCentro(frm.cmbTipoCentro.getSelectedItem().toString());
       
       try {
+        
         if(frm.txtCantidadCentro.getText().length()==0
-          || frm.txtCodigoCentro.getText().length()==0
+        || frm.txtCodigoCentro.getText().length()==0
             || frm.txtNombreCentro.getText().length()==0
-              || frm.txtUbicacionCentro.getText().length()==0) {
+                || frm.txtUbicacionCentro.getText().length()==0){ 
           JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
-        } else{
-          for (int i = 0; i < frm.tablaCentroA.getRowCount(); i++) {
-            try{
-              if(frm.tablaCentroA.getValueAt(i, 0).toString().equals(frm.txtCodigoCentro.getText())){
-               JOptionPane.showMessageDialog(null, "ERROR, este ID ya existe");
-              }
-              else{
-              if(modC.registrar(mod)){
-                JOptionPane.showMessageDialog(null,"Registro de Centro de "
-                        + "Atención guardado");
-                cargarTablaCentroAtencion();
-              }else{
-                JOptionPane.showMessageDialog(null,"ERROR");
-                limpiar();
-              }
-              }
-            }
-             catch(NullPointerException ex) {
-			  System.out.println("NullPointerException thrown!");
-		     }
+        }
+        else{
+          if(modC.registrar(mod)){
+            JOptionPane.showMessageDialog(null,"Registro de Centro de "
+                    + "Atención guardado");
+            limpiar();
+            cargarTablaCentroAtencion();
+          }else{
+            JOptionPane.showMessageDialog(null,"ERROR");
+            limpiar();
           }
         }
-    } catch (SQLException ex) {
+      } catch (SQLException ex) {
         Logger.getLogger(CtrlCentroAtencion.class.getName())
                 .log(Level.SEVERE, null, ex);
+        JOptionPane.showMessageDialog(null,"HA OCURRIDO UN ERROR");
       }
     }
-    
     
     //Boton editar
     if(e.getSource()==frm.btnEditarCentro){
