@@ -296,8 +296,7 @@ public class CtrlFuncionario implements ActionListener {
           cargarTablaFuncionarioEnfermero();
           cargarTablaFuncionarioDoctor();
         }else{
-          JOptionPane.showMessageDialog(null,"ERROR, el funcionario "
-              + "ingresado no existe");
+          JOptionPane.showMessageDialog(null,"ERROR");
           limpiar();
         }
       } catch (SQLException ex) {
@@ -318,8 +317,7 @@ public class CtrlFuncionario implements ActionListener {
           cargarTablaFuncionarioEnfermero();
           cargarTablaFuncionarioDoctor();
         }else{
-          JOptionPane.showMessageDialog(null,"ERROR, el funcionario "
-              + "ingresado no existe");
+          JOptionPane.showMessageDialog(null,"ERROR");
           limpiar();
         }
       } catch (SQLException ex) {
@@ -340,8 +338,7 @@ public class CtrlFuncionario implements ActionListener {
           cargarTablaFuncionarioEnfermero();
           cargarTablaFuncionarioDoctor();
         }else{
-          JOptionPane.showMessageDialog(null,"ERROR, el funcionario "
-              + "ingresado no existe");
+          JOptionPane.showMessageDialog(null,"ERROR");
           limpiar();
         }
       } catch (SQLException ex) {

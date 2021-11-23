@@ -100,10 +100,10 @@ public class ConsultaPaciente extends Conexion {
     try{
       ps = con.prepareStatement(sql);
       ps.setInt(1, Vac.getCedulaPaciente());
-      ps.setString(2, Vac.getNombrePaciente());
-      ps.setString (3, Vac.getFechaNacimiento());
-      ps.setString(4, Vac.getTipoSangre());
-      ps.setString(5, Vac.getNacionalidad());
+      ps.setString(2, Vac.getFechaAplicacion());
+      ps.setString (3, Vac.getNombreVacuna());
+      ps.setString(4, Vac.getFarmaceutica());
+      ps.setString(5, Vac.getNumLote());
       ps.execute();
       return true;
     }catch(SQLException e){

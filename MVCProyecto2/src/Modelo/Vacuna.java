@@ -9,17 +9,17 @@ package Modelo;
  * @author Alejandra Merino
  */
 public class Vacuna {
-  private Paciente cedulaPaciente;
+  private int cedulaPaciente;
   private String fechaAplicacion;
   private String nombreVacuna;
   private String farmaceutica;
   private String numLote;
 
-  public Paciente getCedulaPaciente() {
+  public int getCedulaPaciente() {
     return cedulaPaciente;
   }
 
-  public void setCedulaPaciente(Paciente cedulaPaciente) {
+  public void setCedulaPaciente(int cedulaPaciente) {
     this.cedulaPaciente = cedulaPaciente;
   }
   

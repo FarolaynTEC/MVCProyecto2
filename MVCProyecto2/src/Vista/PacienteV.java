@@ -53,7 +53,7 @@ import javax.swing.JOptionPane;
     jLabel7 = new javax.swing.JLabel();
     jLabel8 = new javax.swing.JLabel();
     txtResidenciaPaciente = new javax.swing.JTextField();
-    txxTelefonoPaciente = new javax.swing.JTextField();
+    txtTelefonoPaciente = new javax.swing.JTextField();
     jLabel9 = new javax.swing.JLabel();
     txtCorreoPciente = new javax.swing.JTextField();
     btnConsultaVacunas = new javax.swing.JButton();
@@ -249,7 +249,7 @@ import javax.swing.JOptionPane;
                 .addGroup(jPanel1Layout.createSequentialGroup()
                   .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addGap(18, 18, 18)
-                  .addComponent(txxTelefonoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                  .addComponent(txtTelefonoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
               .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                   .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -292,9 +292,9 @@ import javax.swing.JOptionPane;
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addGap(7, 7, 7)
         .addComponent(jLabel1)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(jPanel1Layout.createSequentialGroup()
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel2)
               .addComponent(txtCedulaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -321,7 +321,7 @@ import javax.swing.JOptionPane;
             .addGap(18, 18, 18)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(txxTelefonoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(txtTelefonoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(18, 18, 18)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -348,7 +348,7 @@ import javax.swing.JOptionPane;
               .addComponent(txtNumLote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE))
           .addGroup(jPanel1Layout.createSequentialGroup()
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -386,7 +386,7 @@ import javax.swing.JOptionPane;
                 || txtNacionalidadPaciente.getText().length()==0
                     || txtNombrePaciente.getText().length()==0
                         || txtResidenciaPaciente.getText().length()==0
-                            || txxTelefonoPaciente.getText().length()==0)
+                            || txtTelefonoPaciente.getText().length()==0)
    {
      JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
     } else{
@@ -402,7 +402,7 @@ import javax.swing.JOptionPane;
                 || txtNacionalidadPaciente.getText().length()==0
                     || txtNombrePaciente.getText().length()==0
                         || txtResidenciaPaciente.getText().length()==0
-                            || txxTelefonoPaciente.getText().length()==0)
+                            || txtTelefonoPaciente.getText().length()==0)
    {
      JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
     } else{
@@ -428,7 +428,7 @@ import javax.swing.JOptionPane;
     txtNacionalidadPaciente.setText(null);
     txtNombrePaciente.setText(null);
     txtResidenciaPaciente.setText(null);
-    txxTelefonoPaciente.setText(null);
+    txtTelefonoPaciente.setText(null);
     txtNombreVacuna.setText(null);
     txtNumLote.setText(null);
     txtFechaVacuna.setText(null);
@@ -530,6 +530,6 @@ import javax.swing.JOptionPane;
   public javax.swing.JTextField txtNombreVacuna;
   public javax.swing.JTextField txtNumLote;
   public javax.swing.JTextField txtResidenciaPaciente;
-  public javax.swing.JTextField txxTelefonoPaciente;
+  public javax.swing.JTextField txtTelefonoPaciente;
   // End of variables declaration//GEN-END:variables
 }
