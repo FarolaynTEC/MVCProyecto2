@@ -39,8 +39,11 @@ public class CtrlFuncionario implements ActionListener {
     this.modEnf = modEnf;
     this.modC = modC;
     this.frm = frm;
+    this.frm.btnEliminarFuncionario1.addActionListener(this);
+    this.frm.btnEliminarSecretario.addActionListener(this);
     this.frm.btnGuardarFuncionario.addActionListener(this);
     this.frm.btnAgregarEspecialidad.addActionListener(this);
+    this.frm.btnEditarsecretario.addActionListener(this);
     this.frm.btnEditarFuncionario.addActionListener(this);
     this.frm.btnEditarFuncionario1.addActionListener(this);
     this.frm.btnEliminarFuncionario.addActionListener(this);
@@ -318,7 +321,7 @@ public class CtrlFuncionario implements ActionListener {
     }
 
     //Boton eliminar Enfermero
-    if(e.getSource()==frm.btnEditarFuncionario1){
+    if(e.getSource()==frm.btnEliminarFuncionario1){
       modEnf.setCedulaFuncionario(Integer.parseInt
           (frm.txtCedulaFuncionario.getText()));
       try {

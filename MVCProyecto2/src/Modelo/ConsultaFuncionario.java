@@ -246,7 +246,7 @@ public class ConsultaFuncionario extends Conexion {
       return false;
     } 
     String sql2 = "INSERT INTO Enfermero (cedulaFuncionario ,"
-            + "IndicadorPersonasACargo,IndicadorExpCapacitacion VALUES (?,?,?)";
+            + "IndicadorPersonasACargo,IndicadorExpCapacitacion) VALUES (?,?,?)";
     try{
       ps = con.prepareStatement(sql2);
       ps.setInt(1, enfe.getCedulaFuncionario());
