@@ -23,7 +23,7 @@ public class MVCProyecto2 {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-    
+    /*
     CentroAtencion modCA = new CentroAtencion();
     ConsultaCentroAtencion modCCA = new ConsultaCentroAtencion();
     CentroA frmCA = new CentroA();
@@ -31,7 +31,7 @@ public class MVCProyecto2 {
     CtrlCentroAtencion ctrl1 = new CtrlCentroAtencion(modCA,modCCA,frmCA);
     ctrl1.iniciar();
     frmCA.setVisible(true);
-    
+    */
     Funcionario modFun = new Funcionario();
     Doctor modDoc = new Doctor();
     Enfermero modEnf= new Enfermero();
@@ -40,6 +40,6 @@ public class MVCProyecto2 {
     
     CtrlFuncionario ctrl2 = new CtrlFuncionario( modFun, modCF, modDoc, modEnf, frmF);
     ctrl2.iniciar();
-    frmCA.setVisible(true);
+    frmF.setVisible(true);
   }
 }

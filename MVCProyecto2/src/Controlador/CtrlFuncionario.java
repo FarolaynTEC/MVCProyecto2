@@ -23,7 +23,7 @@ import javax.swing.table.DefaultTableModel;
  * Controlados de la clase Funcionario.
  * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
-public class CtrlFuncionario {
+public class CtrlFuncionario implements ActionListener {
   
   private Funcionario modFun;
   private Doctor modDoc;
@@ -37,15 +37,15 @@ public class CtrlFuncionario {
     this.modDoc = modDoc;
     this.modEnf = modEnf;
     this.frm = frm;
-    this.frm.btnAgregarEspecialidad.addActionListener((ActionListener) this);
-    this.frm.btnEditarFuncionario.addActionListener((ActionListener) this);
-    this.frm.btnEditarFuncionario1.addActionListener((ActionListener) this);
-    this.frm.btnEliminarFuncionario.addActionListener((ActionListener) this);
-    this.frm.btnEliminarFuncionario1.addActionListener((ActionListener) this);
-    this.frm.btnGuardarFuncionario.addActionListener((ActionListener) this);
-    this.frm.btnGuardarFuncionario2.addActionListener((ActionListener) this);
-    this.frm.btnLimpiar.addActionListener((ActionListener) this);
-    this.frm.btnVolver.addActionListener((ActionListener) this);
+    this.frm.btnAgregarEspecialidad.addActionListener(this);
+    this.frm.btnEditarFuncionario.addActionListener(this);
+    this.frm.btnEditarFuncionario1.addActionListener(this);
+    this.frm.btnEliminarFuncionario.addActionListener(this);
+    this.frm.btnEliminarFuncionario1.addActionListener(this);
+    this.frm.btnGuardarFuncionario.addActionListener(this);
+    this.frm.btnGuardarFuncionario2.addActionListener(this);
+    this.frm.btnLimpiar.addActionListener(this);
+    this.frm.btnVolver.addActionListener(this);
   }
     
   /**
