@@ -9,7 +9,18 @@ import Modelo.Vacuna;
 import Vista.PacienteV;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ButtonGroup;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  * Controlados de la clase Paciente.
@@ -152,6 +163,21 @@ public class CtrlPaciente implements ActionListener {
     frm.txtTelefonoPaciente.setText(null);
   }
   
-  
-  
+    /**
+   * Método para cargar los datos de la base de datos
+   * en la tabla llamada tablaPaciente.
+   */
+  private void cargarTablaPaciente(){
+    DefaultTableModel modeloTabla = (DefaultTableModel) frm.tablaPaciente.getModel();
+    modeloTabla.setRowCount(0);
+    ResultSet rs;
+    ResultSetMetaData rsmd;
+    int columnas;
+    
+    int [] anchos = {10, 50, 100, 30, 100};
+    for(int i = 0 ; i < frm.tablaPaciente.getColumnCount(); i++){
+      frm.tablaPaciente.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
+    }
+    ConsultaPaciente.cargarTablaPaciente(modeloTabla);
+  }
 }
