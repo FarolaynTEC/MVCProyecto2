@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ConsultaFuncionario extends Conexion {
   
-  public boolean registrarFuncionario (Funcionario fun) {
+  public boolean registrarFuncionario (Funcionario fun) throws SQLException {
     System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
@@ -48,7 +48,7 @@ public class ConsultaFuncionario extends Conexion {
     }
   }
   
-  public boolean modificarFuncionario (Funcionario fun) {
+  public boolean modificarFuncionario (Funcionario fun) throws SQLException {
     System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
@@ -78,7 +78,7 @@ public class ConsultaFuncionario extends Conexion {
     }
   }  
   
-  public boolean eliminarFuncionario (Funcionario fun) {
+  public boolean eliminarFuncionario (Funcionario fun) throws SQLException {
     System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
@@ -123,7 +123,7 @@ public class ConsultaFuncionario extends Conexion {
     }
   }
   
-  public boolean registrarDoctor (Doctor doc) {
+  public boolean registrarDoctor (Doctor doc) throws SQLException{
     System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
@@ -164,7 +164,7 @@ public class ConsultaFuncionario extends Conexion {
     }
   }
   
-  public boolean modificarDoctor (Doctor doc) {
+  public boolean modificarDoctor (Doctor doc) throws SQLException {
     System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
@@ -205,7 +205,7 @@ public class ConsultaFuncionario extends Conexion {
     }
   }
   
-  public boolean eliminarDoctor (Doctor doc) {
+  public boolean eliminarDoctor (Doctor doc) throws SQLException{
     System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
@@ -235,7 +235,7 @@ public class ConsultaFuncionario extends Conexion {
     }
   }
   
-  public boolean registrarEnfermero (Enfermero enfe) {
+  public boolean registrarEnfermero (Enfermero enfe) throws SQLException {
     System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
@@ -276,7 +276,7 @@ public class ConsultaFuncionario extends Conexion {
     }
   }
   
-  public boolean modificarEnfermero (Enfermero enfe) {
+  public boolean modificarEnfermero (Enfermero enfe) throws SQLException {
     System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
@@ -317,7 +317,7 @@ public class ConsultaFuncionario extends Conexion {
     }
   }
   
-  public boolean eliminarEnfermero (Enfermero enfe) {
+  public boolean eliminarEnfermero (Enfermero enfe) throws SQLException{
     System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
