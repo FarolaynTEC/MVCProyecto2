@@ -74,7 +74,8 @@ public class CtrlFuncionario implements ActionListener {
   }
   
   /**
-   * 
+   * Método encargado del control de las funcionalidades
+   * del CRUD de los Funcionarios
    * @param e 
    */
   @Override
@@ -375,7 +376,7 @@ public class CtrlFuncionario implements ActionListener {
   
     /**
    * Método para cargar los datos de la base de datos
-   * en la tabla llamada tablaCentroA.
+   * en la tabla llamada tablaFuncionario.
    */
   private void cargarTablaFuncionario(){
     DefaultTableModel modeloTabla = (DefaultTableModel) frm.tablaFuncionario.getModel();
@@ -393,7 +394,7 @@ public class CtrlFuncionario implements ActionListener {
   
   /**
    * Método para cargar los datos de la base de datos
-   * en la tabla llamada tablaCentroA.
+   * en la tabla llamada tablaDoctor.
    */
   private void cargarTablaFuncionarioDoctor(){
     DefaultTableModel modeloTabla = (DefaultTableModel) frm.tablaDoctor.getModel();
@@ -411,7 +412,7 @@ public class CtrlFuncionario implements ActionListener {
   
     /**
    * Método para cargar los datos de la base de datos
-   * en la tabla llamada tablaCentroA.
+   * en la tabla llamada tablaEnfermero.
    */
   private void cargarTablaFuncionarioEnfermero(){
     DefaultTableModel modeloTabla = (DefaultTableModel) frm.tablaEnfermero.getModel();
@@ -458,7 +459,7 @@ public class CtrlFuncionario implements ActionListener {
   
     /**
    * Método para insertar las areas de los funcionarios en el
-   * combobox llamado cmbAreaFuncionario
+   * combobox llamado cmbLugarTrabajo
    */  
     public void obtenerLugarTrabajo(){
     ResultSet rs;

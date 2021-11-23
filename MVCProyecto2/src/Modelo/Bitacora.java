@@ -8,7 +8,7 @@ package Modelo;
  *
  * @author Alejandra Merino
  */
-class Bitacora {
+public class Bitacora {
   private int idBitacora;
   private String fecha;
   private String hora;

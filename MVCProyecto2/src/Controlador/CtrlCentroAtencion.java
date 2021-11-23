@@ -54,10 +54,11 @@ public class CtrlCentroAtencion implements ActionListener{
   }
   
   /**
-   * 
-   * @override
+   * Método encargado del control de las funcionalidades
+   * del CRUD de los centros de atención
    * @param e 
    */
+  @Override
   public void actionPerformed(ActionEvent e){
 
     //Boton guardar

@@ -8,7 +8,7 @@ package Modelo;
  *
  * @author Alejandra Merino
  */
-class Vacuna {
+public class Vacuna {
   private String fechaAplicacion;
   private String nombreVacuna;
   private String farmaceutica;

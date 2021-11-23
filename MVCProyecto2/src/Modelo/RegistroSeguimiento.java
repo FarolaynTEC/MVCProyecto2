@@ -8,7 +8,7 @@ package Modelo;
  *
  * @author Alejandra Merino
  */
-class RegistroSeguimiento {
+public class RegistroSeguimiento {
   private String fechaSeguimiento;
   private Funcionario funcionarioSegui;
   private String observacionEvolucion;
