@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Modelo;
 
 import java.sql.PreparedStatement;
@@ -14,13 +11,12 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
- * @author Alejandra Merino
+ * Controlados de la clase Funcionario.
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class ConsultaFuncionario extends Conexion {
   
   public boolean registrarFuncionario (Funcionario fun) throws SQLException {
-    System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "INSERT INTO Funcionario(cedulaFuncionario ,"
@@ -49,7 +45,6 @@ public class ConsultaFuncionario extends Conexion {
   }
   
   public boolean modificarFuncionario (Funcionario fun) throws SQLException {
-    System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "UPDATE Funcionario SET nombreFuncionario=?"
@@ -79,7 +74,6 @@ public class ConsultaFuncionario extends Conexion {
   }  
   
   public boolean eliminarFuncionario (Funcionario fun) throws SQLException {
-    System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "DELETE FROM Funcionario WHERE cedulaFuncionario=?";
@@ -101,7 +95,6 @@ public class ConsultaFuncionario extends Conexion {
   }
   
   public boolean buscarFuncionario (Funcionario fun) {
-    System.out.print("Aqui1");
     PreparedStatement ps = null;
     
     Connection con = connect();
@@ -124,9 +117,9 @@ public class ConsultaFuncionario extends Conexion {
   }
   
   public boolean registrarDoctor (Doctor doc) throws SQLException{
-    System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
+    System.out.println("Error 1");
     String sql = "INSERT INTO Funcionario(cedulaFuncionario ,"
             + "nombreFuncionario,fechaVigencia ,tipoFuncionario ,"
             + "codigoCentroAtencion, areaTrabajo) VALUES (?,?,?,?,?,?)";
@@ -144,7 +137,7 @@ public class ConsultaFuncionario extends Conexion {
       return false;
     } 
     String sql2 = "INSERT INTO Doctor (cedulaFuncionario ,"
-            + "codigoMedico,especialidad VALUES (?,?,?)";
+            + "codigoMedico,especialidad) VALUES (?,?,?)";
     try{
       ps = con.prepareStatement(sql2);
       ps.setInt(1, doc.getCedulaFuncionario());
@@ -165,7 +158,6 @@ public class ConsultaFuncionario extends Conexion {
   }
   
   public boolean modificarDoctor (Doctor doc) throws SQLException {
-    System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "UPDATE Funcionario SET nombreFuncionario=?"
@@ -206,7 +198,6 @@ public class ConsultaFuncionario extends Conexion {
   }
   
   public boolean eliminarDoctor (Doctor doc) throws SQLException{
-    System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "DELETE FROM Funcionario WHERE cedulaFuncionario=?";
@@ -236,7 +227,6 @@ public class ConsultaFuncionario extends Conexion {
   }
   
   public boolean registrarEnfermero (Enfermero enfe) throws SQLException {
-    System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "INSERT INTO Funcionario(cedulaFuncionario ,"
@@ -277,7 +267,6 @@ public class ConsultaFuncionario extends Conexion {
   }
   
   public boolean modificarEnfermero (Enfermero enfe) throws SQLException {
-    System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "UPDATE Funcionario SET nombreFuncionario=?"
@@ -318,7 +307,6 @@ public class ConsultaFuncionario extends Conexion {
   }
   
   public boolean eliminarEnfermero (Enfermero enfe) throws SQLException{
-    System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "DELETE FROM Funcionario WHERE cedulaFuncionario=?";

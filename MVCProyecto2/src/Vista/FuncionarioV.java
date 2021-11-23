@@ -370,7 +370,6 @@ public class FuncionarioV extends javax.swing.JFrame {
     txtFechaFuncionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
     cmbAreaFuncionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-    cmbAreaFuncionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
     tablaFuncionario.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
@@ -442,7 +441,7 @@ public class FuncionarioV extends javax.swing.JFrame {
     });
 
     cmbTipoFuncionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-    cmbTipoFuncionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+    cmbTipoFuncionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ENFERMERO", "DOCTOR", "SECRETARIO" }));
 
     javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
     jPanel2.setLayout(jPanel2Layout);
@@ -584,7 +583,6 @@ public class FuncionarioV extends javax.swing.JFrame {
     jLabel22.setText("Lugar de Trabajo");
 
     cmbTrabajaEn.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-    cmbTrabajaEn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
     btnGuardarSecretario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     btnGuardarSecretario.setText("Guardar Secretario");

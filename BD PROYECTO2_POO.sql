@@ -47,7 +47,7 @@ CREATE TABLE Enfermero(
 CREATE TABLE Doctor(
   cedulaFuncionario int NOT NULL,
   codigoMedico int NOT NULL,
-  especialidad varchar NOT NULL,
+  especialidad varchar(100) NOT NULL,
   FOREIGN KEY (cedulaFuncionario) REFERENCES Funcionario(cedulaFuncionario) ON DELETE CASCADE  
   ON UPDATE CASCADE,
 );

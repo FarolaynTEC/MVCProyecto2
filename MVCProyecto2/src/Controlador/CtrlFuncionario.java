@@ -16,6 +16,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -36,13 +37,14 @@ public class CtrlFuncionario implements ActionListener {
     this.modFun = modFun;
     this.modDoc = modDoc;
     this.modEnf = modEnf;
+    this.modC = modC;
     this.frm = frm;
+    this.frm.btnGuardarFuncionario.addActionListener(this);
     this.frm.btnAgregarEspecialidad.addActionListener(this);
     this.frm.btnEditarFuncionario.addActionListener(this);
     this.frm.btnEditarFuncionario1.addActionListener(this);
     this.frm.btnEliminarFuncionario.addActionListener(this);
-    this.frm.btnEliminarFuncionario1.addActionListener(this);
-    this.frm.btnGuardarFuncionario.addActionListener(this);
+    this.frm.btnGuardarSecretario.addActionListener(this);
     this.frm.btnGuardarFuncionario2.addActionListener(this);
     this.frm.btnLimpiar.addActionListener(this);
     this.frm.btnVolver.addActionListener(this);
@@ -57,17 +59,19 @@ public class CtrlFuncionario implements ActionListener {
     cargarTablaFuncionario();
     cargarTablaFuncionarioEnfermero();
     cargarTablaFuncionarioDoctor();
+    obtenerAreaFuncionario();
+    obtenerLugarTrabajo();
   }
   
   /**
    * 
-   * @throws java.sql.SQLException
-   * @override
    * @param e 
    */
+  @Override
   public void actionPerformed(ActionEvent e){
     //Boton guardar Secritario
-    if(e.getSource()==frm.btnGuardarSecretario){
+    if(e.getSource() == frm.btnGuardarSecretario){
+      System.out.println("Aqui en boton guardar secre");
       modFun.setCedulaFuncionario(Integer.parseInt(frm.txtCedulaFuncionario.getText()));
       modFun.setNomFuncionario(frm.txtNombreFuncionario.getText());
       modFun.setFechaIngreso(frm.txtFechaFuncionario.getText());
@@ -412,4 +416,63 @@ public class CtrlFuncionario implements ActionListener {
     }
     ConsultaFuncionario.cargarTablaFuncionarioEnfermero(modeloTabla);
   }
+  
+    /**
+   * Método para insertar las areas de los funcionarios en el
+   * combobox llamado cmbAreaFuncionario
+   */  
+  public void obtenerAreaFuncionario(){
+    ResultSet rs;
+    try {
+      DefaultComboBoxModel listaModelo = new DefaultComboBoxModel();
+      listaModelo.addElement("Área");
+    
+      Connection connect = DriverManager.getConnection("jdbc:sqlserver://"
+          + ";databaseName=Proyecto_POO2;user=usuariosql;password=root1");
+      PreparedStatement st = connect.prepareStatement("SELECT * from "
+          + "AreaTrabajo order by areaTrabajo");
+      rs = st.executeQuery();
+    
+      try {
+        while (rs.next()){
+          listaModelo.addElement(rs.getString("areaTrabajo"));
+      } rs.close();
+      
+      } catch(SQLException ex ){
+        System.err.println(ex.getMessage());
+      } frm.cmbAreaFuncionario.setModel(listaModelo);
+    } catch(SQLException e){
+      JOptionPane.showMessageDialog(null,e);
+    }
+  }
+  
+    /**
+   * Método para insertar las areas de los funcionarios en el
+   * combobox llamado cmbAreaFuncionario
+   */  
+    public void obtenerLugarTrabajo(){
+    ResultSet rs;
+    try {
+      DefaultComboBoxModel listaModelo = new DefaultComboBoxModel();
+      listaModelo.addElement("Lugar");
+    
+      Connection connect = DriverManager.getConnection("jdbc:sqlserver://"
+          + ";databaseName=Proyecto_POO2;user=usuariosql;password=root1");
+      PreparedStatement st = connect.prepareStatement("SELECT codigoCentroAtencion from "
+          + "CentroAtencion order by codigoCentroAtencion");
+      rs = st.executeQuery();
+    
+      try {
+        while (rs.next()){
+          listaModelo.addElement(rs.getString("codigoCentroAtencion"));
+      } rs.close();
+      
+      } catch(SQLException ex ){
+        System.err.println(ex.getMessage());
+      } frm.cmbTrabajaEn.setModel(listaModelo);
+    } catch(SQLException e){
+      JOptionPane.showMessageDialog(null,e);
+    }
+  }
+  
 }
