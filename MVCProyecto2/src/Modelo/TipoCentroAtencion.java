@@ -9,5 +9,13 @@ package Modelo;
  * @author Josue
  */
 public class TipoCentroAtencion {
-  
+  private String tipoCentro;
+
+  public String getTipoCentro() {
+    return tipoCentro;
+  }
+
+  public void setTipoCentro(String tipoCentro) {
+    this.tipoCentro = tipoCentro;
+  }
 }

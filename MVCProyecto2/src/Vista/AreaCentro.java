@@ -73,11 +73,9 @@ public class AreaCentro extends javax.swing.JFrame {
     jLabel22 = new javax.swing.JLabel();
     jLabel23 = new javax.swing.JLabel();
     txtNombreCentro = new javax.swing.JTextField();
-    btnEditarArea = new javax.swing.JButton();
     btnEliminarArea = new javax.swing.JButton();
     btnGuardarArea = new javax.swing.JButton();
     btnGuardarCentro = new javax.swing.JButton();
-    btnEditarCentro = new javax.swing.JButton();
     btnEliminarCentro = new javax.swing.JButton();
     jPanel2 = new javax.swing.JPanel();
     btnLimpiarArea = new javax.swing.JButton();
@@ -321,10 +319,7 @@ public class AreaCentro extends javax.swing.JFrame {
 
     tablaArea.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
-        {null},
-        {null},
-        {null},
-        {null}
+
       },
       new String [] {
         "Área Trabajo"
@@ -366,10 +361,7 @@ public class AreaCentro extends javax.swing.JFrame {
 
     tablaTipoCentro.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
-        {null},
-        {null},
-        {null},
-        {null}
+
       },
       new String [] {
         "Tipo de Centro"
@@ -398,14 +390,6 @@ public class AreaCentro extends javax.swing.JFrame {
     jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     jLabel23.setText("Nombre Centro");
 
-    btnEditarArea.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-    btnEditarArea.setText("Editar Área");
-    btnEditarArea.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnEditarAreaActionPerformed(evt);
-      }
-    });
-
     btnEliminarArea.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     btnEliminarArea.setText("Eliminar Área");
     btnEliminarArea.addActionListener(new java.awt.event.ActionListener() {
@@ -428,14 +412,6 @@ public class AreaCentro extends javax.swing.JFrame {
     btnGuardarCentro.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
         btnGuardarCentroActionPerformed(evt);
-      }
-    });
-
-    btnEditarCentro.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-    btnEditarCentro.setText("Editar Centro");
-    btnEditarCentro.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnEditarCentroActionPerformed(evt);
       }
     });
 
@@ -473,9 +449,7 @@ public class AreaCentro extends javax.swing.JFrame {
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         .addComponent(btnGuardarArea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(34, 34, 34)
-        .addComponent(btnEditarArea, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(33, 33, 33)
+        .addGap(173, 173, 173)
         .addComponent(btnEliminarArea)
         .addGap(192, 192, 192))
       .addGroup(jPanel1Layout.createSequentialGroup()
@@ -516,9 +490,7 @@ public class AreaCentro extends javax.swing.JFrame {
                 .addComponent(jScrollPane3))
               .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(btnGuardarCentro)
-                .addGap(32, 32, 32)
-                .addComponent(btnEditarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addGap(184, 184, 184)
                 .addComponent(btnEliminarCentro)
                 .addGap(143, 143, 143))))
           .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
@@ -551,7 +523,6 @@ public class AreaCentro extends javax.swing.JFrame {
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGap(18, 18, 18)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(btnEditarArea, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(btnGuardarArea, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(btnEliminarArea, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(51, 51, 51)
@@ -568,11 +539,9 @@ public class AreaCentro extends javax.swing.JFrame {
                 .addComponent(btnLimpiarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
               .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(18, 18, 18)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(btnEditarCentro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(btnGuardarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(btnEliminarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+              .addComponent(btnGuardarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(btnEliminarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addContainerGap(23, Short.MAX_VALUE))
           .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -623,15 +592,6 @@ public class AreaCentro extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnEliminarCentroActionPerformed
 
-  private void btnEditarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCentroActionPerformed
-    if(txtNombreCentro.getText().length()==0){
-     JOptionPane.showMessageDialog(null, "ERROR, el campo de centro no puede estar vacio");
-    } else{
-     //verificacion de repetido
-     JOptionPane.showMessageDialog(null, "REGISTRO MODIFICADO CON EXITO");
-    }
-  }//GEN-LAST:event_btnEditarCentroActionPerformed
-
   private void btnGuardarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCentroActionPerformed
     if(txtNombreCentro.getText().length()==0){
      JOptionPane.showMessageDialog(null, "ERROR, el campo de centro no puede estar vacio");
@@ -658,15 +618,6 @@ public class AreaCentro extends javax.swing.JFrame {
      JOptionPane.showMessageDialog(null, "REGISTRO ELIMINADO CON EXITO");
     }
   }//GEN-LAST:event_btnEliminarAreaActionPerformed
-
-  private void btnEditarAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarAreaActionPerformed
-    if(txtNombreArea.getText().length()==0){
-     JOptionPane.showMessageDialog(null, "ERROR, el campo de area no puede estar vacio");
-    } else{
-     //verificacion de repetido
-     JOptionPane.showMessageDialog(null, "REGISTRO MODIFICADO CON EXITO");
-    }
-  }//GEN-LAST:event_btnEditarAreaActionPerformed
 
   private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
     // TODO add your handling code here:
@@ -719,8 +670,6 @@ public class AreaCentro extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  public javax.swing.JButton btnEditarArea;
-  public javax.swing.JButton btnEditarCentro;
   private javax.swing.JButton btnEditarCentro1;
   public javax.swing.JButton btnEliminarArea;
   public javax.swing.JButton btnEliminarCentro;
@@ -729,7 +678,7 @@ public class AreaCentro extends javax.swing.JFrame {
   public javax.swing.JButton btnGuardarCentro;
   private javax.swing.JButton btnGuardarCentro1;
   public javax.swing.JButton btnLimpiarArea;
-  private javax.swing.JButton btnLimpiarCentro;
+  public javax.swing.JButton btnLimpiarCentro;
   private javax.swing.JButton btnLimpiarCentro1;
   public javax.swing.JButton btnVolver;
   private javax.swing.JButton btnVolverCentro1;
@@ -767,7 +716,7 @@ public class AreaCentro extends javax.swing.JFrame {
   private javax.swing.JTextField txtCantidadCentro1;
   private javax.swing.JTextField txtCodigoCentro1;
   public javax.swing.JTextField txtNombreArea;
-  private javax.swing.JTextField txtNombreCentro;
+  public javax.swing.JTextField txtNombreCentro;
   private javax.swing.JTextField txtNombreCentro1;
   // End of variables declaration//GEN-END:variables
 }

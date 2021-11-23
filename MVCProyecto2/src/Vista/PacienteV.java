@@ -427,6 +427,7 @@ import javax.swing.JOptionPane;
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnGuardarPacienteActionPerformed
 
@@ -526,6 +527,20 @@ import javax.swing.JOptionPane;
         new PacienteV().setVisible(true);
       }
     });
+  }
+  
+    public void limpiar(){
+    txtCedulaPaciente.setText(null);
+    txtCorreoPciente.setText(null);
+    txtFechaPaciente.setText(null);
+    txtNacionalidadPaciente.setText(null);
+    txtNombrePaciente.setText(null);
+    txtResidenciaPaciente.setText(null);
+    txtTelefonoPaciente.setText(null);
+    txtNombreVacuna.setText(null);
+    txtNumLote.setText(null);
+    txtFechaVacuna.setText(null);
+    txtNombreFarmaceutica.setText(null);
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
