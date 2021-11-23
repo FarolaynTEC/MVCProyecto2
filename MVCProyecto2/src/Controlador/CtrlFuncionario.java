@@ -137,22 +137,22 @@ public class CtrlFuncionario implements ActionListener {
       AreaTrabajo areaTrabajo = new AreaTrabajo(frm.cmbAreaFuncionario.
           getSelectedItem().toString());
       modEnf.setAreaTrabajo(areaTrabajo);
-      boolean aCargo;
+      int aCargo;
       if(frm.jRadioButton1.isSelected()==true){
-        aCargo=true;
+        aCargo=1;
       }else if(frm.jRadioButton1.isSelected()==true){
-        aCargo=false;
+        aCargo=0;
       }else{
-        aCargo=false;
+        aCargo=0;
       }
       modEnf.setIndicadorExpCapacitacion(aCargo);
-      boolean expCapa;
+      int expCapa;
       if(frm.jRadioButton5.isSelected()==true){
-        expCapa=true;
+        expCapa=1;
       }else if(frm.jRadioButton6.isSelected()==true){
-        expCapa=false;
+        expCapa=0;
       }else{
-        expCapa=false;
+        expCapa=0;
       }
       modEnf.setIndicadorExpCapacitacion(expCapa);
       try {
@@ -240,22 +240,22 @@ public class CtrlFuncionario implements ActionListener {
       AreaTrabajo areaTrabajo = new AreaTrabajo(frm.cmbAreaFuncionario.
           getSelectedItem().toString());
       modEnf.setAreaTrabajo(areaTrabajo);
-      boolean aCargo;
+      int aCargo;
       if(frm.jRadioButton1.isSelected()==true){
-        aCargo=true;
+        aCargo=1;
       }else if(frm.jRadioButton1.isSelected()==true){
-        aCargo=false;
+        aCargo=0;
       }else{
-        aCargo=false;
+        aCargo=0;
       }
       modEnf.setIndicadorExpCapacitacion(aCargo);
-      boolean expCapa;
+      int expCapa;
       if(frm.jRadioButton5.isSelected()==true){
-        expCapa=true;
+        expCapa=1;
       }else if(frm.jRadioButton6.isSelected()==true){
-        expCapa=false;
+        expCapa=0;
       }else{
-        expCapa=false;
+        expCapa=0;
       }
       modEnf.setIndicadorExpCapacitacion(expCapa);
       try {

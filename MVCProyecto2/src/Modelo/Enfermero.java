@@ -11,8 +11,8 @@ import java.util.Date;
  * @author Alejandra Merino
  */
 public class Enfermero extends Funcionario{
-  private boolean indicadorPersonasACargo;
-  private boolean indicadorExpCapacitacion;
+  private int indicadorPersonasACargo;
+  private int indicadorExpCapacitacion;
 
   @Override
   public String toString() {
@@ -22,19 +22,19 @@ public class Enfermero extends Funcionario{
     return msg;
   }
 
-  public boolean isIndicadorPersonasACargo() {
+  public int isIndicadorPersonasACargo() {
     return indicadorPersonasACargo;
   }
 
-  public boolean isIndicadorExpCapacitacion() {
+  public int isIndicadorExpCapacitacion() {
     return indicadorExpCapacitacion;
   }
 
-  public void setIndicadorPersonasACargo(boolean indicadorPersonasACargo) {
+  public void setIndicadorPersonasACargo(int indicadorPersonasACargo) {
     this.indicadorPersonasACargo = indicadorPersonasACargo;
   }
 
-  public void setIndicadorExpCapacitacion(boolean indicadorExpCapacitacion) {
+  public void setIndicadorExpCapacitacion(int indicadorExpCapacitacion) {
     this.indicadorExpCapacitacion = indicadorExpCapacitacion;
   }
   

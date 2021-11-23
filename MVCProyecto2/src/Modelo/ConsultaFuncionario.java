@@ -250,8 +250,8 @@ public class ConsultaFuncionario extends Conexion {
     try{
       ps = con.prepareStatement(sql2);
       ps.setInt(1, enfe.getCedulaFuncionario());
-      ps.setBoolean(2, enfe.isIndicadorPersonasACargo());
-      ps.setBoolean (3, enfe.isIndicadorExpCapacitacion());
+      ps.setInt(2, enfe.isIndicadorPersonasACargo());
+      ps.setInt (3, enfe.isIndicadorExpCapacitacion());
       ps.execute();
       return true;
     }catch(SQLException e){
@@ -289,8 +289,8 @@ public class ConsultaFuncionario extends Conexion {
             + "IndicadorExpCapacitacion =? WHERE cedulaFuncionario=?";
     try{
       ps = con.prepareStatement(sql2);
-      ps.setBoolean (1, enfe.isIndicadorPersonasACargo());
-      ps.setBoolean (2, enfe.isIndicadorExpCapacitacion());
+      ps.setInt (1, enfe.isIndicadorPersonasACargo());
+      ps.setInt (2, enfe.isIndicadorExpCapacitacion());
       ps.setInt(3, enfe.getCedulaFuncionario());
       ps.execute();
       return true;
