@@ -126,4 +126,18 @@ public class ConsultaCentroAtencion extends Conexion{
       JOptionPane.showMessageDialog(null,e);
     }
   }
+  
+  public boolean buscarAreaAtencion(int id) throws SQLException{
+    ResultSet rs;
+    Connection connect = DriverManager.getConnection("jdbc:sqlserver://;databaseName="
+    + "Proyecto_POO2;user=usuariosql;password=root1");
+    PreparedStatement st = connect.prepareStatement("SELECT * FROM CentroAtencion WHERE codigoCentroAtencion = "+id);
+      rs = st.executeQuery();
+        if(rs.last()){
+            return true;
+        }
+        else{
+            return false;
+        }
+  }
 }

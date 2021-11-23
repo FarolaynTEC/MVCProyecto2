@@ -12,3 +12,4 @@ public class CtrlAreaCentro {
   //private ConsultaAreaTrabajo modC;
   private AreaCentro frm;
 }
+

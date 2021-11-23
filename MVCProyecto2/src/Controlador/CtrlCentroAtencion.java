@@ -42,6 +42,7 @@ public class CtrlCentroAtencion implements ActionListener{
     this.frm.btnEliminarCentro.addActionListener(this);
     this.frm.btnLimpiarCentro.addActionListener(this);
     this.frm.btnVolverCentro.addActionListener(this);
+    
   }
   
   /**
@@ -60,16 +61,27 @@ public class CtrlCentroAtencion implements ActionListener{
    */
   @Override
   public void actionPerformed(ActionEvent e){
+   
 
     //Boton guardar
-    if(e.getSource()==frm.btnGuardarCentro){
+    if(e.getSource()==frm.btnGuardarCentro){ 
       mod.setCodigoCentroAtencion(Integer.parseInt(frm.txtCodigoCentro.getText()));
       mod.setNombre(frm.txtNombreCentro.getText());
       mod.setUbicacion(frm.txtUbicacionCentro.getText());
       mod.setCapacidadMaxPac(Integer.parseInt(frm.txtCantidadCentro.getText()));
       mod.setTipoDeCentro(frm.cmbTipoCentro.getSelectedItem().toString());
       
-      try {
+           if(frm.txtCantidadCentro.getText().length()==0
+        || frm.txtCodigoCentro.getText().length()==0
+            || frm.txtNombreCentro.getText().length()==0
+                || frm.txtUbicacionCentro.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
+    } else{
+        try {
+          if (modC.buscarAreaAtencion(Integer.parseInt(frm.txtCodigoCentro.getText()))== false){
+            //anadir todo
+                  try {
         if(modC.registrar(mod)){
           JOptionPane.showMessageDialog(null,"Registro de Centro de "
                   + "Atención guardado");
@@ -83,6 +95,18 @@ public class CtrlCentroAtencion implements ActionListener{
         Logger.getLogger(CtrlCentroAtencion.class.getName())
                 .log(Level.SEVERE, null, ex);
       }
+            
+            
+            JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");}
+          else{
+            JOptionPane.showMessageDialog(null, "ERROR, el ID ya existe en el sistema");
+          }
+        } catch (SQLException ex) {
+          Logger.getLogger(CtrlCentroAtencion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      }  
+      
+
     }
     
     //Boton editar

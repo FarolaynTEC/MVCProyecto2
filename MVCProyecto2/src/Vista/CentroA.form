@@ -78,9 +78,9 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="245" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="770" max="-2" attributes="0"/>
-                  <EmptySpace pref="39" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -102,7 +102,7 @@
                   <Component id="btnEditarCentro" min="-2" pref="106" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Component id="btnEliminarCentro" min="-2" pref="106" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="603" max="32767" attributes="0"/>
                   <Component id="btnLimpiarCentro" min="-2" pref="106" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="276" max="-2" attributes="0"/>
               </Group>

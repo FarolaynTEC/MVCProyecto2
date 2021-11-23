@@ -164,9 +164,9 @@ public class CentroA extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addComponent(txtCodigoCentro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(txtNombreCentro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
-        .addGap(245, 245, 245)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap(39, Short.MAX_VALUE))
+        .addGap(73, 73, 73))
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(jPanel1Layout.createSequentialGroup()
@@ -183,7 +183,7 @@ public class CentroA extends javax.swing.JFrame {
         .addComponent(btnEditarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(34, 34, 34)
         .addComponent(btnEliminarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 603, Short.MAX_VALUE)
         .addComponent(btnLimpiarCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(276, 276, 276))
     );
@@ -241,16 +241,7 @@ public class CentroA extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void btnGuardarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCentroActionPerformed
-    if(txtCantidadCentro.getText().length()==0
-        || txtCodigoCentro.getText().length()==0
-            || txtNombreCentro.getText().length()==0
-                || txtUbicacionCentro.getText().length()==0)
-   {
-     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
-    } else{
-     //verificacion de repetido
-     JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
-    }
+
   }//GEN-LAST:event_btnGuardarCentroActionPerformed
 
   private void btnEditarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCentroActionPerformed
