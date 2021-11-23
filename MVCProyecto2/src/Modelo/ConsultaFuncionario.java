@@ -47,12 +47,11 @@ public class ConsultaFuncionario extends Conexion {
   public boolean modificarFuncionario (Funcionario fun) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();
-    String sql = "UPDATE Funcionario SET nombreFuncionario=?"
+    String sql = "UPDATE Funcionario SET nombreFuncionario=?,"
             + "fechaVigencia=? ,tipoFuncionario=?,codigoCentroAtencion=?,"
             + "areaTrabajo=? WHERE cedulaFuncionario=?";
     try{
       ps = con.prepareStatement(sql);
-      
       ps.setString(1, fun.getNomFuncionario());
       ps.setString (2, fun.getFechaIngreso());
       ps.setString(3, fun.getTipoFuncionario());
@@ -160,7 +159,7 @@ public class ConsultaFuncionario extends Conexion {
   public boolean modificarDoctor (Doctor doc) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();
-    String sql = "UPDATE Funcionario SET nombreFuncionario=?"
+    String sql = "UPDATE Funcionario SET nombreFuncionario=?,"
             + "fechaVigencia=? ,tipoFuncionario=?,codigoCentroAtencion=?,"
             + "areaTrabajo=? WHERE cedulaFuncionario=?";
     try{
@@ -169,14 +168,14 @@ public class ConsultaFuncionario extends Conexion {
       ps.setString(1, doc.getNomFuncionario());
       ps.setString (2, doc.getFechaIngreso());
       ps.setString(3, doc.getTipoFuncionario());
-      ps.setString(5, doc.getTrabajaEn());
+      ps.setString(4, doc.getTrabajaEn());
       ps.setString(5, doc.areaTrabajo.getNomAreaTrabajo());
       ps.setInt(6, doc.getCedulaFuncionario());
       ps.execute();
     }catch(SQLException e){
       System.err.println(e);
       return false;
-    }String sql2 = "UPDATE Doctor SET codigoMedico=?"
+    }String sql2 = "UPDATE Doctor SET codigoMedico=?,"
             + "especialidad=? WHERE cedulaFuncionario=?";
     try{
       ps = con.prepareStatement(sql2);
@@ -269,7 +268,7 @@ public class ConsultaFuncionario extends Conexion {
   public boolean modificarEnfermero (Enfermero enfe) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();
-    String sql = "UPDATE Funcionario SET nombreFuncionario=?"
+    String sql = "UPDATE Funcionario SET nombreFuncionario=?,"
             + "fechaVigencia=? ,tipoFuncionario=?,codigoCentroAtencion=?,"
             + "areaTrabajo=? WHERE cedulaFuncionario=?";
     try{
@@ -278,14 +277,14 @@ public class ConsultaFuncionario extends Conexion {
       ps.setString(1, enfe.getNomFuncionario());
       ps.setString (2, enfe.getFechaIngreso());
       ps.setString(3, enfe.getTipoFuncionario());
-      ps.setString(5, enfe.getTrabajaEn());
+      ps.setString(4, enfe.getTrabajaEn());
       ps.setString(5, enfe.areaTrabajo.getNomAreaTrabajo());
       ps.setInt(6, enfe.getCedulaFuncionario());
       ps.execute();
     }catch(SQLException e){
       System.err.println(e);
       return false;
-    }String sql2 = "UPDATE Enfermero SET IndicadorPersonasACargo=?"
+    }String sql2 = "UPDATE Enfermero SET IndicadorPersonasACargo=?,"
             + "IndicadorExpCapacitacion =? WHERE cedulaFuncionario=?";
     try{
       ps = con.prepareStatement(sql2);
@@ -349,8 +348,8 @@ public class ConsultaFuncionario extends Conexion {
       Connection connect = DriverManager.getConnection("jdbc:sqlserver://;"
               + "databaseName=Proyecto_POO2;user=usuariosql;password=root1");
       PreparedStatement st = connect.prepareStatement("SELECT cedulaFuncionario,"
-              + "nombreFuncionario, tipoFuncionario, fechaVigencia,"
-              + "areaTrabajo  FROM Funcionario");
+              + "nombreFuncionario, codigoCentroAtencion, fechaVigencia,"
+              + "areaTrabajo FROM Funcionario");
       rs = st.executeQuery();
       rsmd = rs.getMetaData();
       columnas = rsmd.getColumnCount();

@@ -16,6 +16,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -25,7 +26,8 @@ import javax.swing.table.DefaultTableModel;
  * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class CtrlFuncionario implements ActionListener {
-  
+  ButtonGroup btnGr1;
+  ButtonGroup btnGr2;
   private Funcionario modFun;
   private Doctor modDoc;
   private Enfermero modEnf;
@@ -42,7 +44,6 @@ public class CtrlFuncionario implements ActionListener {
     this.frm.btnEliminarFuncionario1.addActionListener(this);
     this.frm.btnEliminarSecretario.addActionListener(this);
     this.frm.btnGuardarFuncionario.addActionListener(this);
-    this.frm.btnAgregarEspecialidad.addActionListener(this);
     this.frm.btnEditarsecretario.addActionListener(this);
     this.frm.btnEditarFuncionario.addActionListener(this);
     this.frm.btnEditarFuncionario1.addActionListener(this);
@@ -59,6 +60,12 @@ public class CtrlFuncionario implements ActionListener {
   public void iniciar(){
     frm.setTitle("Funcionarios");
     frm.setLocationRelativeTo(null);
+    btnGr1 = new ButtonGroup();
+    btnGr1.add(frm.jRadioButton1);
+    btnGr1.add(frm.jRadioButton2);
+    btnGr2 = new ButtonGroup();
+    btnGr2.add(frm.jRadioButton5);
+    btnGr2.add(frm.jRadioButton6);
     cargarTablaFuncionario();
     cargarTablaFuncionarioEnfermero();
     cargarTablaFuncionarioDoctor();
@@ -145,7 +152,7 @@ public class CtrlFuncionario implements ActionListener {
       }else{
         aCargo=0;
       }
-      modEnf.setIndicadorExpCapacitacion(aCargo);
+      modEnf.setIndicadorPersonasACargo(aCargo);
       int expCapa;
       if(frm.jRadioButton5.isSelected()==true){
         expCapa=1;
@@ -231,7 +238,7 @@ public class CtrlFuncionario implements ActionListener {
     }
     
     //Boton editar Enfermero
-    if(e.getSource()==frm.btnEditarsecretario){
+    if(e.getSource()==frm.btnEditarFuncionario1){
       modEnf.setCedulaFuncionario(Integer.parseInt(frm.txtCedulaFuncionario.getText()));
       modEnf.setNomFuncionario(frm.txtNombreFuncionario.getText());
       modEnf.setFechaIngreso(frm.txtFechaFuncionario.getText());
@@ -243,12 +250,12 @@ public class CtrlFuncionario implements ActionListener {
       int aCargo;
       if(frm.jRadioButton1.isSelected()==true){
         aCargo=1;
-      }else if(frm.jRadioButton1.isSelected()==true){
+      }else if(frm.jRadioButton2.isSelected()==true){
         aCargo=0;
       }else{
         aCargo=0;
       }
-      modEnf.setIndicadorExpCapacitacion(aCargo);
+      modEnf.setIndicadorPersonasACargo(aCargo);
       int expCapa;
       if(frm.jRadioButton5.isSelected()==true){
         expCapa=1;
