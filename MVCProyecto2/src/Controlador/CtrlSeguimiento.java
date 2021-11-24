@@ -133,7 +133,6 @@ public class CtrlSeguimiento implements ActionListener{
     if(e.getSource()==vistaSegui.btnVolver){
        
     }
-    
   }
   
   /**
