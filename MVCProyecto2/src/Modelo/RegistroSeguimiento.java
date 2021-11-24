@@ -9,11 +9,16 @@ package Modelo;
  * @author Alejandra Merino
  */
 public class RegistroSeguimiento {
+  private int cedilaPacienteInternado;
   private String fechaSeguimiento;
-  private Funcionario funcionarioSegui;
+  Funcionario funcionarioSegui;
   private String observacionEvolucion;
   private String tratamientoAsociado;
 
+  public int getCedilaPacienteInternado() {
+    return cedilaPacienteInternado;
+  }
+  
   public String getFechaSeguimiento() {
     return fechaSeguimiento;
   }
@@ -26,6 +31,10 @@ public class RegistroSeguimiento {
     return tratamientoAsociado;
   }
 
+  public void setCedilaPacienteInternado(int cedilaPacienteInternado) {
+    this.cedilaPacienteInternado = cedilaPacienteInternado;
+  }
+  
   public void setFechaSeguimiento(String fechaSeguimiento) {
     this.fechaSeguimiento = fechaSeguimiento;
   }
