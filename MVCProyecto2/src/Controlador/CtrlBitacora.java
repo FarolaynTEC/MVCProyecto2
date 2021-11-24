@@ -70,7 +70,8 @@ public class CtrlBitacora implements ActionListener {
     //Boton guardar Bitacora
     if(e.getSource() == vistaBit.btnGuardarBitacora){
       modBit.setIdBitacora(Integer.parseInt(vistaBit.txtIDBitacora.getText()));
-      modBit.setIdentificadorCita(Integer.parseInt(vistaBit.cmbCitaBitacora.getSelectedItem().toString()));
+      modBit.setIdentificadorCita(Integer.parseInt(vistaBit.cmbCitaBitacora.
+          getSelectedItem().toString()));
       modBit.setNombreAutor(vistaBit.cmbNombreBitacora.getSelectedItem().toString());
       modBit.setFecha(vistaBit.txtFechaBitacora.getText());
       modBit.setHora(vistaBit.txtHoraBitacora.getText());

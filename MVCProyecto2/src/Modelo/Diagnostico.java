@@ -17,10 +17,6 @@ public class Diagnostico {
   public ArrayList<Tratamiento> tratamientos;
   public String nivel;
 
-  public Diagnostico(String nombreDiagnostico, String observaciones) {
-    this.nombreDiagnostico = nombreDiagnostico;
-    this.observaciones = observaciones;
-  }
 
   public int getIdentificadorCita() {
     return identificadorCita;

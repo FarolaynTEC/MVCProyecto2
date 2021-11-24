@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Controlador;
 
 import Modelo.Diagnostico;
@@ -57,6 +53,8 @@ public class CtrlDiagnosticoTratamiento implements ActionListener{
     vistaDiaTra.setLocationRelativeTo(null);
     cargarTablaDiagnostico();
     cargarTablaTratamiento();
+    obtenerIdCita();
+    obtenerIdCita1();
   }
   
   private void cargarTablaDiagnostico (){
@@ -91,7 +89,8 @@ public class CtrlDiagnosticoTratamiento implements ActionListener{
   public void actionPerformed(ActionEvent e) {
     //Boton guardar Diagnostico
     if(e.getSource() == vistaDiaTra.btnGuardarDiagnostico){
-      modDia.setIdentificadorCita(Integer.parseInt(vistaDiaTra.txtIDCita.getText()));
+      modDia.setIdentificadorCita(Integer.parseInt(vistaDiaTra.cmbIdCita.
+          getSelectedItem().toString()));
       modDia.setNombreDiagnostico(vistaDiaTra.txtNombreDiagnostico.getText());
       modDia.setObservaciones(vistaDiaTra.txtObservacionDiagnostico.getText());
       modDia.setNivel(vistaDiaTra.cbxNiveles.getSelectedItem().toString());
@@ -113,7 +112,8 @@ public class CtrlDiagnosticoTratamiento implements ActionListener{
     
     //Boton guardar Tratamiento
     if(e.getSource() == vistaDiaTra.btnGuardarTratamiento){
-      modTra.setIdentificadorCita(Integer.parseInt(vistaDiaTra.txtIdTrata.getText()));
+      modTra.setIdentificadorCita(Integer.parseInt(vistaDiaTra.cmbIdCita1.
+          getSelectedItem().toString()));
       modTra.setNombreTratamiento(vistaDiaTra.txNombreTratamiento.getText());
       modTra.setDosis(vistaDiaTra.txtDosisTratamiento.getText());
       modTra.setTipoTratamiento(vistaDiaTra.txtTipoTratamiento.getText());
@@ -133,9 +133,10 @@ public class CtrlDiagnosticoTratamiento implements ActionListener{
       }
     }
     
-    //Boton eliminar Area
+    //Boton eliminar diagnostico
     if(e.getSource() == vistaDiaTra.btnEliminarDiagnostico){
-      modDia.setIdentificadorCita(Integer.parseInt(vistaDiaTra.txtIDCita.getText()));
+      modDia.setIdentificadorCita(Integer.parseInt(vistaDiaTra.cmbIdCita.
+          getSelectedItem().toString()));
       try {
         if(modDiaTra.eliminarDiagnotico(modDia)){
           JOptionPane.showMessageDialog(null,"Registro de Diagnóstico"
@@ -151,9 +152,10 @@ public class CtrlDiagnosticoTratamiento implements ActionListener{
       }
     } 
     
-    //Boton eliminar Tipo Centro
+    //Boton eliminar Tratamineto
     if(e.getSource() == vistaDiaTra.btnEliminarTratamiento){
-      modTra.setIdentificadorCita(Integer.parseInt(vistaDiaTra.txtIdTrata.getText()));
+      modTra.setIdentificadorCita(Integer.parseInt(vistaDiaTra.cmbIdCita1.
+          getSelectedItem().toString()));
       try {
         if(modDiaTra.eliminarTratamiento(modTra)){
           JOptionPane.showMessageDialog(null,"Registro de Tratamiento"
@@ -168,6 +170,52 @@ public class CtrlDiagnosticoTratamiento implements ActionListener{
                 .log(Level.SEVERE,null,ex);
       }
     }
+    
+   //Boton modificar diagnostico
+    if(e.getSource() == vistaDiaTra.btnEditarDiagnostico){
+      modDia.setIdentificadorCita(Integer.parseInt(vistaDiaTra.cmbIdCita.
+          getSelectedItem().toString()));
+      modDia.setNombreDiagnostico(vistaDiaTra.txtNombreDiagnostico.getText());
+      modDia.setObservaciones(vistaDiaTra.txtObservacionDiagnostico.getText());
+      modDia.setNivel(vistaDiaTra.cbxNiveles.getSelectedItem().toString());
+      try {
+        if(modDiaTra.modificarDiagnostico(modDia)){
+          JOptionPane.showMessageDialog(null,"Registro de diagnostico"
+              + " modificado");
+          cargarTablaDiagnostico();
+          cargarTablaTratamiento();
+        }else{
+          JOptionPane.showMessageDialog(null,"ERROR");
+        }
+      } catch(SQLException ex){
+        Logger.getLogger(CtrlFuncionario.class.getName())
+                .log(Level.SEVERE,null,ex);
+      }
+    }
+    
+    //Boton modificar Trataminto
+    if(e.getSource() == vistaDiaTra.btnEditarTratamiento){
+      modTra.setIdentificadorCita(Integer.parseInt(vistaDiaTra.cmbIdCita1.
+          getSelectedItem().toString()));
+      modTra.setNombreTratamiento(vistaDiaTra.txNombreTratamiento.getText());
+      modTra.setDosis(vistaDiaTra.txtDosisTratamiento.getText());
+      modTra.setTipoTratamiento(vistaDiaTra.txtTipoTratamiento.getText());
+      try {
+        if(modDiaTra.modificarTratamiento(modTra)){
+          JOptionPane.showMessageDialog(null,"Registro de Tratamiento"
+              + " modificado");
+          cargarTablaDiagnostico();
+          cargarTablaTratamiento();
+        }else{
+          JOptionPane.showMessageDialog(null,"ERROR");
+        }
+      } catch(SQLException ex){
+        Logger.getLogger(CtrlFuncionario.class.getName())
+                .log(Level.SEVERE,null,ex);
+      }
+    }
+    
+
     
     //Boton limpiar
     if(e.getSource()==vistaDiaTra.btnLimpiarDiag){
@@ -190,7 +238,6 @@ public class CtrlDiagnosticoTratamiento implements ActionListener{
    * Establece las cajas de texto como nulas o vacias
    */
   public void limpiarDiagnostico(){
-    vistaDiaTra.txtIDCita.setText(null);
     vistaDiaTra.txtNombreDiagnostico.setText(null);
     vistaDiaTra.txtObservacionDiagnostico.setText(null);
   }
@@ -199,10 +246,66 @@ public class CtrlDiagnosticoTratamiento implements ActionListener{
    * Establece las cajas de texto como nulas o vacias
    */
   public void limpiarTratamiento(){
-    vistaDiaTra.txtIdTrata.setText(null);
     vistaDiaTra.txNombreTratamiento.setText(null);
     vistaDiaTra.txtDosisTratamiento.setText(null);
     vistaDiaTra.txtTipoTratamiento.setText(null);
+  }
+  
+    /**
+   * Método para insertar los id de las citas en el
+   * combobox llamado cmbIdCita
+   */  
+    public void obtenerIdCita(){
+    ResultSet rs;
+    try {
+      DefaultComboBoxModel listaModelo = new DefaultComboBoxModel();
+      listaModelo.addElement("Cita");
+    
+      Connection connect = DriverManager.getConnection("jdbc:sqlserver://"
+          + ";databaseName=Proyecto_POO2;user=usuariosql;password=root1");
+      PreparedStatement st = connect.prepareStatement("SELECT identificador from "
+          + "Citas order by cedulaPaciente");
+      rs = st.executeQuery();
+    
+      try {
+        while (rs.next()){
+          listaModelo.addElement(rs.getString("identificador"));
+      } rs.close();
+      
+      } catch(SQLException ex ){
+        System.err.println(ex.getMessage());
+      } vistaDiaTra.cmbIdCita.setModel(listaModelo);
+    } catch(SQLException e){
+      JOptionPane.showMessageDialog(null,e);
+    }
+  }
+      /**
+   * Método para insertar los id de las citas en el
+   * combobox llamado cmbIdCita1
+   */  
+    public void obtenerIdCita1(){
+    ResultSet rs;
+    try {
+      DefaultComboBoxModel listaModelo = new DefaultComboBoxModel();
+      listaModelo.addElement("Cita");
+    
+      Connection connect = DriverManager.getConnection("jdbc:sqlserver://"
+          + ";databaseName=Proyecto_POO2;user=usuariosql;password=root1");
+      PreparedStatement st = connect.prepareStatement("SELECT identificador from "
+          + "Citas order by cedulaPaciente");
+      rs = st.executeQuery();
+    
+      try {
+        while (rs.next()){
+          listaModelo.addElement(rs.getString("identificador"));
+      } rs.close();
+      
+      } catch(SQLException ex ){
+        System.err.println(ex.getMessage());
+      } vistaDiaTra.cmbIdCita1.setModel(listaModelo);
+    } catch(SQLException e){
+      JOptionPane.showMessageDialog(null,e);
+    }
   }
   
 }
