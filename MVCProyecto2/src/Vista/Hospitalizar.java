@@ -371,11 +371,15 @@ import javax.swing.JOptionPane;
   }//GEN-LAST:event_btnLimpiarPacienteActionPerformed
 
   private void btnVolverPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverPacienteActionPerformed
-    // TODO add your handling code here:
+    Menu verM = new Menu();    
+    verM.setVisible(true);
+    this.setVisible(false);
   }//GEN-LAST:event_btnVolverPacienteActionPerformed
 
   private void btnSeguimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeguimientoActionPerformed
-    // TODO add your handling code here:
+    Seguimiento verS = new Seguimiento();    
+    verS.setVisible(true);
+    this.setVisible(false);
   }//GEN-LAST:event_btnSeguimientoActionPerformed
 
   private void cmbNombrePacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbNombrePacienteActionPerformed

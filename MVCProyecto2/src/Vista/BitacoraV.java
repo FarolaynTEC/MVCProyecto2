@@ -299,7 +299,9 @@ public class BitacoraV extends javax.swing.JFrame {
   }//GEN-LAST:event_btnLimpiarBitacoraActionPerformed
 
   private void btnVolverBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverBitacoraActionPerformed
-    // TODO add your handling code here:
+    Menu verM = new Menu();    
+    verM.setVisible(true);
+    this.setVisible(false);
   }//GEN-LAST:event_btnVolverBitacoraActionPerformed
 
   /**

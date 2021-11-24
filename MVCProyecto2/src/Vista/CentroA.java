@@ -287,7 +287,9 @@ public class CentroA extends javax.swing.JFrame {
   }//GEN-LAST:event_btnLimpiarCentroActionPerformed
 
   private void btnVolverCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverCentroActionPerformed
-    // TODO add your handling code here:
+    Menu verM = new Menu();    
+    verM.setVisible(true);
+    this.setVisible(false);
   }//GEN-LAST:event_btnVolverCentroActionPerformed
 
   /**

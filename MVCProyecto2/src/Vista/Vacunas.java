@@ -80,6 +80,7 @@ import javax.swing.JOptionPane;
     });
     jScrollPane1.setViewportView(tablaVacuna);
 
+    btnVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
     btnVolver.setText("Volver");
     btnVolver.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,6 +88,7 @@ import javax.swing.JOptionPane;
       }
     });
 
+    btnConsultaVacunas.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
     btnConsultaVacunas.setText("Consultar Vacunas");
     btnConsultaVacunas.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,7 +154,9 @@ import javax.swing.JOptionPane;
   }// </editor-fold>//GEN-END:initComponents
 
   private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-    // TODO add your handling code here:
+    Menu verM = new Menu();    
+    verM.setVisible(true);
+    this.setVisible(false);
   }//GEN-LAST:event_btnVolverActionPerformed
 
   private void btnConsultaVacunasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaVacunasActionPerformed

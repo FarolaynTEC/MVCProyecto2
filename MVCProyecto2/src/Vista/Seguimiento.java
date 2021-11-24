@@ -307,7 +307,9 @@ public class Seguimiento extends javax.swing.JFrame {
   }//GEN-LAST:event_btnLimpiarActionPerformed
 
   private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-    // TODO add your handling code here:
+    Menu verM = new Menu();    
+    verM.setVisible(true);
+    this.setVisible(false);
   }//GEN-LAST:event_btnVolverActionPerformed
 
   private void txtFechaSeguimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaSeguimientoActionPerformed
