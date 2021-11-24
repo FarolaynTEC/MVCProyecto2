@@ -9,6 +9,7 @@ package Modelo;
  * @author Alejandra Merino
  */
 public class Tratamiento {
+  private int identificadorCita;
   private String nombreTratamiento;
   private String dosis;
   private String tipoTratamiento;
@@ -19,6 +20,10 @@ public class Tratamiento {
     this.tipoTratamiento = tipoTratamiento;
   }
 
+  public int getIdentificadorCita() {
+    return identificadorCita;
+  }
+  
   public String getNombreTratamiento() {
     return nombreTratamiento;
   }
@@ -31,6 +36,10 @@ public class Tratamiento {
     return tipoTratamiento;
   }
 
+  public void setIdentificadorCita(int identificadorCita) {
+    this.identificadorCita = identificadorCita;
+  }
+  
   public void setNombreTratamiento(String nombreTratamiento) {
     this.nombreTratamiento = nombreTratamiento;
   }
