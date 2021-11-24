@@ -14,6 +14,7 @@ import Controlador.CtrlCentroAtencion;
 import Controlador.CtrlCitas;
 import Controlador.CtrlFuncionario;
 import Controlador.CtrlPaciente;
+import Controlador.CtrlSeguimiento;
 import Modelo.AreaTrabajo;
 import Modelo.Bitacora;
 import Modelo.Cita;
@@ -21,11 +22,13 @@ import Modelo.ConsultaBitacora;
 import Modelo.ConsultaCita;
 import Modelo.ConsultaFuncionario;
 import Modelo.ConsultaPaciente;
+import Modelo.ConsultaSeguimiento;
 import Modelo.ConsultaTipoCentro;
 import Modelo.Doctor;
 import Modelo.Enfermero;
 import Modelo.Funcionario;
 import Modelo.Paciente;
+import Modelo.RegistroSeguimiento;
 import Modelo.TipoCentroAtencion;
 import Modelo.Vacuna;
 import Vista.AreaCentro;
@@ -321,9 +324,13 @@ public class Menu extends javax.swing.JFrame {
   }//GEN-LAST:event_jButton7ActionPerformed
 
   private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-    Seguimiento verS = new Seguimiento();    
-    verS.setVisible(true);
-    this.setVisible(false);
+    RegistroSeguimiento modSegui = new RegistroSeguimiento();
+    ConsultaSeguimiento modSeguiC = new ConsultaSeguimiento();
+    Seguimiento vistaSegui = new Seguimiento ();
+    
+    CtrlSeguimiento ctrlSegui = new CtrlSeguimiento (modSegui,modSeguiC, vistaSegui );
+    ctrlSegui.iniciar();
+    vistaSegui.setVisible(false);
   }//GEN-LAST:event_jButton8ActionPerformed
 
   private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
