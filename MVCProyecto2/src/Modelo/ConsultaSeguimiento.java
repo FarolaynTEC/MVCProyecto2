@@ -20,7 +20,6 @@ import javax.swing.table.DefaultTableModel;
 public class ConsultaSeguimiento extends Conexion {
   
   public boolean registrarSeguimiento (RegistroSeguimiento segui) throws SQLException{
-    System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "INSERT INTO RegistroDeSeguimiento (cedulaPacienteInternado,"
@@ -48,7 +47,6 @@ public class ConsultaSeguimiento extends Conexion {
   }
   
   public boolean modificarSeguimiento (RegistroSeguimiento segui) throws SQLException{
-    System.out.print("Aqui2");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "UPDATE RegistroDeSeguimiento SET "
@@ -77,7 +75,6 @@ public class ConsultaSeguimiento extends Conexion {
   }
   
   public boolean eliminarSeguimiento (RegistroSeguimiento segui) throws SQLException{
-    System.out.print("Aqui2");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "DELETE FROM RegistroDeSeguimiento WHERE cedulaPacienteInternado=?";

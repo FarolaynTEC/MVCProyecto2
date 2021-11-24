@@ -263,6 +263,7 @@ public class Menu extends javax.swing.JFrame {
     CtrlAreaCentro ctrl4 = new CtrlAreaCentro(modAT, modTCA, modC, frmAC);
     ctrl4.iniciar();
     frmAC.setVisible(true);
+    this.setVisible(false);
   }//GEN-LAST:event_jButton1ActionPerformed
 
   private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -285,6 +286,7 @@ public class Menu extends javax.swing.JFrame {
     CtrlCentroAtencion ctrl1 = new CtrlCentroAtencion(modCA,modCCA,frmCA);
     ctrl1.iniciar();
     frmCA.setVisible(true);
+    this.setVisible(false);
   }//GEN-LAST:event_jButton3ActionPerformed
 
   private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -320,6 +322,7 @@ public class Menu extends javax.swing.JFrame {
     CtrlFuncionario ctrl2 = new CtrlFuncionario( modFun, modCF, modDoc, modEnf, frmF);
     ctrl2.iniciar();
     frmF.setVisible(true);
+    this.setVisible(false);
   }//GEN-LAST:event_jButton6ActionPerformed
 
   private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -331,6 +334,7 @@ public class Menu extends javax.swing.JFrame {
     CtrlPaciente ctrl3 = new CtrlPaciente( modPac, modVac, modCP, frmP);
     ctrl3.iniciar();
     frmP.setVisible(true);
+    this.setVisible(false);
   }//GEN-LAST:event_jButton7ActionPerformed
 
   private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -340,7 +344,8 @@ public class Menu extends javax.swing.JFrame {
     
     CtrlSeguimiento ctrlSegui = new CtrlSeguimiento (modSegui,modSeguiC, vistaSegui );
     ctrlSegui.iniciar();
-    vistaSegui.setVisible(false);
+    vistaSegui.setVisible(true);
+    this.setVisible(false);
   }//GEN-LAST:event_jButton8ActionPerformed
 
   private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -352,11 +357,13 @@ public class Menu extends javax.swing.JFrame {
     CtrlPaciente ctrl3 = new CtrlPaciente( modPac, modVac, modCP, frmP);
     ctrl3.iniciar();
     frmP.setVisible(true);
+    this.setVisible(false);
   }//GEN-LAST:event_jButton9ActionPerformed
 
   private void btnHospitalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHospitalizarActionPerformed
     Hospitalizar verH = new Hospitalizar();    
     verH.setVisible(true);
+    this.setVisible(true);
     this.setVisible(false);
   }//GEN-LAST:event_btnHospitalizarActionPerformed
 

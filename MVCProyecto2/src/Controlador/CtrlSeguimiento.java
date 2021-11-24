@@ -17,7 +17,6 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -46,6 +45,9 @@ public class CtrlSeguimiento implements ActionListener{
     vistaSegui.setTitle("Registro de seguimiento");
     vistaSegui.setLocationRelativeTo(null);
     cargarTablaSeguimiento();
+    obtenerCedulaPaciente();
+    obtenerFuncionarios();
+    obtenerTratamiento();
   }
   
   private void cargarTablaSeguimiento (){
@@ -66,7 +68,8 @@ public class CtrlSeguimiento implements ActionListener{
   public void actionPerformed(ActionEvent e) {
     //Boton guardar Seguimiento
     if(e.getSource() == vistaSegui.btnGuardarSeguimiento){
-      modSegui.setCedilaPacienteInternado(Integer.parseInt(vistaSegui.txtCedulaPaciente.getText()));
+      modSegui.setCedilaPacienteInternado(Integer.parseInt
+          (vistaSegui.cmbCedulaPacientes.getSelectedItem().toString()));
       modSegui.setFechaSeguimiento(vistaSegui.txtFechaSeguimiento.getText());
       modSegui.funcionarioSegui.setCedulaFuncionario(Integer.parseInt(vistaSegui.cmbFuncionario.getSelectedItem().toString()));
       modSegui.setTratamientoAsociado(vistaSegui.cmbTratamiento.getSelectedItem().toString());
@@ -87,7 +90,8 @@ public class CtrlSeguimiento implements ActionListener{
     
     //Boton editar Seguimiento
     if(e.getSource()== vistaSegui.btnEditarSeguimiento){
-      modSegui.setCedilaPacienteInternado(Integer.parseInt(vistaSegui.txtCedulaPaciente.getText()));
+      modSegui.setCedilaPacienteInternado(Integer.parseInt
+          (vistaSegui.cmbCedulaPacientes.getSelectedItem().toString()));
       modSegui.setFechaSeguimiento(vistaSegui.txtFechaSeguimiento.getText());
       modSegui.funcionarioSegui.setCedulaFuncionario(Integer.parseInt(vistaSegui.cmbFuncionario.getSelectedItem().toString()));
       modSegui.setTratamientoAsociado(vistaSegui.cmbTratamiento.getSelectedItem().toString());
@@ -108,7 +112,8 @@ public class CtrlSeguimiento implements ActionListener{
     
     //Boton eliminar Seguimiento
     if(e.getSource() == vistaSegui.btnEliminarSeguimiento){
-      modSegui.setCedilaPacienteInternado(Integer.parseInt(vistaSegui.txtCedulaPaciente.getText()));
+      modSegui.setCedilaPacienteInternado(Integer.parseInt
+          (vistaSegui.cmbCedulaPacientes.getSelectedItem().toString()));
       try {
         if(modSeguiC.eliminarSeguimiento(modSegui)){
           JOptionPane.showMessageDialog(null,"Registro de Seguimiento"
@@ -139,8 +144,93 @@ public class CtrlSeguimiento implements ActionListener{
    * Establece las cajas de texto como nulas o vacias
    */
   public void limpiar(){
-    vistaSegui.txtCedulaPaciente.setText(null);
     vistaSegui.txtFechaSeguimiento.setText(null);
   }
   
+   /**
+   * Método para insertar las cedulas de los pacientes en el
+   * combobox llamado cmbCedulaPacientes
+   */  
+  public void obtenerCedulaPaciente(){
+    ResultSet rs;
+    try {
+      DefaultComboBoxModel listaModelo = new DefaultComboBoxModel();
+      listaModelo.addElement("Paciente");
+    
+      Connection connect = DriverManager.getConnection("jdbc:sqlserver://"
+          + ";databaseName=Proyecto_POO2;user=usuariosql;password=root1");
+      PreparedStatement st = connect.prepareStatement("SELECT cedulaPaciente "
+          + "FROM Paciente ORDER BY cedulaPaciente");
+      rs = st.executeQuery();
+    
+      try {
+        while (rs.next()){
+          listaModelo.addElement(rs.getString("cedulaPaciente"));
+      } rs.close();
+      
+      } catch(SQLException ex ){
+        System.err.println(ex.getMessage());
+      } vistaSegui.cmbCedulaPacientes.setModel(listaModelo);
+    } catch(SQLException e){
+      JOptionPane.showMessageDialog(null,e);
+    }
+  }
+  
+        /**
+   * Método para insertar las cedulas de los funcionarios en el
+   * combobox llamado cmbFuncionario
+   */  
+  public void obtenerFuncionarios(){
+    ResultSet rs;
+    try {
+      DefaultComboBoxModel listaModelo = new DefaultComboBoxModel();
+      listaModelo.addElement("Funcionario");
+    
+      Connection connect = DriverManager.getConnection("jdbc:sqlserver://"
+          + ";databaseName=Proyecto_POO2;user=usuariosql;password=root1");
+      PreparedStatement st = connect.prepareStatement("SELECT cedulaFuncionario"
+          + " FROM Funcionario ORDER BY cedulaFuncionario");
+      rs = st.executeQuery();
+    
+      try {
+        while (rs.next()){
+          listaModelo.addElement(rs.getString("cedulaFuncionario"));
+      } rs.close();
+      
+      } catch(SQLException ex ){
+        System.err.println(ex.getMessage());
+      } vistaSegui.cmbFuncionario.setModel(listaModelo);
+    } catch(SQLException e){
+      JOptionPane.showMessageDialog(null,e);
+    }
+  }
+  
+        /**
+   * Método para insertar las cedulas de los funcionarios en el
+   * combobox llamado cmbFuncionario
+   */  
+  public void obtenerTratamiento(){
+    ResultSet rs;
+    try {
+      DefaultComboBoxModel listaModelo = new DefaultComboBoxModel();
+      listaModelo.addElement("Tratamiento");
+    
+      Connection connect = DriverManager.getConnection("jdbc:sqlserver://"
+          + ";databaseName=Proyecto_POO2;user=usuariosql;password=root1");
+      PreparedStatement st = connect.prepareStatement("SELECT nombreTratameinto"
+          + " FROM Tratamiento ORDER BY nombreTratameinto");
+      rs = st.executeQuery();
+    
+      try {
+        while (rs.next()){
+          listaModelo.addElement(rs.getString("nombreTratameinto"));
+      } rs.close();
+      
+      } catch(SQLException ex ){
+        System.err.println(ex.getMessage());
+      } vistaSegui.cmbTratamiento.setModel(listaModelo);
+    } catch(SQLException e){
+      JOptionPane.showMessageDialog(null,e);
+    }
+  }
 }

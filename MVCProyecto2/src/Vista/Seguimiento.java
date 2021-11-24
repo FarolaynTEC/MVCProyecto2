@@ -37,7 +37,6 @@ public class Seguimiento extends javax.swing.JFrame {
     jLabel3 = new javax.swing.JLabel();
     jLabel4 = new javax.swing.JLabel();
     jLabel5 = new javax.swing.JLabel();
-    txtCedulaPaciente = new javax.swing.JTextField();
     txtFechaSeguimiento = new javax.swing.JTextField();
     jScrollPane1 = new javax.swing.JScrollPane();
     tablaSeguimiento = new javax.swing.JTable();
@@ -48,6 +47,7 @@ public class Seguimiento extends javax.swing.JFrame {
     btnVolver = new javax.swing.JButton();
     cmbFuncionario = new javax.swing.JComboBox<>();
     cmbTratamiento = new javax.swing.JComboBox<>();
+    cmbCedulaPacientes = new javax.swing.JComboBox<>();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,8 +69,6 @@ public class Seguimiento extends javax.swing.JFrame {
 
     jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     jLabel5.setText("Tratamiento Asociado");
-
-    txtCedulaPaciente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
     txtFechaSeguimiento.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     txtFechaSeguimiento.addActionListener(new java.awt.event.ActionListener() {
@@ -141,10 +139,14 @@ public class Seguimiento extends javax.swing.JFrame {
     });
 
     cmbFuncionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-    cmbFuncionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
     cmbTratamiento.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-    cmbTratamiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+    cmbCedulaPacientes.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        cmbCedulaPacientesActionPerformed(evt);
+      }
+    });
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -180,8 +182,8 @@ public class Seguimiento extends javax.swing.JFrame {
                     .addGap(66, 66, 66)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                   .addComponent(cmbFuncionario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                  .addComponent(txtCedulaPaciente)
-                  .addComponent(txtFechaSeguimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE))))
+                  .addComponent(txtFechaSeguimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+                  .addComponent(cmbCedulaPacientes, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,35 +207,34 @@ public class Seguimiento extends javax.swing.JFrame {
         .addContainerGap()
         .addComponent(jLabel1)
         .addGap(58, 58, 58)
-        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(jPanel1Layout.createSequentialGroup()
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 0, Short.MAX_VALUE))
-          .addGroup(jPanel1Layout.createSequentialGroup()
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-              .addComponent(jLabel2)
-              .addComponent(txtCedulaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(26, 26, 26)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-              .addComponent(jLabel3)
-              .addComponent(txtFechaSeguimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(27, 27, 27)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-              .addComponent(jLabel4)
-              .addComponent(cmbFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(31, 31, 31)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-              .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(cmbTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(111, 111, 111)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-              .addComponent(btnGuardarSeguimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(btnEditarSeguimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(btnEliminarSeguimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
-            .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(56, 56, 56))))
+        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(0, 0, Short.MAX_VALUE))
+      .addGroup(jPanel1Layout.createSequentialGroup()
+        .addGap(90, 90, 90)
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel2)
+          .addComponent(cmbCedulaPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(23, 23, 23)
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel3)
+          .addComponent(txtFechaSeguimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(27, 27, 27)
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel4)
+          .addComponent(cmbFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(31, 31, 31)
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(cmbTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(111, 111, 111)
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(btnGuardarSeguimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(btnEditarSeguimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(btnEliminarSeguimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+        .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(56, 56, 56))
     );
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -251,8 +252,7 @@ public class Seguimiento extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void btnGuardarSeguimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarSeguimientoActionPerformed
-    if(txtCedulaPaciente.getText().length()==0
-        || txtFechaSeguimiento.getText().length()==0)
+    if(txtFechaSeguimiento.getText().length()==0)
    {
      JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados de vacuna no pueden estar vacios");
     } else{
@@ -263,8 +263,7 @@ public class Seguimiento extends javax.swing.JFrame {
   }//GEN-LAST:event_btnGuardarSeguimientoActionPerformed
 
   private void btnEditarSeguimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarSeguimientoActionPerformed
-   if(txtCedulaPaciente.getText().length()==0
-        || txtFechaSeguimiento.getText().length()==0)
+   if(txtFechaSeguimiento.getText().length()==0)
    {
      JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados de vacuna no pueden estar vacios");
     } else{
@@ -275,18 +274,10 @@ public class Seguimiento extends javax.swing.JFrame {
   }//GEN-LAST:event_btnEditarSeguimientoActionPerformed
 
   private void btnEliminarSeguimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarSeguimientoActionPerformed
-   if(txtCedulaPaciente.getText().length()==0)
-   {
-     JOptionPane.showMessageDialog(null, "ERROR, el campo cedula no puede estar vacios");
-    } else{
-     //verificacion de repetido
-     JOptionPane.showMessageDialog(null, "REGISTRO ELIMINADO CON EXITO");
-     limpiar();
-    }
+
   }//GEN-LAST:event_btnEliminarSeguimientoActionPerformed
 
   private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-    txtCedulaPaciente.setText(null);
     txtFechaSeguimiento.setText(null);
   }//GEN-LAST:event_btnLimpiarActionPerformed
 
@@ -299,6 +290,10 @@ public class Seguimiento extends javax.swing.JFrame {
   private void txtFechaSeguimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaSeguimientoActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_txtFechaSeguimientoActionPerformed
+
+  private void cmbCedulaPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCedulaPacientesActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_cmbCedulaPacientesActionPerformed
 
   /**
    * @param args the command line arguments
@@ -346,7 +341,6 @@ public class Seguimiento extends javax.swing.JFrame {
   Metodo para limpiar campos txt
   */
    public void limpiar(){
-    txtCedulaPaciente.setText(null);
     txtFechaSeguimiento.setText(null);
   }
    
@@ -356,6 +350,7 @@ public class Seguimiento extends javax.swing.JFrame {
   public javax.swing.JButton btnGuardarSeguimiento;
   public javax.swing.JButton btnLimpiar;
   public javax.swing.JButton btnVolver;
+  public javax.swing.JComboBox<String> cmbCedulaPacientes;
   public javax.swing.JComboBox<String> cmbFuncionario;
   public javax.swing.JComboBox<String> cmbTratamiento;
   private javax.swing.JLabel jLabel1;
@@ -366,7 +361,6 @@ public class Seguimiento extends javax.swing.JFrame {
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
   public javax.swing.JTable tablaSeguimiento;
-  public javax.swing.JTextField txtCedulaPaciente;
   public javax.swing.JTextField txtFechaSeguimiento;
   // End of variables declaration//GEN-END:variables
 }

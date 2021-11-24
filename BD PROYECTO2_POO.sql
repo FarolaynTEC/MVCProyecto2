@@ -14,7 +14,7 @@ CREATE TABLE AreaTrabajo(
 );
 
 CREATE TABLE CentroAtencion(
-  codigoCentroAtencion int NOT NULL,
+  codigoCentroAtencion int identity(1,1) NOT NULL,
   nombre varchar(70) NOT NULL,
   ubicacion varchar(90) NOT NULL,
   capacidadMaxPac int NOT NULL,
@@ -66,7 +66,7 @@ CREATE TABLE Paciente(
 
 CREATE TABLE Citas(
   cedulaPaciente int NOT NULL,
-  identificador int NOT NULL,
+  identificador int identity(1,1) NOT NULL,
   fechaCita date NOT NULL,
   observaciones varchar(80) NOT NULL,
   especialidad varchar(80) NOT NULL,
