@@ -70,7 +70,6 @@ CREATE TABLE Citas(
   fechaCita date NOT NULL,
   observaciones varchar(80) NOT NULL,
   especialidad varchar(80) NOT NULL,
-  diagnostico varchar(80) NOT NULL,
   estadoDeCita varchar(30) NOT NULL,
   PRIMARY KEY (identificador),
   FOREIGN KEY (cedulaPaciente) REFERENCES Paciente(cedulaPaciente) ON DELETE CASCADE  

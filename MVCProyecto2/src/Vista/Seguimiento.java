@@ -48,6 +48,7 @@ public class Seguimiento extends javax.swing.JFrame {
     cmbFuncionario = new javax.swing.JComboBox<>();
     cmbTratamiento = new javax.swing.JComboBox<>();
     cmbCedulaPacientes = new javax.swing.JComboBox<>();
+    jLabel6 = new javax.swing.JLabel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,6 +72,7 @@ public class Seguimiento extends javax.swing.JFrame {
     jLabel5.setText("Tratamiento Asociado");
 
     txtFechaSeguimiento.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    txtFechaSeguimiento.setText("00 / 00 / 0000");
     txtFechaSeguimiento.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
         txtFechaSeguimientoActionPerformed(evt);
@@ -148,6 +150,8 @@ public class Seguimiento extends javax.swing.JFrame {
       }
     });
 
+    jLabel6.setText("mes/día/año");
+
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
@@ -183,7 +187,10 @@ public class Seguimiento extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                   .addComponent(cmbFuncionario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                   .addComponent(txtFechaSeguimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
-                  .addComponent(cmbCedulaPacientes, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                  .addComponent(cmbCedulaPacientes, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel6)
+                .addGap(104, 104, 104)))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,7 +221,9 @@ public class Seguimiento extends javax.swing.JFrame {
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel2)
           .addComponent(cmbCedulaPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addGap(23, 23, 23)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(jLabel6)
+        .addGap(3, 3, 3)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel3)
           .addComponent(txtFechaSeguimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -358,6 +367,7 @@ public class Seguimiento extends javax.swing.JFrame {
   private javax.swing.JLabel jLabel3;
   private javax.swing.JLabel jLabel4;
   private javax.swing.JLabel jLabel5;
+  private javax.swing.JLabel jLabel6;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
   public javax.swing.JTable tablaSeguimiento;

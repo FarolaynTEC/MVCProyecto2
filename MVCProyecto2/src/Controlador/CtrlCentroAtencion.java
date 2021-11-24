@@ -13,6 +13,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -51,6 +52,7 @@ public class CtrlCentroAtencion implements ActionListener{
     frm.setTitle("Centros de Atención");
     frm.setLocationRelativeTo(null);
     cargarTablaCentroAtencion();
+    obtenerTipoCentro();
   }
   
   /**
@@ -172,4 +174,35 @@ public class CtrlCentroAtencion implements ActionListener{
     }
     ConsultaCentroAtencion.cargarTablaCentroAtencion(modeloTabla);
   }
+  
+  /**
+   * Método para insertar las areas de trabajo el
+   * combobox llamado cmbEspecialidad
+   */  
+    public void obtenerTipoCentro(){
+    ResultSet rs;
+    try {
+      DefaultComboBoxModel listaModelo = new DefaultComboBoxModel();
+      listaModelo.addElement("Tipo");
+    
+      Connection connect = DriverManager.getConnection("jdbc:sqlserver://"
+          + ";databaseName=Proyecto_POO2;user=usuariosql;password=root1");
+      PreparedStatement st = connect.prepareStatement("SELECT tipoDeCentro from "
+          + "TiposCentrosAtencion order by tipoDeCentro SELECT AreaTrabajo from "
+          + "AreaTrabajo order by AreaTrabajo");
+      rs = st.executeQuery();
+    
+      try {
+        while (rs.next()){
+          listaModelo.addElement(rs.getString("tipoDeCentro"));
+      } rs.close();
+      
+      } catch(SQLException ex ){
+        System.err.println(ex.getMessage());
+      } frm.cmbTipoCentro.setModel(listaModelo);
+    } catch(SQLException e){
+      JOptionPane.showMessageDialog(null,e);
+    }
+  }
+  
 }

@@ -50,6 +50,7 @@ public class CentroA extends javax.swing.JFrame {
     btnEliminarCentro = new javax.swing.JButton();
     btnLimpiarCentro = new javax.swing.JButton();
     btnVolverCentro = new javax.swing.JButton();
+    jLabel7 = new javax.swing.JLabel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,14 +74,9 @@ public class CentroA extends javax.swing.JFrame {
     jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     jLabel6.setText("Tipo de Centro");
 
-    cmbTipoCentro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HOSPITAL", "EBAIS", "CLINICA" }));
-
     tablaCentroA.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
-        {null, null, null, null, null},
-        {null, null, null, null, null},
-        {null, null, null, null, null},
-        {null, null, null, null, null}
+
       },
       new String [] {
         "Código", "Nombre", "Ubicacion", "Pacientes", "Tipo Centro"
@@ -136,6 +132,8 @@ public class CentroA extends javax.swing.JFrame {
       }
     });
 
+    jLabel7.setText("Para registrar NO llenar este campo");
+
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
@@ -162,8 +160,10 @@ public class CentroA extends javax.swing.JFrame {
               .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(61, 61, 61)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(txtCodigoCentro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(txtNombreCentro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
+              .addComponent(jLabel7)
+              .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(txtCodigoCentro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNombreCentro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(73, 73, 73))
@@ -192,7 +192,9 @@ public class CentroA extends javax.swing.JFrame {
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addGap(34, 34, 34)
         .addComponent(jLabel1)
-        .addGap(35, 35, 35)
+        .addGap(15, 15, 15)
+        .addComponent(jLabel7)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -350,6 +352,7 @@ public class CentroA extends javax.swing.JFrame {
   private javax.swing.JLabel jLabel4;
   private javax.swing.JLabel jLabel5;
   private javax.swing.JLabel jLabel6;
+  private javax.swing.JLabel jLabel7;
   public javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
   public javax.swing.JTable tablaCentroA;
