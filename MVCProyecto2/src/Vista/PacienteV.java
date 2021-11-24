@@ -422,7 +422,7 @@ import javax.swing.JOptionPane;
                     || txtNombrePaciente.getText().length()==0
                         || txtResidenciaPaciente.getText().length()==0
                             || txtTelefonoPaciente.getText().length()==0)
-   {
+    {
      JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
     } else{
      //verificacion de repetido
