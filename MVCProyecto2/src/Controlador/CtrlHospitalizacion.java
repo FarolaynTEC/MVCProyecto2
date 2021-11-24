@@ -64,18 +64,19 @@ public class CtrlHospitalizacion implements ActionListener{
   
   @Override
   public void actionPerformed(ActionEvent e) {
-    //Boton guardar Seguimiento
-    if(e.getSource() == vistaSegui.btnGuardarSeguimiento){
-      modSegui.setCedilaPacienteInternado(Integer.parseInt(vistaSegui.txtCedulaPaciente.getText()));
-      modSegui.setFechaSeguimiento(vistaSegui.txtFechaSeguimiento.getText());
-      modSegui.funcionarioSegui.setCedulaFuncionario(Integer.parseInt(vistaSegui.cmbFuncionario.getSelectedItem().toString()));
-      modSegui.setTratamientoAsociado(vistaSegui.cmbTratamiento.getSelectedItem().toString());
+    //Boton guardar Hospitalizacion
+    if(e.getSource() == vistaHos.btnGuardarPaciente){
+      modHos.setCedulaPAcienteInternado(Integer.parseInt(vistaHos.cmbCedulaPaciente.getSelectedItem().toString()));
+      modHos.setNombrePacienteInternado(vistaHos.cmbCedulaPaciente.getSelectedItem().toString());
+      modHos.diagnosticoInter.setNombreDiagnostico(vistaHos.cmbDiagnostico.getSelectedItem().toString());
+      modHos.setFechaInicio(vistaHos.txtFechaInicio.getText());
+      modHos.setFechaFin(vistaHos.txtFechaFin.getText());
       
       try {
-        if(modSeguiC.registrarSeguimiento(modSegui)){
-          JOptionPane.showMessageDialog(null,"Registro de Seguimiento"
+        if(modHosC.registrarHospitalizacion(modHos)){
+          JOptionPane.showMessageDialog(null,"Registro de Hospitalizacion"
               + " guardado");
-          cargarTablaSeguimiento ();
+          cargarTablaHospitalizacion ();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
         }
@@ -85,17 +86,18 @@ public class CtrlHospitalizacion implements ActionListener{
       }
     } 
     
-    //Boton editar Seguimiento
-    if(e.getSource()== vistaSegui.btnEditarSeguimiento){
-      modSegui.setCedilaPacienteInternado(Integer.parseInt(vistaSegui.txtCedulaPaciente.getText()));
-      modSegui.setFechaSeguimiento(vistaSegui.txtFechaSeguimiento.getText());
-      modSegui.funcionarioSegui.setCedulaFuncionario(Integer.parseInt(vistaSegui.cmbFuncionario.getSelectedItem().toString()));
-      modSegui.setTratamientoAsociado(vistaSegui.cmbTratamiento.getSelectedItem().toString());
+    //Boton editar Hospitalizacion
+    if(e.getSource()== vistaHos.btnEditarPaciente){
+      modHos.setCedulaPAcienteInternado(Integer.parseInt(vistaHos.cmbCedulaPaciente.getSelectedItem().toString()));
+      modHos.setNombrePacienteInternado(vistaHos.cmbCedulaPaciente.getSelectedItem().toString());
+      modHos.diagnosticoInter.setNombreDiagnostico(vistaHos.cmbDiagnostico.getSelectedItem().toString());
+      modHos.setFechaInicio(vistaHos.txtFechaInicio.getText());
+      modHos.setFechaFin(vistaHos.txtFechaFin.getText());
       
       try {
-        if(modSeguiC.modificarSeguimiento(modSegui)){
+        if(modHosC.modificarHospitalizacion(modHos)){
           JOptionPane.showMessageDialog(null,"Modificación realizada");
-          cargarTablaSeguimiento ();
+          cargarTablaHospitalizacion ();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR, el id de paciente "
               + "ingresado no existe");
@@ -106,14 +108,14 @@ public class CtrlHospitalizacion implements ActionListener{
       }
     }
     
-    //Boton eliminar Seguimiento
-    if(e.getSource() == vistaSegui.btnEliminarSeguimiento){
-      modSegui.setCedilaPacienteInternado(Integer.parseInt(vistaSegui.txtCedulaPaciente.getText()));
+    //Boton eliminar Hospitalizacion
+    if(e.getSource() == vistaHos.btnEliminarPaciente){
+      modHos.setCedulaPAcienteInternado(Integer.parseInt(vistaHos.cmbCedulaPaciente.getSelectedItem().toString()));
       try {
-        if(modSeguiC.eliminarSeguimiento(modSegui)){
-          JOptionPane.showMessageDialog(null,"Registro de Seguimiento"
+        if(modHosC.eliminarHospitalizacion(modHos)){
+          JOptionPane.showMessageDialog(null,"Registro de Hospitalizacion"
               + " eliminado");
-          cargarTablaSeguimiento ();
+          cargarTablaHospitalizacion ();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
         }
@@ -124,13 +126,13 @@ public class CtrlHospitalizacion implements ActionListener{
     }
     
     //Boton limpiar
-    if(e.getSource()==vistaSegui.btnLimpiar){
+    if(e.getSource()==vistaHos.btnLimpiarPaciente){
       limpiar();
     }
     
     
     //boton Volver
-    if(e.getSource()==vistaSegui.btnVolver){
+    if(e.getSource()==vistaHos.btnVolverPaciente){
        
     }
   }
@@ -139,8 +141,8 @@ public class CtrlHospitalizacion implements ActionListener{
    * Establece las cajas de texto como nulas o vacias
    */
   public void limpiar(){
-    vistaSegui.txtCedulaPaciente.setText(null);
-    vistaSegui.txtFechaSeguimiento.setText(null);
+    vistaHos.txtFechaInicio.setText(null);
+    vistaHos.txtFechaFin.setText(null);
   }
   
   
