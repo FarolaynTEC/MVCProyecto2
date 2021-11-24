@@ -260,6 +260,7 @@ public class BitacoraV extends javax.swing.JFrame {
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnGuardarBitacoraActionPerformed
 
@@ -274,6 +275,7 @@ public class BitacoraV extends javax.swing.JFrame {
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "REGISTRO MODIFICADO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnEditarBitacoraActionPerformed
 
@@ -284,6 +286,7 @@ public class BitacoraV extends javax.swing.JFrame {
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "REGISTRO ELIMINADO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnEliminarBitacoraActionPerformed
 
@@ -348,7 +351,18 @@ public class BitacoraV extends javax.swing.JFrame {
       }
     });
   }
-
+  
+  /*
+  Metodo para limpiar campos txt
+  */
+   public void limpiar(){
+    txtFechaBitacora.setText(null);
+    txtHoraBitacora.setText(null);
+    txtIDBitacora.setText(null);
+    txtIDCitaBitacora.setText(null);
+    txtNombreBitacora.setText(null);
+  }
+   
   // Variables declaration - do not modify//GEN-BEGIN:variables
   public javax.swing.JButton btnEditarBitacora;
   public javax.swing.JButton btnEliminarBitacora;

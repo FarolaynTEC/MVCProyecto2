@@ -238,6 +238,7 @@ import javax.swing.JOptionPane;
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnSolicitarCitaActionPerformed
 
@@ -254,6 +255,7 @@ import javax.swing.JOptionPane;
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "REGISTRO ELIMINADO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnCancelarActionPerformed
 
@@ -290,6 +292,15 @@ import javax.swing.JOptionPane;
         new CitaV().setVisible(true);
       }
     });
+  }
+  
+  /*
+  Metodo para limpiar campos txt
+  */
+   public void limpiar(){
+    txtCedulaPaciente.setText(null);
+    txtFechaCita.setText(null);
+    txtObservacionesCita.setText(null);
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables

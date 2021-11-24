@@ -877,6 +877,7 @@ public class FuncionarioV extends javax.swing.JFrame {
      //verificacion de repetido
      //eliminar enfermero
      JOptionPane.showMessageDialog(null, "DOCTOR ELIMINADO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnEliminarFuncionarioActionPerformed
 
@@ -891,6 +892,7 @@ public class FuncionarioV extends javax.swing.JFrame {
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "DOCTOR MODIFICADO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnEditarFuncionarioActionPerformed
 
@@ -907,6 +909,7 @@ public class FuncionarioV extends javax.swing.JFrame {
      //verificacion de repetido
      //anadir doctor
      JOptionPane.showMessageDialog(null, "DOCTOR AÑADIDO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnGuardarFuncionarioActionPerformed
 
@@ -933,6 +936,7 @@ public class FuncionarioV extends javax.swing.JFrame {
         } else{ 
            //llamar metodo para anadir
            JOptionPane.showMessageDialog(null, "ENFERMERO AÑADIDO CON EXITO");
+           limpiar();
         } 
   }//GEN-LAST:event_btnGuardarFuncionario2ActionPerformed
 
@@ -955,6 +959,7 @@ public class FuncionarioV extends javax.swing.JFrame {
         } else{ 
            //llamar metodo para anadir
            JOptionPane.showMessageDialog(null, "ENFERMERO MODIFICADO CON EXITO");
+           limpiar();
         }
   }//GEN-LAST:event_btnEditarFuncionario1ActionPerformed
 
@@ -966,6 +971,7 @@ public class FuncionarioV extends javax.swing.JFrame {
      //verificacion de repetido
      //eliminar enfermero
      JOptionPane.showMessageDialog(null, "ENFERMERO ELIMINADO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnEliminarFuncionario1ActionPerformed
 
@@ -1018,6 +1024,17 @@ public class FuncionarioV extends javax.swing.JFrame {
       }
     });
   }
+  
+  /*
+  Metodo para limpiar campos txt
+  */
+   public void limpiar(){
+    txtCedulaFuncionario.setText(null);
+    txtNombreFuncionario.setText(null);
+    txtFechaFuncionario.setText(null);
+    txtCedulaDoctor.setText(null);
+    txtEspecialidad.setText(null);
+  }  
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton btnEditarCentro1;

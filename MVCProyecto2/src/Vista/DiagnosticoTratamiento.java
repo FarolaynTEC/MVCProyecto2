@@ -683,6 +683,7 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
     } else{
       //verificacion de repetido
       JOptionPane.showMessageDialog(null, "REGISTRO ELIMINADO CON EXITO");
+      limpiar();
     }
   }//GEN-LAST:event_btnEliminarTratamientoActionPerformed
 
@@ -695,6 +696,7 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
     } else{
       //verificacion de repetido
       JOptionPane.showMessageDialog(null, "REGISTRO EDITADO CON EXITO");
+      limpiar();
     }
   }//GEN-LAST:event_btnEditarTratamientoActionPerformed
 
@@ -707,6 +709,7 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
     } else{
       //verificacion de repetido
       JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
+      limpiar();
     }
   }//GEN-LAST:event_btnGuardarTratamientoActionPerformed
 
@@ -719,6 +722,7 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
     } else{
       //verificacion de repetido
       JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
+      limpiar();
     }
   }//GEN-LAST:event_btnGuardarDiagnosticoActionPerformed
 
@@ -729,6 +733,7 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
     } else{
       //verificacion de repetido
       JOptionPane.showMessageDialog(null, "REGISTRO ELIMINADO CON EXITO");
+      limpiar();
     }
   }//GEN-LAST:event_btnEliminarDiagnosticoActionPerformed
 
@@ -741,6 +746,7 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
     } else{
       //verificacion de repetido
       JOptionPane.showMessageDialog(null, "REGISTRO MODIFICADO CON EXITO");
+      limpiar();
     }
   }//GEN-LAST:event_btnEditarDiagnosticoActionPerformed
 
@@ -794,6 +800,15 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
         new DiagnosticoTratamiento().setVisible(true);
       }
     });
+  }
+  
+  /*
+  Metodo para limpiar campos txt
+  */
+   public void limpiar(){
+    txtCedulaDiagnostico.setText(null);
+    txtNombreDiagnostico.setText(null);
+    txtObservacionDiagnostico.setText(null);
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables

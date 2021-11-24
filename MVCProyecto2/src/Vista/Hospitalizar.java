@@ -345,15 +345,24 @@ import javax.swing.JOptionPane;
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnGuardarPacienteActionPerformed
 
   private void btnEditarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPacienteActionPerformed
-    // TODO add your handling code here:
+    if(txtFechaFin.getText().length()==0
+        || txtFechaInicio.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO MODIFICADO CON EXITO");
+     limpiar();
+    }
   }//GEN-LAST:event_btnEditarPacienteActionPerformed
 
   private void btnEliminarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPacienteActionPerformed
-    // TODO add your handling code here:
+
   }//GEN-LAST:event_btnEliminarPacienteActionPerformed
 
   private void btnLimpiarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarPacienteActionPerformed
@@ -410,6 +419,14 @@ import javax.swing.JOptionPane;
         new Hospitalizar().setVisible(true);
       }
     });
+  }
+  
+  /*
+  Metodo para limpiar campos txt
+  */
+   public void limpiar(){
+    txtFechaInicio.setText(null);
+    txtFechaFin.setText(null);
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables

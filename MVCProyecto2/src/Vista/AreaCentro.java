@@ -589,6 +589,7 @@ public class AreaCentro extends javax.swing.JFrame {
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "REGISTRO ELIMINADO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnEliminarCentroActionPerformed
 
@@ -598,6 +599,7 @@ public class AreaCentro extends javax.swing.JFrame {
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnGuardarCentroActionPerformed
 
@@ -607,6 +609,7 @@ public class AreaCentro extends javax.swing.JFrame {
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnGuardarAreaActionPerformed
 
@@ -616,6 +619,7 @@ public class AreaCentro extends javax.swing.JFrame {
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "REGISTRO ELIMINADO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnEliminarAreaActionPerformed
 
@@ -667,6 +671,14 @@ public class AreaCentro extends javax.swing.JFrame {
         new AreaCentro().setVisible(true);
       }
     });
+  }
+  
+  /*
+  Metodo para limpiar campos txt
+  */
+   public void limpiar(){
+    txtNombreArea.setText(null);
+    txtNombreCentro.setText(null);
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -162,6 +162,7 @@ import javax.swing.JOptionPane;
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "CONSULTA REALIZADA CON EXITO");
+     txtCedulaPaciente.setText(null);
     }
   }//GEN-LAST:event_btnConsultaVacunasActionPerformed
 

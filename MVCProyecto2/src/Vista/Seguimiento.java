@@ -274,6 +274,7 @@ public class Seguimiento extends javax.swing.JFrame {
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnGuardarSeguimientoActionPerformed
 
@@ -285,6 +286,7 @@ public class Seguimiento extends javax.swing.JFrame {
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "REGISTRO MODIFICADO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnEditarSeguimientoActionPerformed
 
@@ -295,6 +297,7 @@ public class Seguimiento extends javax.swing.JFrame {
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "REGISTRO ELIMINADO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnEliminarSeguimientoActionPerformed
 
@@ -353,6 +356,14 @@ public class Seguimiento extends javax.swing.JFrame {
     });
   }
 
+  /*
+  Metodo para limpiar campos txt
+  */
+   public void limpiar(){
+    txtCedulaPaciente.setText(null);
+    txtFechaSeguimiento.setText(null);
+  }
+   
   // Variables declaration - do not modify//GEN-BEGIN:variables
   public javax.swing.JButton btnEditarSeguimiento;
   public javax.swing.JButton btnEliminarSeguimiento;
