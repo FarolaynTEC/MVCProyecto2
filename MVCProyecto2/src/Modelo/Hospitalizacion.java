@@ -14,11 +14,11 @@ public class Hospitalizacion {
   private int centroAtencion;
   private int cedulaPAcienteInternado;
   private String nombrePacienteInternado;
-  private Diagnostico diagnosticoInter;
+  Diagnostico diagnosticoInter;
   private String fechaInicio;
   private String fechaFin;
   private String especialidadHospi;
-  private Funcionario funcionarioEncargado;
+  Funcionario funcionarioEncargado;
   private ArrayList<RegistroSeguimiento> registroDeSEguimiento;
 
   public int getCentroAtencion() {

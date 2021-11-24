@@ -10,6 +10,7 @@ package Modelo;
  */
 public class Cita {
   private int identificador;
+  private int cedulaPaciente;
   private String fechaCita;
   private String observaciones;
   private AreaTrabajo servicio;
@@ -32,6 +33,11 @@ public class Cita {
     return identificador;
   }
 
+  public int getCedulaPaciente() {
+    return cedulaPaciente;
+  }
+
+  
   public String getFechaCita() {
     return fechaCita;
   }
@@ -50,6 +56,12 @@ public class Cita {
     this.identificador = identificador;
   }
 
+  public void setCedulaPaciente(int cedulaPaciente) {
+    this.cedulaPaciente = cedulaPaciente;
+  }
+
+  
+  
   public void setFechaCita(String fechaCita) {
     this.fechaCita = fechaCita;
   }

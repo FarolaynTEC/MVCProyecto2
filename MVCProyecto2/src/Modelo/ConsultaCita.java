@@ -22,17 +22,18 @@ public class ConsultaCita extends Conexion {
     System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
-    String sql = "INSERT INTO Citas (identificador,"
+    String sql = "INSERT INTO Citas (cedulaPaciente , identificador,"
             + "fechaCita,observaciones,diagnostico,"
             + "estadoDeCita ) VALUES (?,?,?,?,?)";
     
     try{
       ps = con.prepareStatement(sql);
-      ps.setInt(1, cita.getIdentificador());
-      ps.setString(2, cita.getFechaCita());
-      ps.setString(3, cita.getObservaciones());
-      ps.setString(4, cita.diagnostico.getNombreDiagnostico());
-      ps.setString(5, cita.getEstadoDeCita());
+      ps.setInt(1, cita.getCedulaPaciente());
+      ps.setInt(2, cita.getIdentificador());
+      ps.setString(3, cita.getFechaCita());
+      ps.setString(4, cita.getObservaciones());
+      ps.setString(5, cita.diagnostico.getNombreDiagnostico());
+      ps.setString(6, cita.getEstadoDeCita());
       ps.execute();
       return true;
     }catch(SQLException e){
@@ -51,18 +52,18 @@ public class ConsultaCita extends Conexion {
     System.out.print("Aqui2");
     PreparedStatement ps = null;
     Connection con = connect();
-    String sql = "UPDATE Citas SET "
+    String sql = "UPDATE Citas SET cedulaPaciente=?, "
             + "fechaCita=?,observaciones=?,diagnostico=?,"
             + "estadoDeCita=? WHERE identificador=?";
     
     try{
       ps = con.prepareStatement(sql);
-      
-      ps.setString(1, cita.getFechaCita());
-      ps.setString(2, cita.getObservaciones());
-      ps.setString(3, cita.diagnostico.getNombreDiagnostico());
-      ps.setString(4, cita.getEstadoDeCita());
-      ps.setInt(5, cita.getIdentificador());
+      ps.setInt(1, cita.getCedulaPaciente());
+      ps.setString(2, cita.getFechaCita());
+      ps.setString(3, cita.getObservaciones());
+      ps.setString(4, cita.diagnostico.getNombreDiagnostico());
+      ps.setString(5, cita.getEstadoDeCita());
+      ps.setInt(6, cita.getIdentificador());
       ps.execute();
       return true;
     }catch(SQLException e){
