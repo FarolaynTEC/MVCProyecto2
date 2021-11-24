@@ -11,7 +11,7 @@ package Modelo;
 public class RegistroSeguimiento {
   private int cedilaPacienteInternado;
   private String fechaSeguimiento;
-  Funcionario funcionarioSegui;
+  public Funcionario funcionarioSegui;
   private String observacionEvolucion;
   private String tratamientoAsociado;
 
