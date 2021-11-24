@@ -47,6 +47,8 @@ public class CtrlBitacora implements ActionListener {
     vistaBit.setTitle("Bitácoras");
     vistaBit.setLocationRelativeTo(null);
     cargarTablaBitacora();
+    obtenerNombresFuncionarios();
+    obtenerIdCita();
   }
   
   private void cargarTablaBitacora(){
@@ -68,8 +70,8 @@ public class CtrlBitacora implements ActionListener {
     //Boton guardar Bitacora
     if(e.getSource() == vistaBit.btnGuardarBitacora){
       modBit.setIdBitacora(Integer.parseInt(vistaBit.txtIDBitacora.getText()));
-      modBit.setNombreAutor(vistaBit.txtNombreBitacora.getText());
-      modBit.setIdentificadorCita(Integer.parseInt(vistaBit.txtIDCitaBitacora.getText()));
+      modBit.setIdentificadorCita(Integer.parseInt(vistaBit.cmbCitaBitacora.getSelectedItem().toString()));
+      modBit.setNombreAutor(vistaBit.cmbNombreBitacora.getSelectedItem().toString());
       modBit.setFecha(vistaBit.txtFechaBitacora.getText());
       modBit.setHora(vistaBit.txtHoraBitacora.getText());
       
@@ -90,8 +92,8 @@ public class CtrlBitacora implements ActionListener {
     //Boton editar Bitacora
     if(e.getSource()==vistaBit.btnEditarBitacora){
       modBit.setIdBitacora(Integer.parseInt(vistaBit.txtIDBitacora.getText()));
-      modBit.setNombreAutor(vistaBit.txtNombreBitacora.getText());
-      modBit.setIdentificadorCita(Integer.parseInt(vistaBit.txtIDCitaBitacora.getText()));
+      modBit.setIdentificadorCita(Integer.parseInt(vistaBit.cmbCitaBitacora.getSelectedItem().toString()));
+      modBit.setNombreAutor(vistaBit.cmbNombreBitacora.getSelectedItem().toString());
       modBit.setFecha(vistaBit.txtFechaBitacora.getText());
       modBit.setHora(vistaBit.txtHoraBitacora.getText());
       
@@ -144,11 +146,65 @@ public class CtrlBitacora implements ActionListener {
    */
   public void limpiar(){
     vistaBit.txtIDBitacora.setText(null);
-    vistaBit.txtNombreBitacora.setText(null);
-    vistaBit.txtIDCitaBitacora.setText(null);
     vistaBit.txtFechaBitacora.setText(null);
     vistaBit.txtHoraBitacora.setText(null);
   }
   
+    /**
+   * Método para insertar el nombre de los funcionarios en el
+   * combobox llamado cmbNombreBitacora
+   */  
+    public void obtenerNombresFuncionarios(){
+    ResultSet rs;
+    try {
+      DefaultComboBoxModel listaModelo = new DefaultComboBoxModel();
+      listaModelo.addElement("Funcionario");
+    
+      Connection connect = DriverManager.getConnection("jdbc:sqlserver://"
+          + ";databaseName=Proyecto_POO2;user=usuariosql;password=root1");
+      PreparedStatement st = connect.prepareStatement("SELECT nombreFuncionario from "
+          + "Funcionario order by cedulaFuncionario");
+      rs = st.executeQuery();
+    
+      try {
+        while (rs.next()){
+          listaModelo.addElement(rs.getString("nombreFuncionario"));
+      } rs.close();
+      
+      } catch(SQLException ex ){
+        System.err.println(ex.getMessage());
+      } vistaBit.cmbNombreBitacora.setModel(listaModelo);
+    } catch(SQLException e){
+      JOptionPane.showMessageDialog(null,e);
+    }
+  }
   
+    /**
+   * Método para insertar los id de las citas en el
+   * combobox llamado cmbCitaBitacora
+   */  
+    public void obtenerIdCita(){
+    ResultSet rs;
+    try {
+      DefaultComboBoxModel listaModelo = new DefaultComboBoxModel();
+      listaModelo.addElement("Cita");
+    
+      Connection connect = DriverManager.getConnection("jdbc:sqlserver://"
+          + ";databaseName=Proyecto_POO2;user=usuariosql;password=root1");
+      PreparedStatement st = connect.prepareStatement("SELECT identificador from "
+          + "Citas order by cedulaPaciente");
+      rs = st.executeQuery();
+    
+      try {
+        while (rs.next()){
+          listaModelo.addElement(rs.getString("identificador"));
+      } rs.close();
+      
+      } catch(SQLException ex ){
+        System.err.println(ex.getMessage());
+      } vistaBit.cmbCitaBitacora.setModel(listaModelo);
+    } catch(SQLException e){
+      JOptionPane.showMessageDialog(null,e);
+    }
+  }
 }

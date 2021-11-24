@@ -37,8 +37,6 @@ public class BitacoraV extends javax.swing.JFrame {
     jLabel3 = new javax.swing.JLabel();
     jLabel4 = new javax.swing.JLabel();
     jLabel5 = new javax.swing.JLabel();
-    txtNombreBitacora = new javax.swing.JTextField();
-    txtIDCitaBitacora = new javax.swing.JTextField();
     txtFechaBitacora = new javax.swing.JTextField();
     txtHoraBitacora = new javax.swing.JTextField();
     jScrollPane1 = new javax.swing.JScrollPane();
@@ -50,6 +48,8 @@ public class BitacoraV extends javax.swing.JFrame {
     btnVolverBitacora = new javax.swing.JButton();
     jLabel6 = new javax.swing.JLabel();
     txtIDBitacora = new javax.swing.JTextField();
+    cmbNombreBitacora = new javax.swing.JComboBox<>();
+    cmbCitaBitacora = new javax.swing.JComboBox<>();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,10 +73,7 @@ public class BitacoraV extends javax.swing.JFrame {
 
     tablaBitacora.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
-        {null, null, null, null},
-        {null, null, null, null},
-        {null, null, null, null},
-        {null, null, null, null}
+
       },
       new String [] {
         "Nombre", "ID CITA", "Fecha", "Hora"
@@ -147,32 +144,33 @@ public class BitacoraV extends javax.swing.JFrame {
     jPanel1Layout.setHorizontalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel1Layout.createSequentialGroup()
-        .addGap(37, 37, 37)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGap(37, 37, 37)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE))
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel3)
+                .addGap(83, 83, 83))
+              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-              .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(txtIDCitaBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(txtNombreBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(txtFechaBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(txtHoraBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(txtIDBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(147, 147, 147))
-          .addGroup(jPanel1Layout.createSequentialGroup()
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-              .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
-              .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                  .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(69, 69, 69)))))
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+          .addComponent(txtHoraBitacora, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+          .addComponent(txtIDBitacora, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+          .addComponent(txtFechaBitacora, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+          .addComponent(cmbNombreBitacora, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(cmbCitaBitacora, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        .addGap(81, 81, 81)
         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 737, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(29, 29, 29))
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -205,23 +203,23 @@ public class BitacoraV extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel6)
               .addComponent(txtIDBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(24, 24, 24)
+            .addGap(23, 23, 23)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel2)
-              .addComponent(txtNombreBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(27, 27, 27)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-              .addComponent(txtIDCitaBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jLabel3))
-            .addGap(27, 27, 27)
+              .addComponent(cmbNombreBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(25, 25, 25)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addComponent(jLabel3)
+              .addComponent(cmbCitaBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(18, 18, 18)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(txtFechaBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(jLabel4))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(txtHoraBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(96, 96, 96))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+              .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(txtHoraBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(100, 100, 100))
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)))
@@ -239,7 +237,7 @@ public class BitacoraV extends javax.swing.JFrame {
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1260, Short.MAX_VALUE)
+      .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -252,9 +250,7 @@ public class BitacoraV extends javax.swing.JFrame {
   private void btnGuardarBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarBitacoraActionPerformed
     if(txtFechaBitacora.getText().length()==0
         || txtHoraBitacora.getText().length()==0
-            || txtIDBitacora.getText().length()==0
-                || txtIDCitaBitacora.getText().length()==0
-                    || txtNombreBitacora.getText().length()==0)
+            || txtIDBitacora.getText().length()==0)
    {
      JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
     } else{
@@ -267,9 +263,7 @@ public class BitacoraV extends javax.swing.JFrame {
   private void btnEditarBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarBitacoraActionPerformed
     if(txtFechaBitacora.getText().length()==0
         || txtHoraBitacora.getText().length()==0
-            || txtIDBitacora.getText().length()==0
-                || txtIDCitaBitacora.getText().length()==0
-                    || txtNombreBitacora.getText().length()==0)
+            || txtIDBitacora.getText().length()==0)
    {
      JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
     } else{
@@ -294,8 +288,6 @@ public class BitacoraV extends javax.swing.JFrame {
     txtFechaBitacora.setText(null);
     txtHoraBitacora.setText(null);
     txtIDBitacora.setText(null);
-    txtIDCitaBitacora.setText(null);
-    txtNombreBitacora.setText(null);
   }//GEN-LAST:event_btnLimpiarBitacoraActionPerformed
 
   private void btnVolverBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverBitacoraActionPerformed
@@ -361,8 +353,6 @@ public class BitacoraV extends javax.swing.JFrame {
     txtFechaBitacora.setText(null);
     txtHoraBitacora.setText(null);
     txtIDBitacora.setText(null);
-    txtIDCitaBitacora.setText(null);
-    txtNombreBitacora.setText(null);
   }
    
   // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -371,6 +361,8 @@ public class BitacoraV extends javax.swing.JFrame {
   public javax.swing.JButton btnGuardarBitacora;
   public javax.swing.JButton btnLimpiarBitacora;
   public javax.swing.JButton btnVolverBitacora;
+  public javax.swing.JComboBox<String> cmbCitaBitacora;
+  public javax.swing.JComboBox<String> cmbNombreBitacora;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JLabel jLabel3;
@@ -383,7 +375,5 @@ public class BitacoraV extends javax.swing.JFrame {
   public javax.swing.JTextField txtFechaBitacora;
   public javax.swing.JTextField txtHoraBitacora;
   public javax.swing.JTextField txtIDBitacora;
-  public javax.swing.JTextField txtIDCitaBitacora;
-  public javax.swing.JTextField txtNombreBitacora;
   // End of variables declaration//GEN-END:variables
 }

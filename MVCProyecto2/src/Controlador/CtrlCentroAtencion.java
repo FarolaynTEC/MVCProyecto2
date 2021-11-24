@@ -63,7 +63,6 @@ public class CtrlCentroAtencion implements ActionListener{
 
     //Boton guardar
     if(e.getSource()==frm.btnGuardarCentro){ 
-      mod.setCodigoCentroAtencion(Integer.parseInt(frm.txtCodigoCentro.getText()));
       mod.setNombre(frm.txtNombreCentro.getText());
       mod.setUbicacion(frm.txtUbicacionCentro.getText());
       mod.setCapacidadMaxPac(Integer.parseInt(frm.txtCantidadCentro.getText()));
@@ -72,7 +71,6 @@ public class CtrlCentroAtencion implements ActionListener{
       try {
         
         if(frm.txtCantidadCentro.getText().length()==0
-        || frm.txtCodigoCentro.getText().length()==0
             || frm.txtNombreCentro.getText().length()==0
                 || frm.txtUbicacionCentro.getText().length()==0){ 
           JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");

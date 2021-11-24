@@ -242,7 +242,6 @@ public class CentroA extends javax.swing.JFrame {
 
   private void btnGuardarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCentroActionPerformed
     if(txtCantidadCentro.getText().length()==0
-        || txtCodigoCentro.getText().length()==0
             || txtNombreCentro.getText().length()==0
                 || txtUbicacionCentro.getText().length()==0)
    {
@@ -256,7 +255,6 @@ public class CentroA extends javax.swing.JFrame {
 
   private void btnEditarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCentroActionPerformed
     if(txtCantidadCentro.getText().length()==0
-        || txtCodigoCentro.getText().length()==0
             || txtNombreCentro.getText().length()==0
                 || txtUbicacionCentro.getText().length()==0)
    {

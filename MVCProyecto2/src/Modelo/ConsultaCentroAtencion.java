@@ -18,17 +18,15 @@ public class ConsultaCentroAtencion extends Conexion{
     System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
-    String sql = "INSERT INTO CentroAtencion(codigoCentroAtencion,"
-            + "nombre,ubicacion,capacidadMaxPac,"
-            + "tipoDeCentro) VALUES (?,?,?,?,?)";
+    String sql = "INSERT INTO CentroAtencion(nombre,ubicacion,capacidadMaxPac,"
+            + "tipoDeCentro) VALUES (?,?,?,?)";
     
     try{
       ps = con.prepareStatement(sql);
-      ps.setInt(1, CA.getCodigoCentroAtencion());
-      ps.setString(2, CA.getNombre());
-      ps.setString(3, CA.getUbicacion());
-      ps.setInt(4, CA.getCapacidadMaxPac());
-      ps.setString(5, CA.getTipoDeCentro());
+      ps.setString(1, CA.getNombre());
+      ps.setString(2, CA.getUbicacion());
+      ps.setInt(3, CA.getCapacidadMaxPac());
+      ps.setString(4, CA.getTipoDeCentro());
       ps.execute();
       return true;
     }catch(SQLException e){
@@ -44,7 +42,6 @@ public class ConsultaCentroAtencion extends Conexion{
   }
   
   public boolean modificar(CentroAtencion CA) throws SQLException{
-    System.out.print("Aqui2");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "UPDATE CentroAtencion SET "

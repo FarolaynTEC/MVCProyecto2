@@ -6,6 +6,7 @@ package Vista;
 
 import Controlador.CtrlCentroAtencion;
 import Controlador.CtrlAreaCentro;
+import Controlador.CtrlBitacora;
 import Modelo.CentroAtencion;
 import Modelo.ConsultaCentroAtencion;
 import Vista.CentroA;
@@ -14,7 +15,9 @@ import Controlador.CtrlCitas;
 import Controlador.CtrlFuncionario;
 import Controlador.CtrlPaciente;
 import Modelo.AreaTrabajo;
+import Modelo.Bitacora;
 import Modelo.Cita;
+import Modelo.ConsultaBitacora;
 import Modelo.ConsultaCita;
 import Modelo.ConsultaFuncionario;
 import Modelo.ConsultaPaciente;
@@ -256,7 +259,13 @@ public class Menu extends javax.swing.JFrame {
   }//GEN-LAST:event_jButton1ActionPerformed
 
   private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    BitacoraV verV = new BitacoraV();    
+
+    Bitacora modBit = new Bitacora();
+    ConsultaBitacora modBitC = new ConsultaBitacora();    
+    BitacoraV verV = new BitacoraV(); 
+    
+    CtrlBitacora ctrlBit = new CtrlBitacora(modBit, modBitC, verV);
+    ctrlBit.iniciar();
     verV.setVisible(true);
     this.setVisible(false);
   }//GEN-LAST:event_jButton2ActionPerformed
