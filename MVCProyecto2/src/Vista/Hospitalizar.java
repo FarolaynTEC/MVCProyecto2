@@ -85,20 +85,20 @@ import javax.swing.JOptionPane;
 
     tablaPaciente.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
-        {null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null}
+        {null, null, null, null, null, null, null},
+        {null, null, null, null, null, null, null},
+        {null, null, null, null, null, null, null},
+        {null, null, null, null, null, null, null}
       },
       new String [] {
-        "Cédula", "Nombre", "Fecha Nacimiento", "Nacionalidad", "Tipo Sangre", "Residencia", "Teléfono", "Correo"
+        "Cédula", "Nombre", "Diagnotico", "Ingreso", "Salida", "Especialidad", "Encargado"
       }
     ) {
       Class[] types = new Class [] {
-        java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+        java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
       };
       boolean[] canEdit = new boolean [] {
-        false, false, false, false, false, true, false, false
+        false, false, false, false, false, true, false
       };
 
       public Class getColumnClass(int columnIndex) {
