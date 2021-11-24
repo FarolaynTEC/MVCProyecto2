@@ -20,10 +20,9 @@ import javax.swing.table.DefaultTableModel;
 public class ConsultaDiagnosticoTratamiento extends Conexion {
   
   public boolean registrarDiagnostico (Diagnostico dia) throws SQLException{
-    System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
-    String sql = "INSERT INTO Diagnostico (identificador,"
+    String sql = "INSERT INTO Diagnostico(identificador,"
             + "nombreDiagnostico,observaciones,nivel)"
             + "VALUES (?,?,?,?)";
     
@@ -48,20 +47,18 @@ public class ConsultaDiagnosticoTratamiento extends Conexion {
   }
   
   public boolean modificarDiagnostico (Diagnostico dia) throws SQLException{
-    System.out.print("Aqui2");
     PreparedStatement ps = null;
     Connection con = connect();
-    String sql = "UPDATE Diagnositco SET "
-            + "nombreDiagnostico=?,observaciones=?,nivel=?"
+    String sql = "UPDATE Diagnostico SET "
+            + " nombreDiagnostico=? , observaciones=? , nivel=? "
             + " WHERE identificador=?";
     
     try{
       ps = con.prepareStatement(sql);
-      
       ps.setString(1, dia.getNombreDiagnostico());
       ps.setString(2, dia.getObservaciones());
       ps.setString(3, dia.getNivel());
-      ps.setInt(5, dia.getIdentificadorCita());
+      ps.setInt(4, dia.getIdentificadorCita());
       ps.execute();
       return true;
     }catch(SQLException e){
@@ -77,10 +74,9 @@ public class ConsultaDiagnosticoTratamiento extends Conexion {
   }
   
   public boolean eliminarDiagnotico (Diagnostico dia) throws SQLException{
-    System.out.print("Aqui2");
     PreparedStatement ps = null;
     Connection con = connect();
-    String sql = "DELETE FROM Bitacora WHERE identificador =?";
+    String sql = "DELETE FROM Diagnostico WHERE identificador =?";
     
     try{
       ps = con.prepareStatement(sql);
@@ -127,7 +123,6 @@ public class ConsultaDiagnosticoTratamiento extends Conexion {
   }
   
   public boolean registrarTratamiento (Tratamiento tra) throws SQLException{
-    System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "INSERT INTO Tratamiento (identificador,"
@@ -155,7 +150,6 @@ public class ConsultaDiagnosticoTratamiento extends Conexion {
   }
   
   public boolean modificarTratamiento (Tratamiento tra) throws SQLException{
-    System.out.print("Aqui2");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "UPDATE Tratamiento SET "
@@ -168,7 +162,7 @@ public class ConsultaDiagnosticoTratamiento extends Conexion {
       ps.setString(1, tra.getNombreTratamiento());
       ps.setString(2, tra.getDosis());
       ps.setString(3, tra.getTipoTratamiento());
-      ps.setInt(5, tra.getIdentificadorCita());
+      ps.setInt(4, tra.getIdentificadorCita());
       ps.execute();
       return true;
     }catch(SQLException e){
@@ -184,7 +178,6 @@ public class ConsultaDiagnosticoTratamiento extends Conexion {
   }
   
   public boolean eliminarTratamiento (Tratamiento tra) throws SQLException{
-    System.out.print("Aqui2");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "DELETE FROM Tratamiento WHERE identificador =?";
@@ -215,7 +208,7 @@ public class ConsultaDiagnosticoTratamiento extends Conexion {
       Connection connect = DriverManager.getConnection("jdbc:sqlserver://;"
               + "databaseName=Proyecto_POO2;user=usuariosql;password=root1");
       PreparedStatement st = connect.prepareStatement("SELECT identificador, "
-              + "nombreDiagnostico, dosis, tipoTratamiento FROM Tratamiento");
+              + "nombreTratameinto, dosis, tipoTratamiento FROM Tratamiento");
       rs = st.executeQuery();
       rsmd = rs.getMetaData();
       columnas = rsmd.getColumnCount();

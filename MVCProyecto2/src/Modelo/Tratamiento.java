@@ -14,11 +14,6 @@ public class Tratamiento {
   private String dosis;
   private String tipoTratamiento;
 
-  public Tratamiento(String nombreTratamiento, String dosis, String tipoTratamiento) {
-    this.nombreTratamiento = nombreTratamiento;
-    this.dosis = dosis;
-    this.tipoTratamiento = tipoTratamiento;
-  }
 
   public int getIdentificadorCita() {
     return identificadorCita;

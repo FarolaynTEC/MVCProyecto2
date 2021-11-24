@@ -12,6 +12,7 @@ import Modelo.ConsultaCentroAtencion;
 import Vista.CentroA;
 import Controlador.CtrlCentroAtencion;
 import Controlador.CtrlCitas;
+import Controlador.CtrlDiagnosticoTratamiento;
 import Controlador.CtrlFuncionario;
 import Controlador.CtrlHospitalizacion;
 import Controlador.CtrlPaciente;
@@ -21,11 +22,13 @@ import Modelo.Bitacora;
 import Modelo.Cita;
 import Modelo.ConsultaBitacora;
 import Modelo.ConsultaCita;
+import Modelo.ConsultaDiagnosticoTratamiento;
 import Modelo.ConsultaFuncionario;
 import Modelo.ConsultaHospitalizacion;
 import Modelo.ConsultaPaciente;
 import Modelo.ConsultaSeguimiento;
 import Modelo.ConsultaTipoCentro;
+import Modelo.Diagnostico;
 import Modelo.Doctor;
 import Modelo.Enfermero;
 import Modelo.Funcionario;
@@ -33,6 +36,7 @@ import Modelo.Hospitalizacion;
 import Modelo.Paciente;
 import Modelo.RegistroSeguimiento;
 import Modelo.TipoCentroAtencion;
+import Modelo.Tratamiento;
 import Modelo.Vacuna;
 import Vista.AreaCentro;
 import Vista.FuncionarioV;
@@ -298,7 +302,13 @@ public class Menu extends javax.swing.JFrame {
   }//GEN-LAST:event_jButton4ActionPerformed
 
   private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-    DiagnosticoTratamiento verDT = new DiagnosticoTratamiento();    
+    
+    Diagnostico modDia = new Diagnostico();
+    Tratamiento modTra = new Tratamiento();
+    ConsultaDiagnosticoTratamiento modDiaTra = new ConsultaDiagnosticoTratamiento();
+    DiagnosticoTratamiento verDT = new DiagnosticoTratamiento(); 
+    CtrlDiagnosticoTratamiento ctrlDT = new CtrlDiagnosticoTratamiento(modDia,modTra,modDiaTra,verDT);
+    ctrlDT.iniciar();
     verDT.setVisible(true);
     this.setVisible(false);
   }//GEN-LAST:event_jButton5ActionPerformed
