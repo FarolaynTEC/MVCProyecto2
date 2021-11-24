@@ -124,7 +124,7 @@ public class CtrlSeguimiento implements ActionListener{
     }
     
     //Boton limpiar
-    if(e.getSource()==vistaSegui.btnLimpiar{
+    if(e.getSource()==vistaSegui.btnLimpiar){
       limpiar();
     }
     
