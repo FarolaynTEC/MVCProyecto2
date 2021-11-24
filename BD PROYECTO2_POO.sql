@@ -1,4 +1,4 @@
---Creación de la base de dato Proyecto_POO2
+--CreaciÃ³n de la base de dato Proyecto_POO2
 CREATE DATABASE Proyecto_POO2
 --Se coloca en la base de datos Proyecto_POO2 para hacerle modificaciones
 USE Proyecto_POO2
@@ -69,6 +69,7 @@ CREATE TABLE Citas(
   identificador int NOT NULL,
   fechaCita date NOT NULL,
   observaciones varchar(80) NOT NULL,
+  especialidad varchar(80) NOT NULL,
   diagnostico varchar(80) NOT NULL,
   estadoDeCita varchar(30) NOT NULL,
   PRIMARY KEY (identificador),
