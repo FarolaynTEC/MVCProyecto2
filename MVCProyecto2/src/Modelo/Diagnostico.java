@@ -11,6 +11,7 @@ import java.util.ArrayList;
  * @author Alejandra Merino
  */
 public class Diagnostico {
+  public int identificadorCita;
   public String nombreDiagnostico;
   public String observaciones;
   public ArrayList<Tratamiento> tratamientos;
@@ -21,6 +22,12 @@ public class Diagnostico {
     this.observaciones = observaciones;
   }
 
+  public int getIdentificadorCita() {
+    return identificadorCita;
+  }
+
+  
+  
   public String getNombreDiagnostico() {
     return nombreDiagnostico;
   }
@@ -36,8 +43,12 @@ public class Diagnostico {
   public String getNivel() {
     return nivel;
   }
-  
 
+  public void setIdentificadorCita(int identificadorCita) {
+    this.identificadorCita = identificadorCita;
+  }
+  
+  
   public void setNombreDiagnostico(String nombreDiagnostico) {
     this.nombreDiagnostico = nombreDiagnostico;
   }
