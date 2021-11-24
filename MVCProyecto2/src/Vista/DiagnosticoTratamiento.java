@@ -65,7 +65,7 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
     jLabel4 = new javax.swing.JLabel();
     jLabel5 = new javax.swing.JLabel();
     jLabel6 = new javax.swing.JLabel();
-    txtCedulaDiagnostico = new javax.swing.JTextField();
+    txtIDCita = new javax.swing.JTextField();
     txtNombreDiagnostico = new javax.swing.JTextField();
     jScrollPane1 = new javax.swing.JScrollPane();
     tablaDiagnostico = new javax.swing.JTable();
@@ -323,7 +323,7 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
     jLabel1.setText("Diagnóstico y tratamiento");
 
     jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-    jLabel2.setText("Cédula Paciente");
+    jLabel2.setText("ID Cita");
 
     jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     jLabel3.setText("Nombre Diagnóstico");
@@ -334,9 +334,9 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
     jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
     jLabel6.setText("Tratamiento");
 
-    txtCedulaDiagnostico.addActionListener(new java.awt.event.ActionListener() {
+    txtIDCita.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        txtCedulaDiagnosticoActionPerformed(evt);
+        txtIDCitaActionPerformed(evt);
       }
     });
 
@@ -511,7 +511,7 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createSequentialGroup()
                   .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addGap(30, 30, 30)
-                  .addComponent(txtCedulaDiagnostico, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                  .addComponent(txtIDCita, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE))
               .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -583,7 +583,7 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel2)
-              .addComponent(txtCedulaDiagnostico, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(txtIDCita, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(26, 26, 26)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel3)
@@ -714,7 +714,7 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
   }//GEN-LAST:event_btnGuardarTratamientoActionPerformed
 
   private void btnGuardarDiagnosticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarDiagnosticoActionPerformed
-    if(txtCedulaDiagnostico.getText().length()==0
+    if(txtIDCita.getText().length()==0
       || txtNombreDiagnostico.getText().length()==0
       || txtObservacionDiagnostico.getText().length()==0)
     {
@@ -738,7 +738,7 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
   }//GEN-LAST:event_btnEliminarDiagnosticoActionPerformed
 
   private void btnEditarDiagnosticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarDiagnosticoActionPerformed
-    if(txtCedulaDiagnostico.getText().length()==0
+    if(txtIDCita.getText().length()==0
       || txtNombreDiagnostico.getText().length()==0
       || txtObservacionDiagnostico.getText().length()==0)
     {
@@ -757,15 +757,16 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
   }//GEN-LAST:event_btnVolverCentroActionPerformed
 
   private void btnLimpiarDiagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarDiagActionPerformed
-    txtCedulaDiagnostico.setText(null);
+    txtIDCita.setText(null);
     txtNombreDiagnostico.setText(null);
     txtObservacionDiagnostico.setText(null);
   }//GEN-LAST:event_btnLimpiarDiagActionPerformed
 
-  private void txtCedulaDiagnosticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaDiagnosticoActionPerformed
+  private void txtIDCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDCitaActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_txtCedulaDiagnosticoActionPerformed
+  }//GEN-LAST:event_txtIDCitaActionPerformed
 
+  
   /**
    * @param args the command line arguments
    */
@@ -808,25 +809,25 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
   Metodo para limpiar campos txt
   */
    public void limpiar(){
-    txtCedulaDiagnostico.setText(null);
+    txtIDCita.setText(null);
     txtNombreDiagnostico.setText(null);
     txtObservacionDiagnostico.setText(null);
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton btnEditarCentro1;
-  private javax.swing.JButton btnEditarDiagnostico;
-  private javax.swing.JButton btnEditarTratamiento;
+  public javax.swing.JButton btnEditarDiagnostico;
+  public javax.swing.JButton btnEditarTratamiento;
   private javax.swing.JButton btnEliminarCentro1;
-  private javax.swing.JButton btnEliminarDiagnostico;
-  private javax.swing.JButton btnEliminarTratamiento;
+  public javax.swing.JButton btnEliminarDiagnostico;
+  public javax.swing.JButton btnEliminarTratamiento;
   private javax.swing.JButton btnGuardarCentro1;
-  private javax.swing.JButton btnGuardarDiagnostico;
-  private javax.swing.JButton btnGuardarTratamiento;
+  public javax.swing.JButton btnGuardarDiagnostico;
+  public javax.swing.JButton btnGuardarTratamiento;
   private javax.swing.JButton btnLimpiarCentro1;
-  private javax.swing.JButton btnLimpiarCentro2;
-  private javax.swing.JButton btnLimpiarDiag;
-  private javax.swing.JButton btnVolverCentro;
+  public javax.swing.JButton btnLimpiarCentro2;
+  public javax.swing.JButton btnLimpiarDiag;
+  public javax.swing.JButton btnVolverCentro;
   private javax.swing.JButton btnVolverCentro1;
   private javax.swing.JComboBox<String> cmbTipoCentro2;
   private javax.swing.JComboBox<String> cmbTipoCentro3;
@@ -862,16 +863,16 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
   private javax.swing.JScrollPane jScrollPane3;
   private javax.swing.JScrollPane jScrollPane5;
   private javax.swing.JTable jTable2;
-  private javax.swing.JTable tablaDiagnostico;
-  private javax.swing.JTable tablaTratamiento;
-  private javax.swing.JTextField txNombreTratamiento;
+  public javax.swing.JTable tablaDiagnostico;
+  public javax.swing.JTable tablaTratamiento;
+  public javax.swing.JTextField txNombreTratamiento;
   private javax.swing.JTextField txtCantidadCentro1;
-  private javax.swing.JTextField txtCedulaDiagnostico;
   private javax.swing.JTextField txtCodigoCentro1;
-  private javax.swing.JTextField txtDosisTratamiento;
+  public javax.swing.JTextField txtDosisTratamiento;
+  public javax.swing.JTextField txtIDCita;
   private javax.swing.JTextField txtNombreCentro1;
-  private javax.swing.JTextField txtNombreDiagnostico;
-  private javax.swing.JTextArea txtObservacionDiagnostico;
-  private javax.swing.JTextField txtTipoTratamiento;
+  public javax.swing.JTextField txtNombreDiagnostico;
+  public javax.swing.JTextArea txtObservacionDiagnostico;
+  public javax.swing.JTextField txtTipoTratamiento;
   // End of variables declaration//GEN-END:variables
 }
