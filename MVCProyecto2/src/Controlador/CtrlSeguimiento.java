@@ -69,10 +69,13 @@ public class CtrlSeguimiento implements ActionListener{
     //Boton guardar Seguimiento
     if(e.getSource() == vistaSegui.btnGuardarSeguimiento){
       modSegui.setCedilaPacienteInternado(Integer.parseInt
-          (vistaSegui.cmbCedulaPacientes.getSelectedItem().toString()));
+          (vistaSegui.cmbCedulaPacientes.getSelectedItem().toString()));      
       modSegui.setFechaSeguimiento(vistaSegui.txtFechaSeguimiento.getText());
-      modSegui.funcionarioSegui.setCedulaFuncionario(Integer.parseInt(vistaSegui.cmbFuncionario.getSelectedItem().toString()));
-      modSegui.setTratamientoAsociado(vistaSegui.cmbTratamiento.getSelectedItem().toString());
+      modSegui.setFuncionarioSegui(Integer.parseInt(vistaSegui.cmbFuncionario.
+          getSelectedItem().toString()));
+      modSegui.setTratamientoAsociado(vistaSegui.cmbTratamiento.
+          getSelectedItem().toString());
+      modSegui.setObservacionEvolucion(vistaSegui.txtObservacionEvolucion.getText());
       
       try {
         if(modSeguiC.registrarSeguimiento(modSegui)){
@@ -93,8 +96,11 @@ public class CtrlSeguimiento implements ActionListener{
       modSegui.setCedilaPacienteInternado(Integer.parseInt
           (vistaSegui.cmbCedulaPacientes.getSelectedItem().toString()));
       modSegui.setFechaSeguimiento(vistaSegui.txtFechaSeguimiento.getText());
-      modSegui.funcionarioSegui.setCedulaFuncionario(Integer.parseInt(vistaSegui.cmbFuncionario.getSelectedItem().toString()));
-      modSegui.setTratamientoAsociado(vistaSegui.cmbTratamiento.getSelectedItem().toString());
+      modSegui.setFuncionarioSegui(Integer.parseInt(vistaSegui.cmbFuncionario.
+          getSelectedItem().toString()));
+      modSegui.setTratamientoAsociado(vistaSegui.cmbTratamiento.
+          getSelectedItem().toString());
+      modSegui.setObservacionEvolucion(vistaSegui.txtObservacionEvolucion.getText());
       
       try {
         if(modSeguiC.modificarSeguimiento(modSegui)){
@@ -159,13 +165,14 @@ public class CtrlSeguimiento implements ActionListener{
     
       Connection connect = DriverManager.getConnection("jdbc:sqlserver://"
           + ";databaseName=Proyecto_POO2;user=usuariosql;password=root1");
-      PreparedStatement st = connect.prepareStatement("SELECT cedulaPaciente "
-          + "FROM Paciente ORDER BY cedulaPaciente");
+      PreparedStatement st = connect.prepareStatement("SELECT "
+          + "cedulaPacienteInternado FROM Hospitalizacion ORDER BY "
+          + "cedulaPacienteInternado");
       rs = st.executeQuery();
     
       try {
         while (rs.next()){
-          listaModelo.addElement(rs.getString("cedulaPaciente"));
+          listaModelo.addElement(rs.getString("cedulaPacienteInternado"));
       } rs.close();
       
       } catch(SQLException ex ){

@@ -143,8 +143,8 @@ CREATE TABLE Hospitalizacion(
 CREATE TABLE RegistroDeSeguimiento(
   cedulaPacienteInternado int NOT NULL,
   funcionarioSeguimiento int NOT NULL,
-  fechaSeguimiento varchar(80) NOT NULL,
-  observacionDeEvolucion int NOT NULL,
+  fechaSeguimiento date NOT NULL,
+  observacionDeEvolucion varchar(200) NOT NULL,
   tratameintoAsociado varchar(80) NOT NULL,
   FOREIGN KEY (cedulaPacienteInternado) REFERENCES Hospitalizacion(cedulaPacienteInternado)ON DELETE CASCADE  
   ON UPDATE CASCADE,

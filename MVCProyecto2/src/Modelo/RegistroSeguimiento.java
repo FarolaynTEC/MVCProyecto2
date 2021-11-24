@@ -5,16 +5,24 @@
 package Modelo;
 
 /**
- *
- * @author Alejandra Merino
+ * Clase RegistroSeguimeinto.
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class RegistroSeguimiento {
   private int cedilaPacienteInternado;
   private String fechaSeguimiento;
-  public Funcionario funcionarioSegui;
+  private int funcionarioSegui;
   private String observacionEvolucion;
   private String tratamientoAsociado;
 
+  public int getFuncionarioSegui() {
+    return funcionarioSegui;
+  }
+
+  public void setFuncionarioSegui(int funcionarioSegui) {
+    this.funcionarioSegui = funcionarioSegui;
+  }
+  
   public int getCedilaPacienteInternado() {
     return cedilaPacienteInternado;
   }

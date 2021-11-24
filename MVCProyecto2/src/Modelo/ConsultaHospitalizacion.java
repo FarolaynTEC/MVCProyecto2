@@ -51,7 +51,7 @@ public class ConsultaHospitalizacion extends Conexion {
     Connection con = connect();
     String sql = "UPDATE Hospitalizacion SET nombrePacienteInternado=?,"
         + "diagnostico=?,fechaInicio=?,fechaFin=?,especialidadHospitalizacion=?, "
-        + "funcionarioEncargado=? WHERE cedulaPaciente=? AND centroAtencion=?";
+        + "funcionarioEncargado=? WHERE cedulaPacienteInternado=?";
     try{
       ps = con.prepareStatement(sql);
       ps.setString(1, hos.getNombrePacienteInternado());
@@ -61,7 +61,6 @@ public class ConsultaHospitalizacion extends Conexion {
       ps.setString(5, hos.getEspecialidadHospi());
       ps.setInt(6, hos.getFuncionarioEncargado());
       ps.setInt(7, hos.getCedulaPAcienteInternado());
-      ps.setInt(8, hos.getCentroAtencion());
       ps.execute();
       return true;
     }catch(SQLException e){
@@ -79,11 +78,10 @@ public class ConsultaHospitalizacion extends Conexion {
   public boolean eliminarHospitalizacion (Hospitalizacion hos) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();
-    String sql = "DELETE FROM Hospitalizacion WHERE WHERE cedulaPaciente=? AND centroAtencion=?";
+    String sql = "DELETE FROM Hospitalizacion WHERE cedulaPacienteInternado=?";
     try{
       ps = con.prepareStatement(sql);
       ps.setInt(1, hos.getCedulaPAcienteInternado());
-      ps.setInt(2, hos.getCentroAtencion());
       ps.execute();
       return true;
     }catch(SQLException e){

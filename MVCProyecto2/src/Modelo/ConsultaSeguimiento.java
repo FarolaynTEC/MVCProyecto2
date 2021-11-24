@@ -22,16 +22,17 @@ public class ConsultaSeguimiento extends Conexion {
   public boolean registrarSeguimiento (RegistroSeguimiento segui) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();
-    String sql = "INSERT INTO RegistroDeSeguimiento (cedulaPacienteInternado,"
-            + "funcionarioSeguimiento ,observacionDeEvolucion ,"
-            + "tratameintoAsociado   ) VALUES (?,?,?,?)";
+    String sql = "INSERT INTO RegistroDeSeguimiento(cedulaPacienteInternado,"
+        + "funcionarioSeguimiento ,observacionDeEvolucion ,tratameintoAsociado,"
+        + " fechaSeguimiento   ) VALUES (?,?,?,?,?)";
     
     try{
       ps = con.prepareStatement(sql);
       ps.setInt(1, segui.getCedilaPacienteInternado());
-      ps.setInt(2, segui.funcionarioSegui.getCedulaFuncionario());
+      ps.setInt(2, segui.getFuncionarioSegui());
       ps.setString(3, segui.getObservacionEvolucion());
       ps.setString(4, segui.getTratamientoAsociado());
+      ps.setString(5, segui.getFechaSeguimiento());
       ps.execute();
       return true;
     }catch(SQLException e){
@@ -51,15 +52,16 @@ public class ConsultaSeguimiento extends Conexion {
     Connection con = connect();
     String sql = "UPDATE RegistroDeSeguimiento SET "
             + "funcionarioSeguimiento =?,observacionDeEvolucion =?, "
-            + "tratameintoAsociado=? WHERE cedulaPacienteInternado =?";
+            + "tratameintoAsociado=?,fechaSeguimiento=?  WHERE cedulaPacienteInternado =?";
     
     try{
       ps = con.prepareStatement(sql);
       
-      ps.setInt(1, segui.funcionarioSegui.getCedulaFuncionario());
+      ps.setInt(1, segui.getFuncionarioSegui());
       ps.setString(2, segui.getObservacionEvolucion());
       ps.setString(3, segui.getTratamientoAsociado());
-      ps.setInt(4, segui.getCedilaPacienteInternado());
+      ps.setString(4, segui.getFechaSeguimiento());
+      ps.setInt(5, segui.getCedilaPacienteInternado());
       ps.execute();
       return true;
     }catch(SQLException e){
