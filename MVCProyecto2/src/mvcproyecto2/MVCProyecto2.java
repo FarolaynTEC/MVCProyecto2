@@ -20,6 +20,7 @@ import Modelo.TipoCentroAtencion;
 import Modelo.Vacuna;
 import Vista.AreaCentro;
 import Vista.FuncionarioV;
+import Vista.Menu;
 import Vista.PacienteV;
 
 
@@ -66,7 +67,8 @@ public class MVCProyecto2 {
     ctrl3.iniciar();
     frmP.setVisible(true);
     
-    */   
+    */ 
+/*  
     //Crus centroAtención
     AreaTrabajo modAT = new AreaTrabajo();
     TipoCentroAtencion modTCA = new TipoCentroAtencion() ;
@@ -76,6 +78,10 @@ public class MVCProyecto2 {
     CtrlAreaCentro ctrl4 = new CtrlAreaCentro(modAT, modTCA, modC, frmAC);
     ctrl4.iniciar();
     frmAC.setVisible(true);
+*/
+
+    Menu menuPrincipal = new Menu();
+    menuPrincipal.setVisible(true);
 
   }
 }
