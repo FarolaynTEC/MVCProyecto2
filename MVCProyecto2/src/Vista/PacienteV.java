@@ -444,6 +444,7 @@ import javax.swing.JOptionPane;
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "REGISTRO MODIFICADO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnEditarPacienteActionPerformed
 
@@ -454,6 +455,7 @@ import javax.swing.JOptionPane;
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "REGISTRO ELIMINADO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnEliminarPacienteActionPerformed
 
@@ -491,6 +493,7 @@ import javax.swing.JOptionPane;
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "REGISTRO AÑADIDO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnAgregarVacunaActionPerformed
 
@@ -529,7 +532,7 @@ import javax.swing.JOptionPane;
     });
   }
   
-    public void limpiar(){
+  public void limpiar(){
     txtCedulaPaciente.setText(null);
     txtCorreoPciente.setText(null);
     txtFechaPaciente.setText(null);

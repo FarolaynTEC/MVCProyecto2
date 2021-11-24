@@ -241,7 +241,17 @@ public class CentroA extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void btnGuardarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCentroActionPerformed
-
+    if(txtCantidadCentro.getText().length()==0
+        || txtCodigoCentro.getText().length()==0
+            || txtNombreCentro.getText().length()==0
+                || txtUbicacionCentro.getText().length()==0)
+   {
+     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados no pueden estar vacios");
+    } else{
+     //verificacion de repetido
+     JOptionPane.showMessageDialog(null, "REGISTRO AGREGADO CON EXITO");
+     limpiar();
+    }
   }//GEN-LAST:event_btnGuardarCentroActionPerformed
 
   private void btnEditarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCentroActionPerformed
@@ -254,6 +264,7 @@ public class CentroA extends javax.swing.JFrame {
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "REGISTRO MODIFICADO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnEditarCentroActionPerformed
 
@@ -264,6 +275,7 @@ public class CentroA extends javax.swing.JFrame {
     } else{
      //verificacion de repetido
      JOptionPane.showMessageDialog(null, "REGISTRO ELIMINADO CON EXITO");
+     limpiar();
     }
   }//GEN-LAST:event_btnEliminarCentroActionPerformed
 
@@ -315,7 +327,16 @@ public class CentroA extends javax.swing.JFrame {
       }
     });
   }
-
+  
+  /*
+  Metodo para limpiar campos txt
+  */
+   public void limpiar(){
+    txtCantidadCentro.setText(null);
+    txtCodigoCentro.setText(null);
+    txtNombreCentro.setText(null);
+    txtUbicacionCentro.setText(null);
+  }
   // Variables declaration - do not modify//GEN-BEGIN:variables
   public javax.swing.JButton btnEditarCentro;
   public javax.swing.JButton btnEliminarCentro;
