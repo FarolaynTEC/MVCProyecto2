@@ -34,11 +34,11 @@ import javax.swing.JOptionPane;
     jPanel1 = new javax.swing.JPanel();
     jLabel1 = new javax.swing.JLabel();
     jLabel2 = new javax.swing.JLabel();
-    txtCedulaPaciente = new javax.swing.JTextField();
     jScrollPane1 = new javax.swing.JScrollPane();
     tablaVacuna = new javax.swing.JTable();
     btnVolver = new javax.swing.JButton();
     btnConsultaVacunas = new javax.swing.JButton();
+    cmbCedulaPaciente = new javax.swing.JComboBox<>();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,24 +50,19 @@ import javax.swing.JOptionPane;
     jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     jLabel2.setText("Cédula Paciente");
 
-    txtCedulaPaciente.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-
     tablaVacuna.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
-        {null, null, null, null, null},
-        {null, null, null, null, null},
-        {null, null, null, null, null},
-        {null, null, null, null, null}
+
       },
       new String [] {
-        "Cédula", "Vacuna", "Fecha Aplicación", "Farmacéutica", "Número Lote"
+        "Vacuna", "Fecha Aplicación", "Farmacéutica", "Número Lote"
       }
     ) {
       Class[] types = new Class [] {
-        java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+        java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
       };
       boolean[] canEdit = new boolean [] {
-        false, false, false, false, false
+        false, false, false, false
       };
 
       public Class getColumnClass(int columnIndex) {
@@ -100,39 +95,40 @@ import javax.swing.JOptionPane;
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(jPanel1Layout.createSequentialGroup()
-        .addGap(316, 316, 316)
-        .addComponent(btnConsultaVacunas, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(193, 193, 193)
-        .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(0, 0, Short.MAX_VALUE))
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-        .addContainerGap(91, Short.MAX_VALUE)
+        .addContainerGap(351, Short.MAX_VALUE)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1089, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(80, 80, 80))
           .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(544, 544, 544))
           .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(143, 143, 143)
-            .addComponent(txtCedulaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(333, 333, 333))))
+            .addGap(29, 29, 29)
+            .addComponent(cmbCedulaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(456, 456, 456))))
+      .addGroup(jPanel1Layout.createSequentialGroup()
+        .addGap(40, 40, 40)
+        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1089, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(0, 0, Short.MAX_VALUE))
+      .addGroup(jPanel1Layout.createSequentialGroup()
+        .addGap(162, 162, 162)
+        .addComponent(btnConsultaVacunas, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(153, 153, 153))
     );
     jPanel1Layout.setVerticalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addGap(22, 22, 22)
         .addComponent(jLabel1)
-        .addGap(31, 31, 31)
+        .addGap(28, 28, 28)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(jLabel2)
-          .addComponent(txtCedulaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(cmbCedulaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jLabel2))
         .addGap(18, 18, 18)
         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(btnConsultaVacunas, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -143,7 +139,10 @@ import javax.swing.JOptionPane;
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addGroup(layout.createSequentialGroup()
+        .addGap(49, 49, 49)
+        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addContainerGap())
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,14 +159,7 @@ import javax.swing.JOptionPane;
   }//GEN-LAST:event_btnVolverActionPerformed
 
   private void btnConsultaVacunasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaVacunasActionPerformed
-    if(txtCedulaPaciente.getText().length()==0)
-   {
-     JOptionPane.showMessageDialog(null, "ERROR, los campos solicitados de vacuna no pueden estar vacios");
-    } else{
-     //verificacion de repetido
-     JOptionPane.showMessageDialog(null, "CONSULTA REALIZADA CON EXITO");
-     txtCedulaPaciente.setText(null);
-    }
+
   }//GEN-LAST:event_btnConsultaVacunasActionPerformed
 
   /**
@@ -208,11 +200,11 @@ import javax.swing.JOptionPane;
   // Variables declaration - do not modify//GEN-BEGIN:variables
   public javax.swing.JButton btnConsultaVacunas;
   public javax.swing.JButton btnVolver;
+  public javax.swing.JComboBox<String> cmbCedulaPaciente;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
   public javax.swing.JTable tablaVacuna;
-  public javax.swing.JTextField txtCedulaPaciente;
   // End of variables declaration//GEN-END:variables
 }

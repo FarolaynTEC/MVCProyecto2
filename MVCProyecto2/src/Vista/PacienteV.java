@@ -4,6 +4,9 @@
  */
 package Vista;
 
+import Controlador.CtrlVacunasPaciente;
+import Modelo.ConsultaVacuna;
+import Modelo.Vacuna;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -475,7 +478,13 @@ import javax.swing.JOptionPane;
   }//GEN-LAST:event_btnVolverPacienteActionPerformed
 
   private void btnConsultaVacunasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaVacunasActionPerformed
-    // TODO add your handling code here:
+    Vacuna modVac = new Vacuna();
+    ConsultaVacuna modCVac = new ConsultaVacuna();
+    Vacunas verVac = new Vacunas();    
+    CtrlVacunasPaciente modCtrlVac = new CtrlVacunasPaciente(modVac, modCVac, verVac);
+    modCtrlVac.iniciar();
+    verVac.setVisible(true);
+    this.setVisible(false);
   }//GEN-LAST:event_btnConsultaVacunasActionPerformed
 
   private void btnAgregarVacunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarVacunaActionPerformed
