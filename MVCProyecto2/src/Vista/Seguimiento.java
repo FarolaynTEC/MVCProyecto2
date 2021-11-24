@@ -92,11 +92,11 @@ public class Seguimiento extends javax.swing.JFrame {
         {null, null, null, null, null}
       },
       new String [] {
-        "Código", "Nombre", "Ubicacion", "Pacientes", "Tipo Centro"
+        "Cedula", "Cedula funcionario", "Fecha seguimiento", "Observaciones", "Tratamiento"
       }
     ) {
       Class[] types = new Class [] {
-        java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+        java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
       };
 
       public Class getColumnClass(int columnIndex) {
