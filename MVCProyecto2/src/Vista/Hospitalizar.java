@@ -51,7 +51,6 @@ import javax.swing.JOptionPane;
     txtFechaFin = new javax.swing.JTextField();
     txtFechaInicio = new javax.swing.JTextField();
     jLabel9 = new javax.swing.JLabel();
-    btnSeguimiento = new javax.swing.JButton();
     cmbCentro = new javax.swing.JComboBox<>();
     cmbCedulaPaciente = new javax.swing.JComboBox<>();
     cmbNombrePaciente = new javax.swing.JComboBox<>();
@@ -169,14 +168,6 @@ import javax.swing.JOptionPane;
     jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     jLabel9.setText("Funcionario Encargado");
 
-    btnSeguimiento.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-    btnSeguimiento.setText("Registro Seguimiento");
-    btnSeguimiento.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnSeguimientoActionPerformed(evt);
-      }
-    });
-
     cmbCentro.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     cmbCentro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -259,9 +250,7 @@ import javax.swing.JOptionPane;
                 .addGap(18, 18, 18)
                 .addComponent(btnEliminarPaciente)
                 .addGap(195, 195, 195)
-                .addComponent(btnLimpiarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
-                .addComponent(btnSeguimiento))
+                .addComponent(btnLimpiarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
               .addComponent(btnVolverPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGap(454, 454, 454)
@@ -315,8 +304,7 @@ import javax.swing.JOptionPane;
           .addComponent(btnGuardarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(btnEditarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(btnEliminarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(btnLimpiarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(btnSeguimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(btnLimpiarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
         .addComponent(btnVolverPaciente))
     );
@@ -376,12 +364,6 @@ import javax.swing.JOptionPane;
     this.setVisible(false);
   }//GEN-LAST:event_btnVolverPacienteActionPerformed
 
-  private void btnSeguimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeguimientoActionPerformed
-    Seguimiento verS = new Seguimiento();    
-    verS.setVisible(true);
-    this.setVisible(false);
-  }//GEN-LAST:event_btnSeguimientoActionPerformed
-
   private void cmbNombrePacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbNombrePacienteActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_cmbNombrePacienteActionPerformed
@@ -438,7 +420,6 @@ import javax.swing.JOptionPane;
   public javax.swing.JButton btnEliminarPaciente;
   public javax.swing.JButton btnGuardarPaciente;
   public javax.swing.JButton btnLimpiarPaciente;
-  public javax.swing.JButton btnSeguimiento;
   public javax.swing.JButton btnVolverPaciente;
   public javax.swing.JComboBox<String> cmbCedulaPaciente;
   public javax.swing.JComboBox<String> cmbCentro;

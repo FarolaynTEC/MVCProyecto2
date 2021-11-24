@@ -14,7 +14,7 @@ public class Hospitalizacion {
   private int centroAtencion;
   private int cedulaPAcienteInternado;
   private String nombrePacienteInternado;
-  Diagnostico diagnosticoInter;
+  public Diagnostico diagnosticoInter;
   private String fechaInicio;
   private String fechaFin;
   private String especialidadHospi;
