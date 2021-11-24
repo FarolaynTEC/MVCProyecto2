@@ -34,7 +34,6 @@ import javax.swing.JOptionPane;
     jPanel1 = new javax.swing.JPanel();
     jLabel1 = new javax.swing.JLabel();
     jLabel2 = new javax.swing.JLabel();
-    txtCedulaPaciente = new javax.swing.JTextField();
     jScrollPane1 = new javax.swing.JScrollPane();
     tablaCita = new javax.swing.JTable();
     btnVolver = new javax.swing.JButton();
@@ -46,8 +45,12 @@ import javax.swing.JOptionPane;
     txtObservacionesCita = new javax.swing.JTextArea();
     jLabel7 = new javax.swing.JLabel();
     cmbEspecialidad = new javax.swing.JComboBox<>();
-    txtLimpiar = new javax.swing.JButton();
+    btnLimpiar = new javax.swing.JButton();
     btnCancelar = new javax.swing.JButton();
+    cmbCedulaPaciente = new javax.swing.JComboBox<>();
+    jScrollPane3 = new javax.swing.JScrollPane();
+    tablaCita1 = new javax.swing.JTable();
+    btnEliminarCita = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,20 +64,17 @@ import javax.swing.JOptionPane;
 
     tablaCita.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
-        {null, null, null, null, null},
-        {null, null, null, null, null},
-        {null, null, null, null, null},
-        {null, null, null, null, null}
+
       },
       new String [] {
-        "Cédula", "Cita ID", "Fecha Cita", "Observaciones", "Especialidad"
+        "Cédula", "Cita ID", "Observaciones"
       }
     ) {
       Class[] types = new Class [] {
-        java.lang.Integer.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+        java.lang.Integer.class, java.lang.Object.class, java.lang.String.class
       };
       boolean[] canEdit = new boolean [] {
-        false, false, false, false, false
+        false, false, false
       };
 
       public Class getColumnClass(int columnIndex) {
@@ -86,6 +86,10 @@ import javax.swing.JOptionPane;
       }
     });
     jScrollPane1.setViewportView(tablaCita);
+    if (tablaCita.getColumnModel().getColumnCount() > 0) {
+      tablaCita.getColumnModel().getColumn(0).setHeaderValue("Cédula");
+      tablaCita.getColumnModel().getColumn(2).setHeaderValue("Observaciones");
+    }
 
     btnVolver.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     btnVolver.setText("Volver");
@@ -117,13 +121,12 @@ import javax.swing.JOptionPane;
     jLabel7.setText("Especialidad");
 
     cmbEspecialidad.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-    cmbEspecialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-    txtLimpiar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-    txtLimpiar.setText("Limpiar");
-    txtLimpiar.addActionListener(new java.awt.event.ActionListener() {
+    btnLimpiar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    btnLimpiar.setText("Limpiar");
+    btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        txtLimpiarActionPerformed(evt);
+        btnLimpiarActionPerformed(evt);
       }
     });
 
@@ -132,6 +135,45 @@ import javax.swing.JOptionPane;
     btnCancelar.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
         btnCancelarActionPerformed(evt);
+      }
+    });
+
+    cmbCedulaPaciente.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        cmbCedulaPacienteActionPerformed(evt);
+      }
+    });
+
+    tablaCita1.setModel(new javax.swing.table.DefaultTableModel(
+      new Object [][] {
+
+      },
+      new String [] {
+        "Cita ID", "Fecha Cita", "Especialidad", "Estado"
+      }
+    ) {
+      Class[] types = new Class [] {
+        java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+      };
+      boolean[] canEdit = new boolean [] {
+        false, false, false, true
+      };
+
+      public Class getColumnClass(int columnIndex) {
+        return types [columnIndex];
+      }
+
+      public boolean isCellEditable(int rowIndex, int columnIndex) {
+        return canEdit [columnIndex];
+      }
+    });
+    jScrollPane3.setViewportView(tablaCita1);
+
+    btnEliminarCita.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    btnEliminarCita.setText("Eliminar Cita del Registro");
+    btnEliminarCita.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnEliminarCitaActionPerformed(evt);
       }
     });
 
@@ -147,27 +189,30 @@ import javax.swing.JOptionPane;
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addComponent(cmbEspecialidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
           .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-              .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-              .addComponent(txtCedulaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-              .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addGap(40, 40, 40)
-              .addComponent(txtFechaCita, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+          .addGroup(jPanel1Layout.createSequentialGroup()
+            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(18, 18, 18)
+            .addComponent(cmbCedulaPaciente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(40, 40, 40)
+            .addComponent(txtFechaCita, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
           .addComponent(jScrollPane2))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
-        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 753, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(31, 31, 31))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 753, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 753, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(24, 24, 24))
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addGap(23, 23, 23)
         .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
         .addGap(115, 115, 115)
-        .addComponent(txtLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(43, 43, 43)
+        .addComponent(btnEliminarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
         .addComponent(btnSolicitarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(32, 32, 32)
         .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -182,31 +227,37 @@ import javax.swing.JOptionPane;
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addGap(30, 30, 30)
         .addComponent(jLabel1)
-        .addGap(37, 37, 37)
-        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGap(37, 37, 37)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel2)
-              .addComponent(txtCedulaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(41, 41, 41)
+              .addComponent(cmbCedulaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(47, 47, 47)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel3)
               .addComponent(txtFechaCita, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(40, 40, 40)
-            .addComponent(jLabel4)
-            .addGap(18, 18, 18)
+            .addComponent(jLabel4))
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGap(54, 54, 54)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        .addGap(18, 18, 18)
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(jPanel1Layout.createSequentialGroup()
             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(54, 54, 54)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(cmbEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-          .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+          .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(52, 52, 52)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(txtLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(btnSolicitarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+          .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(btnEliminarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
         .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addContainerGap())
     );
@@ -232,7 +283,7 @@ import javax.swing.JOptionPane;
   }//GEN-LAST:event_btnVolverActionPerformed
 
   private void btnSolicitarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitarCitaActionPerformed
-    if(txtCedulaPaciente.getText().length()==0
+    if(cmbCedulaPaciente.getSelectedItem().toString().length()==0
         || txtFechaCita.getText().length()==0
             || txtObservacionesCita.getText().length()==0)
    {
@@ -244,14 +295,14 @@ import javax.swing.JOptionPane;
     }
   }//GEN-LAST:event_btnSolicitarCitaActionPerformed
 
-  private void txtLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLimpiarActionPerformed
-    txtCedulaPaciente.setText(null);
+  private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+
     txtFechaCita.setText(null);
     txtObservacionesCita.setText(null);
-  }//GEN-LAST:event_txtLimpiarActionPerformed
+  }//GEN-LAST:event_btnLimpiarActionPerformed
 
   private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-    if(txtCedulaPaciente.getText().length()==0)
+    if(cmbCedulaPaciente.getSelectedItem().toString().length()==0)
    {
      JOptionPane.showMessageDialog(null, "ERROR, el campo de cedula no puede estar vacio");
     } else{
@@ -260,6 +311,14 @@ import javax.swing.JOptionPane;
      limpiar();
     }
   }//GEN-LAST:event_btnCancelarActionPerformed
+
+  private void cmbCedulaPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCedulaPacienteActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_cmbCedulaPacienteActionPerformed
+
+  private void btnEliminarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCitaActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_btnEliminarCitaActionPerformed
 
   /**
    * @param args the command line arguments
@@ -300,15 +359,17 @@ import javax.swing.JOptionPane;
   Metodo para limpiar campos txt
   */
    public void limpiar(){
-    txtCedulaPaciente.setText(null);
     txtFechaCita.setText(null);
     txtObservacionesCita.setText(null);
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   public javax.swing.JButton btnCancelar;
+  public javax.swing.JButton btnEliminarCita;
+  public javax.swing.JButton btnLimpiar;
   public javax.swing.JButton btnSolicitarCita;
   public javax.swing.JButton btnVolver;
+  public javax.swing.JComboBox<String> cmbCedulaPaciente;
   public javax.swing.JComboBox<String> cmbEspecialidad;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
@@ -318,10 +379,10 @@ import javax.swing.JOptionPane;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
   private javax.swing.JScrollPane jScrollPane2;
+  private javax.swing.JScrollPane jScrollPane3;
   public javax.swing.JTable tablaCita;
-  public javax.swing.JTextField txtCedulaPaciente;
+  public javax.swing.JTable tablaCita1;
   public javax.swing.JTextField txtFechaCita;
-  public javax.swing.JButton txtLimpiar;
   public javax.swing.JTextArea txtObservacionesCita;
   // End of variables declaration//GEN-END:variables
 }

@@ -9,12 +9,12 @@ package Modelo;
  * @author Alejandra Merino
  */
 public class Cita {
+  private int cedulaPaciente;
   private int identificador;
+  private String especialidad;
   private String fechaCita;
   private String observaciones;
   private AreaTrabajo servicio;
-  Diagnostico diagnostico;
-  private Bitacora bitacora;
   private String estadoDeCita;
 
   @Override
@@ -24,7 +24,6 @@ public class Cita {
     msg+="Fecha de cita: "+fechaCita+ "\n";
     msg+= "Observaciones: "+ observaciones+ "\n"; 
     msg+= servicio.toString()+ "\n";
-    msg+= diagnostico.toString() +"\n";
     return msg;
   }
 
@@ -44,7 +43,23 @@ public class Cita {
     return estadoDeCita;
   }
 
+  public int getCedulaPaciente() {
+    return cedulaPaciente;
+  }
+
+  public String getEspecialidad() {
+    return especialidad;
+  }
+
+  public void setEspecialidad(String especialidad) {
+    this.especialidad = especialidad;
+  }
+
   
+  
+  public void setCedulaPaciente(int cedulaPaciente) {
+    this.cedulaPaciente = cedulaPaciente;
+  }
   
   public void setIdentificador(int identificador) {
     this.identificador = identificador;

@@ -10,9 +10,12 @@ import Modelo.CentroAtencion;
 import Modelo.ConsultaCentroAtencion;
 import Vista.CentroA;
 import Controlador.CtrlCentroAtencion;
+import Controlador.CtrlCitas;
 import Controlador.CtrlFuncionario;
 import Controlador.CtrlPaciente;
 import Modelo.AreaTrabajo;
+import Modelo.Cita;
+import Modelo.ConsultaCita;
 import Modelo.ConsultaFuncionario;
 import Modelo.ConsultaPaciente;
 import Modelo.ConsultaTipoCentro;
@@ -269,7 +272,12 @@ public class Menu extends javax.swing.JFrame {
   }//GEN-LAST:event_jButton3ActionPerformed
 
   private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-    CitaV verV = new CitaV();    
+    Cita modCita = new Cita();
+    ConsultaCita modC = new ConsultaCita();
+    CitaV verV = new CitaV(); 
+    
+    CtrlCitas ctrlCita = new CtrlCitas(modCita,modC,verV);
+    ctrlCita.iniciar();
     verV.setVisible(true);
     this.setVisible(false);
   }//GEN-LAST:event_jButton4ActionPerformed
