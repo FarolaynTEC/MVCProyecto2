@@ -46,6 +46,10 @@ public class CtrlHospitalizacion implements ActionListener{
     vistaHos.setTitle("Registro de Hospitalizaciones");
     vistaHos.setLocationRelativeTo(null);
     cargarTablaHospitalizacion();
+    obtenerCedulasPacientesHospitalizacion();
+    obtenerNombresPacientesHospitalizacion();
+    obtenerCedulasPacientesHospitalizacion();
+    obtenerEspecialidadesHospi();
   }
   
   private void cargarTablaHospitalizacion (){
@@ -145,6 +149,129 @@ public class CtrlHospitalizacion implements ActionListener{
     vistaHos.txtFechaFin.setText(null);
   }
   
+  public void obtenerCedulasPacientesHospitalizacion(){
+    ResultSet rs;
+    try {
+      DefaultComboBoxModel listaModelo = new DefaultComboBoxModel();
+      listaModelo.addElement("Paciente");
+    
+      Connection connect = DriverManager.getConnection("jdbc:sqlserver://"
+          + ";databaseName=Proyecto_POO2;user=usuariosql;password=root1");
+      PreparedStatement st = connect.prepareStatement("SELECT cedulaPaciente "
+          + "from Paciente order by cedulaPaciente");
+      rs = st.executeQuery();
+    
+      try {
+        while (rs.next()){
+          listaModelo.addElement(rs.getString("cedulaPaciente"));
+      } rs.close();
+      
+      } catch(SQLException ex ){
+        System.err.println(ex.getMessage());
+      } vistaHos.cmbCedulaPaciente.setModel(listaModelo);
+    } catch(SQLException e){
+      JOptionPane.showMessageDialog(null,e);
+    }
+  }
   
+  public void obtenerNombresPacientesHospitalizacion(){
+    ResultSet rs;
+    try {
+      DefaultComboBoxModel listaModelo = new DefaultComboBoxModel();
+      listaModelo.addElement("Paciente");
+    
+      Connection connect = DriverManager.getConnection("jdbc:sqlserver://"
+          + ";databaseName=Proyecto_POO2;user=usuariosql;password=root1");
+      PreparedStatement st = connect.prepareStatement("SELECT nombrePaciente "
+          + "from Paciente order by nombrePaciente");
+      rs = st.executeQuery();
+    
+      try {
+        while (rs.next()){
+          listaModelo.addElement(rs.getString("nombrePaciente"));
+      } rs.close();
+      
+      } catch(SQLException ex ){
+        System.err.println(ex.getMessage());
+      } vistaHos.cmbNombrePaciente.setModel(listaModelo);
+    } catch(SQLException e){
+      JOptionPane.showMessageDialog(null,e);
+    }
+  }
+  
+  public void obtenerDiagnosticoHospitalizacion(){
+    ResultSet rs;
+    try {
+      DefaultComboBoxModel listaModelo = new DefaultComboBoxModel();
+      listaModelo.addElement("Diagnostico");
+    
+      Connection connect = DriverManager.getConnection("jdbc:sqlserver://"
+          + ";databaseName=Proyecto_POO2;user=usuariosql;password=root1");
+      PreparedStatement st = connect.prepareStatement("SELECT nombreDiagnostico "
+          + "from Diagnostico order by nombreDiagnostico");
+      rs = st.executeQuery();
+    
+      try {
+        while (rs.next()){
+          listaModelo.addElement(rs.getString("nombreDiagnostico"));
+      } rs.close();
+      
+      } catch(SQLException ex ){
+        System.err.println(ex.getMessage());
+      } vistaHos.cmbDiagnostico.setModel(listaModelo);
+    } catch(SQLException e){
+      JOptionPane.showMessageDialog(null,e);
+    }
+  }
+  
+  public void obtenerEspecialidadesHospi(){
+    ResultSet rs;
+    try {
+      DefaultComboBoxModel listaModelo = new DefaultComboBoxModel();
+      listaModelo.addElement("Especialidad");
+    
+      Connection connect = DriverManager.getConnection("jdbc:sqlserver://"
+          + ";databaseName=Proyecto_POO2;user=usuariosql;password=root1");
+      PreparedStatement st = connect.prepareStatement("SELECT AreaTrabajo from "
+          + "AreaTrabajo order by AreaTrabajo");
+      rs = st.executeQuery();
+    
+      try {
+        while (rs.next()){
+          listaModelo.addElement(rs.getString("AreaTrabajo"));
+      } rs.close();
+      
+      } catch(SQLException ex ){
+        System.err.println(ex.getMessage());
+      } vistaHos.cmbEspecialidad.setModel(listaModelo);
+    } catch(SQLException e){
+      JOptionPane.showMessageDialog(null,e);
+    }
+  }
+  
+  public void obtenerIdFuncionarios(){
+    ResultSet rs;
+    try {
+      DefaultComboBoxModel listaModelo = new DefaultComboBoxModel();
+      listaModelo.addElement("Funcionario");
+    
+      Connection connect = DriverManager.getConnection("jdbc:sqlserver://"
+          + ";databaseName=Proyecto_POO2;user=usuariosql;password=root1");
+      PreparedStatement st = connect.prepareStatement("SELECT cedulaFuncionario  from "
+          + "Funcionario order by cedulaFuncionario");
+      rs = st.executeQuery();
+    
+      try {
+        while (rs.next()){
+          listaModelo.addElement(rs.getString("cedulaFuncionario"));
+      } rs.close();
+      
+      } catch(SQLException ex ){
+        System.err.println(ex.getMessage());
+      } vistaHos.cmbFuncionario.setModel(listaModelo);
+    } catch(SQLException e){
+      JOptionPane.showMessageDialog(null,e);
+    }
+  }
   
 }
