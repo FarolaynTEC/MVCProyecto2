@@ -7,14 +7,7 @@ package Modelo;
  */
 public class AreaTrabajo {
   private String nomAreaTrabajo;
-  
-  /**
-   *
-   * @param pNomAreaTrabajo
-   */
-  public AreaTrabajo(String pNomAreaTrabajo) {
-    this.nomAreaTrabajo = pNomAreaTrabajo;
-  }
+ 
 
   @Override
   public String toString() {

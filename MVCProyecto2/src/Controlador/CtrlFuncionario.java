@@ -88,8 +88,8 @@ public class CtrlFuncionario implements ActionListener {
       modFun.setFechaIngreso(frm.txtFechaFuncionario.getText());
       modFun.setTipoFuncionario(frm.cmbTipoFuncionario.getSelectedItem().toString());
       modFun.setTrabajaEn(frm.cmbTrabajaEn.getSelectedItem().toString());
-      AreaTrabajo areaTrabajo = new AreaTrabajo(frm.cmbAreaFuncionario.
-          getSelectedItem().toString());
+      AreaTrabajo areaTrabajo = new AreaTrabajo();
+      areaTrabajo.setNomAreaTrabajo(frm.cmbAreaFuncionario.getSelectedItem().toString());
       modFun.setAreaTrabajo(areaTrabajo);
       try {
         if(modC.registrarFuncionario(modFun)){
@@ -112,8 +112,8 @@ public class CtrlFuncionario implements ActionListener {
       modDoc.setFechaIngreso(frm.txtFechaFuncionario.getText());
       modDoc.setTipoFuncionario(frm.cmbTipoFuncionario.getSelectedItem().toString());
       modDoc.setTrabajaEn(frm.cmbTrabajaEn.getSelectedItem().toString());
-      AreaTrabajo areaTrabajo = new AreaTrabajo(frm.cmbAreaFuncionario.
-          getSelectedItem().toString());
+      AreaTrabajo areaTrabajo = new AreaTrabajo();
+      areaTrabajo.setNomAreaTrabajo(frm.cmbAreaFuncionario.getSelectedItem().toString());
       modDoc.setAreaTrabajo(areaTrabajo);
       modDoc.setCodigoMedico(Integer.parseInt(frm.txtCedulaDoctor.getText()));
       modDoc.setEspecialidad(frm.txtEspecialidad.getText());
@@ -138,8 +138,8 @@ public class CtrlFuncionario implements ActionListener {
       modEnf.setFechaIngreso(frm.txtFechaFuncionario.getText());
       modEnf.setTipoFuncionario(frm.cmbTipoFuncionario.getSelectedItem().toString());
       modEnf.setTrabajaEn(frm.cmbTrabajaEn.getSelectedItem().toString());
-      AreaTrabajo areaTrabajo = new AreaTrabajo(frm.cmbAreaFuncionario.
-          getSelectedItem().toString());
+      AreaTrabajo areaTrabajo = new AreaTrabajo();
+      areaTrabajo.setNomAreaTrabajo(frm.cmbAreaFuncionario.getSelectedItem().toString());
       modEnf.setAreaTrabajo(areaTrabajo);
       int aCargo;
       if(frm.jRadioButton1.isSelected()==true){
@@ -181,8 +181,8 @@ public class CtrlFuncionario implements ActionListener {
       modFun.setFechaIngreso(frm.txtFechaFuncionario.getText());
       modFun.setTipoFuncionario(frm.cmbTipoFuncionario.getSelectedItem().toString());
       modFun.setTrabajaEn(frm.cmbTrabajaEn.getSelectedItem().toString());
-      AreaTrabajo areaTrabajo = new AreaTrabajo(frm.cmbAreaFuncionario.
-          getSelectedItem().toString());
+      AreaTrabajo areaTrabajo = new AreaTrabajo();
+      areaTrabajo.setNomAreaTrabajo(frm.cmbAreaFuncionario.getSelectedItem().toString());
       modFun.setAreaTrabajo(areaTrabajo);
       try {
         if(modC.modificarFuncionario(modFun)){
@@ -207,8 +207,8 @@ public class CtrlFuncionario implements ActionListener {
       modDoc.setFechaIngreso(frm.txtFechaFuncionario.getText());
       modDoc.setTipoFuncionario(frm.cmbTipoFuncionario.getSelectedItem().toString());
       modDoc.setTrabajaEn(frm.cmbTrabajaEn.getSelectedItem().toString());
-      AreaTrabajo areaTrabajo = new AreaTrabajo(frm.cmbAreaFuncionario.
-          getSelectedItem().toString());
+      AreaTrabajo areaTrabajo = new AreaTrabajo();
+      areaTrabajo.setNomAreaTrabajo(frm.cmbAreaFuncionario.getSelectedItem().toString());
       modDoc.setAreaTrabajo(areaTrabajo);
       modDoc.setCodigoMedico(Integer.parseInt(frm.txtCedulaDoctor.getText()));
       modDoc.setEspecialidad(frm.txtEspecialidad.getText());
@@ -235,8 +235,8 @@ public class CtrlFuncionario implements ActionListener {
       modEnf.setFechaIngreso(frm.txtFechaFuncionario.getText());
       modEnf.setTipoFuncionario(frm.cmbTipoFuncionario.getSelectedItem().toString());
       modEnf.setTrabajaEn(frm.cmbTrabajaEn.getSelectedItem().toString());
-      AreaTrabajo areaTrabajo = new AreaTrabajo(frm.cmbAreaFuncionario.
-          getSelectedItem().toString());
+      AreaTrabajo areaTrabajo = new AreaTrabajo();
+      areaTrabajo.setNomAreaTrabajo(frm.cmbAreaFuncionario.getSelectedItem().toString());
       modEnf.setAreaTrabajo(areaTrabajo);
       int aCargo;
       if(frm.jRadioButton1.isSelected()==true){

@@ -11,10 +11,10 @@ import java.util.ArrayList;
  * @author Alejandra Merino
  */
 public class Diagnostico {
-  private String nombreDiagnostico;
-  private String observaciones;
-  private ArrayList<Tratamiento> tratamientos;
-  private String nivel;
+  public String nombreDiagnostico;
+  public String observaciones;
+  public ArrayList<Tratamiento> tratamientos;
+  public String nivel;
 
   public Diagnostico(String nombreDiagnostico, String observaciones) {
     this.nombreDiagnostico = nombreDiagnostico;

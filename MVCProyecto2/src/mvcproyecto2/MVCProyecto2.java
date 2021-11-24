@@ -1,19 +1,24 @@
 
 package mvcproyecto2;
 
+import Controlador.CtrlAreaCentro;
 import Modelo.CentroAtencion;
 import Modelo.ConsultaCentroAtencion;
 import Vista.CentroA;
 import Controlador.CtrlCentroAtencion;
 import Controlador.CtrlFuncionario;
 import Controlador.CtrlPaciente;
+import Modelo.AreaTrabajo;
 import Modelo.ConsultaFuncionario;
 import Modelo.ConsultaPaciente;
+import Modelo.ConsultaTipoCentro;
 import Modelo.Doctor;
 import Modelo.Enfermero;
 import Modelo.Funcionario;
 import Modelo.Paciente;
+import Modelo.TipoCentroAtencion;
 import Modelo.Vacuna;
+import Vista.AreaCentro;
 import Vista.FuncionarioV;
 import Vista.PacienteV;
 
@@ -28,7 +33,8 @@ public class MVCProyecto2 {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-
+    /*
+    //Crus centroAtención
     CentroAtencion modCA = new CentroAtencion();
     ConsultaCentroAtencion modCCA = new ConsultaCentroAtencion();
     CentroA frmCA = new CentroA();
@@ -59,6 +65,17 @@ public class MVCProyecto2 {
     CtrlPaciente ctrl3 = new CtrlPaciente( modPac, modVac, modCP, frmP);
     ctrl3.iniciar();
     frmP.setVisible(true);
-   */
+    
+    */   
+    //Crus centroAtención
+    AreaTrabajo modAT = new AreaTrabajo();
+    TipoCentroAtencion modTCA = new TipoCentroAtencion() ;
+    ConsultaTipoCentro modC = new ConsultaTipoCentro();
+    AreaCentro frmAC = new AreaCentro();
+    
+    CtrlAreaCentro ctrl4 = new CtrlAreaCentro(modAT, modTCA, modC, frmAC);
+    ctrl4.iniciar();
+    frmAC.setVisible(true);
+
   }
 }

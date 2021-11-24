@@ -13,7 +13,7 @@ public class Cita {
   private String fechaCita;
   private String observaciones;
   private AreaTrabajo servicio;
-  private Diagnostico diagnostico;
+  Diagnostico diagnostico;
   private Bitacora bitacora;
   private String estadoDeCita;
 
