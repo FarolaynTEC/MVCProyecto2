@@ -4,6 +4,28 @@
  */
 package Vista;
 
+import Controlador.CtrlCentroAtencion;
+import Controlador.CtrlAreaCentro;
+import Modelo.CentroAtencion;
+import Modelo.ConsultaCentroAtencion;
+import Vista.CentroA;
+import Controlador.CtrlCentroAtencion;
+import Controlador.CtrlFuncionario;
+import Controlador.CtrlPaciente;
+import Modelo.AreaTrabajo;
+import Modelo.ConsultaFuncionario;
+import Modelo.ConsultaPaciente;
+import Modelo.ConsultaTipoCentro;
+import Modelo.Doctor;
+import Modelo.Enfermero;
+import Modelo.Funcionario;
+import Modelo.Paciente;
+import Modelo.TipoCentroAtencion;
+import Modelo.Vacuna;
+import Vista.AreaCentro;
+import Vista.FuncionarioV;
+import Vista.Menu;
+import Vista.PacienteV;
 import javax.swing.JFrame;
 
 /**
@@ -220,9 +242,14 @@ public class Menu extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    AreaCentro verAC = new AreaCentro();    
-    verAC.setVisible(true);
-    this.setVisible(false);
+    AreaTrabajo modAT = new AreaTrabajo();
+    TipoCentroAtencion modTCA = new TipoCentroAtencion() ;
+    ConsultaTipoCentro modC = new ConsultaTipoCentro();
+    AreaCentro frmAC = new AreaCentro();
+    
+    CtrlAreaCentro ctrl4 = new CtrlAreaCentro(modAT, modTCA, modC, frmAC);
+    ctrl4.iniciar();
+    frmAC.setVisible(true);
   }//GEN-LAST:event_jButton1ActionPerformed
 
   private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -232,9 +259,13 @@ public class Menu extends javax.swing.JFrame {
   }//GEN-LAST:event_jButton2ActionPerformed
 
   private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    CentroA verA = new CentroA();    
-    verA.setVisible(true);
-    this.setVisible(false);
+    CentroAtencion modCA = new CentroAtencion();
+    ConsultaCentroAtencion modCCA = new ConsultaCentroAtencion();
+    CentroA frmCA = new CentroA();
+    
+    CtrlCentroAtencion ctrl1 = new CtrlCentroAtencion(modCA,modCCA,frmCA);
+    ctrl1.iniciar();
+    frmCA.setVisible(true);
   }//GEN-LAST:event_jButton3ActionPerformed
 
   private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -250,15 +281,26 @@ public class Menu extends javax.swing.JFrame {
   }//GEN-LAST:event_jButton5ActionPerformed
 
   private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-    FuncionarioV verF = new FuncionarioV();    
-    verF.setVisible(true);
-    this.setVisible(false);
+    Funcionario modFun = new Funcionario();
+    Doctor modDoc = new Doctor();
+    Enfermero modEnf= new Enfermero();
+    ConsultaFuncionario modCF = new ConsultaFuncionario();
+    FuncionarioV frmF = new FuncionarioV();
+    
+    CtrlFuncionario ctrl2 = new CtrlFuncionario( modFun, modCF, modDoc, modEnf, frmF);
+    ctrl2.iniciar();
+    frmF.setVisible(true);
   }//GEN-LAST:event_jButton6ActionPerformed
 
   private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-    PacienteV verV = new PacienteV();    
-    verV.setVisible(true);
-    this.setVisible(false);
+    Paciente modPac = new Paciente();
+    Vacuna modVac = new Vacuna();
+    ConsultaPaciente modCP = new ConsultaPaciente();
+    PacienteV frmP = new PacienteV();
+    
+    CtrlPaciente ctrl3 = new CtrlPaciente( modPac, modVac, modCP, frmP);
+    ctrl3.iniciar();
+    frmP.setVisible(true);
   }//GEN-LAST:event_jButton7ActionPerformed
 
   private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -268,9 +310,14 @@ public class Menu extends javax.swing.JFrame {
   }//GEN-LAST:event_jButton8ActionPerformed
 
   private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-    PacienteV verV = new PacienteV();    
-    verV.setVisible(true);
-    this.setVisible(false);
+    Paciente modPac = new Paciente();
+    Vacuna modVac = new Vacuna();
+    ConsultaPaciente modCP = new ConsultaPaciente();
+    PacienteV frmP = new PacienteV();
+    
+    CtrlPaciente ctrl3 = new CtrlPaciente( modPac, modVac, modCP, frmP);
+    ctrl3.iniciar();
+    frmP.setVisible(true);
   }//GEN-LAST:event_jButton9ActionPerformed
 
   private void btnHospitalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHospitalizarActionPerformed
