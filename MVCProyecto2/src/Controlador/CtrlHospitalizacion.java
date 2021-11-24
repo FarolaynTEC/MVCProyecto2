@@ -46,10 +46,13 @@ public class CtrlHospitalizacion implements ActionListener{
     vistaHos.setTitle("Registro de Hospitalizaciones");
     vistaHos.setLocationRelativeTo(null);
     cargarTablaHospitalizacion();
+    cargarTablaHospitalizacion1();
     obtenerCedulasPacientesHospitalizacion();
     obtenerNombresPacientesHospitalizacion();
-    obtenerCedulasPacientesHospitalizacion();
     obtenerEspecialidadesHospi();
+    obtenerIdFuncionarios();
+    obtenerDiagnosticoHospitalizacion();
+    obtenerCentroAtencion();
   }
   
   private void cargarTablaHospitalizacion (){
@@ -65,22 +68,45 @@ public class CtrlHospitalizacion implements ActionListener{
       }
       ConsultaHospitalizacion.cargarTablaHospitalizacion(modeloTabla);
   }
+    private void cargarTablaHospitalizacion1 (){
+      DefaultTableModel modeloTabla = (DefaultTableModel) vistaHos.tablaPaciente1.getModel();
+      modeloTabla.setRowCount(0);
+      ResultSet rs;
+      ResultSetMetaData rsmd;
+      int columnas;
+
+      int [] anchos = {10, 50, 100, 30, 100};
+      for(int i = 0 ; i < vistaHos.tablaPaciente1.getColumnCount(); i++){
+        vistaHos.tablaPaciente1.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
+      }
+      ConsultaHospitalizacion.cargarTablaHospitalizacion1(modeloTabla);
+  }
   
   @Override
   public void actionPerformed(ActionEvent e) {
     //Boton guardar Hospitalizacion
     if(e.getSource() == vistaHos.btnGuardarPaciente){
-      modHos.setCedulaPAcienteInternado(Integer.parseInt(vistaHos.cmbCedulaPaciente.getSelectedItem().toString()));
-      modHos.setNombrePacienteInternado(vistaHos.cmbCedulaPaciente.getSelectedItem().toString());
-      modHos.diagnosticoInter.setNombreDiagnostico(vistaHos.cmbDiagnostico.getSelectedItem().toString());
+      modHos.setCentroAtencion(Integer.parseInt(vistaHos.cmbCentro.
+          getSelectedItem().toString()));
+      modHos.setCedulaPAcienteInternado(Integer.parseInt(vistaHos.
+          cmbCedulaPaciente.getSelectedItem().toString()));
+      modHos.setNombrePacienteInternado(vistaHos.cmbCedulaPaciente.
+          getSelectedItem().toString());
+      modHos.setDiagnosticoInter(vistaHos.cmbDiagnostico.
+          getSelectedItem().toString());
       modHos.setFechaInicio(vistaHos.txtFechaInicio.getText());
       modHos.setFechaFin(vistaHos.txtFechaFin.getText());
-      
+      modHos.setEspecialidadHospi(vistaHos.cmbEspecialidad.getSelectedItem().
+          toString());
+      modHos.setFuncionarioEncargado(Integer.parseInt
+    (vistaHos.cmbFuncionario.getSelectedItem().toString()));
+     
       try {
         if(modHosC.registrarHospitalizacion(modHos)){
           JOptionPane.showMessageDialog(null,"Registro de Hospitalizacion"
               + " guardado");
-          cargarTablaHospitalizacion ();
+          cargarTablaHospitalizacion();
+          cargarTablaHospitalizacion1();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
         }
@@ -92,16 +118,26 @@ public class CtrlHospitalizacion implements ActionListener{
     
     //Boton editar Hospitalizacion
     if(e.getSource()== vistaHos.btnEditarPaciente){
-      modHos.setCedulaPAcienteInternado(Integer.parseInt(vistaHos.cmbCedulaPaciente.getSelectedItem().toString()));
-      modHos.setNombrePacienteInternado(vistaHos.cmbCedulaPaciente.getSelectedItem().toString());
-      modHos.diagnosticoInter.setNombreDiagnostico(vistaHos.cmbDiagnostico.getSelectedItem().toString());
+      modHos.setCentroAtencion(Integer.parseInt(vistaHos.cmbCentro.
+          getSelectedItem().toString()));
+      modHos.setCedulaPAcienteInternado(Integer.parseInt(vistaHos.
+          cmbCedulaPaciente.getSelectedItem().toString()));
+      modHos.setNombrePacienteInternado(vistaHos.cmbCedulaPaciente.
+          getSelectedItem().toString());
+      modHos.setDiagnosticoInter(vistaHos.cmbDiagnostico.
+          getSelectedItem().toString());
       modHos.setFechaInicio(vistaHos.txtFechaInicio.getText());
       modHos.setFechaFin(vistaHos.txtFechaFin.getText());
+      modHos.setEspecialidadHospi(vistaHos.cmbEspecialidad.getSelectedItem().
+          toString());
+      modHos.setFuncionarioEncargado(Integer.parseInt
+    (vistaHos.cmbFuncionario.getSelectedItem().toString()));
       
       try {
         if(modHosC.modificarHospitalizacion(modHos)){
           JOptionPane.showMessageDialog(null,"Modificación realizada");
-          cargarTablaHospitalizacion ();
+          cargarTablaHospitalizacion();
+          cargarTablaHospitalizacion1();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR, el id de paciente "
               + "ingresado no existe");
@@ -119,7 +155,8 @@ public class CtrlHospitalizacion implements ActionListener{
         if(modHosC.eliminarHospitalizacion(modHos)){
           JOptionPane.showMessageDialog(null,"Registro de Hospitalizacion"
               + " eliminado");
-          cargarTablaHospitalizacion ();
+          cargarTablaHospitalizacion();
+          cargarTablaHospitalizacion1();
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
         }
@@ -269,6 +306,31 @@ public class CtrlHospitalizacion implements ActionListener{
       } catch(SQLException ex ){
         System.err.println(ex.getMessage());
       } vistaHos.cmbFuncionario.setModel(listaModelo);
+    } catch(SQLException e){
+      JOptionPane.showMessageDialog(null,e);
+    }
+  }
+  
+  public void obtenerCentroAtencion(){
+    ResultSet rs;
+    try {
+      DefaultComboBoxModel listaModelo = new DefaultComboBoxModel();
+      listaModelo.addElement("Lugar");
+    
+      Connection connect = DriverManager.getConnection("jdbc:sqlserver://"
+          + ";databaseName=Proyecto_POO2;user=usuariosql;password=root1");
+      PreparedStatement st = connect.prepareStatement("SELECT codigoCentroAtencion from "
+          + "CentroAtencion order by codigoCentroAtencion");
+      rs = st.executeQuery();
+    
+      try {
+        while (rs.next()){
+          listaModelo.addElement(rs.getString("codigoCentroAtencion"));
+      } rs.close();
+      
+      } catch(SQLException ex ){
+        System.err.println(ex.getMessage());
+      } vistaHos.cmbCentro.setModel(listaModelo);
     } catch(SQLException e){
       JOptionPane.showMessageDialog(null,e);
     }

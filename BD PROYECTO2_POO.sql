@@ -120,7 +120,7 @@ CREATE TABLE Vacuna(
 CREATE TABLE Hospitalizacion(
   centroAtencion int NOT NULL,
   cedulaPacienteInternado int NOT NULL,
-  nombrePacienteInternado varchar NOT NULL,
+  nombrePacienteInternado varchar(70) NOT NULL,
   diagnostico varchar(80) NOT NULL,
   fechaInicio date NOT NULL,
   fechaFin date NOT NULL,

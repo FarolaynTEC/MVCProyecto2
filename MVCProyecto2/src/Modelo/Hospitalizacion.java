@@ -14,15 +14,23 @@ public class Hospitalizacion {
   private int centroAtencion;
   private int cedulaPAcienteInternado;
   private String nombrePacienteInternado;
-  public Diagnostico diagnosticoInter;
+  private String diagnosticoInter;
   private String fechaInicio;
   private String fechaFin;
   private String especialidadHospi;
-  Funcionario funcionarioEncargado;
+  private int funcionarioEncargado;
   private ArrayList<RegistroSeguimiento> registroDeSEguimiento;
 
   public int getCentroAtencion() {
     return centroAtencion;
+  }
+
+  public String getDiagnosticoInter() {
+    return diagnosticoInter;
+  }
+
+  public int getFuncionarioEncargado() {
+    return funcionarioEncargado;
   }
 
   public int getCedulaPAcienteInternado() {
@@ -57,7 +65,7 @@ public class Hospitalizacion {
     this.nombrePacienteInternado = nombrePacienteInternado;
   }
 
-  public void setDiagnosticoInter(Diagnostico diagnosticoInter) {
+  public void setDiagnosticoInter(String diagnosticoInter) {
     this.diagnosticoInter = diagnosticoInter;
   }
 
@@ -73,7 +81,7 @@ public class Hospitalizacion {
     this.especialidadHospi = especialidadHospi;
   }
 
-  public void setFuncionarioEncargado(Funcionario funcionarioEncargado) {
+  public void setFuncionarioEncargado(int funcionarioEncargado) {
     this.funcionarioEncargado = funcionarioEncargado;
   }
 

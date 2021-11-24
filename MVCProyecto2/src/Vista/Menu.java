@@ -14,6 +14,7 @@ import Controlador.CtrlCentroAtencion;
 import Controlador.CtrlCitas;
 import Controlador.CtrlDiagnosticoTratamiento;
 import Controlador.CtrlFuncionario;
+import Controlador.CtrlHospitalizacion;
 import Controlador.CtrlPaciente;
 import Controlador.CtrlSeguimiento;
 import Modelo.AreaTrabajo;
@@ -23,6 +24,7 @@ import Modelo.ConsultaBitacora;
 import Modelo.ConsultaCita;
 import Modelo.ConsultaDiagnosticoTratamiento;
 import Modelo.ConsultaFuncionario;
+import Modelo.ConsultaHospitalizacion;
 import Modelo.ConsultaPaciente;
 import Modelo.ConsultaSeguimiento;
 import Modelo.ConsultaTipoCentro;
@@ -30,6 +32,7 @@ import Modelo.Diagnostico;
 import Modelo.Doctor;
 import Modelo.Enfermero;
 import Modelo.Funcionario;
+import Modelo.Hospitalizacion;
 import Modelo.Paciente;
 import Modelo.RegistroSeguimiento;
 import Modelo.TipoCentroAtencion;
@@ -389,9 +392,12 @@ public class Menu extends javax.swing.JFrame {
   }//GEN-LAST:event_jButton9ActionPerformed
 
   private void btnHospitalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHospitalizarActionPerformed
-    Hospitalizar verH = new Hospitalizar();    
+    Hospitalizacion modHos= new Hospitalizacion() ;
+    ConsultaHospitalizacion modHosC = new ConsultaHospitalizacion();
+    Hospitalizar verH = new Hospitalizar(); 
+    CtrlHospitalizacion ctrlHospi = new CtrlHospitalizacion(modHos, modHosC, verH);
+    ctrlHospi.iniciar();
     verH.setVisible(true);
-    this.setVisible(true);
     this.setVisible(false);
   }//GEN-LAST:event_btnHospitalizarActionPerformed
 
