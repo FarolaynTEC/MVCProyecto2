@@ -346,20 +346,20 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
 
     tablaDiagnostico.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
-        {null, null, null},
-        {null, null, null},
-        {null, null, null},
-        {null, null, null}
+        {null, null, null, null},
+        {null, null, null, null},
+        {null, null, null, null},
+        {null, null, null, null}
       },
       new String [] {
-        "Cédula", "Diagnóstico", "Observaciones"
+        "Cédula", "Diagnóstico", "Observaciones", "Niveles"
       }
     ) {
       Class[] types = new Class [] {
-        java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+        java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
       };
       boolean[] canEdit = new boolean [] {
-        false, false, false
+        false, false, false, true
       };
 
       public Class getColumnClass(int columnIndex) {
@@ -391,20 +391,20 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
 
     tablaTratamiento.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
-        {null, null, null},
-        {null, null, null},
-        {null, null, null},
-        {null, null, null}
+        {null, null, null, null},
+        {null, null, null, null},
+        {null, null, null, null},
+        {null, null, null, null}
       },
       new String [] {
-        "Tratamiento", "Dosis", "Tipo Tratamiento"
+        "ID Cita", "Tratamiento", "Dosis", "Tipo Tratamiento"
       }
     ) {
       Class[] types = new Class [] {
-        java.lang.String.class, java.lang.String.class, java.lang.String.class
+        java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
       };
       boolean[] canEdit = new boolean [] {
-        false, true, false
+        false, true, false, true
       };
 
       public Class getColumnClass(int columnIndex) {

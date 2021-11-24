@@ -108,7 +108,7 @@ public class ConsultaDiagnosticoTratamiento extends Conexion {
       Connection connect = DriverManager.getConnection("jdbc:sqlserver://;"
               + "databaseName=Proyecto_POO2;user=usuariosql;password=root1");
       PreparedStatement st = connect.prepareStatement("SELECT identificador,"
-          + "nombreDiagnostico, observaciones FROM Diagnostico");
+          + "nombreDiagnostico, observaciones, nivel FROM Diagnostico");
       rs = st.executeQuery();
       rsmd = rs.getMetaData();
       columnas = rsmd.getColumnCount();
@@ -214,8 +214,8 @@ public class ConsultaDiagnosticoTratamiento extends Conexion {
       
       Connection connect = DriverManager.getConnection("jdbc:sqlserver://;"
               + "databaseName=Proyecto_POO2;user=usuariosql;password=root1");
-      PreparedStatement st = connect.prepareStatement("SELECT nombreDiagnostico,"
-          + "dosis, tipoTratamiento FROM Tratamiento");
+      PreparedStatement st = connect.prepareStatement("SELECT identificador, "
+              + "nombreDiagnostico, dosis, tipoTratamiento FROM Tratamiento");
       rs = st.executeQuery();
       rsmd = rs.getMetaData();
       columnas = rsmd.getColumnCount();
