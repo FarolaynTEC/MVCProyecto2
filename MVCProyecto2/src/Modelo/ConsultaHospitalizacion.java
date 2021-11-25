@@ -177,4 +177,85 @@ public class ConsultaHospitalizacion extends Conexion {
       JOptionPane.showMessageDialog(null,e);
     }
   }
+  /**
+   * Metodo que carga la primera parte de la tabla de consulta pacinete de 
+   * hospitalizacion
+   * @param modeloTabla 
+   */
+    public boolean consultarCedulaPacInter (Hospitalizacion hos, DefaultTableModel modeloTabla) throws SQLException {
+    PreparedStatement ps = null;
+    ResultSet rs;
+    ResultSetMetaData rsmd;
+    int columnas;
+    Connection con = connect();
+    String sql = "SELECT centroAtencion,cedulaPacienteInternado, "
+        + "nombrePacienteInternado,diagnostico, funcionarioEncargado "
+        + "FROM Hospitalizacion  WHERE cedulaPacienteInternado = ?";
+    try{
+      ps = con.prepareStatement(sql);
+      ps.setInt(1, hos.getCedulaPAcienteInternado());
+      rs = ps.executeQuery();
+      rsmd = rs.getMetaData();
+      columnas = rsmd.getColumnCount();
+      
+      while(rs.next()){
+        Object[] fila = new Object[columnas];
+        for(int indice=0; indice<columnas; indice++){
+          fila[indice]=rs.getObject(indice+1);
+        }
+        modeloTabla.addRow(fila);
+      }
+      return true;
+    }catch(SQLException e){
+      System.err.println(e);
+      return false;
+    }finally{
+      try{
+        con.close();
+      }catch(SQLException e){
+        System.err.println(e);
+      }
+    }
+  }
+    
+   /**
+   * Metodo que carga la Segunda parte de la tabla de consulta pacinete de 
+   * hospitalizacion
+   * @param modeloTabla 
+   */
+    public boolean consultarCedulaPacInter2 (Hospitalizacion hos, DefaultTableModel modeloTabla) throws SQLException {
+    PreparedStatement ps = null;
+    ResultSet rs;
+    ResultSetMetaData rsmd;
+    int columnas;
+    Connection con = connect();
+    String sql = "SELECT nombrePacienteInternado,fechaInicio,"
+        + " fechaFin,especialidadHospitalizacion FROM Hospitalizacion  "
+        + "WHERE cedulaPacienteInternado = ?";
+    try{
+      ps = con.prepareStatement(sql);
+      ps.setInt(1, hos.getCedulaPAcienteInternado());
+      rs = ps.executeQuery();
+      rsmd = rs.getMetaData();
+      columnas = rsmd.getColumnCount();
+      
+      while(rs.next()){
+        Object[] fila = new Object[columnas];
+        for(int indice=0; indice<columnas; indice++){
+          fila[indice]=rs.getObject(indice+1);
+        }
+        modeloTabla.addRow(fila);
+      }
+      return true;
+    }catch(SQLException e){
+      System.err.println(e);
+      return false;
+    }finally{
+      try{
+        con.close();
+      }catch(SQLException e){
+        System.err.println(e);
+      }
+    }
+  }
 }

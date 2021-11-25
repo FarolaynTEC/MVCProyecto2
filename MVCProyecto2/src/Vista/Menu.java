@@ -433,8 +433,11 @@ public class Menu extends javax.swing.JFrame {
     Tratamiento modTra = new Tratamiento();
     ConsultaDiagnosticoTratamiento modDiaTra = new ConsultaDiagnosticoTratamiento() ;
     
+    Hospitalizacion modHos = new Hospitalizacion();
+    ConsultaHospitalizacion modHosC = new ConsultaHospitalizacion();
+    
     CtrlConsultasPacientes ctrlCita = new CtrlConsultasPacientes( modCita, modC, 
-    modDia,  modTra, modDiaTra,  verV);
+    modDia,  modTra, modDiaTra,  verV, modHos, modHosC);
     ctrlCita.iniciar();
     verV.setVisible(true);
     this.setVisible(false);
