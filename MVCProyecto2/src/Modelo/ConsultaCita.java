@@ -14,11 +14,17 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
         
 /**
- * Clase para las consultas de la clase Cita
+ * Clase para las consultas de la clase ConsultaCita
  * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class ConsultaCita extends Conexion {
   
+  /**
+   * Metodo que registra una cita
+   * @param cita
+   * @return
+   * @throws SQLException 
+   */
   public boolean registrarCita (Cita cita) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();
@@ -47,6 +53,12 @@ public class ConsultaCita extends Conexion {
     }
   }
   
+  /**
+   * Metodo que modifica una cita
+   * @param cita
+   * @return
+   * @throws SQLException 
+   */
   public boolean modificarCita (Cita cita) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();
@@ -70,7 +82,13 @@ public class ConsultaCita extends Conexion {
       }
     }
   }
-   
+  
+  /**
+   * Metodo que elimina una cita
+   * @param cita
+   * @return
+   * @throws SQLException 
+   */
   public boolean eliminarCita (Cita cita) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();
@@ -93,6 +111,10 @@ public class ConsultaCita extends Conexion {
     }
   }
   
+  /**
+   * Metodo que carga la tabla de cita
+   * @param modeloTabla 
+   */
   public static void cargarTablaCita(DefaultTableModel modeloTabla){
     ResultSet rs;
     ResultSetMetaData rsmd;
@@ -120,6 +142,10 @@ public class ConsultaCita extends Conexion {
     }
   }
   
+  /**
+   * Metodo que carga la tabla de cita
+   * @param modeloTabla 
+   */
   public static void cargarTablaCita1(DefaultTableModel modeloTabla){
     ResultSet rs;
     ResultSetMetaData rsmd;
@@ -147,8 +173,14 @@ public class ConsultaCita extends Conexion {
     }
   }
   
-    
-    public boolean consultarCitasEspecialidad (Cita cit, DefaultTableModel modeloTabla) throws SQLException {
+  /**
+   * Metodo que consulta una cita y su especialidad
+   * @param cit
+   * @param modeloTabla
+   * @return
+   * @throws SQLException 
+   */  
+  public boolean consultarCitasEspecialidad (Cita cit, DefaultTableModel modeloTabla) throws SQLException {
     PreparedStatement ps = null;
     ResultSet rs;
     ResultSetMetaData rsmd;
@@ -184,8 +216,15 @@ public class ConsultaCita extends Conexion {
       }
     }
   }
-    
-    public boolean consultarCitasEstado(Cita cit, DefaultTableModel modeloTabla) throws SQLException {
+  
+/**
+ * Metodo que consulta una cita y su estado
+ * @param cit
+ * @param modeloTabla
+ * @return
+ * @throws SQLException 
+ */  
+  public boolean consultarCitasEstado(Cita cit, DefaultTableModel modeloTabla) throws SQLException {
     PreparedStatement ps = null;
     ResultSet rs;
     ResultSetMetaData rsmd;

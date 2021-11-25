@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * Controlados de la clase Area y tipo Centro.
+ * Esta es una clase de Controlador de la clase Area y tipo Centro.
  * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class CtrlAreaCentro implements ActionListener{
@@ -29,6 +29,14 @@ public class CtrlAreaCentro implements ActionListener{
   private ConsultaTipoCentro modC;
   private AreaCentro frm;
 
+  /**
+   * Esta es una asbtraccion de la clase CtrlAreaCentro
+   * @author Josue Brenes, Paola Lopez, Alejandra Merino
+   * @param modAT
+   * @param modTCA
+   * @param modC
+   * @param frm 
+   */
   public CtrlAreaCentro(AreaTrabajo modAT, TipoCentroAtencion modTCA, ConsultaTipoCentro modC, AreaCentro frm) {
     this.modAT = modAT;
     this.modTCA = modTCA;
@@ -44,7 +52,7 @@ public class CtrlAreaCentro implements ActionListener{
   }
   
   /**
-   * Inicializador de la ventana
+   * Metodo Inicializador de la ventana
    */
   public void iniciar(){
     frm.setTitle("Areas y Centros de Trabajo");
@@ -52,7 +60,11 @@ public class CtrlAreaCentro implements ActionListener{
     cargarTablaAreaTrabajo();
     cargarTablaCentroAtencion();
   }
-
+  
+  /**
+   * Metodo que controla la acciones de cada boton de la ventana Area Centro
+   * @param e 
+   */
   @Override
   public void actionPerformed(ActionEvent e) {
     //Boton guardar Area
@@ -128,32 +140,36 @@ public class CtrlAreaCentro implements ActionListener{
     } 
   }
   
-      private void cargarTablaAreaTrabajo(){
-      DefaultTableModel modeloTabla = (DefaultTableModel) frm.tablaArea.getModel();
-      modeloTabla.setRowCount(0);
-      ResultSet rs;
-      ResultSetMetaData rsmd;
-      int columnas;
+  /**
+   * Metodo que carga la tabla de AreaTrabajo de la BD
+   */
+  private void cargarTablaAreaTrabajo(){
+    DefaultTableModel modeloTabla = (DefaultTableModel) frm.tablaArea.getModel();
+    modeloTabla.setRowCount(0);
+    ResultSet rs;
+    ResultSetMetaData rsmd;
+    int columnas;
 
-      int [] anchos = {10, 50, 100, 30, 100};
-      for(int i = 0 ; i < frm.tablaArea.getColumnCount(); i++){
-        frm.tablaArea.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
-      }
-      ConsultaTipoCentro.cargarTablaAreaTrabajo(modeloTabla);
-    }
-    
-    private void cargarTablaCentroAtencion(){
-      DefaultTableModel modeloTabla = (DefaultTableModel) frm.tablaTipoCentro.getModel();
-      modeloTabla.setRowCount(0);
-      ResultSet rs;
-      ResultSetMetaData rsmd;
-      int columnas;
+    int [] anchos = {10, 50, 100, 30, 100};
+    for(int i = 0 ; i < frm.tablaArea.getColumnCount(); i++){
+      frm.tablaArea.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
+    }ConsultaTipoCentro.cargarTablaAreaTrabajo(modeloTabla);
+  }
+  
+  /**
+   * Metodo que carga la tabla de CentroAtencion de la BD
+   */
+  private void cargarTablaCentroAtencion(){
+    DefaultTableModel modeloTabla = (DefaultTableModel) frm.tablaTipoCentro.getModel();
+    modeloTabla.setRowCount(0);
+    ResultSet rs;
+    ResultSetMetaData rsmd;
+    int columnas;
 
-      int [] anchos = {10, 50, 100, 30, 100};
-      for(int i = 0 ; i < frm.tablaTipoCentro.getColumnCount(); i++){
-        frm.tablaTipoCentro.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
-      }
-      ConsultaTipoCentro.cargarTablaTipoDeCentro(modeloTabla);
-    }
+    int [] anchos = {10, 50, 100, 30, 100};
+    for(int i = 0 ; i < frm.tablaTipoCentro.getColumnCount(); i++){
+      frm.tablaTipoCentro.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
+    }ConsultaTipoCentro.cargarTablaTipoDeCentro(modeloTabla);
+  }
 }
 

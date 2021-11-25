@@ -22,14 +22,20 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 /**
- *
- * @author Alejandra Merino
+ *Esta es una abstraccion de la clase CtrlHospitalizacion
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class CtrlHospitalizacion implements ActionListener{
   private Hospitalizacion modHos;
   private ConsultaHospitalizacion modHosC;
   private Hospitalizar vistaHos;
 
+  /**
+   * Construtor de la clase CtrlHospitalizacion
+   * @param modHos
+   * @param modHosC
+   * @param vistaHos 
+   */
   public CtrlHospitalizacion(Hospitalizacion modHos, ConsultaHospitalizacion modHosC, Hospitalizar vistaHos) {
     this.modHos = modHos;
     this.modHosC = modHosC;
@@ -42,6 +48,9 @@ public class CtrlHospitalizacion implements ActionListener{
     this.vistaHos.btnVolverPaciente.addActionListener(this);
   }
   
+  /**
+   * Inicializador de la ventana Funcionarios
+   */
   public void iniciar(){
     vistaHos.setTitle("Registro de Hospitalizaciones");
     vistaHos.setLocationRelativeTo(null);
@@ -55,6 +64,10 @@ public class CtrlHospitalizacion implements ActionListener{
     obtenerCentroAtencion();
   }
   
+   /**
+   * Método para cargar los primeros datos de la base de datos
+   * en la tabla llamada tabla Hospitalizacion
+   */
   private void cargarTablaHospitalizacion (){
       DefaultTableModel modeloTabla = (DefaultTableModel) vistaHos.tablaPaciente.getModel();
       modeloTabla.setRowCount(0);
@@ -65,9 +78,12 @@ public class CtrlHospitalizacion implements ActionListener{
       int [] anchos = {10, 50, 100, 30, 100};
       for(int i = 0 ; i < vistaHos.tablaPaciente.getColumnCount(); i++){
         vistaHos.tablaPaciente.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
-      }
-      ConsultaHospitalizacion.cargarTablaHospitalizacion(modeloTabla);
+      } ConsultaHospitalizacion.cargarTablaHospitalizacion(modeloTabla);
   }
+   /**
+   * Método para cargar los ultimos datos de la base de datos
+   * en la tabla llamada tabla Hospitalizacion
+   */
     private void cargarTablaHospitalizacion1 (){
       DefaultTableModel modeloTabla = (DefaultTableModel) vistaHos.tablaPaciente1.getModel();
       modeloTabla.setRowCount(0);
@@ -82,6 +98,11 @@ public class CtrlHospitalizacion implements ActionListener{
       ConsultaHospitalizacion.cargarTablaHospitalizacion1(modeloTabla);
   }
   
+   /**
+    * Método encargado del control de las funcionalidades
+   * del CRUD de la Hospitalizacion
+    * @param e 
+    */
   @Override
   public void actionPerformed(ActionEvent e) {
     //Boton guardar Hospitalizacion
@@ -173,9 +194,7 @@ public class CtrlHospitalizacion implements ActionListener{
     
     
     //boton Volver
-    if(e.getSource()==vistaHos.btnVolverPaciente){
-       
-    }
+    if(e.getSource()==vistaHos.btnVolverPaciente){ }
   }
   
   /**
@@ -186,6 +205,10 @@ public class CtrlHospitalizacion implements ActionListener{
     vistaHos.txtFechaFin.setText(null);
   }
   
+  /**
+   * Método para insertar las cedulas de los pacientes en el
+   * combobox respectivo
+   */ 
   public void obtenerCedulasPacientesHospitalizacion(){
     ResultSet rs;
     try {
@@ -201,7 +224,7 @@ public class CtrlHospitalizacion implements ActionListener{
       try {
         while (rs.next()){
           listaModelo.addElement(rs.getString("cedulaPaciente"));
-      } rs.close();
+        } rs.close();
       
       } catch(SQLException ex ){
         System.err.println(ex.getMessage());
@@ -211,6 +234,10 @@ public class CtrlHospitalizacion implements ActionListener{
     }
   }
   
+  /**
+   * Metodo que obtiene los nombres de los pacientes para colocarlos en el
+   * combobox respectivo
+   */
   public void obtenerNombresPacientesHospitalizacion(){
     ResultSet rs;
     try {
@@ -226,7 +253,7 @@ public class CtrlHospitalizacion implements ActionListener{
       try {
         while (rs.next()){
           listaModelo.addElement(rs.getString("nombrePaciente"));
-      } rs.close();
+        } rs.close();
       
       } catch(SQLException ex ){
         System.err.println(ex.getMessage());
@@ -236,6 +263,10 @@ public class CtrlHospitalizacion implements ActionListener{
     }
   }
   
+  /**
+   * Metodo que obtiene los nombres de los diagnosticos para colocarlos en el
+   * combobox respectivo
+   */
   public void obtenerDiagnosticoHospitalizacion(){
     ResultSet rs;
     try {
@@ -251,7 +282,7 @@ public class CtrlHospitalizacion implements ActionListener{
       try {
         while (rs.next()){
           listaModelo.addElement(rs.getString("nombreDiagnostico"));
-      } rs.close();
+        } rs.close();
       
       } catch(SQLException ex ){
         System.err.println(ex.getMessage());
@@ -261,6 +292,10 @@ public class CtrlHospitalizacion implements ActionListener{
     }
   }
   
+  /**
+   * Metodo que obtiene los nombres de las especialidad para colocarlas en el
+   * combobox respectivo
+   */
   public void obtenerEspecialidadesHospi(){
     ResultSet rs;
     try {
@@ -276,7 +311,7 @@ public class CtrlHospitalizacion implements ActionListener{
       try {
         while (rs.next()){
           listaModelo.addElement(rs.getString("AreaTrabajo"));
-      } rs.close();
+        } rs.close();
       
       } catch(SQLException ex ){
         System.err.println(ex.getMessage());
@@ -286,6 +321,10 @@ public class CtrlHospitalizacion implements ActionListener{
     }
   }
   
+  /**
+   * Metodo que obtiene las cedulas de los funcionarios para colocarlos en el
+   * combobox respectivo
+   */
   public void obtenerIdFuncionarios(){
     ResultSet rs;
     try {
@@ -301,7 +340,7 @@ public class CtrlHospitalizacion implements ActionListener{
       try {
         while (rs.next()){
           listaModelo.addElement(rs.getString("cedulaFuncionario"));
-      } rs.close();
+        } rs.close();
       
       } catch(SQLException ex ){
         System.err.println(ex.getMessage());
@@ -311,6 +350,10 @@ public class CtrlHospitalizacion implements ActionListener{
     }
   }
   
+  /**
+   * Metodo que obtiene los id de los centros de atencion para colocarlos en el
+   * combobox respectivo
+   */
   public void obtenerCentroAtencion(){
     ResultSet rs;
     try {

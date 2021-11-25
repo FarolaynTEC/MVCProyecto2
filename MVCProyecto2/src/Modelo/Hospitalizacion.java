@@ -7,8 +7,8 @@ package Modelo;
 import java.util.ArrayList;
 
 /**
- *
- * @author Alejandra Merino
+ * Esta es una abstraccion de la clase Hospitalizacion
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class Hospitalizacion {
   private int centroAtencion;
@@ -21,6 +21,7 @@ public class Hospitalizacion {
   private int funcionarioEncargado;
   private ArrayList<RegistroSeguimiento> registroDeSEguimiento;
 
+  //Metodos accesores
   public int getCentroAtencion() {
     return centroAtencion;
   }

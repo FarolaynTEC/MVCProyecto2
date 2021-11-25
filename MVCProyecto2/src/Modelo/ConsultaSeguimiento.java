@@ -14,11 +14,17 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
- * @author Alejandra Merino
+ *Consultas de la clase ConsultaSeguimiento.
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class ConsultaSeguimiento extends Conexion {
   
+  /**
+   * Metodo que registra un seguimiento
+   * @param segui
+   * @return
+   * @throws SQLException 
+   */
   public boolean registrarSeguimiento (RegistroSeguimiento segui) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();
@@ -47,6 +53,12 @@ public class ConsultaSeguimiento extends Conexion {
     }
   }
   
+  /**
+   * Metodo que modifica un seguimiento
+   * @param segui
+   * @return
+   * @throws SQLException 
+   */
   public boolean modificarSeguimiento (RegistroSeguimiento segui) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();
@@ -76,6 +88,12 @@ public class ConsultaSeguimiento extends Conexion {
     }
   }
   
+  /**
+   * Metodo que elimina un seguimiento
+   * @param segui
+   * @return
+   * @throws SQLException 
+   */
   public boolean eliminarSeguimiento (RegistroSeguimiento segui) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();
@@ -98,6 +116,10 @@ public class ConsultaSeguimiento extends Conexion {
     }
   }
   
+  /**
+   * Metodo que carga la tabla de seguimiento
+   * @param modeloTabla 
+   */
   public static void cargarTablaSeguimiento (DefaultTableModel modeloTabla){
     ResultSet rs;
     ResultSetMetaData rsmd;

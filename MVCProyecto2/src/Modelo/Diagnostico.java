@@ -7,8 +7,8 @@ package Modelo;
 import java.util.ArrayList;
 
 /**
- *
- * @author Alejandra Merino
+ * Esta es una abstraccion de la clase Diagnostico
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class Diagnostico {
   public int identificadorCita;
@@ -18,6 +18,7 @@ public class Diagnostico {
   public String nivel;
 
 
+  //Metodos accesores
   public int getIdentificadorCita() {
     return identificadorCita;
   }
@@ -61,6 +62,10 @@ public class Diagnostico {
     this.nivel = nivel;
   }
   
+  /**
+   * Metodo que imprime un String de la clase
+   * @return 
+   */
   @Override
   public String toString() {
     String msg;

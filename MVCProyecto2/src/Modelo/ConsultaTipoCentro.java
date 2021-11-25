@@ -15,6 +15,12 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ConsultaTipoCentro extends Conexion {
   
+  /**
+   * Metodo que registra un Area de trabajo
+   * @param AT
+   * @return
+   * @throws SQLException 
+   */
   public boolean registrarAreaTrabajo (AreaTrabajo AT) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();
@@ -36,6 +42,12 @@ public class ConsultaTipoCentro extends Conexion {
     }
   }
   
+  /**
+   * Metodo que elimina un Area de trabajo
+   * @param AT
+   * @return
+   * @throws SQLException 
+   */
   public boolean EliminarAreaTrabajo (AreaTrabajo AT) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();
@@ -56,7 +68,13 @@ public class ConsultaTipoCentro extends Conexion {
       }
     }
   }
-    
+  
+  /**
+   * Metodo que registra un tipo de centro de atencion
+   * @param TCA
+   * @return
+   * @throws SQLException 
+   */
   public boolean registrarTipoCentroAtencion (TipoCentroAtencion TCA) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();
@@ -78,6 +96,12 @@ public class ConsultaTipoCentro extends Conexion {
     }
   }
   
+  /**
+   * Metodo que elimina un tipo de centro de atencion
+   * @param TCA
+   * @return
+   * @throws SQLException 
+   */
   public boolean EliminarTipoCentroAtencion (TipoCentroAtencion TCA) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();

@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * Controlados de la clase CentroAtencion.
+ * Controlador de la clase CentroAtencion.
  * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class CtrlCentroAtencion implements ActionListener{
@@ -167,12 +167,10 @@ public class CtrlCentroAtencion implements ActionListener{
     ResultSet rs;
     ResultSetMetaData rsmd;
     int columnas;
-    
     int [] anchos = {10, 50, 100, 30, 100};
     for(int i = 0 ; i < frm.tablaCentroA.getColumnCount(); i++){
       frm.tablaCentroA.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
-    }
-    ConsultaCentroAtencion.cargarTablaCentroAtencion(modeloTabla);
+    } ConsultaCentroAtencion.cargarTablaCentroAtencion(modeloTabla);
   }
   
   /**
@@ -191,12 +189,10 @@ public class CtrlCentroAtencion implements ActionListener{
           + "TiposCentrosAtencion order by tipoDeCentro SELECT AreaTrabajo from "
           + "AreaTrabajo order by AreaTrabajo");
       rs = st.executeQuery();
-    
       try {
         while (rs.next()){
           listaModelo.addElement(rs.getString("tipoDeCentro"));
-      } rs.close();
-      
+        } rs.close();
       } catch(SQLException ex ){
         System.err.println(ex.getMessage());
       } frm.cmbTipoCentro.setModel(listaModelo);
@@ -204,5 +200,4 @@ public class CtrlCentroAtencion implements ActionListener{
       JOptionPane.showMessageDialog(null,e);
     }
   }
-  
 }

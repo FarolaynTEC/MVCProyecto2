@@ -14,6 +14,12 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ConsultaCentroAtencion extends Conexion{
   
+  /**
+   * Metodo que registra un centro de atencion
+   * @param CA
+   * @return
+   * @throws SQLException 
+   */
   public boolean registrar(CentroAtencion CA) throws SQLException{
     System.out.print("Aqui1");
     PreparedStatement ps = null;
@@ -41,6 +47,12 @@ public class ConsultaCentroAtencion extends Conexion{
     }
   }
   
+  /**
+   * Metodo que modifica un centro de atencion
+   * @param CA
+   * @return
+   * @throws SQLException 
+   */
   public boolean modificar(CentroAtencion CA) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();
@@ -70,6 +82,12 @@ public class ConsultaCentroAtencion extends Conexion{
     }
   }
   
+  /**
+   * Metodo que elimina un centro de atencion
+   * @param CA
+   * @return
+   * @throws SQLException 
+   */
   public boolean eliminar(CentroAtencion CA) throws SQLException{
     System.out.print("Aqui3");
     PreparedStatement ps = null;
@@ -124,6 +142,12 @@ public class ConsultaCentroAtencion extends Conexion{
     }
   }
   
+  /**
+   * Metodo que busca un area de atencion
+   * @param id
+   * @return
+   * @throws SQLException 
+   */
   public boolean buscarAreaAtencion(int id) throws SQLException{
     ResultSet rs;
     Connection connect = DriverManager.getConnection("jdbc:sqlserver://;databaseName="

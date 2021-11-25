@@ -5,8 +5,8 @@
 package Modelo;
 
 /**
- *
- * @author Alejandra Merino
+ * Esta es una abstraccion de la clase Tratamiento
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class Tratamiento {
   private int identificadorCita;
@@ -15,6 +15,7 @@ public class Tratamiento {
   private String tipoTratamiento;
 
 
+  //Metodos accesores
   public int getIdentificadorCita() {
     return identificadorCita;
   }

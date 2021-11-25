@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * Controlados de la clase Paciente.
+ * Controlador de la clase Paciente.
  * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class CtrlPaciente implements ActionListener {
@@ -30,6 +30,13 @@ public class CtrlPaciente implements ActionListener {
   private ConsultaPaciente modC;
   private PacienteV frm;
 
+  /**
+   * Constructor de la clase CtrlPaciente
+   * @param modPac
+   * @param modVac
+   * @param modC
+   * @param frm 
+   */
   public CtrlPaciente(Paciente modPac, Vacuna modVac, /*Hospitalizacion modHos, RegistroSeguimiento modReSe,*/ ConsultaPaciente modC, PacienteV frm) {
     this.modPac = modPac;
     this.modVac = modVac;
@@ -56,6 +63,11 @@ public class CtrlPaciente implements ActionListener {
     cargarTablaPaciente2();
   }
 
+  /**
+   * Método encargado del control de las funcionalidades
+   * del CRUD de los Pacientes
+   * @param e 
+   */
   @Override
   public void actionPerformed(ActionEvent e) {
     //Boton guardar Paciente
@@ -160,7 +172,7 @@ public class CtrlPaciente implements ActionListener {
     frm.txtTelefonoPaciente.setText(null);
   }
   
-    /**
+  /**
    * Método para cargar los datos de la base de datos
    * en la tabla llamada tablaPaciente.
    */
@@ -174,11 +186,10 @@ public class CtrlPaciente implements ActionListener {
     int [] anchos = {10, 50, 100, 30, 100};
     for(int i = 0 ; i < frm.tablaPaciente1.getColumnCount(); i++){
       frm.tablaPaciente1.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
-    }
-    ConsultaPaciente.cargarTablaPaciente1(modeloTabla);
+    } ConsultaPaciente.cargarTablaPaciente1(modeloTabla);
   }
   
-      /**
+  /**
    * Método para cargar los datos de la base de datos
    * en la tabla llamada tablaPaciente.
    */
@@ -192,7 +203,6 @@ public class CtrlPaciente implements ActionListener {
     int [] anchos = {10, 50, 100, 30, 100};
     for(int i = 0 ; i < frm.tablaPaciente2.getColumnCount(); i++){
       frm.tablaPaciente2.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
-    }
-    ConsultaPaciente.cargarTablaPaciente2(modeloTabla);
+    }ConsultaPaciente.cargarTablaPaciente2(modeloTabla);
   }
 }

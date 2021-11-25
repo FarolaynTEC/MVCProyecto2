@@ -16,6 +16,12 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ConsultaFuncionario extends Conexion {
   
+  /**
+   * Metodo que registra un funcionario
+   * @param fun
+   * @return
+   * @throws SQLException 
+   */
   public boolean registrarFuncionario (Funcionario fun) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();
@@ -44,6 +50,12 @@ public class ConsultaFuncionario extends Conexion {
     }
   }
   
+  /**
+   * Metodo que modifica un funcionario
+   * @param fun
+   * @return
+   * @throws SQLException 
+   */
   public boolean modificarFuncionario (Funcionario fun) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();
@@ -72,6 +84,12 @@ public class ConsultaFuncionario extends Conexion {
     }
   }  
   
+  /**
+   * Metodo que elimina un funcionario
+   * @param fun
+   * @return
+   * @throws SQLException 
+   */
   public boolean eliminarFuncionario (Funcionario fun) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();
@@ -93,6 +111,11 @@ public class ConsultaFuncionario extends Conexion {
     }
   }
   
+  /**
+   * Metodo que busca un funcionario
+   * @param fun
+   * @return 
+   */
   public boolean buscarFuncionario (Funcionario fun) {
     PreparedStatement ps = null;
     
@@ -115,6 +138,12 @@ public class ConsultaFuncionario extends Conexion {
     }
   }
   
+  /**
+   * Metodo que registra un Doctor
+   * @param doc
+   * @return
+   * @throws SQLException 
+   */
   public boolean registrarDoctor (Doctor doc) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();
@@ -156,6 +185,12 @@ public class ConsultaFuncionario extends Conexion {
     }
   }
   
+  /**
+   * Metodo que modifica un doctor
+   * @param doc
+   * @return
+   * @throws SQLException 
+   */
   public boolean modificarDoctor (Doctor doc) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();
@@ -196,6 +231,12 @@ public class ConsultaFuncionario extends Conexion {
     }
   }
   
+  /**
+   * Metodo que elimina un doctor
+   * @param doc
+   * @return
+   * @throws SQLException 
+   */
   public boolean eliminarDoctor (Doctor doc) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();
@@ -225,6 +266,12 @@ public class ConsultaFuncionario extends Conexion {
     }
   }
   
+  /**
+   * Metodo que registra un enfermero
+   * @param enfe
+   * @return
+   * @throws SQLException 
+   */
   public boolean registrarEnfermero (Enfermero enfe) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();
@@ -265,6 +312,12 @@ public class ConsultaFuncionario extends Conexion {
     }
   }
   
+  /**
+   * Metodo que modifica un enfermero
+   * @param enfe
+   * @return
+   * @throws SQLException 
+   */
   public boolean modificarEnfermero (Enfermero enfe) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();
@@ -305,6 +358,12 @@ public class ConsultaFuncionario extends Conexion {
     }
   }
   
+  /**
+   * Metodo que elimina un enfermero
+   * @param enfe
+   * @return
+   * @throws SQLException 
+   */
   public boolean eliminarEnfermero (Enfermero enfe) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();

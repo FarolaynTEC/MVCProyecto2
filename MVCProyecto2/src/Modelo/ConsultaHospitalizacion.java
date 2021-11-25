@@ -10,11 +10,17 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * Consultas de la clase Hospitalizacion.
+ * Consultas de la clase ConsultaHospitalizacion.
  * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class ConsultaHospitalizacion extends Conexion {
   
+  /**
+   * Metodo que registra una hospitalizacion
+   * @param hos
+   * @return
+   * @throws SQLException 
+   */
   public boolean registrarHospitalizacion (Hospitalizacion hos) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();
@@ -46,6 +52,12 @@ public class ConsultaHospitalizacion extends Conexion {
     }
   }
   
+  /**
+   * Metodo que modifica una hospitalizacion
+   * @param hos
+   * @return
+   * @throws SQLException 
+   */
   public boolean modificarHospitalizacion (Hospitalizacion hos) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();
@@ -75,6 +87,12 @@ public class ConsultaHospitalizacion extends Conexion {
     }
   }
   
+  /**
+   * Metodo que elimina una hospitalizacion
+   * @param hos
+   * @return
+   * @throws SQLException 
+   */
   public boolean eliminarHospitalizacion (Hospitalizacion hos) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();
@@ -96,6 +114,10 @@ public class ConsultaHospitalizacion extends Conexion {
     }
   }
   
+  /**
+   * Metodo que carga la primera parte de una tabla de hospitalizacion
+   * @param modeloTabla 
+   */
   public static void cargarTablaHospitalizacion (DefaultTableModel modeloTabla){
     ResultSet rs;
     ResultSetMetaData rsmd;
@@ -124,6 +146,10 @@ public class ConsultaHospitalizacion extends Conexion {
     }
   }
   
+  /**
+   * Metodo que carga la segunda parte de una tabla de hospitalizacion
+   * @param modeloTabla 
+   */
   public static void cargarTablaHospitalizacion1 (DefaultTableModel modeloTabla){
     ResultSet rs;
     ResultSetMetaData rsmd;

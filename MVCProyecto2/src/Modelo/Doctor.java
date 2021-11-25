@@ -7,17 +7,17 @@ package Modelo;
 import java.util.Date;
 
 /**
- *
- * @author Alejandra Merino
+ * Esta es una abstraccion de la clase Doctor
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class Doctor extends Funcionario{
   private int codigoMedico;
   private String especialidad;
   
-  public void atenderCita () {}
-  
-  public void registrarVacuna () {}
-
+  /**
+   * Metodo que imprime un String de la clase
+   * @return 
+   */
   @Override
   public String toString() {
     String msg;
@@ -26,6 +26,7 @@ public class Doctor extends Funcionario{
     return msg;
   }
 
+  //Metodos accesores
   public int getCodigoMedico() {
     return codigoMedico;
   }

@@ -11,6 +11,7 @@ public class CentroAtencion {
   private int capacidadMaxPac; 
   private String tipoDeCentro;
 
+  //Metodos accesores
   public int getCodigoCentroAtencion() {
     return codigoCentroAtencion;
   }
