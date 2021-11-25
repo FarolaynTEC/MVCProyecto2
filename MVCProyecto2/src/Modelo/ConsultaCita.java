@@ -146,4 +146,79 @@ public class ConsultaCita extends Conexion {
       JOptionPane.showMessageDialog(null,e);
     }
   }
+  
+    
+    public boolean consultarCitasEspecialidad (Cita cit, DefaultTableModel modeloTabla) throws SQLException {
+    PreparedStatement ps = null;
+    ResultSet rs;
+    ResultSetMetaData rsmd;
+    int columnas;
+    Connection con = connect();
+    String sql = "SELECT nombrePaciente,"
+          + " identificador, observaciones, fechaCita, estadoDeCita FROM "
+          + "Citas C INNER JOIN Paciente P ON C.cedulaPaciente=P.cedulaPaciente"
+          + " WHERE C.especialidad = ?";
+    try{
+      ps = con.prepareStatement(sql);
+      ps.setString(1, cit.getEspecialidad());
+      rs = ps.executeQuery();
+      rsmd = rs.getMetaData();
+      columnas = rsmd.getColumnCount();
+      
+      while(rs.next()){
+        Object[] fila = new Object[columnas];
+        for(int indice=0; indice<columnas; indice++){
+          fila[indice]=rs.getObject(indice+1);
+        }
+        modeloTabla.addRow(fila);
+      }
+      return true;
+    }catch(SQLException e){
+      System.err.println(e);
+      return false;
+    }finally{
+      try{
+        con.close();
+      }catch(SQLException e){
+        System.err.println(e);
+      }
+    }
+  }
+    
+    public boolean consultarCitasEstado(Cita cit, DefaultTableModel modeloTabla) throws SQLException {
+    PreparedStatement ps = null;
+    ResultSet rs;
+    ResultSetMetaData rsmd;
+    int columnas;
+    Connection con = connect();
+    String sql = "SELECT nombrePaciente,"
+          + " identificador, observaciones, fechaCita, estadoDeCita FROM "
+          + "Citas C INNER JOIN Paciente P ON C.cedulaPaciente=P.cedulaPaciente"
+          + " WHERE C.estadoDeCita = ?";
+    try{
+      ps = con.prepareStatement(sql);
+      ps.setString(1, cit.getEstadoDeCita());
+      rs = ps.executeQuery();
+      rsmd = rs.getMetaData();
+      columnas = rsmd.getColumnCount();
+      
+      while(rs.next()){
+        Object[] fila = new Object[columnas];
+        for(int indice=0; indice<columnas; indice++){
+          fila[indice]=rs.getObject(indice+1);
+        }
+        modeloTabla.addRow(fila);
+      }
+      return true;
+    }catch(SQLException e){
+      System.err.println(e);
+      return false;
+    }finally{
+      try{
+        con.close();
+      }catch(SQLException e){
+        System.err.println(e);
+      }
+    }
+  }
 }

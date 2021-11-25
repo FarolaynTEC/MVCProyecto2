@@ -19,7 +19,6 @@ import javax.swing.table.DefaultTableModel;
 public class ConsultaBitacora extends Conexion {
   
   public boolean registrarBitacora (Bitacora bit) throws SQLException{
-    System.out.print("Aqui1");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "INSERT INTO Bitacora (idBitacora,"
@@ -48,7 +47,6 @@ public class ConsultaBitacora extends Conexion {
   }
   
   public boolean modificarBitacora (Bitacora bit) throws SQLException{
-    System.out.print("Aqui2");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "UPDATE Bitacora SET "
@@ -77,7 +75,6 @@ public class ConsultaBitacora extends Conexion {
   }
   
   public boolean eliminarBitacora (Bitacora bit) throws SQLException{
-    System.out.print("Aqui2");
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "DELETE FROM Bitacora WHERE idBitacora=?";
@@ -107,7 +104,7 @@ public class ConsultaBitacora extends Conexion {
       
       Connection connect = DriverManager.getConnection("jdbc:sqlserver://;"
               + "databaseName=Proyecto_POO2;user=usuariosql;password=root1");
-      PreparedStatement st = connect.prepareStatement("SELECT nombreAutor,"
+      PreparedStatement st = connect.prepareStatement("SELECT idBitacora, nombreAutor,"
           + "identificadorCita, fecha, hora FROM Bitacora");
       rs = st.executeQuery();
       rsmd = rs.getMetaData();

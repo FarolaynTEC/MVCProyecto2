@@ -12,6 +12,7 @@ import Modelo.ConsultaCentroAtencion;
 import Vista.CentroA;
 import Controlador.CtrlCentroAtencion;
 import Controlador.CtrlCitas;
+import Controlador.CtrlConsultasPacientes;
 import Controlador.CtrlDiagnosticoTratamiento;
 import Controlador.CtrlFuncionario;
 import Controlador.CtrlHospitalizacion;
@@ -83,6 +84,8 @@ public class Menu extends javax.swing.JFrame {
     btnHospitalizar = new javax.swing.JButton();
     jLabel2 = new javax.swing.JLabel();
     jLabel3 = new javax.swing.JLabel();
+    jLabel4 = new javax.swing.JLabel();
+    jButton10 = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setBackground(new java.awt.Color(37, 182, 204));
@@ -189,6 +192,16 @@ public class Menu extends javax.swing.JFrame {
     jLabel3.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
     jLabel3.setText("Bienvenido al registro médico ");
 
+    jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    jLabel4.setText("Consulta de Pacientes");
+
+    jButton10.setText("Ir consulta Pacientes");
+    jButton10.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton10ActionPerformed(evt);
+      }
+    });
+
     javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
     jPanel2.setLayout(jPanel2Layout);
     jPanel2Layout.setHorizontalGroup(
@@ -229,7 +242,12 @@ public class Menu extends javax.swing.JFrame {
             .addComponent(jLabel3))
           .addGroup(jPanel2Layout.createSequentialGroup()
             .addGap(652, 652, 652)
-            .addComponent(jLabel1)))
+            .addComponent(jLabel1))
+          .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGap(258, 258, 258)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+              .addComponent(jButton10)
+              .addComponent(jLabel4))))
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel2Layout.setVerticalGroup(
@@ -257,7 +275,11 @@ public class Menu extends javax.swing.JFrame {
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(btnHospitalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addContainerGap(273, Short.MAX_VALUE))
+        .addGap(68, 68, 68)
+        .addComponent(jLabel4)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(147, Short.MAX_VALUE))
     );
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -401,6 +423,17 @@ public class Menu extends javax.swing.JFrame {
     this.setVisible(false);
   }//GEN-LAST:event_btnHospitalizarActionPerformed
 
+  private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    Cita modCita = new Cita();
+    ConsultaCita modC = new ConsultaCita();
+    ConsultasDePacientes verV = new ConsultasDePacientes(); 
+    
+    CtrlConsultasPacientes ctrlCita = new CtrlConsultasPacientes(modCita,modC,verV);
+    ctrlCita.iniciar();
+    verV.setVisible(true);
+    this.setVisible(false);
+  }//GEN-LAST:event_jButton10ActionPerformed
+
   /**
    * @param args the command line arguments
    */
@@ -439,6 +472,7 @@ public class Menu extends javax.swing.JFrame {
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton btnHospitalizar;
   private javax.swing.JButton jButton1;
+  private javax.swing.JButton jButton10;
   private javax.swing.JButton jButton2;
   private javax.swing.JButton jButton3;
   private javax.swing.JButton jButton4;
@@ -450,6 +484,7 @@ public class Menu extends javax.swing.JFrame {
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JLabel jLabel3;
+  private javax.swing.JLabel jLabel4;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JPanel jPanel2;
   // End of variables declaration//GEN-END:variables
