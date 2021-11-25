@@ -8,8 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author farol
+ * Esta es una abstraccion de la clase ventana Hospitalizar
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
  public class Hospitalizar extends javax.swing.JFrame {
 
@@ -367,6 +367,10 @@ import javax.swing.JOptionPane;
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * Metodo del boton guardar Paciente
+   * @param evt 
+   */
   private void btnGuardarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarPacienteActionPerformed
     if(txtFechaFin.getText().length()==0
         || txtFechaInicio.getText().length()==0)
@@ -379,6 +383,10 @@ import javax.swing.JOptionPane;
     }
   }//GEN-LAST:event_btnGuardarPacienteActionPerformed
 
+  /**
+   * Metodo del boton editar Paciente
+   * @param evt 
+   */
   private void btnEditarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPacienteActionPerformed
     if(txtFechaFin.getText().length()==0
         || txtFechaInicio.getText().length()==0)
@@ -391,21 +399,37 @@ import javax.swing.JOptionPane;
     }
   }//GEN-LAST:event_btnEditarPacienteActionPerformed
 
+  /**
+   * Metodo del boton eliminar Paciente
+   * @param evt 
+   */
   private void btnEliminarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPacienteActionPerformed
 
   }//GEN-LAST:event_btnEliminarPacienteActionPerformed
 
+  /**
+   * Metodo del boton limpiar Paciente
+   * @param evt 
+   */
   private void btnLimpiarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarPacienteActionPerformed
     txtFechaInicio.setText(null);
     txtFechaFin.setText(null);
   }//GEN-LAST:event_btnLimpiarPacienteActionPerformed
 
+  /**
+   * Metodo del boton volver Paciente
+   * @param evt 
+   */
   private void btnVolverPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverPacienteActionPerformed
     Menu verM = new Menu();    
     verM.setVisible(true);
     this.setVisible(false);
   }//GEN-LAST:event_btnVolverPacienteActionPerformed
 
+  /**
+   * Metodo del boton combobox nombre Paciente
+   * @param evt 
+   */
   private void cmbNombrePacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbNombrePacienteActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_cmbNombrePacienteActionPerformed
@@ -415,6 +439,7 @@ import javax.swing.JOptionPane;
   }//GEN-LAST:event_txtFechaInicioActionPerformed
 
   /**
+   * Metodo main de vista Hospitalizar
    * @param args the command line arguments
    */
   public static void main(String args[]) {

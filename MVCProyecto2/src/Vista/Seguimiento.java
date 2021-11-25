@@ -8,8 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author farol
+ * Esta es una abstraccion de la clase ventana Seguimiento
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class Seguimiento extends javax.swing.JFrame {
 
@@ -275,6 +275,10 @@ public class Seguimiento extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * Metodo del boton que guarda un registro de seguimiento
+   * @param evt 
+   */
   private void btnGuardarSeguimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarSeguimientoActionPerformed
     if(txtFechaSeguimiento.getText().length()==0)
    {
@@ -286,6 +290,10 @@ public class Seguimiento extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnGuardarSeguimientoActionPerformed
 
+  /**
+   * Metodo del boton que edita el registro de seguimiento
+   * @param evt 
+   */
   private void btnEditarSeguimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarSeguimientoActionPerformed
    if(txtFechaSeguimiento.getText().length()==0)
    {
@@ -301,10 +309,18 @@ public class Seguimiento extends javax.swing.JFrame {
 
   }//GEN-LAST:event_btnEliminarSeguimientoActionPerformed
 
+  /**
+   * Metodo del boton que limpa los campos  del registro de seguimiento
+   * @param evt 
+   */
   private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
     txtFechaSeguimiento.setText(null);
   }//GEN-LAST:event_btnLimpiarActionPerformed
 
+  /**
+   * Metodo del boton que vuelve al menu principal desde el registro de seguimiento
+   * @param evt 
+   */
   private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
     Menu verM = new Menu();    
     verM.setVisible(true);
@@ -320,6 +336,7 @@ public class Seguimiento extends javax.swing.JFrame {
   }//GEN-LAST:event_cmbCedulaPacientesActionPerformed
 
   /**
+   * Metodo main de la vista Seguimiento
    * @param args the command line arguments
    */
   public static void main(String args[]) {

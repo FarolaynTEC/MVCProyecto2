@@ -8,8 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author farol
+ * Esta es una abstraccion de la clase ventana Vacunas
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
  public class Vacunas extends javax.swing.JFrame {
 
@@ -152,6 +152,10 @@ import javax.swing.JOptionPane;
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * Metodo que vuelve al menu principal desde la vista Vacunas
+   * @param evt 
+   */
   private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
     Menu verM = new Menu();    
     verM.setVisible(true);
@@ -163,6 +167,7 @@ import javax.swing.JOptionPane;
   }//GEN-LAST:event_btnConsultaVacunasActionPerformed
 
   /**
+   * Metodo main de la vista Vacunas
    * @param args the command line arguments
    */
   public static void main(String args[]) {

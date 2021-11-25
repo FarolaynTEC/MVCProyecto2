@@ -11,8 +11,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author farol
+ * Esta es una abstraccion de la clase ventana PAcienteV
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
  public class PacienteV extends javax.swing.JFrame {
 
@@ -456,6 +456,10 @@ import javax.swing.JOptionPane;
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * Metodo que valida los datos al guardar un paciente
+   * @param evt 
+   */
   private void btnGuardarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarPacienteActionPerformed
     if(txtCedulaPaciente.getText().length()==0
         || txtCorreoPciente.getText().length()==0
@@ -473,6 +477,10 @@ import javax.swing.JOptionPane;
     }
   }//GEN-LAST:event_btnGuardarPacienteActionPerformed
 
+  /**
+   * Metodo que valida los datos al editar un paciente
+   * @param evt 
+   */
   private void btnEditarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPacienteActionPerformed
     if(txtCedulaPaciente.getText().length()==0
         || txtCorreoPciente.getText().length()==0
@@ -490,6 +498,10 @@ import javax.swing.JOptionPane;
     }
   }//GEN-LAST:event_btnEditarPacienteActionPerformed
 
+  /**
+   * Metodo que valida los datos al eliminar un paciente
+   * @param evt 
+   */
   private void btnEliminarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPacienteActionPerformed
     if(txtCedulaPaciente.getText().length()==0)
    {
@@ -501,6 +513,10 @@ import javax.swing.JOptionPane;
     }
   }//GEN-LAST:event_btnEliminarPacienteActionPerformed
 
+  /**
+   * Metodo que limpia campos del registro de paciente
+   * @param evt 
+   */
   private void btnLimpiarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarPacienteActionPerformed
     txtCedulaPaciente.setText(null);
     txtCorreoPciente.setText(null);
@@ -515,12 +531,20 @@ import javax.swing.JOptionPane;
     txtNombreFarmaceutica.setText(null);
   }//GEN-LAST:event_btnLimpiarPacienteActionPerformed
 
+  /**
+   * Metodo que vuelve de la vista de paciente
+   * @param evt 
+   */
   private void btnVolverPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverPacienteActionPerformed
     Menu verM = new Menu();    
     verM.setVisible(true);
     this.setVisible(false);
   }//GEN-LAST:event_btnVolverPacienteActionPerformed
 
+  /**
+   * Metodo que consulta las vacunas de un paciente
+   * @param evt 
+   */
   private void btnConsultaVacunasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaVacunasActionPerformed
     Vacuna modVac = new Vacuna();
     ConsultaVacuna modCVac = new ConsultaVacuna();
@@ -531,6 +555,10 @@ import javax.swing.JOptionPane;
     this.setVisible(false);
   }//GEN-LAST:event_btnConsultaVacunasActionPerformed
 
+  /**
+   * Metodo que agrega vacunas de un paciente
+   * @param evt 
+   */
   private void btnAgregarVacunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarVacunaActionPerformed
     if(txtCedulaPaciente.getText().length()==0
         || txtNombreVacuna.getText().length()==0
@@ -552,6 +580,7 @@ import javax.swing.JOptionPane;
   }//GEN-LAST:event_txtFechaVacunaActionPerformed
 
   /**
+   * Metodo main de la vista PacienteV
    * @param args the command line arguments
    */
   public static void main(String args[]) {

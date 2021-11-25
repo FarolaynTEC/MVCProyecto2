@@ -8,8 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author farol
+ * Esta es una abstraccion de la clase ventana DiagnosticoTratamiento
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class DiagnosticoTratamiento extends javax.swing.JFrame {
 
@@ -684,32 +684,60 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * Metodo del boton guardar centro1
+   * @param evt 
+   */
   private void btnGuardarCentro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCentro1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnGuardarCentro1ActionPerformed
 
+  /**
+   * Metodo del boton editar centro1
+   * @param evt 
+   */
   private void btnEditarCentro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCentro1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnEditarCentro1ActionPerformed
 
+  /**
+   * Metodo del boton eliminar centro1
+   * @param evt 
+   */
   private void btnEliminarCentro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCentro1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnEliminarCentro1ActionPerformed
 
+  /**
+   * Metodo del boton limpiar centro1
+   * @param evt 
+   */
   private void btnLimpiarCentro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarCentro1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnLimpiarCentro1ActionPerformed
 
+  /**
+   * Metodo del boton volver centro1
+   * @param evt 
+   */
   private void btnVolverCentro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverCentro1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnVolverCentro1ActionPerformed
 
+  /**
+   * Metodo del boton limpiar centro2
+   * @param evt 
+   */
   private void btnLimpiarCentro2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarCentro2ActionPerformed
     txNombreTratamiento.setText(null);
     txtDosisTratamiento.setText(null);
     txtTipoTratamiento.setText(null);
   }//GEN-LAST:event_btnLimpiarCentro2ActionPerformed
 
+  /**
+   * Metodo del boton eliminar tratamiento
+   * @param evt 
+   */
   private void btnEliminarTratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarTratamientoActionPerformed
     if(txNombreTratamiento.getText().length()==0)
     {
@@ -721,6 +749,10 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnEliminarTratamientoActionPerformed
 
+  /**
+   * Metodo del boton editar tratamiento
+   * @param evt 
+   */
   private void btnEditarTratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarTratamientoActionPerformed
     if(txNombreTratamiento.getText().length()==0
       || txtDosisTratamiento.getText().length()==0
@@ -734,6 +766,10 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnEditarTratamientoActionPerformed
 
+  /**
+   * Metodo del boton guardar tratamiento
+   * @param evt 
+   */
   private void btnGuardarTratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTratamientoActionPerformed
     if(txNombreTratamiento.getText().length()==0
       || txtDosisTratamiento.getText().length()==0
@@ -747,6 +783,10 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnGuardarTratamientoActionPerformed
 
+  /**
+   * Metodo del boton guardar diagnostico
+   * @param evt 
+   */
   private void btnGuardarDiagnosticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarDiagnosticoActionPerformed
     if(txtNombreDiagnostico.getText().length()==0
       || txtObservacionDiagnostico.getText().length()==0)
@@ -759,6 +799,10 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnGuardarDiagnosticoActionPerformed
 
+  /**
+   * Metodo del boton eliminar diagnostico
+   * @param evt 
+   */
   private void btnEliminarDiagnosticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarDiagnosticoActionPerformed
     if(txtNombreDiagnostico.getText().length()==0)
     {
@@ -770,6 +814,10 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnEliminarDiagnosticoActionPerformed
 
+  /**
+   * Metodo del boton editar diagnostico
+   * @param evt 
+   */
   private void btnEditarDiagnosticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarDiagnosticoActionPerformed
     if(txtNombreDiagnostico.getText().length()==0
       || txtObservacionDiagnostico.getText().length()==0)
@@ -782,23 +830,36 @@ public class DiagnosticoTratamiento extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnEditarDiagnosticoActionPerformed
 
+  /**
+   * Metodo del boton vovler centro 
+   * @param evt 
+   */
   private void btnVolverCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverCentroActionPerformed
     Menu verM = new Menu();    
     verM.setVisible(true);
     this.setVisible(false);
   }//GEN-LAST:event_btnVolverCentroActionPerformed
 
+  /**
+   * Metodo del boton limpiar diagnostico
+   * @param evt 
+   */
   private void btnLimpiarDiagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarDiagActionPerformed
     txtNombreDiagnostico.setText(null);
     txtObservacionDiagnostico.setText(null);
   }//GEN-LAST:event_btnLimpiarDiagActionPerformed
 
+  /**
+   * Metodo del boton combobox citas en Diagnostico y Tratamiento
+   * @param evt 
+   */
   private void cmbIdCita1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbIdCita1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_cmbIdCita1ActionPerformed
 
   
   /**
+   * Metodo main de la clase vista DiagnosticoTratamiento
    * @param args the command line arguments
    */
   public static void main(String args[]) {
