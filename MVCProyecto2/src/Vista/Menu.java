@@ -426,9 +426,15 @@ public class Menu extends javax.swing.JFrame {
   private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
     Cita modCita = new Cita();
     ConsultaCita modC = new ConsultaCita();
-    ConsultasDePacientes verV = new ConsultasDePacientes(); 
+    ConsultasDePacientes verV = new ConsultasDePacientes();
     
-    CtrlConsultasPacientes ctrlCita = new CtrlConsultasPacientes(modCita,modC,verV);
+    
+    Diagnostico modDia = new  Diagnostico();
+    Tratamiento modTra = new Tratamiento();
+    ConsultaDiagnosticoTratamiento modDiaTra = new ConsultaDiagnosticoTratamiento() ;
+    
+    CtrlConsultasPacientes ctrlCita = new CtrlConsultasPacientes( modCita, modC, 
+    modDia,  modTra, modDiaTra,  verV);
     ctrlCita.iniciar();
     verV.setVisible(true);
     this.setVisible(false);
