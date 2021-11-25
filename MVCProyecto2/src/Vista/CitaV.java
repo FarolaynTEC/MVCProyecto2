@@ -8,8 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author farol
+ * Esta es una abstraccion de la clase ventana CitaV
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
  public class CitaV extends javax.swing.JFrame {
 
@@ -285,12 +285,20 @@ import javax.swing.JOptionPane;
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * Metodo del boton volver CitaV
+   * @param evt 
+   */
   private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
     Menu verM = new Menu();    
     verM.setVisible(true);
     this.setVisible(false);
   }//GEN-LAST:event_btnVolverActionPerformed
 
+  /**
+   * Metodo del boton solicitar CitaV
+   * @param evt 
+   */
   private void btnSolicitarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitarCitaActionPerformed
     if(cmbCedulaPaciente.getSelectedItem().toString().length()==0
         || txtFechaCita.getText().length()==0
@@ -304,12 +312,20 @@ import javax.swing.JOptionPane;
     }
   }//GEN-LAST:event_btnSolicitarCitaActionPerformed
 
+  /**
+   * Metodo del boton limpiar CitaV
+   * @param evt 
+   */
   private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
 
     txtFechaCita.setText(null);
     txtObservacionesCita.setText(null);
   }//GEN-LAST:event_btnLimpiarActionPerformed
 
+  /**
+   * Metodo del boton cancelar CitaV
+   * @param evt 
+   */
   private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
     if(cmbCedulaPaciente.getSelectedItem().toString().length()==0)
    {
@@ -321,15 +337,24 @@ import javax.swing.JOptionPane;
     }
   }//GEN-LAST:event_btnCancelarActionPerformed
 
+  /**
+   * Metodo del boton combobox cedula paciente en CitaV
+   * @param evt 
+   */
   private void cmbCedulaPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCedulaPacienteActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_cmbCedulaPacienteActionPerformed
 
+  /**
+   * Metodo del boton eliminar CitaV
+   * @param evt 
+   */
   private void btnEliminarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCitaActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnEliminarCitaActionPerformed
 
   /**
+   * Metodo main de la clase vista CitaV
    * @param args the command line arguments
    */
   public static void main(String args[]) {

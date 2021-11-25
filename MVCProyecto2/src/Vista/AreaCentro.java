@@ -8,8 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author farol
+ * Esta es una abstraccion de la clase ventana AreaCentro
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class AreaCentro extends javax.swing.JFrame {
 
@@ -563,26 +563,50 @@ public class AreaCentro extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * Metodo del boton guardar centro1
+   * @param evt 
+   */
   private void btnGuardarCentro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCentro1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnGuardarCentro1ActionPerformed
 
+  /**
+   * MEtodo del boton de editar centro1
+   * @param evt 
+   */
   private void btnEditarCentro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCentro1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnEditarCentro1ActionPerformed
 
+  /**
+   * Metodo del boton eliminar centro1
+   * @param evt 
+   */
   private void btnEliminarCentro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCentro1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnEliminarCentro1ActionPerformed
 
+  /**
+   * Metodo del boton limpiar centro1
+   * @param evt 
+   */
   private void btnLimpiarCentro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarCentro1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnLimpiarCentro1ActionPerformed
 
+  /**
+   * Metodo del boton volver centro1
+   * @param evt 
+   */
   private void btnVolverCentro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverCentro1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnVolverCentro1ActionPerformed
 
+  /**
+   * Metodo del boton eliminar centro
+   * @param evt 
+   */
   private void btnEliminarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCentroActionPerformed
     if(txtNombreCentro.getText().length()==0){
      JOptionPane.showMessageDialog(null, "ERROR, el campo de centro no puede estar vacio");
@@ -593,6 +617,10 @@ public class AreaCentro extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnEliminarCentroActionPerformed
 
+  /**
+   * Metodo del boton eliminar centro
+   * @param evt 
+   */
   private void btnGuardarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCentroActionPerformed
     if(txtNombreCentro.getText().length()==0){
      JOptionPane.showMessageDialog(null, "ERROR, el campo de centro no puede estar vacio");
@@ -603,6 +631,10 @@ public class AreaCentro extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnGuardarCentroActionPerformed
 
+  /**
+   * Metodo del boton guardar centro
+   * @param evt 
+   */
   private void btnGuardarAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarAreaActionPerformed
     if(txtNombreArea.getText().length()==0){
      JOptionPane.showMessageDialog(null, "ERROR, el campo de area no puede estar vacio");
@@ -613,6 +645,10 @@ public class AreaCentro extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnGuardarAreaActionPerformed
 
+  /**
+   * Metodo del boton eliminar area
+   * @param evt 
+   */
   private void btnEliminarAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarAreaActionPerformed
     if(txtNombreArea.getText().length()==0){
      JOptionPane.showMessageDialog(null, "ERROR, el campo de area no puede estar vacio");
@@ -623,21 +659,34 @@ public class AreaCentro extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnEliminarAreaActionPerformed
 
+  /**
+   * Metodo del boton volver centro
+   * @param evt 
+   */
   private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
     Menu verM = new Menu();    
     verM.setVisible(true);
     this.setVisible(false);
   }//GEN-LAST:event_btnVolverActionPerformed
 
+  /**
+   * Metodo del boton limpiar area
+   * @param evt 
+   */
   private void btnLimpiarAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarAreaActionPerformed
     txtNombreArea.setText(null);
   }//GEN-LAST:event_btnLimpiarAreaActionPerformed
 
+  /**
+   * Metodo del boton limpiar centro
+   * @param evt 
+   */
   private void btnLimpiarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarCentroActionPerformed
     txtNombreCentro.setText(null);
   }//GEN-LAST:event_btnLimpiarCentroActionPerformed
 
   /**
+   * Metodo main de la vista AreaCentro
    * @param args the command line arguments
    */
   public static void main(String args[]) {

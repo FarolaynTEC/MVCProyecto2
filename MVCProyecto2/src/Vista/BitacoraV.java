@@ -8,8 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author farol
+ * Esta es una abstraccion de la clase ventana BitacoraV
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class BitacoraV extends javax.swing.JFrame {
 
@@ -259,6 +259,10 @@ public class BitacoraV extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * Metodo del boton guardar bitacora
+   * @param evt 
+   */
   private void btnGuardarBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarBitacoraActionPerformed
     if(txtFechaBitacora.getText().length()==0
         || txtHoraBitacora.getText().length()==0
@@ -272,6 +276,10 @@ public class BitacoraV extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnGuardarBitacoraActionPerformed
 
+  /**
+   * Metodo del boton modificar bitacora
+   * @param evt 
+   */
   private void btnEditarBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarBitacoraActionPerformed
     if(txtFechaBitacora.getText().length()==0
         || txtHoraBitacora.getText().length()==0
@@ -285,6 +293,10 @@ public class BitacoraV extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnEditarBitacoraActionPerformed
 
+  /**
+   * Metodo del boton eliminar bitacora
+   * @param evt 
+   */
   private void btnEliminarBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarBitacoraActionPerformed
     if(txtIDBitacora.getText().length()==0)
    {
@@ -296,12 +308,20 @@ public class BitacoraV extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnEliminarBitacoraActionPerformed
 
+  /**
+   * Metodo del boton limpiar bitacora
+   * @param evt 
+   */
   private void btnLimpiarBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarBitacoraActionPerformed
     txtFechaBitacora.setText(null);
     txtHoraBitacora.setText(null);
     txtIDBitacora.setText(null);
   }//GEN-LAST:event_btnLimpiarBitacoraActionPerformed
 
+  /**
+   * Metodo del boton volver bitacora
+   * @param evt 
+   */
   private void btnVolverBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverBitacoraActionPerformed
     Menu verM = new Menu();    
     verM.setVisible(true);
@@ -309,6 +329,7 @@ public class BitacoraV extends javax.swing.JFrame {
   }//GEN-LAST:event_btnVolverBitacoraActionPerformed
 
   /**
+   * Metodo main de la vista BitacoraV
    * @param args the command line arguments
    */
   public static void main(String args[]) {
