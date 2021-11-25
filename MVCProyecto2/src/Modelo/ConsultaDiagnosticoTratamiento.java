@@ -225,4 +225,144 @@ public class ConsultaDiagnosticoTratamiento extends Conexion {
       JOptionPane.showMessageDialog(null,e);
     }
   }
+  
+    public boolean consultarCitasEstado(Diagnostico dia, DefaultTableModel modeloTabla) throws SQLException {
+    PreparedStatement ps = null;
+    ResultSet rs;
+    ResultSetMetaData rsmd;
+    int columnas;
+    Connection con = connect();
+    String sql = "SELECT identificador,nombreDiagnostico, observaciones, "
+        + "nivel FROM Diagnostico  WHERE nivel = ?";
+    try{
+      ps = con.prepareStatement(sql);
+      ps.setString(1, dia.getNivel());
+      rs = ps.executeQuery();
+      rsmd = rs.getMetaData();
+      columnas = rsmd.getColumnCount();
+      
+      while(rs.next()){
+        Object[] fila = new Object[columnas];
+        for(int indice=0; indice<columnas; indice++){
+          fila[indice]=rs.getObject(indice+1);
+        }
+        modeloTabla.addRow(fila);
+      }
+      return true;
+    }catch(SQLException e){
+      System.err.println(e);
+      return false;
+    }finally{
+      try{
+        con.close();
+      }catch(SQLException e){
+        System.err.println(e);
+      }
+    }
+  }
+    
+  public boolean consultarNombre (Diagnostico dia, DefaultTableModel modeloTabla) throws SQLException {
+    PreparedStatement ps = null;
+    ResultSet rs;
+    ResultSetMetaData rsmd;
+    int columnas;
+    Connection con = connect();
+    String sql = "SELECT identificador,nombreDiagnostico, observaciones, "
+        + "nivel FROM Diagnostico  WHERE nombreDiagnostico = ?";
+    try{
+      ps = con.prepareStatement(sql);
+      ps.setString(1, dia.getNivel());
+      rs = ps.executeQuery();
+      rsmd = rs.getMetaData();
+      columnas = rsmd.getColumnCount();
+      
+      while(rs.next()){
+        Object[] fila = new Object[columnas];
+        for(int indice=0; indice<columnas; indice++){
+          fila[indice]=rs.getObject(indice+1);
+        }
+        modeloTabla.addRow(fila);
+      }
+      return true;
+    }catch(SQLException e){
+      System.err.println(e);
+      return false;
+    }finally{
+      try{
+        con.close();
+      }catch(SQLException e){
+        System.err.println(e);
+      }
+    }
+  }
+  
+  public boolean consultarNombreTrata (Tratamiento tra, DefaultTableModel modeloTabla) throws SQLException {
+    PreparedStatement ps = null;
+    ResultSet rs;
+    ResultSetMetaData rsmd;
+    int columnas;
+    Connection con = connect();
+    String sql = "SELECT identificador,nombreTratameinto, dosis,"
+        + "tipoTratamiento FROM Tratamiento  WHERE nombreTratameinto = ?";
+    try{
+      ps = con.prepareStatement(sql);
+      ps.setString(1, tra.getNombreTratamiento());
+      rs = ps.executeQuery();
+      rsmd = rs.getMetaData();
+      columnas = rsmd.getColumnCount();
+      
+      while(rs.next()){
+        Object[] fila = new Object[columnas];
+        for(int indice=0; indice<columnas; indice++){
+          fila[indice]=rs.getObject(indice+1);
+        }
+        modeloTabla.addRow(fila);
+      }
+      return true;
+    }catch(SQLException e){
+      System.err.println(e);
+      return false;
+    }finally{
+      try{
+        con.close();
+      }catch(SQLException e){
+        System.err.println(e);
+      }
+    }
+  }
+  
+    public boolean consultarTipoTrata (Tratamiento tra, DefaultTableModel modeloTabla) throws SQLException {
+    PreparedStatement ps = null;
+    ResultSet rs;
+    ResultSetMetaData rsmd;
+    int columnas;
+    Connection con = connect();
+    String sql = "SELECT identificador,nombreTratameinto, dosis,"
+        + "tipoTratamiento FROM Tratamiento  WHERE tipoTratamiento = ?";
+    try{
+      ps = con.prepareStatement(sql);
+      ps.setString(1, tra.getTipoTratamiento());
+      rs = ps.executeQuery();
+      rsmd = rs.getMetaData();
+      columnas = rsmd.getColumnCount();
+      
+      while(rs.next()){
+        Object[] fila = new Object[columnas];
+        for(int indice=0; indice<columnas; indice++){
+          fila[indice]=rs.getObject(indice+1);
+        }
+        modeloTabla.addRow(fila);
+      }
+      return true;
+    }catch(SQLException e){
+      System.err.println(e);
+      return false;
+    }finally{
+      try{
+        con.close();
+      }catch(SQLException e){
+        System.err.println(e);
+      }
+    }
+  }
 }
