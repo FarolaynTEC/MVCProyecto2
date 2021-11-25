@@ -14,11 +14,17 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
- * @author Alejandra Merino
+ * Clase para las consultas de la clase ConsultaDiagnosticoTratamiento
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class ConsultaDiagnosticoTratamiento extends Conexion {
   
+  /**
+   * Metodo que registra un diagnostico
+   * @param dia
+   * @return
+   * @throws SQLException 
+   */
   public boolean registrarDiagnostico (Diagnostico dia) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();
@@ -46,6 +52,12 @@ public class ConsultaDiagnosticoTratamiento extends Conexion {
     }
   }
   
+  /**
+   * Metodo que modifica un diagnostico
+   * @param dia
+   * @return
+   * @throws SQLException 
+   */
   public boolean modificarDiagnostico (Diagnostico dia) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();
@@ -73,6 +85,12 @@ public class ConsultaDiagnosticoTratamiento extends Conexion {
     }
   }
   
+  /**
+   * Metodo que elimina un diagnostico
+   * @param dia
+   * @return
+   * @throws SQLException 
+   */
   public boolean eliminarDiagnotico (Diagnostico dia) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();
@@ -95,6 +113,10 @@ public class ConsultaDiagnosticoTratamiento extends Conexion {
     }
   }
   
+  /**
+   * Metodo que carga la tabla de diagnostico
+   * @param modeloTabla 
+   */
   public static void cargarTablaDiagnotico (DefaultTableModel modeloTabla){
     ResultSet rs;
     ResultSetMetaData rsmd;
@@ -122,6 +144,12 @@ public class ConsultaDiagnosticoTratamiento extends Conexion {
     }
   }
   
+  /**
+   * Metodo que registra un tratamiento
+   * @param tra
+   * @return
+   * @throws SQLException 
+   */
   public boolean registrarTratamiento (Tratamiento tra) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();
@@ -149,6 +177,12 @@ public class ConsultaDiagnosticoTratamiento extends Conexion {
     }
   }
   
+  /**
+   * Metodo que modifica un tratamiento
+   * @param tra
+   * @return
+   * @throws SQLException 
+   */
   public boolean modificarTratamiento (Tratamiento tra) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();
@@ -177,6 +211,12 @@ public class ConsultaDiagnosticoTratamiento extends Conexion {
     }
   }
   
+  /**
+   * Metodo que elimina un tratamiento
+   * @param tra
+   * @return
+   * @throws SQLException 
+   */
   public boolean eliminarTratamiento (Tratamiento tra) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();
@@ -199,6 +239,10 @@ public class ConsultaDiagnosticoTratamiento extends Conexion {
     }
   }
   
+  /**
+   * Metodo que carga la tabla de tratamiento
+   * @param modeloTabla 
+   */
   public static void cargarTablaTratamiento (DefaultTableModel modeloTabla){
     ResultSet rs;
     ResultSetMetaData rsmd;

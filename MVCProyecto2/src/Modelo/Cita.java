@@ -6,7 +6,7 @@ package Modelo;
 
 /**
  * Clase que abarca la cita
- * @author Alejandra Merino
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class Cita {
   private int cedulaPaciente;
@@ -17,6 +17,10 @@ public class Cita {
   private AreaTrabajo servicio;
   private String estadoDeCita;
 
+  /**
+   * Metodo que retorna un String de la clase
+   * @return 
+   */
   @Override
   public String toString() {
     String msg;

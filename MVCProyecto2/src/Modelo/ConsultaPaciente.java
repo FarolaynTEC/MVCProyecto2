@@ -10,11 +10,17 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * Consultas de la clase paciente.
+ * Consultas de la clase ConsultaPaciente.
  * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class ConsultaPaciente extends Conexion {
 
+  /**
+   * Metodo que registra un paciente
+   * @param Pac
+   * @return
+   * @throws SQLException 
+   */
   public boolean registrarPaciente (Paciente Pac) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();
@@ -46,6 +52,12 @@ public class ConsultaPaciente extends Conexion {
     }
   } 
   
+  /**
+   * Metodo que modifica un paciente
+   * @param Pac
+   * @return
+   * @throws SQLException 
+   */
   public boolean modificarPaciente (Paciente Pac) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();
@@ -76,6 +88,12 @@ public class ConsultaPaciente extends Conexion {
     }
   }
   
+  /**
+   * Metodo que elimina un paciente
+   * @param Pac
+   * @return
+   * @throws SQLException 
+   */
   public boolean eliminarPaciente (Paciente Pac) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();
@@ -97,7 +115,13 @@ public class ConsultaPaciente extends Conexion {
     }
   }
   
-    public boolean registrarVacunas (Vacuna Vac) throws SQLException {
+  /**
+   * Metodo que registra una Vacuna
+   * @param Vac
+   * @return
+   * @throws SQLException 
+   */
+  public boolean registrarVacunas (Vacuna Vac) throws SQLException {
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "INSERT INTO Vacuna(cedulaPaciente ,fechaAplicacion,"

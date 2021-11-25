@@ -14,6 +14,14 @@ import javax.swing.table.DefaultTableModel;
  * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class ConsultaVacuna extends Conexion{
+  
+  /**
+   * Metodo que consulta las vacunas
+   * @param Vac
+   * @param modeloTabla
+   * @return
+   * @throws SQLException 
+   */
   public boolean consultarvacunas (Vacuna Vac, DefaultTableModel modeloTabla) throws SQLException {
     PreparedStatement ps = null;
     ResultSet rs;

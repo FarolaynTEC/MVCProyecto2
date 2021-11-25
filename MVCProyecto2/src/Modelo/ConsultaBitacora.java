@@ -12,19 +12,25 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
 /**
- *
- * @author Alejandra Merino
+ * Clase que abarca la ConsultaBitacora
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class ConsultaBitacora extends Conexion {
   
+  /**
+   * Metodo que registra una bitacora
+   * @param bit
+   * @return
+   * @throws SQLException 
+   */
   public boolean registrarBitacora (Bitacora bit) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();
     String sql = "INSERT INTO Bitacora (idBitacora,"
             + "identificadorCita ,fecha,hora ,"
             + "nombreAutor  ) VALUES (?,?,?,?,?)";
-    
     try{
       ps = con.prepareStatement(sql);
       ps.setInt(1, bit.getIdBitacora());
@@ -46,6 +52,12 @@ public class ConsultaBitacora extends Conexion {
     }
   }
   
+  /**
+   * Metodo que modifica una bitacora
+   * @param bit
+   * @return
+   * @throws SQLException 
+   */
   public boolean modificarBitacora (Bitacora bit) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();
@@ -74,6 +86,12 @@ public class ConsultaBitacora extends Conexion {
     }
   }
   
+  /**
+   * Metodo que elimina una bitacora
+   * @param bit
+   * @return
+   * @throws SQLException 
+   */
   public boolean eliminarBitacora (Bitacora bit) throws SQLException{
     PreparedStatement ps = null;
     Connection con = connect();
@@ -96,6 +114,10 @@ public class ConsultaBitacora extends Conexion {
     }
   }
   
+  /**
+   * Metodo para cargar la tabla de bitacora
+   * @param modeloTabla 
+   */
   public static void cargarTablaBitacora(DefaultTableModel modeloTabla){
     ResultSet rs;
     ResultSetMetaData rsmd;
