@@ -18,9 +18,10 @@ import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
 /**
- *
- * @author Alejandra Merino
+ * Clase Controlador para las consultas de Diagnostico y Tratamiento.
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class CtrlDiagnosticoTratamiento implements ActionListener{
   private Diagnostico modDia;
@@ -28,6 +29,14 @@ public class CtrlDiagnosticoTratamiento implements ActionListener{
   private ConsultaDiagnosticoTratamiento modDiaTra;
   private DiagnosticoTratamiento vistaDiaTra;
 
+ /**
+  * Esta es una clase de Controlador de Diagnostico y Tratamiento
+  * @author Josue Brenes, Paola Lopez, Alejandra Merino
+  * @param modDia
+  * @param modTra
+  * @param modDiaTra
+  * @param vistaDiaTra 
+  */
   public CtrlDiagnosticoTratamiento(Diagnostico modDia, Tratamiento modTra, ConsultaDiagnosticoTratamiento modDiaTra, DiagnosticoTratamiento vistaDiaTra) {
     this.modDia = modDia;
     this.modTra = modTra;
@@ -57,6 +66,9 @@ public class CtrlDiagnosticoTratamiento implements ActionListener{
     obtenerIdCita1();
   }
   
+  /**
+   * Metodo que carga la tabla de Dianostico de la BD
+   */
   private void cargarTablaDiagnostico (){
       DefaultTableModel modeloTabla = (DefaultTableModel) vistaDiaTra.tablaDiagnostico.getModel();
       modeloTabla.setRowCount(0);
@@ -67,10 +79,12 @@ public class CtrlDiagnosticoTratamiento implements ActionListener{
       int [] anchos = {10, 50, 100, 30, 100};
       for(int i = 0 ; i < vistaDiaTra.tablaDiagnostico.getColumnCount(); i++){
         vistaDiaTra.tablaDiagnostico.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
-      }
-      ConsultaDiagnosticoTratamiento.cargarTablaDiagnotico(modeloTabla);
+      }ConsultaDiagnosticoTratamiento.cargarTablaDiagnotico(modeloTabla);
     }
   
+  /**
+   * Metodo que carga la tabla de Tratamiento de la BD
+   */
   private void cargarTablaTratamiento (){
       DefaultTableModel modeloTabla = (DefaultTableModel) vistaDiaTra.tablaTratamiento.getModel();
       modeloTabla.setRowCount(0);
@@ -81,10 +95,14 @@ public class CtrlDiagnosticoTratamiento implements ActionListener{
       int [] anchos = {10, 50, 100, 30, 100};
       for(int i = 0 ; i < vistaDiaTra.tablaDiagnostico.getColumnCount(); i++){
         vistaDiaTra.tablaTratamiento.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
-      }
-      ConsultaDiagnosticoTratamiento.cargarTablaTratamiento(modeloTabla);
+      } ConsultaDiagnosticoTratamiento.cargarTablaTratamiento(modeloTabla);
     }
   
+  /**
+   * Método encargado del control de las funcionalidades
+   * del CRUD de los Diagnositcos y Tratamiento
+   * @param e 
+   */
   @Override
   public void actionPerformed(ActionEvent e) {
     //Boton guardar Diagnostico
@@ -235,7 +253,7 @@ public class CtrlDiagnosticoTratamiento implements ActionListener{
   }
   
     /**
-   * Establece las cajas de texto como nulas o vacias
+   * Metodo que establece las cajas de texto como nulas o vacias de Diagnostico
    */
   public void limpiarDiagnostico(){
     vistaDiaTra.txtNombreDiagnostico.setText(null);
@@ -243,7 +261,7 @@ public class CtrlDiagnosticoTratamiento implements ActionListener{
   }
   
     /**
-   * Establece las cajas de texto como nulas o vacias
+   * Metodo que establece las cajas de texto como nulas o vacias de Tratamiento
    */
   public void limpiarTratamiento(){
     vistaDiaTra.txNombreTratamiento.setText(null);

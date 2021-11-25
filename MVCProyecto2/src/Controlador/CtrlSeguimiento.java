@@ -20,15 +20,22 @@ import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
 /**
- *
- * @author Alejandra Merino
+ * Controlador de la clase CtrlSeguimiento.
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class CtrlSeguimiento implements ActionListener{
   private RegistroSeguimiento modSegui;
   private ConsultaSeguimiento modSeguiC;
   private Seguimiento vistaSegui;
 
+  /**
+   * Constructor de la clase CtrlSeguimiento
+   * @param modSegui
+   * @param modSeguiC
+   * @param vistaSegui 
+   */
   public CtrlSeguimiento(RegistroSeguimiento modSegui, ConsultaSeguimiento modSeguiC, Seguimiento vistaSegui) {
     this.modSegui = modSegui;
     this.modSeguiC = modSeguiC;
@@ -41,6 +48,9 @@ public class CtrlSeguimiento implements ActionListener{
     this.vistaSegui.btnVolver.addActionListener(this);
   }
   
+  /**
+   * Inicializador de la ventana Funcionarios
+   */
   public void iniciar(){
     vistaSegui.setTitle("Registro de seguimiento");
     vistaSegui.setLocationRelativeTo(null);
@@ -50,6 +60,10 @@ public class CtrlSeguimiento implements ActionListener{
     obtenerTratamiento();
   }
   
+  /**
+   * Método para cargar los datos de la base de datos
+   * en la tabla llamada tabla RegistroSeguimiento.
+   */
   private void cargarTablaSeguimiento (){
       DefaultTableModel modeloTabla = (DefaultTableModel) vistaSegui.tablaSeguimiento.getModel();
       modeloTabla.setRowCount(0);
@@ -64,6 +78,11 @@ public class CtrlSeguimiento implements ActionListener{
       ConsultaSeguimiento.cargarTablaSeguimiento(modeloTabla);
   }
   
+  /**
+   * Método encargado del control de las funcionalidades
+   * del CRUD de los RegistrosSeguimientos
+   * @param e 
+   */
   @Override
   public void actionPerformed(ActionEvent e) {
     //Boton guardar Seguimiento
@@ -141,9 +160,7 @@ public class CtrlSeguimiento implements ActionListener{
     
     
     //boton Volver
-    if(e.getSource()==vistaSegui.btnVolver){
-       
-    }
+    if(e.getSource()==vistaSegui.btnVolver){ }
   }
   
   /**
@@ -202,7 +219,7 @@ public class CtrlSeguimiento implements ActionListener{
       try {
         while (rs.next()){
           listaModelo.addElement(rs.getString("cedulaFuncionario"));
-      } rs.close();
+        } rs.close();
       
       } catch(SQLException ex ){
         System.err.println(ex.getMessage());
@@ -212,7 +229,7 @@ public class CtrlSeguimiento implements ActionListener{
     }
   }
   
-        /**
+  /**
    * Método para insertar las cedulas de los funcionarios en el
    * combobox llamado cmbFuncionario
    */  

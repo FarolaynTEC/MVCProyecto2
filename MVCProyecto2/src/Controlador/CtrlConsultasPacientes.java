@@ -28,6 +28,12 @@ public class CtrlConsultasPacientes implements ActionListener{
   private ConsultaCita modC;
   private ConsultasDePacientes frm;
   
+  /**
+   * Construtor de la clase CtrlConsultasPacientes
+   * @param modCita
+   * @param modC
+   * @param frm 
+   */
   public CtrlConsultasPacientes(Cita modCita,ConsultaCita modC, ConsultasDePacientes frm) {
     this.modCita = modCita;
     this.modC = modC;
@@ -45,6 +51,11 @@ public class CtrlConsultasPacientes implements ActionListener{
     obtenerEspecialidades();
   }
 
+  /**
+   * Método encargado del control de las funcionalidades
+   * del CRUD de los pacientes
+   * @param e 
+   */
   @Override
   public void actionPerformed(ActionEvent e) {
 //Boton consultar por especialidad
@@ -96,8 +107,8 @@ public class CtrlConsultasPacientes implements ActionListener{
     }
     
   }
-  
-    /**
+ 
+  /**
    * Método para insertar las areas de trabajo el
    * combobox llamado cmbEspecialidad
    */  
@@ -116,7 +127,7 @@ public class CtrlConsultasPacientes implements ActionListener{
       try {
         while (rs.next()){
           listaModelo.addElement(rs.getString("especialidad"));
-      } rs.close();
+        } rs.close();
       
       } catch(SQLException ex ){
         System.err.println(ex.getMessage());

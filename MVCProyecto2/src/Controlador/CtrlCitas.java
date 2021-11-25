@@ -21,7 +21,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * Controlados de la clase Cita.
+ * Controlador de la clase Cita.
  * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class CtrlCitas implements ActionListener {
@@ -52,6 +52,11 @@ public class CtrlCitas implements ActionListener {
     obtenerCedulasPacientes();
   }
 
+  /**
+   * Método encargado del control de las funcionalidades
+   * del CRUD de Citas
+   * @param e 
+   */
   @Override
   public void actionPerformed(ActionEvent e) {
     //Boton Solicitar Cita
@@ -87,7 +92,6 @@ public class CtrlCitas implements ActionListener {
           JOptionPane.showMessageDialog(null,"Registro de cita cancelado");
           cargarTablaCita();
           cargarTablaCita1();
-          
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
         }
@@ -127,17 +131,15 @@ public class CtrlCitas implements ActionListener {
     try {
       DefaultComboBoxModel listaModelo = new DefaultComboBoxModel();
       listaModelo.addElement("Paciente");
-    
       Connection connect = DriverManager.getConnection("jdbc:sqlserver://"
           + ";databaseName=Proyecto_POO2;user=usuariosql;password=root1");
       PreparedStatement st = connect.prepareStatement("SELECT cedulaPaciente "
           + "from Paciente order by cedulaPaciente");
       rs = st.executeQuery();
-    
       try {
         while (rs.next()){
           listaModelo.addElement(rs.getString("cedulaPaciente"));
-      } rs.close();
+        } rs.close();
       
       } catch(SQLException ex ){
         System.err.println(ex.getMessage());
@@ -162,11 +164,10 @@ public class CtrlCitas implements ActionListener {
       PreparedStatement st = connect.prepareStatement("SELECT AreaTrabajo from "
           + "AreaTrabajo order by AreaTrabajo");
       rs = st.executeQuery();
-    
       try {
         while (rs.next()){
           listaModelo.addElement(rs.getString("AreaTrabajo"));
-      } rs.close();
+        } rs.close();
       
       } catch(SQLException ex ){
         System.err.println(ex.getMessage());
@@ -190,8 +191,7 @@ public class CtrlCitas implements ActionListener {
     int [] anchos = {10, 50, 100, 30, 100};
     for(int i = 0 ; i < frm.tablaCita.getColumnCount(); i++){
       frm.tablaCita.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
-    }
-    ConsultaCita.cargarTablaCita(modeloTabla);
+    } ConsultaCita.cargarTablaCita(modeloTabla);
   } 
    /**
    * Método para cargar los datos de la base de datos
@@ -207,7 +207,6 @@ public class CtrlCitas implements ActionListener {
     int [] anchos = {10, 50, 100, 30, 100};
     for(int i = 0 ; i < frm.tablaCita1.getColumnCount(); i++){
       frm.tablaCita1.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
-    }
-    ConsultaCita.cargarTablaCita1(modeloTabla);
+    } ConsultaCita.cargarTablaCita1(modeloTabla);
   } 
 }

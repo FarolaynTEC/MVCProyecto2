@@ -5,7 +5,7 @@
 package Modelo;
 
 /**
- *
+ * Esta es una abstraccion de la clase Bitacora
  * @author Alejandra Merino
  */
 public class Bitacora {
@@ -15,6 +15,7 @@ public class Bitacora {
   private String nombreAutor;
   private int identificadorCita;
 
+  //Metodos accesores
   public int getIdBitacora() {
     return idBitacora;
   }

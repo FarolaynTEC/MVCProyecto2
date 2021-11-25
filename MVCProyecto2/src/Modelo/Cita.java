@@ -5,7 +5,7 @@
 package Modelo;
 
 /**
- *
+ * Clase que abarca la cita
  * @author Alejandra Merino
  */
 public class Cita {

@@ -17,8 +17,9 @@ import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
 /**
- * Controlados de la clase Vacuna.
+ * Controlador de la clase Vacuna.
  * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class CtrlVacunasPaciente implements ActionListener{
@@ -26,6 +27,12 @@ public class CtrlVacunasPaciente implements ActionListener{
   private ConsultaVacuna modCVac;
   private Vacunas frmVac;
 
+  /**
+   * Construtor de la clase CtrlVacunasPaciente
+   * @param modVac
+   * @param modCVac
+   * @param frmVac 
+   */
   public CtrlVacunasPaciente(Vacuna modVac, ConsultaVacuna modCVac, Vacunas frmVac) {
     this.modVac = modVac;
     this.modCVac = modCVac;
@@ -34,12 +41,20 @@ public class CtrlVacunasPaciente implements ActionListener{
     this.frmVac.btnVolver.addActionListener(this);
   }
   
-    public void iniciar(){
+  /**
+   * Inicializador de la ventana Vacuna
+   */
+  public void iniciar(){
     frmVac.setTitle("ConsultaVacunas");
     frmVac.setLocationRelativeTo(null); 
     obtenerCedulaPaciente();
   }
   
+  /**
+   * Método encargado del control de las funcionalidades
+   * del CRUD de las Vacunas
+   * @param e 
+   */
   @Override
   public void actionPerformed(ActionEvent e) {
     //Boton consultar Vacunas
@@ -69,7 +84,7 @@ public class CtrlVacunasPaciente implements ActionListener{
     }
   } 
   
-      /**
+  /**
    * Método para insertar las areas de los funcionarios en el
    * combobox llamado cmbAreaFuncionario
    */  

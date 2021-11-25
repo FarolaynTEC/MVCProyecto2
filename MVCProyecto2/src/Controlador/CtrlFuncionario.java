@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * Controlados de la clase Funcionario.
+ * Controlador de la clase Funcionario.
  * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class CtrlFuncionario implements ActionListener {
@@ -34,6 +34,14 @@ public class CtrlFuncionario implements ActionListener {
   private ConsultaFuncionario modC;
   private FuncionarioV frm;
 
+  /**
+   * Construtor de la clase CtrlFuncionario
+   * @param modFun
+   * @param modC
+   * @param modDoc
+   * @param modEnf
+   * @param frm 
+   */
   public CtrlFuncionario(Funcionario modFun, ConsultaFuncionario modC,
         Doctor modDoc,Enfermero modEnf, FuncionarioV frm) {
     this.modFun = modFun;
@@ -334,11 +342,8 @@ public class CtrlFuncionario implements ActionListener {
       limpiar();
     }
     
-    
     //boton Volver
-    if(e.getSource()==frm.btnVolver){
-       
-    }
+    if(e.getSource()==frm.btnVolver){ }
     
   }
   
@@ -353,7 +358,7 @@ public class CtrlFuncionario implements ActionListener {
     frm.txtNombreFuncionario.setText(null);
   }
   
-    /**
+   /**
    * Método para cargar los datos de la base de datos
    * en la tabla llamada tablaFuncionario.
    */
@@ -367,8 +372,7 @@ public class CtrlFuncionario implements ActionListener {
     int [] anchos = {10, 50, 100, 30, 100};
     for(int i = 0 ; i < frm.tablaFuncionario.getColumnCount(); i++){
       frm.tablaFuncionario.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
-    }
-    ConsultaFuncionario.cargarTablaFuncionario(modeloTabla);
+    }ConsultaFuncionario.cargarTablaFuncionario(modeloTabla);
   }
   
   /**
@@ -385,8 +389,7 @@ public class CtrlFuncionario implements ActionListener {
     int [] anchos = {10, 50, 100, 30, 100};
     for(int i = 0 ; i < frm.tablaFuncionario.getColumnCount(); i++){
       frm.tablaFuncionario.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
-    }
-    ConsultaFuncionario.cargarTablaFuncionarioDoctor(modeloTabla);
+    }ConsultaFuncionario.cargarTablaFuncionarioDoctor(modeloTabla);
   }
   
     /**
@@ -403,11 +406,10 @@ public class CtrlFuncionario implements ActionListener {
     int [] anchos = {10, 50, 100, 30, 100};
     for(int i = 0 ; i < frm.tablaEnfermero.getColumnCount(); i++){
       frm.tablaEnfermero.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
-    }
-    ConsultaFuncionario.cargarTablaFuncionarioEnfermero(modeloTabla);
+    }ConsultaFuncionario.cargarTablaFuncionarioEnfermero(modeloTabla);
   }
   
-    /**
+   /**
    * Método para insertar las areas de los funcionarios en el
    * combobox llamado cmbAreaFuncionario
    */  
@@ -426,7 +428,7 @@ public class CtrlFuncionario implements ActionListener {
       try {
         while (rs.next()){
           listaModelo.addElement(rs.getString("areaTrabajo"));
-      } rs.close();
+        } rs.close();
       
       } catch(SQLException ex ){
         System.err.println(ex.getMessage());
@@ -436,7 +438,7 @@ public class CtrlFuncionario implements ActionListener {
     }
   }
   
-    /**
+   /**
    * Método para insertar las areas de los funcionarios en el
    * combobox llamado cmbLugarTrabajo
    */  
@@ -455,7 +457,7 @@ public class CtrlFuncionario implements ActionListener {
       try {
         while (rs.next()){
           listaModelo.addElement(rs.getString("codigoCentroAtencion"));
-      } rs.close();
+        } rs.close();
       
       } catch(SQLException ex ){
         System.err.println(ex.getMessage());
