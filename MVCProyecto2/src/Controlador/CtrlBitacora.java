@@ -23,14 +23,20 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
- * @author Alejandra Merino
+ * Esta es una clase de Controlador de Bitacora
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class CtrlBitacora implements ActionListener {
   private Bitacora modBit;
   private ConsultaBitacora modBitC;
   private BitacoraV vistaBit;
-
+  
+  /**
+   * Constructor de la clase CtrlBitacora
+   * @param modBit
+   * @param modBitC
+   * @param vistaBit 
+   */
   public CtrlBitacora(Bitacora modBit, ConsultaBitacora modBitC, BitacoraV vistaBit) {
     this.modBit = modBit;
     this.modBitC = modBitC;
@@ -43,6 +49,9 @@ public class CtrlBitacora implements ActionListener {
     this.vistaBit.btnVolverBitacora.addActionListener(this);
   }
   
+  /**
+   * Metodo que inicializa elementos graficos de la ventana Bitacora
+   */
   public void iniciar(){
     vistaBit.setTitle("Bitácoras");
     vistaBit.setLocationRelativeTo(null);
@@ -51,6 +60,9 @@ public class CtrlBitacora implements ActionListener {
     obtenerIdCita();
   }
   
+  /**
+   * Metodo que carga la tabla de Bitacora de la BD
+   */
   private void cargarTablaBitacora(){
       DefaultTableModel modeloTabla = (DefaultTableModel) vistaBit.tablaBitacora.getModel();
       modeloTabla.setRowCount(0);
@@ -61,10 +73,13 @@ public class CtrlBitacora implements ActionListener {
       int [] anchos = {10, 50, 100, 30, 100};
       for(int i = 0 ; i < vistaBit.tablaBitacora.getColumnCount(); i++){
         vistaBit.tablaBitacora.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
-      }
-      ConsultaBitacora.cargarTablaBitacora(modeloTabla);
+      }ConsultaBitacora.cargarTablaBitacora(modeloTabla);
   }
   
+  /**
+   * Metodo que controla la acciones de cada boton de la ventana Bitacora
+   * @param e 
+   */
   @Override
   public void actionPerformed(ActionEvent e) {
     //Boton guardar Bitacora
@@ -136,9 +151,7 @@ public class CtrlBitacora implements ActionListener {
     
     
     //boton Volver
-    if(e.getSource()==vistaBit.btnVolverBitacora){
-       
-    }
+    if(e.getSource()==vistaBit.btnVolverBitacora){}
     
   }
   
@@ -166,12 +179,10 @@ public class CtrlBitacora implements ActionListener {
       PreparedStatement st = connect.prepareStatement("SELECT nombreFuncionario from "
           + "Funcionario order by cedulaFuncionario");
       rs = st.executeQuery();
-    
       try {
         while (rs.next()){
           listaModelo.addElement(rs.getString("nombreFuncionario"));
-      } rs.close();
-      
+        } rs.close();
       } catch(SQLException ex ){
         System.err.println(ex.getMessage());
       } vistaBit.cmbNombreBitacora.setModel(listaModelo);
@@ -195,12 +206,10 @@ public class CtrlBitacora implements ActionListener {
       PreparedStatement st = connect.prepareStatement("SELECT identificador from "
           + "Citas order by cedulaPaciente");
       rs = st.executeQuery();
-    
       try {
         while (rs.next()){
           listaModelo.addElement(rs.getString("identificador"));
-      } rs.close();
-      
+        } rs.close();
       } catch(SQLException ex ){
         System.err.println(ex.getMessage());
       } vistaBit.cmbCitaBitacora.setModel(listaModelo);
