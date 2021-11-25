@@ -60,6 +60,7 @@ public class ConsultasDePacientes extends javax.swing.JFrame {
     jScrollPane5 = new javax.swing.JScrollPane();
     tblHospiPaciente1 = new javax.swing.JTable();
     btnConsultaPacienteHospitalizado = new javax.swing.JButton();
+    jButton1 = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -201,6 +202,13 @@ public class ConsultasDePacientes extends javax.swing.JFrame {
       }
     });
 
+    jButton1.setText("Volver");
+    jButton1.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton1ActionPerformed(evt);
+      }
+    });
+
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
@@ -239,7 +247,8 @@ public class ConsultasDePacientes extends javax.swing.JFrame {
             .addContainerGap()
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
               .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
-              .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING))
+              .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+              .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
@@ -346,8 +355,13 @@ public class ConsultasDePacientes extends javax.swing.JFrame {
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addGap(18, 18, 18)
-        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGap(18, 18, 18)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGap(58, 58, 58)
+            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
         .addContainerGap(569, Short.MAX_VALUE))
     );
 
@@ -381,6 +395,12 @@ public class ConsultasDePacientes extends javax.swing.JFrame {
   private void btnConsultaPacienteHospitalizadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaPacienteHospitalizadoActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnConsultaPacienteHospitalizadoActionPerformed
+
+  private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    Menu verM = new Menu();    
+    verM.setVisible(true);
+    this.setVisible(false);
+  }//GEN-LAST:event_jButton1ActionPerformed
 
   /**
    * Metodo main de la clase vista ConsultasDePacientes
@@ -434,6 +454,7 @@ public class ConsultasDePacientes extends javax.swing.JFrame {
   public javax.swing.JComboBox<String> cmbNombrePaciente;
   public javax.swing.JComboBox<String> cmbNombreTratamiento;
   public javax.swing.JComboBox<String> cmbTipoTratamiento;
+  private javax.swing.JButton jButton1;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JLabel jLabel3;
