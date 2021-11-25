@@ -43,12 +43,15 @@ public class CtrlConsultasPacientes implements ActionListener{
   
   public CtrlConsultasPacientes(Cita modCita,ConsultaCita modC, 
       Diagnostico modDia, Tratamiento modTra, 
-      ConsultaDiagnosticoTratamiento modDiaTra, ConsultasDePacientes frm) {
+      ConsultaDiagnosticoTratamiento modDiaTra, ConsultasDePacientes frm , 
+      Hospitalizacion modHos,ConsultaHospitalizacion modHosC ) {
     this.modCita = modCita;
     this.modC = modC;
     this.modDia = modDia;
     this.modTra = modTra;
     this.modDiaTra = modDiaTra;
+    this.modHos = modHos;
+    this.modHosC = modHosC;
     this.frm = frm;
     this.frm.btnEspecialidad.addActionListener(this);
     this.frm.btnEstado.addActionListener(this);
@@ -239,7 +242,31 @@ public class CtrlConsultasPacientes implements ActionListener{
         for(int i = 0 ; i < frm.tblHospiPaciente1.getColumnCount(); i++){
           frm.tblHospiPaciente1.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
         }
-        if(modDiaTra.consultarNombreTrata(modTra, modeloTabla)){
+        if(modHosC.consultarCedulaPacInter(modHos, modeloTabla)){
+   
+        }else{
+          JOptionPane.showMessageDialog(null,"ERROR");
+        }
+      } catch(SQLException ex){
+        Logger.getLogger(CtrlFuncionario.class.getName())
+                .log(Level.SEVERE,null,ex);
+      }
+    }
+    //Boton consultar por nombre paciente internado
+    if(e.getSource() == frm.btnConsultaPacienteHospitalizado){
+      modHos.setCedulaPAcienteInternado(Integer.parseInt(frm.cmbNombrePaciente
+          .getSelectedItem().toString()));
+      try {
+        DefaultTableModel modeloTabla = (DefaultTableModel) frm.tblHospiPaciente2.getModel();
+        modeloTabla.setRowCount(0);
+        ResultSet rs;
+        ResultSetMetaData rsmd;
+        int columnas;
+        int [] anchos = {10, 50, 100, 30, 100};
+        for(int i = 0 ; i < frm.tblHospiPaciente2.getColumnCount(); i++){
+          frm.tblHospiPaciente2.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
+        }
+        if(modHosC.consultarCedulaPacInter2(modHos, modeloTabla)){
    
         }else{
           JOptionPane.showMessageDialog(null,"ERROR");
