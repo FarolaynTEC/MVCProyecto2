@@ -23,11 +23,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -64,7 +60,7 @@
                   <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -88,8 +84,8 @@
                                       </Group>
                                   </Group>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txtHoraBitacora" pref="212" max="32767" attributes="0"/>
-                                      <Component id="txtIDBitacora" pref="212" max="32767" attributes="0"/>
+                                      <Component id="txtHoraBitacora" max="32767" attributes="0"/>
+                                      <Component id="txtIDBitacora" max="32767" attributes="0"/>
                                       <Component id="txtFechaBitacora" alignment="0" pref="212" max="32767" attributes="0"/>
                                       <Component id="cmbNombreBitacora" max="32767" attributes="0"/>
                                       <Component id="cmbCitaBitacora" max="32767" attributes="0"/>
