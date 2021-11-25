@@ -5,8 +5,8 @@
 package Modelo;
 
 /**
- *
- * @author Alejandra Merino
+ * Esta es una abstraccion de la clase Vacuna
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class Vacuna {
   private int cedulaPaciente;
@@ -15,6 +15,7 @@ public class Vacuna {
   private String farmaceutica;
   private String numLote;
 
+  //Metodos
   public int getCedulaPaciente() {
     return cedulaPaciente;
   }

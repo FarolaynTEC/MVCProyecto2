@@ -7,13 +7,17 @@ package Modelo;
 import java.util.Date;
 
 /**
- *
- * @author Alejandra Merino
+ * Esta es una abstraccion de la clase Enfermero
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class Enfermero extends Funcionario{
   private int indicadorPersonasACargo;
   private int indicadorExpCapacitacion;
 
+  /**
+   * Metodo que imprime un String de la clase
+   * @return 
+   */
   @Override
   public String toString() {
     String msg;
@@ -22,6 +26,7 @@ public class Enfermero extends Funcionario{
     return msg;
   }
 
+  //Metodos accesores
   public int isIndicadorPersonasACargo() {
     return indicadorPersonasACargo;
   }

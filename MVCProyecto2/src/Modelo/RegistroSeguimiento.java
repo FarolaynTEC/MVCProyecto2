@@ -15,6 +15,7 @@ public class RegistroSeguimiento {
   private String observacionEvolucion;
   private String tratamientoAsociado;
 
+  //Metodos accesores
   public int getFuncionarioSegui() {
     return funcionarioSegui;
   }

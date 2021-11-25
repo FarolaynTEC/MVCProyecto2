@@ -5,12 +5,13 @@
 package Modelo;
 
 /**
- *
- * @author Josue
+ * Esta es una abstraccion de la clase TipoCentroAtencion
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class TipoCentroAtencion {
   private String tipoCentro;
 
+  //Metodos accesores
   public String getTipoCentro() {
     return tipoCentro;
   }

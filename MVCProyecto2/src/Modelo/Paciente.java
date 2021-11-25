@@ -7,8 +7,8 @@ package Modelo;
 import java.util.ArrayList;
 
 /**
- *
- * @author Alejandra Merino
+ * Esta es una abstraccion de la clase Paciente
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class Paciente {
   private int cedulaPaciente;
@@ -22,10 +22,7 @@ public class Paciente {
   private ArrayList<Cita> citas;
   private ArrayList<Vacuna> vacunas;
   
-  private void solicitarCita(){}
-  
-  private void cancelarCita(){}
-
+  //Metodos accesores
   public int getCedulaPaciente() {
     return cedulaPaciente;
   }

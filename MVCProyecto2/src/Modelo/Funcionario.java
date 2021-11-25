@@ -4,8 +4,8 @@ package Modelo;
 import java.util.Date;
 
 /**
- *
- * @author Alejandra Merino
+ * Esta es una abstraccion de la clase Funcionario
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class Funcionario {
   protected int cedulaFuncionario;
@@ -15,11 +15,10 @@ public class Funcionario {
   protected String trabajaEn;
   protected AreaTrabajo areaTrabajo;
 
-  
-  public void cancelarCitaPaciente () {}
-  
-  public void asignarCitaPaciente () {}
-
+  /**
+   * Metodo que imprime un String de la clase
+   * @return 
+   */
   @Override
   public String toString() {
     String msg;
@@ -32,6 +31,7 @@ public class Funcionario {
     return msg;
   }
 
+  //Metodos accesores
   public int getCedulaFuncionario() {
     return cedulaFuncionario;
   }
