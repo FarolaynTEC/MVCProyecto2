@@ -8,8 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author farol
+ * Esta es una abstraccion de la clase ventana CentroA
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class CentroA extends javax.swing.JFrame {
 
@@ -242,6 +242,10 @@ public class CentroA extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * Metodo del boton guardar CentroA
+   * @param evt 
+   */
   private void btnGuardarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCentroActionPerformed
     if(txtCantidadCentro.getText().length()==0
             || txtNombreCentro.getText().length()==0
@@ -255,6 +259,10 @@ public class CentroA extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnGuardarCentroActionPerformed
 
+  /**
+   * Metodo del boton editar CentroA
+   * @param evt 
+   */
   private void btnEditarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCentroActionPerformed
     if(txtCantidadCentro.getText().length()==0
             || txtNombreCentro.getText().length()==0
@@ -268,6 +276,10 @@ public class CentroA extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnEditarCentroActionPerformed
 
+  /**
+   * Metodo del boton eliminar CentroA
+   * @param evt 
+   */
   private void btnEliminarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCentroActionPerformed
     if(txtCodigoCentro.getText().length()==0)
    {
@@ -279,6 +291,10 @@ public class CentroA extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnEliminarCentroActionPerformed
 
+  /**
+   * Metodo del boton limpiar CentroA
+   * @param evt 
+   */
   private void btnLimpiarCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarCentroActionPerformed
     txtCantidadCentro.setText(null);
     txtCodigoCentro.setText(null);
@@ -286,6 +302,10 @@ public class CentroA extends javax.swing.JFrame {
     txtUbicacionCentro.setText(null);
   }//GEN-LAST:event_btnLimpiarCentroActionPerformed
 
+  /**
+   * Metodo del boton volver CentroA
+   * @param evt 
+   */
   private void btnVolverCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverCentroActionPerformed
     Menu verM = new Menu();    
     verM.setVisible(true);
@@ -293,6 +313,7 @@ public class CentroA extends javax.swing.JFrame {
   }//GEN-LAST:event_btnVolverCentroActionPerformed
 
   /**
+   * Metodo main de la vista CentroA
    * @param args the command line arguments
    */
   public static void main(String args[]) {

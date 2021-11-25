@@ -5,8 +5,8 @@
 package Vista;
 
 /**
- *
- * @author Josue
+ * Esta es una abstraccion de la clase ventana ConsultasDePacientes
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class ConsultasDePacientes extends javax.swing.JFrame {
 
@@ -124,11 +124,16 @@ public class ConsultasDePacientes extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * Metodo del boton combobox estado en ConsultasDePacientes
+   * @param evt 
+   */
   private void cmbEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbEstadoActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_cmbEstadoActionPerformed
 
   /**
+   * Metodo main de la clase vista ConsultasDePacientes
    * @param args the command line arguments
    */
   public static void main(String args[]) {
