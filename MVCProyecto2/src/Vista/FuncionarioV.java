@@ -8,8 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author farol
+ * Esta es una abstraccion de la clase ventana FuncionarioV
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class FuncionarioV extends javax.swing.JFrame {
 
@@ -847,32 +847,60 @@ public class FuncionarioV extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * Metodo del boton guardar centro1
+   * @param evt 
+   */
   private void btnGuardarCentro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCentro1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnGuardarCentro1ActionPerformed
 
+  /**
+   * Metodo del boton editar centro1
+   * @param evt 
+   */
   private void btnEditarCentro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCentro1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnEditarCentro1ActionPerformed
 
+  /**
+   * Metodo del boton eliminar centro1
+   * @param evt 
+   */
   private void btnEliminarCentro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCentro1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnEliminarCentro1ActionPerformed
 
+  /**
+   * Metodo del boton limpiar centro1
+   * @param evt 
+   */
   private void btnLimpiarCentro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarCentro1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnLimpiarCentro1ActionPerformed
 
+  /**
+   * Metodo del boton volver centro1
+   * @param evt 
+   */
   private void btnVolverCentro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverCentro1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnVolverCentro1ActionPerformed
  
+  /**
+   * Metodo del boton volver
+   * @param evt 
+   */
   private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
     Menu verM = new Menu();    
     verM.setVisible(true);
     this.setVisible(false);
   }//GEN-LAST:event_btnVolverActionPerformed
 
+  /**
+   * Metodo del boton limpiar
+   * @param evt 
+   */
   private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
     txtCedulaFuncionario.setText(null);
     txtNombreFuncionario.setText(null);
@@ -883,6 +911,10 @@ public class FuncionarioV extends javax.swing.JFrame {
     
   }//GEN-LAST:event_btnLimpiarActionPerformed
 
+  /**
+   * Metodo del boton eliminar funcionario
+   * @param evt 
+   */
   private void btnEliminarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarFuncionarioActionPerformed
     if(txtCedulaFuncionario.getText().length()==0)
    {
@@ -895,6 +927,10 @@ public class FuncionarioV extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnEliminarFuncionarioActionPerformed
 
+  /**
+   * Metodo del boton editar funcionario
+   * @param evt 
+   */
   private void btnEditarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarFuncionarioActionPerformed
     if(txtCedulaFuncionario.getText().length()==0
         || txtNombreFuncionario.getText().length()==0
@@ -910,6 +946,10 @@ public class FuncionarioV extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnEditarFuncionarioActionPerformed
 
+  /**
+   * Metodo del boton guardar funcionario
+   * @param evt 
+   */
   private void btnGuardarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarFuncionarioActionPerformed
     if(txtCedulaFuncionario.getText().length()==0
         || txtNombreFuncionario.getText().length()==0
@@ -927,10 +967,18 @@ public class FuncionarioV extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnGuardarFuncionarioActionPerformed
 
+  /**
+   * Metodo del boton guardar funcionario
+   * @param evt 
+   */
   private void btnGuardarFuncionario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarFuncionario1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnGuardarFuncionario1ActionPerformed
 
+  /**
+   * Metodo del boton fuardar funcionario2
+   * @param evt 
+   */
   private void btnGuardarFuncionario2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarFuncionario2ActionPerformed
     if(txtCedulaFuncionario.getText().length()==0
         || txtNombreFuncionario.getText().length()==0
@@ -954,6 +1002,10 @@ public class FuncionarioV extends javax.swing.JFrame {
         } 
   }//GEN-LAST:event_btnGuardarFuncionario2ActionPerformed
 
+  /**
+   * Metodo del boton editar funcionario1
+   * @param evt 
+   */
   private void btnEditarFuncionario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarFuncionario1ActionPerformed
     if(txtCedulaFuncionario.getText().length()==0
         || txtNombreFuncionario.getText().length()==0
@@ -977,6 +1029,10 @@ public class FuncionarioV extends javax.swing.JFrame {
         }
   }//GEN-LAST:event_btnEditarFuncionario1ActionPerformed
 
+  /**
+   * Metodo del boton eliminar funcionario1
+   * @param evt 
+   */
   private void btnEliminarFuncionario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarFuncionario1ActionPerformed
     if(txtCedulaFuncionario.getText().length()==0)
    {
@@ -989,19 +1045,32 @@ public class FuncionarioV extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnEliminarFuncionario1ActionPerformed
 
+  /**
+   * Metodo del boton guardar secretario 
+   * @param evt 
+   */
   private void btnGuardarSecretarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarSecretarioActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnGuardarSecretarioActionPerformed
 
+  /**
+   * Metodo del boton editar secretario 
+   * @param evt 
+   */
   private void btnEditarsecretarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarsecretarioActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnEditarsecretarioActionPerformed
 
+  /**
+   * Metodo del boton eliminar secretario 
+   * @param evt 
+   */
   private void btnEliminarSecretarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarSecretarioActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_btnEliminarSecretarioActionPerformed
 
   /**
+   * Metodo main de la clase vista FuncionarioV
    * @param args the command line arguments
    */
   public static void main(String args[]) {

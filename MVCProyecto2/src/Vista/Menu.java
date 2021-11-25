@@ -46,8 +46,8 @@ import Vista.PacienteV;
 import javax.swing.JFrame;
 
 /**
- *
- * @author farol
+ * Esta es una abstraccion de la clase ventana Menu
+ * @author Josue Brenes, Paola Lopez, Alejandra Merino
  */
 public class Menu extends javax.swing.JFrame {
 
@@ -316,6 +316,10 @@ public class Menu extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * Metodo del boton consulta AreaTrabajo
+   * @param evt 
+   */
   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     AreaTrabajo modAT = new AreaTrabajo();
     TipoCentroAtencion modTCA = new TipoCentroAtencion() ;
@@ -328,6 +332,10 @@ public class Menu extends javax.swing.JFrame {
     this.setVisible(false);
   }//GEN-LAST:event_jButton1ActionPerformed
 
+  /**
+   * Metodo del boton consulta Bitacora
+   * @param evt 
+   */
   private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
     Bitacora modBit = new Bitacora();
@@ -340,6 +348,10 @@ public class Menu extends javax.swing.JFrame {
     this.setVisible(false);
   }//GEN-LAST:event_jButton2ActionPerformed
 
+  /**
+   * Metodo del boton consulta CentroAtencion
+   * @param evt 
+   */
   private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
     CentroAtencion modCA = new CentroAtencion();
     ConsultaCentroAtencion modCCA = new ConsultaCentroAtencion();
@@ -351,6 +363,10 @@ public class Menu extends javax.swing.JFrame {
     this.setVisible(false);
   }//GEN-LAST:event_jButton3ActionPerformed
 
+  /**
+   * Metodo del boton consulta Cita
+   * @param evt 
+   */
   private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
     Cita modCita = new Cita();
     ConsultaCita modC = new ConsultaCita();
@@ -362,6 +378,10 @@ public class Menu extends javax.swing.JFrame {
     this.setVisible(false);
   }//GEN-LAST:event_jButton4ActionPerformed
 
+  /**
+   * Metodo del boton consulta Diagnotico y Tratamiento
+   * @param evt 
+   */
   private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
     
     Diagnostico modDia = new Diagnostico();
@@ -374,6 +394,10 @@ public class Menu extends javax.swing.JFrame {
     this.setVisible(false);
   }//GEN-LAST:event_jButton5ActionPerformed
 
+  /**
+   * Metodo del boton consulta Funcionario
+   * @param evt 
+   */
   private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
     Funcionario modFun = new Funcionario();
     Doctor modDoc = new Doctor();
@@ -387,6 +411,10 @@ public class Menu extends javax.swing.JFrame {
     this.setVisible(false);
   }//GEN-LAST:event_jButton6ActionPerformed
 
+  /**
+   * Metodo del boton consulta Paciente
+   * @param evt 
+   */
   private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
     Paciente modPac = new Paciente();
     Vacuna modVac = new Vacuna();
@@ -399,6 +427,10 @@ public class Menu extends javax.swing.JFrame {
     this.setVisible(false);
   }//GEN-LAST:event_jButton7ActionPerformed
 
+  /**
+   * Metodo del boton consulta RegistroSeguimiento
+   * @param evt 
+   */
   private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
     RegistroSeguimiento modSegui = new RegistroSeguimiento();
     ConsultaSeguimiento modSeguiC = new ConsultaSeguimiento();
@@ -410,6 +442,10 @@ public class Menu extends javax.swing.JFrame {
     this.setVisible(false);
   }//GEN-LAST:event_jButton8ActionPerformed
 
+  /**
+   * Metodo del boton consulta Vacuna
+   * @param evt 
+   */
   private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
     Paciente modPac = new Paciente();
     Vacuna modVac = new Vacuna();
@@ -422,6 +458,10 @@ public class Menu extends javax.swing.JFrame {
     this.setVisible(false);
   }//GEN-LAST:event_jButton9ActionPerformed
 
+  /**
+   * Metodo del boton consulta Hospitalizacion
+   * @param evt 
+   */
   private void btnHospitalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHospitalizarActionPerformed
     Hospitalizacion modHos= new Hospitalizacion() ;
     ConsultaHospitalizacion modHosC = new ConsultaHospitalizacion();
@@ -432,6 +472,10 @@ public class Menu extends javax.swing.JFrame {
     this.setVisible(false);
   }//GEN-LAST:event_btnHospitalizarActionPerformed
 
+  /**
+   * Metodo del boton consulta Cita2
+   * @param evt 
+   */
   private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
     Cita modCita = new Cita();
     ConsultaCita modC = new ConsultaCita();
@@ -453,6 +497,7 @@ public class Menu extends javax.swing.JFrame {
   }//GEN-LAST:event_jButton10ActionPerformed
 
   /**
+   * Metodo main del manu principal
    * @param args the command line arguments
    */
   public static void main(String args[]) {
